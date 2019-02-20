@@ -10,20 +10,46 @@ body
     margin:auto;
     padding:0;
     height:100%;
+<<<<<<< HEAD
     width: 100%;
 }
 
     .container{
         width:100%;
         height: auto;
+=======
+    width:auto;
+    min-width:600px;
+    max-width:2000px;
+    display: block;
+
+}
+/*
+* {
+    
+        list-style:none; 
+    
+        padding:0px;
+    
+        margin:0px;
+    
+    }
+    
+    #all{
+    
+        height:100%;
+    
+        width:auto;
+    
+>>>>>>> 0751397f6594a83e4112c1d7a94dc52b9d37993b
         margin:auto;
         background-color: black;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    
-    }
+        overflow: hidden;
+    }*/
 
 .logo img
 {
@@ -50,7 +76,12 @@ body
     color: white;
     font-family: Courier New, Courier, monospace;
     font-size: 200%;
+<<<<<<< HEAD
     width: auto;
+=======
+    width: 400em;
+    float: left;
+>>>>>>> 0751397f6594a83e4112c1d7a94dc52b9d37993b
 }
 
 .nav
@@ -73,5 +104,26 @@ height: 1em;
 width: 2em;
 font-size: 250%;
 font-weight: 600;
+}
+
+#primeiraS
+{
+    height: 10em;
+    width:100%;
+   background-color: #708090;
+}
+
+#segundaS
+{
+    height: 10em;
+    width: 100%;
+   background-color: #8B8989;
+}
+
+#terceiraS
+{
+    height: 10em;
+    width: 100%;
+   background-color: #708090;
 }
 
