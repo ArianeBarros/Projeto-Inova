@@ -11,28 +11,13 @@ body
     padding:0;
     height:100%;
     width: 100%;
-    min-width:600px;
-    max-width:2000px
-
 }
 
-* {
-    
-        list-style:none; 
-    
-        padding:0px;
-    
-        margin:0px;
-    
-    }
-    
-    #all{
-    
-        height:100%;
-    
+    .container{
         width:100%;
-    
+        height: auto;
         margin:auto;
+        background-color: black;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -40,18 +25,15 @@ body
     
     }
 
-.logo
+.logo img
 {
-    background: url(./Imagens/LOGO/logoofc.png);
-    width: 31em;
-    height: 25em;
+    max-width: 40%;
+    height: auto;
 }
-/*
-@media screen and (min-width: 400px) {
-    .nav{
-        float: none;
-        width: 50%;
-    }
+
+@media screen and (min-width: 800px) {
+   
+    
 }
 
 @media screen and (min-width: 800px) {
@@ -64,11 +46,11 @@ body
 {
     position: absolute;
     left: 17em;
-    top: 7em;
+    top: 0em;
     color: white;
     font-family: Courier New, Courier, monospace;
     font-size: 200%;
-    width: 400em;
+    width: auto;
 }
 
 .nav
