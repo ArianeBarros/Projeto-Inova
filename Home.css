@@ -10,6 +10,14 @@ body
     margin:auto;
     padding:0;
     height:100%;
+<<<<<<< HEAD
+    width: 100%;
+}
+
+    .container{
+        width:100%;
+        height: auto;
+=======
     width:auto;
     min-width:600px;
     max-width:2000px;
@@ -33,7 +41,9 @@ body
     
         width:auto;
     
+>>>>>>> 0751397f6594a83e4112c1d7a94dc52b9d37993b
         margin:auto;
+        background-color: black;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -41,18 +51,15 @@ body
         overflow: hidden;
     }*/
 
-.logo
+.logo img
 {
-    background: url(./Imagens/LOGO/logoofc.png);
-    width: 31em;
-    height: 25em;
+    max-width: 40%;
+    height: auto;
 }
-/*
-@media screen and (min-width: 400px) {
-    .nav{
-        float: none;
-        width: 50%;
-    }
+
+@media screen and (min-width: 800px) {
+   
+    
 }
 
 @media screen and (min-width: 800px) {
@@ -65,12 +72,16 @@ body
 {
     position: absolute;
     left: 17em;
-    top: 7em;
+    top: 0em;
     color: white;
     font-family: Courier New, Courier, monospace;
     font-size: 200%;
+<<<<<<< HEAD
+    width: auto;
+=======
     width: 400em;
     float: left;
+>>>>>>> 0751397f6594a83e4112c1d7a94dc52b9d37993b
 }
 
 .nav
