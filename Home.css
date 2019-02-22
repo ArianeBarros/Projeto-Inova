@@ -1,34 +1,19 @@
 html{
-    
         height: 100%;
     }
 
 body
 {
-    background-color:white;
+    background-color:rgb(99, 12, 31);
     text-align:left;
     margin:auto;
     padding:0;
     height:100%;
     width: 100%;
-}
-
-    header{
-        height: auto;
-        width:auto;
-        min-width:600px;
-        max-width:2000px;
-        display: block;
-       
-        
+    min-width:600px;
+    max-width:2000px
 
 }
-img.ban
-{
-    background: url("./Imagens/banner.jpg"); 
-    filter: alpha(opacity=65);
-}
-/*
 * {
     
         list-style:none; 
@@ -43,24 +28,29 @@ img.ban
     
         height:100%;
     
-        width:auto;
-        background-color: black;
+        width:100%;
+    
+        margin:auto;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        overflow: hidden;
-    }*/
-
-.logo img
-{
-    max-width: 40%;
-    height: auto;
-}
-
-@media screen and (min-width: 800px) {
-   
     
+    }
+
+.logo
+{
+  /*  background: url(./Imagens/LOGO/logoofc.png);    
+    width: 22em;
+    height: 25em; */
+    width: 25%;
+}
+/*
+@media screen and (min-width: 400px) {
+    .nav{
+        float: none;
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -69,17 +59,25 @@ img.ban
     }
 }*/
 
-#menu
+/*#menu
 {
     position: absolute;
     left: 17em;
-    top: 0em;
+    top: 7em;
     color: white;
     font-family: Courier New, Courier, monospace;
     font-size: 200%;
-    width: auto;
-    float: left;
-    
+    width: 400em;
+}*/
+
+.nav
+{
+    background: #000000;
+    height: 25em;
+    width: 100%;
+    left: 0em;
+    position: relative;
+    top:0em;
 }
 
 #sobre,#login,#cadastro,#contato
@@ -92,26 +90,5 @@ height: 1em;
 width: 2em;
 font-size: 250%;
 font-weight: 600;
-}
-
-#primeiraS
-{
-    height: 100%;
-    width:100%;
-   background-color: #708090;
-}
-
-#segundaS
-{
-    height: 100%;
-    width: 100%;
-   background-color: #8B8989;
-}
-
-#terceiraS
-{
-    height: 100%;
-    width: 100%;
-    background-color: #708090;
 }
 
