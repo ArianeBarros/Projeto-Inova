@@ -32,11 +32,13 @@ body
 }
 
 @media screen and (min-width: 400px) {
-    .nav{
+    nav{
         float: none;
         width: 50%;
         position: absolute;
-        top: -30em;
+        top: 0em;
+        left: 50%;
+        font-size: 20px;
     }
 }
 
@@ -44,11 +46,14 @@ body
     body{
         
     }
-    .nav{
+    nav{
         float: none;
         width: 50%;
         position: absolute;
-        top: -30em;
+        top: 0em;
+        left: 50%;
+        
+        font-size: 20px;
     }
 }
 
@@ -63,9 +68,10 @@ body
     width: 400em;
 }*/
 
-.nav
+nav
 {
-    
+    position: absolute;
+    top: 0em;
 }
 
 #sobre,#login,#cadastro,#contato
