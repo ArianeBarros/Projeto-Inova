@@ -1,5 +1,4 @@
 html{
-    
         height: 100%;
     }
 
@@ -10,80 +9,63 @@ body
     margin:auto;
     padding:0;
     height:100%;
-
     width: 100%;
-}
-
-    .container{
-        height: auto;
-        width:auto;
-        min-width:600px;
-        max-width:2000px;
-        display: block;
+    min-width:600px;
+    max-width:2000px;
 
 }
-/*
-* {
+
+    header{
     
-        list-style:none; 
-    
-        padding:0px;
-    
-        margin:0px;
+        width: 100%;
+        background-color: #000000;
+        height: 5%(width);
     
     }
-    
-    #all{
-    
-        height:100%;
-    
-        width:auto;
-        background-color: black;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        overflow: hidden;
-    }*/
 
-.logo img
+.logo
 {
-    max-width: 40%;
-    height: auto;
+  /*  background: url(./Imagens/LOGO/logoofc.png);    
+    width: 22em;
+    height: 25em; */
+    width: 25%;
 }
 
-@media screen and (min-width: 800px) {
-   
-    
+@media screen and (min-width: 400px) {
+    .nav{
+        float: none;
+        width: 50%;
+        position: absolute;
+        top: -30em;
+    }
 }
 
 @media screen and (min-width: 800px) {
     body{
         
     }
-}*/
+    .nav{
+        float: none;
+        width: 50%;
+        position: absolute;
+        top: -30em;
+    }
+}
 
-#menu
+/*#menu
 {
     position: absolute;
     left: 17em;
-    top: 0em;
+    top: 7em;
     color: white;
     font-family: Courier New, Courier, monospace;
     font-size: 200%;
-    width: auto;
-    float: left;
-    
-}
+    width: 400em;
+}*/
 
 .nav
 {
-    background: #000000;
-    height: 25em;
-    width: 100%;
-    left: 0em;
-    position: relative;
-    top:0em;
+    
 }
 
 #sobre,#login,#cadastro,#contato
@@ -91,31 +73,5 @@ body
     color: white;
 }
 
-#home{
-height: 1em;
-width: 2em;
-font-size: 250%;
-font-weight: 600;
-}
 
-#primeiraS
-{
-    height: 100%;
-    width:100%;
-   background-color: #708090;
-}
-
-#segundaS
-{
-    height: 100%;
-    width: 100%;
-   background-color: #8B8989;
-}
-
-#terceiraS
-{
-    height: 100%;
-    width: 100%;
-    background-color: #708090;
-}
 
