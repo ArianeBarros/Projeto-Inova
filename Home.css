@@ -23,11 +23,16 @@ body
     .ondas
     {
         width: 100%;
+        height:40em;
     }
 
 .logo 
 {
     width: 25%;
+    height: auto;
+    position: absolute;
+    left: 5%;
+    top: 5%;
 }
 .barra
 {
