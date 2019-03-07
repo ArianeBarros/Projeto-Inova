@@ -23,7 +23,7 @@ body
     .ondas
     {
         width: 100%;
-        height:40em;
+        height:30em;
     }
 
 .logo 
@@ -34,14 +34,7 @@ body
     left: 5%;
     top: 5%;
 }
-.barra
-{
-    width: 5%;
-    height: auto;
-    position: absolute;
-    top: 2%;
-    left: 80%;
-}
+
 
 @media screen and (min-width: 400px) {
     nav{
@@ -60,7 +53,7 @@ body
     }
     nav{
         
-        float: right, top;
+        float:  top;
         width: 50%;
         /* position: absolute; */
         /* top: 0em; */
@@ -83,9 +76,10 @@ body
 
 nav
 {
-    position:relative ;
-    top: -5em;
-    left: 20%;
+    position: relative;
+    top: -22em;
+    right: -40%;
+    width: 25%;
     visibility: visible;
     /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
