@@ -3,7 +3,17 @@
 <title>I9</title>
 <link rel="shortcut icon" href="favicon.ico" >
 <link href="Home.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+
+  $(document).ready(function(){
+    $("#btnMenu").click(function(){
+      $("#menu").toggleClass("menu_open")
+    })
+  })
 </script>
 </head>
 <body>
@@ -13,9 +23,9 @@
         <div><img  class="logo" src="./Imagens/LOGO/logoofc.png"></div></a>
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
       <nav class="wrap-menu">
-      <a href="#menu" class="btnMenu_open"> Menu </a>
+      <a href="#menu" class="btnMenu btnMenu_open" onclick="open()"> Menu </a>
       <ul id= "menu" class="menu">
-        <li class="btnMenu_close">Sair</li>
+        <li class="btnMenu btnMenu_close" onclick="close()">Sair</li>
         <li class="menu-item">
           <a href="" class="menu-item-action">Login</a>
         </li>
