@@ -3,25 +3,23 @@
 <title>I9</title>
 <link rel="shortcut icon" href="favicon.ico" >
 <link href="Home.css" rel="stylesheet" type="text/css">
-<script src="http://code.jquery.com/jquery-3.3.1.js"
-integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
-
-
+<script>
 
   $(document).ready(function(){
-    $("#btnMenu_open").click(function(){
-      // $("#menu").css({left: 0})
-      $("body").css({"background-color": "#0000"})
-
+    $(".btnMenu_open").click(function(){
+      $("#menu").css("left","100")
     })
+
     $("#btnMenu_close").click(function(){
       $("#menu").toggleClass("menu_open",removeEventListener)
     })
   })
-  
+
+ 
 </script>
+
 </head>
 <body>
 <header><a href="#" class="brand-logo">

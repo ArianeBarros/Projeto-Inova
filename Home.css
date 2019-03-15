@@ -150,7 +150,10 @@ nav
 
 .btnMenu_open
 {
-    background-image: url("./Imagens/menuwt.png");
+    background-image: url("./Imagens/menu3.png");
+    height: 2em;
+    position: relative;
+    left: 60%;
 }
 
 .btnMenu_close
@@ -166,6 +169,8 @@ nav
     text-indent: -9999px;
     padding: 20px 15px;
 }
+
+
 
 .menu-item-action
 {
