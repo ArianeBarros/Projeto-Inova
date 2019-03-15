@@ -3,30 +3,34 @@
 <title>I9</title>
 <link rel="shortcut icon" href="favicon.ico" >
 <link href="Home.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous">
 
-<script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous">
+
+
 
   $(document).ready(function(){
-    $(".btnMenuOpen").click(function(){
-      $("#menu").toggleClass("menu_open",addEventListener)
+    $("#btnMenu_open").click(function(){
+      // $("#menu").css({left: 0})
+      $("body").css({"background-color": "#0000"})
+
     })
-    $(".btnMenuClose").click(function(){
+    $("#btnMenu_close").click(function(){
       $("#menu").toggleClass("menu_open",removeEventListener)
     })
   })
+  
 </script>
 </head>
 <body>
-<header><a href="#" class="brand-logo"></a>
+<header><a href="#" class="brand-logo">
   <img class="ondas" src="./Imagens/ondas.png">
       
         <div><img  class="logo" src="./Imagens/LOGO/logoofc.png"></div></a>
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
       <nav class="wrap-menu">
-      <a href="#menu" class="btnMenu btnMenu_open"> Menu </a>
+      <a href="#" class="btnMenu btnMenu_open" > Menu </a>
       <ul id= "menu" class="menu">
         <li class="btnMenu btnMenu_close" >Sair</li>
         <li class="menu-item">
@@ -40,9 +44,6 @@
         </li>
         <li class="menu-item">
           <a href="" class="menu-item-action">Sobre</a>
-        </li>
-        <li class="menu-item">
-          <a href="" class="menu-item-action">PRINCIPAL</a>
         </li>
 
       </ul>
@@ -59,3 +60,4 @@
 
 </body>
 </html>
+
