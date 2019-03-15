@@ -5,15 +5,20 @@
         <link rel="shortcut icon" href="favicon.ico" >
         <link href="Principal.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
+
+            window.onload = function(){
+                var cont = 0;                
+                while(cont < 20)
+                {
+                    var noti = noti + " <section> <div id='dTitulo'>Titulo</div><br><div id='dImagem'>Imagem</div><br><div id='dLink'>Link</div></section>";
+                    document.getElementById("sectionPrincipal").innerHtml = noti;
+                    cont++;
+                }
+            }
+
         </script>
         </head>
         <body>
-
-                @
-                {
-                    var noticia = "
-                }
-
         <header>
               <a href="#" class="brand-logo">                
                   <img class="ondas" src="./Imagens/ondas.png">
@@ -36,7 +41,6 @@
               <h1></h1>
               <span></span>
             </section>
-            <!-- <a href="" class="button button-accent">COMECE JÁ</a> -->
 
             <section id="sectionLeft"> Semana
 
@@ -52,9 +56,9 @@
 
                <section id="sectionPrincipal">
                     <section id="noticia">
-                        <div id="lblTitulo">Titulo</div><br><br>
-                        < id="lblImagem">Imagem</div><br><br>
-                        <div id="lblLink">Link</div>
+                        <div id="dTitulo">Titulo</div><br>
+                        <div id="dImagem">Imagem</div><br>
+                        <div id="dLink">Link</div>
                         </section>
                    
                </section>

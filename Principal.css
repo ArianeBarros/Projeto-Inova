@@ -127,26 +127,25 @@ footer{
 }
 #noticia
 {
-    background-color: rgb(140, 230, 195);
+    background-color: #E0EEEE;
     width: 100%;
     height: 15%;
     border-radius: 8%;
+    align-items: center;
 }
-#Titulo
+#dTitulo
 {
-    height: 2%;
-    background-color: gold;
-    width: 30%;
+    height: 20%;
+    width: 100%;
+    /* align-content: center; */
 }
-#Imagem
+#dImagem
 {
-   height: 4%;
-   background-color: grey;
-   width: 30%;
+   height: 50%;
+   width: 100%;
 }
-#Link
+#dLink
 {
-    height: 2%;
-    background-color: palevioletred;
-    width: 30%;
+    height: 15%;
+    width: 100%;
 }
