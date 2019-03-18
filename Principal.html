@@ -12,13 +12,13 @@
                 var noti = "";    
                 while(cont < 3)
                 {
-                    var noti = document.createElement('div');
-                    noti.innerHTML = '<div>Hello World!</div>';
-                    document.getElementById("sectionPrincipal").appendChild(noti);​​​​​​​​​​​​​​​​
-                    // noti = noti + " <section><div>Titulo</div><br><div>Imagem</div><br><div>Link</div></section>"; // class
-                    // document.getElementById("sectionPrincipal").innerHtml = noti;
+                    // var noti = document.createElement('div');
+                    // noti.innerHTML = '<div>Hello World!</div>';
+                    // document.getElementById("sectionPrincipal").appendChild(noti);​​​​​​​​​​​​​​​​
+                    noti = noti + " <section><div>Titulo</div><br><div>Imagem</div><br><div>Link</div></section>"; // class
+                    document.getElementById("sectionPrincipal").innerHtml = noti;
                     cont++;
-                    alert(noti);
+                    // alert(noti);
                 }
             }
 
@@ -64,7 +64,13 @@
             <section id="sectionLeft"> Semana
 
                </section>
-               <section id="sectionRight"> Sonhos</section>
+               <section id="sectionRight"> Sonhos
+                
+                <div id="chkSonhos">
+                    <input type="checkbox">Adotar um cachorro<br>
+                    </div>
+
+               </section>
 
                <section id="sectionPrincipal">
                     <section id="noticia">
