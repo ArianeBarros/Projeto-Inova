@@ -17,15 +17,13 @@ header {
     max-height: 30em;
 }
 
-.logo {
-    background: url("./Imagens/LOGO/logoofc.png");
-    width: 2000%;
-    max-width: 500%;
-    height: 100%;
-    position: absolute;
-    left: 5%;
-    top: 5%;
-}
+    .logo {
+        width: 25%;
+        height: auto;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }
 
 @media screen and (min-width: 600px) {
     body {
@@ -81,13 +79,7 @@ header {
     width: 400em;
 }*/
 
-nav {
-    position: absolute;
-    top: 6%;
-    left: 25%;
-    width: 100%;
-    visibility: visible;
-}
+
 
 #botoes {
     position: absolute;
@@ -105,6 +97,7 @@ nav {
 
 .login {
     width: 40%;
+
 }
 
 #sobre,
@@ -163,8 +156,8 @@ nav {
     display: inline-block;
     cursor: pointer;
     position: absolute;
-    margin-right: 103em;
-    right: 0;
+    margin-right: 10%;
+    /* right: 1; */
   }
   
   .bar1, .bar2, .bar3 {
