@@ -1,82 +1,62 @@
-html{
-        height: 100%;
-    }
-
-body
-{
-    background-color:white;
-    text-align:left;
-    margin:auto;
-    padding:0;
-    height:100%;
-    width: 100%;
-    min-width:600px;
-    max-width:2000px;
-
+* {
+    margin: 0;
+    padding: 0;
 }
 
-    header{
-        position: absolute;
-        width: 100%;
-        
-    }
-    .ondas
-    {
-        width: 100%;
-        height:30em;
-    }
+body {
+    background-color: white;
+}
 
-.logo 
-{
-    width: 25%;
-    height: auto;
+header {
+    position: absolute;
+    width: 100%;
+}
+
+.ondas {
+    width: 100%;
+    max-height: 30em;
+}
+
+.logo {
+    background: url("./Imagens/LOGO/logoofc.png");
+    width: 2000%;
+    max-width: 500%;
+    height: 100%;
     position: absolute;
     left: 5%;
     top: 5%;
 }
 
-
 @media screen and (min-width: 600px) {
-
-body
-{
-    background-color: blueviolet;
-}
-nav
-{
-    position: absolute;
-    top: 6%;
-    left: 45%;
-    width: 100%;
-    visibility: visible;
-    font-size: 140%;
-    font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-    
-}
-
-#botoes
-{
-    position: absolute;
-    top: 10em;
-}
-#sobre,#contato
-{
-    color: white;
-    float: center;
-    
-    /* font-size: 80%(width: ;; */
-    font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-}
-
+    body {
+        background-color: blueviolet;
+    }
+    nav {
+        position: absolute;
+        top: 6%;
+        left: 45%;
+        width: 100%;
+        visibility: visible;
+        font-size: 140%;
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #botoes {
+        position: absolute;
+        top: 10em;
+    }
+    #sobre,
+    #contato {
+        color: white;
+        float: center;
+        /* font-size: 80%(width: ;; */
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+    }
 }
 
 @media screen and (min-width: 800px) {
-    body{
-        
-    }
-    nav{
-        
-        float:  top;
+    body {}
+    nav {
+        float: top;
         width: 50%;
         /* position: absolute; */
         /* top: 0em; */
@@ -84,8 +64,7 @@ nav
         visibility: hidden;
         font-size: 20px;
     }
-    #botoes
-    {
+    #botoes {
         /* position: relative; */
         /* top: -18em; */
     }
@@ -102,39 +81,34 @@ nav
     width: 400em;
 }*/
 
-nav
-{
+nav {
     position: absolute;
     top: 6%;
     left: 25%;
     width: 100%;
     visibility: visible;
-    
 }
 
-#botoes
-{
-   position: absolute;
-   bottom: 30.5em;
-   left: 10%;
-   /* z-index: 50; */
+#botoes {
+    position: absolute;
+    bottom: 30.5em;
+    left: 10%;
+    /* z-index: 50; */
 }
 
-.cadastro
-{
+.cadastro {
     width: 58%;
     position: relative;
     bottom: 0.1em;
     margin-left: -0.5em;
 }
 
-.login
-{
+.login {
     width: 40%;
 }
 
-#sobre,#contato
-{
+#sobre,
+#contato {
     color: white;
     float: center;
     font-size: 150%;
@@ -142,27 +116,24 @@ nav
     font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.frase
-{
+.frase {
     width: 10em;
     height: auto;
 }
 
-.btnMenu_open
-{
+.btnMenu_open {
     background-image: url("./Imagens/menu3.png");
     height: 2em;
     position: relative;
     left: 60%;
 }
 
-.btnMenu_close
-{
+.btnMenu_close {
     background-color: white;
-    background-image: url("./Imagens/menupt.png"); 
+    background-image: url("./Imagens/menupt.png");
 }
 
-.btnMenu{
+.btnMenu {
     display: block;
     background-repeat: no-repeat;
     background-position: 15px center;
@@ -170,28 +141,48 @@ nav
     padding: 20px 15px;
 }
 
-
-
-.menu-item-action
-{
-    color:black;
+.menu-item-action {
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
 }
 
-.menu-item
-{
+.menu-item {
     padding: 20px 15px;
-    border-bottom: 1px solid rgba(116, 124,129, 0.8);
+    border-bottom: 1px solid rgba(116, 124, 129, 0.8);
 }
 
-.menu
-{
+.menu {
     position: relative;
     width: 100%;
     top: 0;
     left: -5000;
 }
-
-
+.container {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    margin-right: 103em;
+    right: 0;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 63px;
+    height: 9px;
+    background-color: white;
+    margin: 9px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 20px);
+    transform: rotate(-45deg) translate(-19px, 17px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+  }
