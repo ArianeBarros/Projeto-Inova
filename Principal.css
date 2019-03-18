@@ -95,31 +95,33 @@ footer{
     height: 30%;
     width: 100%;
     position: relative;
-    top: 2000px;
+    top: 830px;
 }
 #sectionLeft{
    background-color: rgba(128, 128, 128, 0.315);
    box-shadow: 10px 10px 5px grey;
-   height: 252%;
+   height: 102%;
    width: 25%;
    float: left;
 }
 #sectionRight{
     background-color: rgba(128, 128, 128, 0.315);
     box-shadow:  10px 10px 5px grey;
-    height: 252%;
+    height: 102%;
     width: 25%;
     float: right;
 }
 
 #sectionPrincipal{
     background-color: rgba(128, 128, 128, 0.315);
-    box-shadow:  10px 10px 5px grey;
-    height: 252%;
+    box-shadow: 10px 10px 5px grey;
+    height: 102%;
     width: 40%;
     align-self: center;
     left: 450px;
     position: absolute;
+    overflow: scroll;
+    scrollbar-base-color: bisque;
 }
 #navSectionLeft{
     text-align: center;
@@ -128,10 +130,12 @@ footer{
 #noticia
 {
     background-color: #E0EEEE;
-    width: 100%;
-    height: 15%;
+    width: 90%;
+    height: 35%;
     border-radius: 8%;
-    align-items: center;
+    left: 4%;
+    top: 4%;
+    position: absolute;
 }
 #dTitulo
 {
@@ -161,7 +165,7 @@ footer{
  top: 600px;
  position: absolute;
  border-radius: 10%;
- display: block; 
+ display: none; 
 }
 
 #lblParabens
@@ -190,3 +194,30 @@ footer{
    top: 200px;
    position: absolute;
 }
+
+#chkSonhos
+{
+  background-color: rgb(197, 191, 191);
+  width: 22%;
+  height: 50%;
+  top: 80%;
+  left: 77%;
+  position: absolute;
+}
+/* 
+::-webkit-scrollbar {
+    width: 15px;  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;    
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;    
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;     
+  } */
