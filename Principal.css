@@ -149,3 +149,44 @@ footer{
     height: 15%;
     width: 100%;
 }
+
+#parabens{
+ background-color: #b1f1f4;
+ width: 40%;
+ height: 30%;
+ border-color: #361bc4;
+ border-style: dotted;
+ /* box-shadow: 10px 10px 5px grey; */
+ left: 450px;
+ top: 600px;
+ position: absolute;
+ border-radius: 10%;
+ display: block; 
+}
+
+#lblParabens
+{
+  font-family: 'Times New Roman', Times, serif;
+  color: #8b4513;
+  font-size: 48px;
+  text-align: center;
+}
+
+#lblVoceRealizouUmSonho
+{
+    font-family: 'Times New Roman', Times, serif;
+    color: #8b4513;
+    font-size: 48px;
+    text-align: center;
+}
+
+#btnParabens
+{
+   width: 10%;
+   height: 10%;
+   align-self: center;
+   border-radius: 70%;
+   left: 500px;
+   top: 200px;
+   position: absolute;
+}

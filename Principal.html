@@ -7,13 +7,32 @@
         <script type="text/javascript">
 
             window.onload = function(){
-                var cont = 0;                
-                while(cont < 20)
+                
+                var cont = 0;  
+                var noti = "";    
+                while(cont < 3)
                 {
-                    var noti = noti + " <section> <div id='dTitulo'>Titulo</div><br><div id='dImagem'>Imagem</div><br><div id='dLink'>Link</div></section>";
-                    document.getElementById("sectionPrincipal").innerHtml = noti;
+                    var noti = document.createElement('div');
+                    noti.innerHTML = '<div>Hello World!</div>';
+                    document.getElementById("sectionPrincipal").appendChild(noti);​​​​​​​​​​​​​​​​
+                    // noti = noti + " <section><div>Titulo</div><br><div>Imagem</div><br><div>Link</div></section>"; // class
+                    // document.getElementById("sectionPrincipal").innerHtml = noti;
                     cont++;
+                    alert(noti);
                 }
+            }
+
+            function Parabens()
+            {
+               if(document.getElementById("parabens").style.display == "block")
+               {
+                document.getElementById("parabens").style.display = "none";                    
+               }                 
+               else
+               {
+                document.getElementById("parabens").style.display = "block"; 
+               }
+                  
             }
 
         </script>
@@ -44,13 +63,6 @@
 
             <section id="sectionLeft"> Semana
 
-               
-                <!-- <nav id="navSectionLeft">
-                    <ul>
-                        <a href="#">A</a>
-                        <a href="#">B</a>
-                        </ul>
-                </nav> -->
                </section>
                <section id="sectionRight"> Sonhos</section>
 
@@ -62,6 +74,12 @@
                         </section>
                    
                </section>
+
+               <section id="parabens">
+                   <div id="lblParabens">Parabéns !! </div><br><br>
+                   <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
+                   <button id="btnParabens" onclick="Parabens()" >OK</button>
+                   </section>
    
                <footer></footer>
         
