@@ -4,7 +4,7 @@ html{
 
 body
 {
-    background-color:white;
+    background-color: #FF9CB3;
     text-align:left;
     margin:auto;
     padding:0;
@@ -98,14 +98,16 @@ footer{
     top: 830px;
 }
 #sectionLeft{
-   background-color: rgba(128, 128, 128, 0.315);
+   background-color: #FFDA9B;
+   border-radius: 2%;
    box-shadow: 10px 10px 5px grey;
    height: 102%;
    width: 25%;
    float: left;
 }
 #sectionRight{
-    background-color: rgba(128, 128, 128, 0.315);
+    background-color: #FFDA9B;
+    border-radius: 2%;
     box-shadow:  10px 10px 5px grey;
     height: 102%;
     width: 25%;
@@ -113,7 +115,8 @@ footer{
 }
 
 #sectionPrincipal{
-    background-color: rgba(128, 128, 128, 0.315);
+    background-color: #E8A78D;
+    border-radius: 2%;
     box-shadow: 10px 10px 5px grey;
     height: 102%;
     width: 40%;
@@ -129,7 +132,8 @@ footer{
 }
 .cNoticia
 {
-    background-color: #E0EEEE;
+    background-color: #DDBCE8;
+    box-shadow: 10px 10px 5px grey;
     width: 90%;
     height: 35%;
     border-radius: 8%;
@@ -188,6 +192,7 @@ footer{
 {
    width: 10%;
    height: 10%;
+   box-shadow: 10px 10px 5px grey;
    align-self: center;
    border-radius: 70%;
    left: 500px;
@@ -198,6 +203,8 @@ footer{
 #chkSonhos
 {
   background-color: rgb(197, 191, 191);
+  box-shadow: 10px 10px 5px grey;
+  border-radius: 2%;
   width: 22%;
   height: 50%;
   top: 80%;
