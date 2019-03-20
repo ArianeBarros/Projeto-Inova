@@ -123,11 +123,11 @@ footer{
     overflow: scroll;
     scrollbar-base-color: bisque;
 }
-#navSectionLeft{
+.navSectionLeft{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-#noticia
+.cNoticia
 {
     background-color: #E0EEEE;
     width: 90%;
@@ -137,18 +137,18 @@ footer{
     top: 4%;
     position: absolute;
 }
-#dTitulo
+.cTitulo
 {
     height: 20%;
     width: 100%;
     /* align-content: center; */
 }
-#dImagem
+.cImagem
 {
    height: 50%;
    width: 100%;
 }
-#dLink
+#cLink
 {
     height: 15%;
     width: 100%;

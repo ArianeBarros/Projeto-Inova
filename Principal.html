@@ -10,15 +10,11 @@
                 
                 var cont = 0;  
                 var noti = "";    
-                while(cont < 3)
+                while(cont < 20)
                 {
-                    // var noti = document.createElement('div');
-                    // noti.innerHTML = '<div>Hello World!</div>';
-                    // document.getElementById("sectionPrincipal").appendChild(noti);​​​​​​​​​​​​​​​​
-                    noti = noti + " <section><div>Titulo</div><br><div>Imagem</div><br><div>Link</div></section>"; // class
-                    document.getElementById("sectionPrincipal").innerHtml = noti;
+                    noti= noti +  " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>"; 
+                    document.getElementById("sectionPrincipal").innerHTML = noti;
                     cont++;
-                    // alert(noti);
                 }
             }
 
@@ -73,11 +69,11 @@
                </section>
 
                <section id="sectionPrincipal">
-                    <section id="noticia">
+                    <!-- <section id="noticia">
                         <div id="dTitulo">Titulo</div><br>
                         <div id="dImagem">Imagem</div><br>
                         <div id="dLink">Link</div>
-                        </section>
+                        </section> -->
                    
                </section>
 
