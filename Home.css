@@ -29,19 +29,24 @@ header {
     body {
         background-color: blueviolet;
     }
-    nav {
-        position: absolute;
-        top: 6%;
-        left: 45%;
-        width: 100%;
-        visibility: visible;
-        font-size: 140%;
+    #sobre,#login,#cadastro,#contato\ {
+        color: white;
+        float: center;
+        font-size: 150%;
+        /* font-size: 80%(width: ;; */
         font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
     }
-    #botoes {
-        position: absolute;
-        top: 10em;
+    #navHeader
+    {
+        position: relative;
+        top: -22em;
+        right: -40%;
+        width: 45%;
+        visibility: initial;
+        /* font-size: 80%(width: ;; */
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
+   
     #sobre,
     #contato {
         color: white;
@@ -49,23 +54,42 @@ header {
         /* font-size: 80%(width: ;; */
         font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
     }
+    .container {
+        visibility: hidden;
+      }
 }
 
 @media screen and (min-width: 800px) {
-    body {}
-    nav {
-        float: top;
-        width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
-        visibility: hidden;
-        font-size: 20px;
+    body {
+        background-color: palevioletred;
     }
+    
     #botoes {
         /* position: relative; */
         /* top: -18em; */
     }
+    .container {
+        visibility: hidden;
+      }
+      #sobre,#login,#cadastro,#contato\ {
+        color: white;
+        float: center;
+        font-size: 150%;
+        /* font-size: 80%(width: ;; */
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #navHeader
+    {
+        position: relative;
+        top: -22em;
+        right: -40%;
+        width: 45%;
+        visibility: visible;
+        /* font-size: 80%(width: ;; */
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+      
 }
 
 /*#menu
@@ -99,12 +123,11 @@ header {
     width: 40%;
 
 }
-
-#sobre,
-#contato {
-    color: white;
+#sobre,#login,#cadastro,#contato\ {
+    color: #012060;
     float: center;
     font-size: 150%;
+    cursor: default;
     /* font-size: 80%(width: ;; */
     font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -156,8 +179,11 @@ header {
     display: inline-block;
     cursor: pointer;
     position: absolute;
-    margin-right: 10%;
-    /* right: 1; */
+    /* margin-right: 10%; */
+    top: 0;
+    margin-top: 10;
+    right: 1em; 
+    z-index: 9;
   }
   
   .bar1, .bar2, .bar3 {
@@ -166,6 +192,7 @@ header {
     background-color: white;
     margin: 9px 0;
     transition: 0.4s;
+    z-index: 1;
   }
   
   .change .bar1 {
