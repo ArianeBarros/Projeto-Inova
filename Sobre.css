@@ -84,7 +84,7 @@ left: 80%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre,#login,#cadastro,#contato
+#sobre,#login,#cadastro,#contato, #home, #principal
 {
 color: white;
 }
@@ -113,7 +113,7 @@ footer{
 }
 
 #sectionPrincipal{
-    background-color: rgba(128, 128, 128, 0.315);
+    background-color: black;
     box-shadow:  10px 10px 5px grey;
     height: 252%;
     width: 50%;
@@ -124,4 +124,10 @@ footer{
 #navSectionLeft{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#descricao
+{
+  font-size: 40px;
+  color: white;
 }

@@ -4,7 +4,7 @@ html{
 
 body
 {
-    background-color: #FF9CB3;
+    background-color: #99FFCC;
     text-align:left;
     margin:auto;
     padding:0;
@@ -84,7 +84,7 @@ left: 80%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre,#login,#cadastro,#contato
+#sobre,#login,#cadastro,#contato, #home, #principal
 {
 color: white;
 }
@@ -98,16 +98,14 @@ footer{
     top: 830px;
 }
 #sectionLeft{
-   background-color: #FFDA9B;
-   border-radius: 2%;
+   background-color: 	#66CC99;
    box-shadow: 10px 10px 5px grey;
    height: 102%;
    width: 25%;
    float: left;
 }
 #sectionRight{
-    background-color: #FFDA9B;
-    border-radius: 2%;
+    background-color: 	#66CC99;
     box-shadow:  10px 10px 5px grey;
     height: 102%;
     width: 25%;
@@ -115,8 +113,8 @@ footer{
 }
 
 #sectionPrincipal{
-    background-color: #E8A78D;
-    border-radius: 2%;
+    /* background-color: #4db6ac teal lighten-2; */
+    background-color: 	#66CC99;
     box-shadow: 10px 10px 5px grey;
     height: 102%;
     width: 40%;
@@ -132,14 +130,16 @@ footer{
 }
 .cNoticia
 {
-    background-color: #DDBCE8;
+    background-color: #6F9;
     box-shadow: 10px 10px 5px grey;
     width: 90%;
     height: 35%;
     border-radius: 8%;
     left: 4%;
-    top: 4%;
-    position: absolute;
+    /* top: 4%; */
+    position: relative;
+    /* margin-bottom: 2em; */
+    margin-top: 2em;
 }
 .cTitulo
 {
@@ -152,7 +152,7 @@ footer{
    height: 50%;
    width: 100%;
 }
-#cLink
+.cLink
 {
     height: 15%;
     width: 100%;
@@ -194,7 +194,6 @@ footer{
    height: 10%;
    box-shadow: 10px 10px 5px grey;
    align-self: center;
-   border-radius: 70%;
    left: 500px;
    top: 200px;
    position: absolute;
@@ -204,13 +203,41 @@ footer{
 {
   background-color: rgb(197, 191, 191);
   box-shadow: 10px 10px 5px grey;
-  border-radius: 2%;
   width: 22%;
   height: 50%;
   top: 80%;
   left: 77%;
   position: absolute;
 }
+
+.lbl
+{
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 40px;
+   color: green;
+   
+}
+
+.eventoSemana
+{
+    background-color: wheat;
+    color: black;
+    height: 12%;
+    width: 80%;
+    position: relative;
+    margin-top: 1em;
+    border-radius: 10%;
+    left: 8%;
+}
+
+#data
+{
+    background-color: rgb(54, 49, 49);
+    color: white;
+    height: 16%;
+    width: 200%;
+}
+
 /* 
 ::-webkit-scrollbar {
     width: 15px;  }

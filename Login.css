@@ -84,25 +84,30 @@ left: 80%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre,#login,#cadastro,#contato
+#sobre,#login,#cadastro,#contato, #home, #principal
 {
 color: white;
 }
 
+
 #login
 {
-    background-color: rgba(128, 128, 128, 0.315);
+    background-color: black;
     box-shadow:  10px 10px 10px 5px grey;
-    height: 100%;
-    width: 70%;
+    height: 50%;
+    width: 50%;
     align-self: center;
-    left: 200px;
+    left: 350px;
     position: absolute;
     border-radius: 10%;
-    text-align: justify;
-    color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    vertical-align: middle;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login
+{
+    font-size: 40px;
+    position: absolute;
+    left: 200px;
 }
 
 footer{
@@ -111,5 +116,5 @@ footer{
     height: 20%;
     width: 100%;
     position: relative;
-    top: 1100px;
+    top: 500px;
 }

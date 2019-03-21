@@ -64,15 +64,6 @@ width: 100%;
         font-size: 20px;
     }
 }
-/* .barra
-{
-width: 5%;
-height: auto;
-position: absolute;
-top: 2%;
-left: 80%;
-} */
-
 #navHeader
 {
     position: relative;
@@ -84,14 +75,14 @@ left: 80%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre,#login,#cadastro,#contato
+#sobre,#loginNav,#cadastro,#contato, #home, #principal
 {
 color: white;
 }
 
-#login
+#loginSection
 {
-    background-color: rgba(128, 128, 128, 0.315);
+    background-color: black;
     box-shadow:  10px 10px 10px 5px grey;
     height: 100%;
     width: 70%;
@@ -99,6 +90,8 @@ color: white;
     left: 200px;
     position: absolute;
     border-radius: 10%;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 footer{
@@ -108,4 +101,35 @@ footer{
     width: 100%;
     position: relative;
     top: 1100px;
+}
+
+.login
+{
+    font-size: 40px;
+    position: absolute;
+    left: 200px;
+}
+
+.loginInput
+{
+    font-size: 24px;
+    position: absolute;
+    left: 700px;
+}
+
+#btnLogin
+{
+   left: 700px;
+   font-size: 23px;
+   position: absolute;
+   top: 700px;
+}
+
+.cTemCadastro
+{
+    font-size: 30px;
+    position: absolute;
+    left: 300px;
+    font-style: italic;
+    top: 700px;
 }

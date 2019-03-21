@@ -4,6 +4,9 @@
         <title>Principal</title>
         <link rel="shortcut icon" href="favicon.ico" >
         <link href="Principal.css" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+        
         <script type="text/javascript">
 
             window.onload = function(){
@@ -12,7 +15,7 @@
                 var noti = "";    
                 while(cont < 20)
                 {
-                    noti= noti +  " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>"; 
+                    noti= noti +  " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
                     document.getElementById("sectionPrincipal").innerHTML = noti;
                     cont++;
                 }
@@ -51,16 +54,17 @@
             
                 
             </header>
-            
-            <section class="home-hero">
-              <h1></h1>
-              <span></span>
-            </section>
 
-            <section id="sectionLeft"> Semana
+            <section id="sectionLeft">
+                <label class="lbl">Semana</label>
+
+                <div class="eventoSemana">
+                <label id="data"> 20/12/2002, Sábado</label>      
+                    </div>
 
                </section>
-               <section id="sectionRight"> Sonhos
+               <section id="sectionRight">
+                    <label class="lbl">Sonhos</label>
                 
                 <div id="chkSonhos">
                     <input type="checkbox">Adotar um cachorro<br>
@@ -69,11 +73,7 @@
                </section>
 
                <section id="sectionPrincipal">
-                    <!-- <section id="noticia">
-                        <div id="dTitulo">Titulo</div><br>
-                        <div id="dImagem">Imagem</div><br>
-                        <div id="dLink">Link</div>
-                        </section> -->
+                   
                    
                </section>
 
@@ -82,6 +82,7 @@
                    <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
                    <button id="btnParabens" onclick="Parabens()" >OK</button>
                    </section>
+                   
    
                <footer></footer>
         

@@ -25,17 +25,24 @@
                   <a id = "sobre" href="Sobre.html" >SOBRE</a>                
                   <a id = "cadastro" href="Cadastro.html" >CADASTRE-SE</a>
                   <a id = "contato" href="Contato.html"  >CONTATO</a>
-                  <a id = "principal" href="Principal.html" >Principal</a>
+                  <a id = "principal" href="Principal.html" >PRINCIPAL</a>
                 </ul>
             </nav>
          
             </header>
             
-           <div id="login">
-               <label id="lblNome">Nome: </label>
-               <input id="nome">
+            <section id="login">
+                    <br><br><br><br>
+                <div class="login">
+                    <label for="email">Email: </label>
+                    <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">                  
+                </div><br><br><br><br><br><br>
 
-           </div>
+                <div class="login">
+                    <label for="password">Senha: </label>
+                    <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">                
+                </div><br><br><br><br><br><br>
+            </section>
 
             <footer></footer>
         
