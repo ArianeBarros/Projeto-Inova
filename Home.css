@@ -50,17 +50,7 @@ header {
         /* font-size: 80%(width: ;; */
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-<<<<<<< HEAD
-=======
-   
-    #sobre,
-    #contato, #home, #principal {
-        color: white;
-        float: center;
-        /* font-size: 80%(width: ;; */
-        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-    }
->>>>>>> 1d18cd6d551de053ac9a8e30bf2434bab0f6a9a6
+
     .container {
         visibility: hidden;
       }
@@ -78,11 +68,7 @@ header {
     .container {
         visibility: hidden;
       }
-<<<<<<< HEAD
       #sobre,#login,#cadastro,#contato {
-=======
-      #sobre,#login,#cadastro,#contato, #home, #principal\ {
->>>>>>> 1d18cd6d551de053ac9a8e30bf2434bab0f6a9a6
         color: white;
         float: center;
         font-size: 150%;
