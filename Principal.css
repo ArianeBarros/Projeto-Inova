@@ -4,7 +4,7 @@ html{
 
 body
 {
-    background-color: #FF9CB3;
+    background-color: #99FFCC;
     text-align:left;
     margin:auto;
     padding:0;
@@ -98,14 +98,14 @@ footer{
     top: 830px;
 }
 #sectionLeft{
-   background-color: #FFDA9B;
+   background-color: 	#66CC99;
    box-shadow: 10px 10px 5px grey;
    height: 102%;
    width: 25%;
    float: left;
 }
 #sectionRight{
-    background-color: #FFDA9B;
+    background-color: 	#66CC99;
     box-shadow:  10px 10px 5px grey;
     height: 102%;
     width: 25%;
@@ -113,7 +113,8 @@ footer{
 }
 
 #sectionPrincipal{
-    background-color: #4db6ac teal lighten-2;
+    /* background-color: #4db6ac teal lighten-2; */
+    background-color: 	#66CC99;
     box-shadow: 10px 10px 5px grey;
     height: 102%;
     width: 40%;
@@ -129,7 +130,7 @@ footer{
 }
 .cNoticia
 {
-    background-color: #DDBCE8;
+    background-color: #6F9;
     box-shadow: 10px 10px 5px grey;
     width: 90%;
     height: 35%;
@@ -214,11 +215,27 @@ footer{
    font-family: 'Times New Roman', Times, serif;
    font-size: 40px;
    color: green;
+   
 }
 
 .eventoSemana
 {
-    background-color: green;
+    background-color: wheat;
+    color: black;
+    height: 12%;
+    width: 80%;
+    position: relative;
+    margin-top: 1em;
+    border-radius: 10%;
+    left: 8%;
+}
+
+#data
+{
+    background-color: rgb(54, 49, 49);
+    color: white;
+    height: 16%;
+    width: 200%;
 }
 
 /* 
