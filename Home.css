@@ -48,7 +48,7 @@ header {
     }
    
     #sobre,
-    #contato {
+    #contato, #home, #principal {
         color: white;
         float: center;
         /* font-size: 80%(width: ;; */
@@ -71,7 +71,7 @@ header {
     .container {
         visibility: hidden;
       }
-      #sobre,#login,#cadastro,#contato\ {
+      #sobre,#login,#cadastro,#contato, #home, #principal\ {
         color: white;
         float: center;
         font-size: 150%;

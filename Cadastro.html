@@ -16,21 +16,54 @@
               <ul>                 
                  <a id = "home" href="Home.html" >HOME</a>
                  <a id = "sobre" href="Sobre.html" >SOBRE</a>
-                  <a id = "login" href="Login.html" >LOGIN</a>
+                  <a id = "loginNav" href="Login.html" >LOGIN</a>
                   <a id = "contato" href="Contato.html"  >CONTATO</a>
-                  <a id = "principal" href="Principal.html" >Principal</a>
+                  <a id = "principal" href="Principal.html" >PRINCIPAL</a>
                 </ul>
             </nav>
          
             </header>
-            
+<!--             
             <section class="home-hero">
               <h1></h1>
               <span></span>
             </section>
-           
-            <section id="login">
-                
+            -->
+            <section id="loginSection">
+                <br><br><br><br><br><br>
+              <div>
+                  <label  class="login" for="username2">Username: </label>
+                  <input  class="loginInput" id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">                  
+              </div><br><br><br><br>
+
+              <div>
+                  <label  class="login" for="email">Email: </label>
+                  <input  class="loginInput" id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">                  
+              </div><br><br><br><br>
+
+              <div>
+                  <label  class="login" for="tel">Telefone((99) 99999-9999): </label>
+                  <input  class="loginInput" id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">                  
+              </div><br><br><br><br>
+
+              <div>
+                  <label  class="login" for="aniversario">Data Nascimento: </label>
+                  <input  class="loginInput" type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>                 
+              </div><br><br><br><br>
+
+              <div>
+                <label  class="login" for="password">Senha: </label>
+                <input  class="loginInput" id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">                
+              </div><br><br><br><br>
+
+              <div>
+                  <label  class="login" for="password2">Confirmar senha: </label>
+                  <input  class="loginInput" id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>                   
+              </div><br><br><br><br>
+
+              <!-- class="txtSubmit"  -->
+              <button id="btnLogin" onclick="carregar()">Cadastrar</button><br><br>  
+              <u><a href="Login.html"class="cTemCadastro"> Já tem cadastro?! </a></u><br><br>
             </section>
 
                <footer></footer>
