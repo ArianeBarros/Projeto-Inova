@@ -4,7 +4,7 @@ html{
 
 body
 {
-    background-color: #99FFCC;
+    background-color: white;
     text-align:left;
     margin:auto;
     padding:0;
@@ -98,14 +98,14 @@ footer{
     top: 830px;
 }
 #sectionLeft{
-   background-color: 	#66CC99;
+   background-color: 	#FF9999	;
    box-shadow: 10px 10px 5px grey;
    height: 102%;
    width: 25%;
    float: left;
 }
 #sectionRight{
-    background-color: 	#66CC99;
+    background-color: 	#993333;
     box-shadow:  10px 10px 5px grey;
     height: 102%;
     width: 25%;
@@ -114,7 +114,7 @@ footer{
 
 #sectionPrincipal{
     /* background-color: #4db6ac teal lighten-2; */
-    background-color: 	#66CC99;
+    background-color: 	#CC6666;
     box-shadow: 10px 10px 5px grey;
     height: 102%;
     width: 40%;
