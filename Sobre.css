@@ -64,21 +64,13 @@ width: 100%;
         font-size: 20px;
     }
 }
-/* .barra
-{
-width: 5%;
-height: auto;
-position: absolute;
-top: 2%;
-left: 80%;
-} */
 
 #navHeader
 {
     position: relative;
     top: -22em;
     right: -40%;
-    width: 25%;
+    width: 55%;
     visibility: visible;
     /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -95,30 +87,15 @@ footer{
     height: 30%;
     width: 100%;
     position: relative;
-    top: 2000px;
-}
-#sectionLeft{
-   background-color: rgba(128, 128, 128, 0.315);
-   box-shadow: 10px 10px 5px grey;
-   height: 252%;
-   width: 20%;
-   float: left;
-}
-#sectionRight{
-    background-color: rgba(128, 128, 128, 0.315);
-    box-shadow:  10px 10px 5px grey;
-    height: 252%;
-    width: 20%;
-    float: right;
+    top: 1150px;
 }
 
 #sectionPrincipal{
-    background-color: black;
-    box-shadow:  10px 10px 5px grey;
-    height: 252%;
-    width: 50%;
+    background-color: rgb(90, 67, 67);
+    height: 140%;
+    width: 80%;
     align-self: center;
-    left: 400px;
+    left: 200px;
     position: absolute;
 }
 #navSectionLeft{
@@ -128,6 +105,14 @@ footer{
 
 #descricao
 {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
+}
+
+.cImagem
+{
+    position: absolute;
+    left: 50px;
+    width: 20%;
+    top: 700px;
 }
