@@ -64,21 +64,27 @@ width: 100%;
         font-size: 20px;
     }
 }
-/* .barra
+
+#contatoSection
 {
-width: 5%;
-height: auto;
-position: absolute;
-top: 2%;
-left: 80%;
-} */
+    background-color: rgb(95, 93, 93);
+    box-shadow:  10px 10px 10px 5px grey;
+    height: 100%;
+    width: 70%;
+    align-self: center;
+    left: 200px;
+    position: absolute;
+    border-radius: 10%;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
 
 #navHeader
 {
     position: relative;
     top: -22em;
     right: -40%;
-    width: 25%;
+    width: 55%;
     visibility: visible;
     /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
