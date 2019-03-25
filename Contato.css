@@ -67,14 +67,13 @@ width: 100%;
 
 #contatoSection
 {
-    background-color: rgb(95, 93, 93);
+    background-color: black;
     box-shadow:  10px 10px 10px 5px grey;
     height: 100%;
     width: 70%;
     align-self: center;
     left: 200px;
     position: absolute;
-    border-radius: 10%;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
 }
@@ -101,32 +100,9 @@ footer{
     height: 30%;
     width: 100%;
     position: relative;
-    top: 2000px;
-}
-#sectionLeft{
-   background-color: rgba(128, 128, 128, 0.315);
-   box-shadow: 10px 10px 5px grey;
-   height: 252%;
-   width: 20%;
-   float: left;
-}
-#sectionRight{
-    background-color: rgba(128, 128, 128, 0.315);
-    box-shadow:  10px 10px 5px grey;
-    height: 252%;
-    width: 20%;
-    float: right;
+    top: 900px;
 }
 
-#sectionPrincipal{
-    background-color: rgba(128, 128, 128, 0.315);
-    box-shadow:  10px 10px 5px grey;
-    height: 252%;
-    width: 50%;
-    align-self: center;
-    left: 400px;
-    position: absolute;
-}
 #navSectionLeft{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
