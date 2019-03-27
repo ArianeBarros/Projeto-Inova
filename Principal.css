@@ -12,6 +12,7 @@ body
     width: 100%;
     min-width:600px;
     max-width:2000px;
+    background-image: url("./Imagens/fundoSobre.png");
 }
 
 
@@ -98,14 +99,17 @@ footer{
     top: 830px;
 }
 #sectionLeft{
-   background-color: 	#C0C0C0;
+   background-color: #FEA47F;
    box-shadow: 10px 10px 5px grey;
    height: 102%;
    width: 25%;
    float: left;
+   position: absolute;
+   overflow: scroll;
+   scrollbar-base-color: bisque;
 }
 #sectionRight{
-    background-color: 	#C0C0C0;
+    background-color: 	#FEA47F;
     box-shadow:  10px 10px 5px grey;
     height: 102%;
     width: 25%;
@@ -114,7 +118,7 @@ footer{
 
 #sectionPrincipal{
     /* background-color: #4db6ac teal lighten-2; */
-    background-color: 	#C0C0C0;
+    background-color: 	#FEA47F;
     box-shadow: 10px 10px 5px grey;
     height: 102%;
     width: 40%;
@@ -130,15 +134,13 @@ footer{
 }
 .cNoticia
 {
-    background-color: #E0FFFF;
+    background-color: #f6e58d;
     box-shadow: 10px 10px 5px grey;
     width: 90%;
     height: 35%;
     border-radius: 8%;
     left: 4%;
-    /* top: 4%; */
     position: relative;
-    /* margin-bottom: 2em; */
     margin-top: 2em;
 }
 .cTitulo
@@ -207,7 +209,7 @@ footer{
 
 #chkSonhos
 {
-  background-color: #E0FFFF;
+  background-color: #f6e58d;
   width: 22%;
   height: 50%;
   top: 80%;
@@ -227,7 +229,7 @@ footer{
 
 .eventoSemana
 {
-    background-color: #E0FFFF;
+    background-color: #f6e58d;
     color: black;
     height: 18%;
     width: 80%;
@@ -235,12 +237,36 @@ footer{
     margin-top: 1em;
     border-radius: 10%;
     left: 8%;
+    margin-top: 2em;
+    box-shadow: 10px 10px 5px grey;
 }
 
-#data
+#eventos
+{
+    background-color: 	#FEA47F;
+    box-shadow:  10px 10px 5px grey;
+    height: 60%;
+    width: 105%;
+    float: right;
+}
+
+.data
 {
     background-color: rgb(54, 49, 49);
     color: white;
     height: 16%;
     width: 100%;
 }
+
+/* .realizacoes
+{
+    background-color: #f6e58d;
+    color: black;
+    height: 40%;
+    width: 100%;
+    position: relative;
+    margin-top: 1em;
+    border-radius: 10%;
+    left: 3%;
+    top: 80%;
+} */

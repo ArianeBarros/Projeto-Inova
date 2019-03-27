@@ -12,6 +12,7 @@ body
     width: 100%;
     min-width:600px;
     max-width:2000px;
+    background-image: url("./Imagens/fundoSobre.png");
 }
 
 
@@ -87,33 +88,26 @@ footer{
     height: 30%;
     width: 100%;
     position: relative;
-    top: 1150px;
+    top: 1000px;
 }
 
-/* #sectionPrincipal{
-    background-color: rgb(90, 67, 67);
-    height: 140%;
-    width: 80%;
+#sectionPrincipal{
+    background-color: rgb(109, 83, 83);
+    height: 120%;
+    width: 60%;
     align-self: center;
-    left: 200px;
+    left: 250px;
     position: absolute;
-} */
+}
 #navSectionLeft{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#descricao
-{
-  font-size: 30px;
-  color: black;
-  border-radius: 60%;
-}
-
 .cImagem
 {
     position: absolute;
-    left: 150px;
-    width: 60%;
-    top: 600px;
+    left: 350px;
+    width: 50%;
+    top: 500px;
 }
