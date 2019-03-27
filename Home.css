@@ -3,9 +3,14 @@
     padding: 0;
 }
 
+html
+{
+    z-index: -1;
+}
+
 body {
     background-color: rgb(180, 231, 157);
-    z-index: 1;
+    z-index: -1;
 }
 
 header {
@@ -27,7 +32,7 @@ header {
     }
 
     nav{
-        max-width: 10%;
+        max-width: 40%;
     }
 
 @media screen and (min-width: 600px) {
@@ -183,47 +188,123 @@ header {
 .container {
     display: inline-block;
     cursor: pointer;
+    position: relative;
+    /* margin-right: 10%; */
+    top: 8;
+    left: 2em;
+    margin-top: 15;
+    z-index: 9;
+    
+  }
+  .containeropen {
+    display: inline-block;
+    cursor: pointer;
     position: absolute;
     /* margin-right: 10%; */
     top: 0;
+    left: 85%;
     margin-top: 10;
-    right: 1em; 
-    z-index: 9;
-  }
-  
-  .bar1, .bar2, .bar3 {
-    width: 63px;
-    height: 9px;
-    background-color: white;
-    margin: 9px 0;
-    transition: 0.4s;
     z-index: 1;
+    
   }
   
-  .change .bar1 {
+
+  .bar1open, .bar2open, .bar3open {
+    width: 23px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .bar1 {
+    width: 23px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
     -webkit-transform: rotate(-45deg) translate(-9px, 20px);
-    transform: rotate(-45deg) translate(-19px, 17px);
+    transform: rotate(-45deg) translate(-7px, -2px);
   }
   
-  .change .bar2 {opacity: 0;}
+  .bar2 {opacity: 0;}
   
-  .change .bar3 {
+  .bar3 {
+    width: 23px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-9px, 2px);
   }
 
-  #menuzinho
+
+
+   #sobremin, #loginmin,#contmin
+   {
+    
+    font-family: "Century Gothic";
+    font-weight: 500;
+    font-size: 17px;
+    color: #757575;
+   }
+   #cadmin
+   {
+    font-family: "Century Gothic";
+    font-weight: 500;
+    font-size: 17px;
+    color: #757575;
+   }
+
+  .balon
   {
-      position: absolute;
-      top: 0;
-      left: 90%;
+    background: url("./Imagens/logopretomin.png");
+    position: relative;
+    bottom: 20;
+    left: 38%;
+    width: 4em;
+    height: 2.3em;
   }
 
-  .escuro
+  /*.escuro
   {
       width: 100%;
       height: 100%;
       background: black;
+      position: absolute;
       opacity: 0.5;
-      z-index: 10;
+      z-index: -1;
   }
+  */
+  #menuzinho
+  {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      height: 500%;
+      background: white;
+      z-index: 100;
+      border-radius: 5px;
+      opacity: 1;
+  }
+
+  .hrUm
+  {
+      width: 12em;
+      height: 0.11em;
+      border-top: 1px solid #E6E6E6;
+      position: relative;
+      bottom: 1em;
+      margin-left: 0.5em;
+  }
+  .hrDois
+  {
+      width: 12em;
+      height: 0.1em;
+      border-top: 1px solid #f5f5f5;
+      position: relative;
+      bottom: 1em;
+      margin-left: 0.5em;
+  }  
+  

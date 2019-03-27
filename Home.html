@@ -1,16 +1,36 @@
+
 <html>
 <head>
 <title>I9</title>
 <link rel="shortcut icon" href="favicon.ico" >
 <link href="Home.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href = "https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
 <script>
 function myFunction(x) {
   x.classList.toggle("change");
   $("html").addClass("escuro");
+  $("#menuzinho").css({left : "70%"});
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+  // var collapsibleElem = document.querySelector('.collapsible');
+  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 </script>
 
@@ -20,31 +40,54 @@ function myFunction(x) {
   <img class="ondas" src="./Imagens/ondas.png">
         <div><img src="./Imagens/LOGO/logoofc.png"class="logo"></div>
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
+        <input type="checkbox" id = "chk">
+        <label for="chk" class="show-mwnu-btn"><i class="fas fa-bars"></i></label>
         <div id="navHeader">
           
             <a id = "sobre" href="Sobre.html" >SOBRE</a>
-            <a id = "login" href="Login.html" >LOGIN</a>                  
+            <a id = "login" href="Login.html" >LOGIN</a>
             <a id = "cadastro" href="Cadastro.html" >CADASTRE-SE</a>
             <a id = "contato" href="Contato.html" >CONTATO</a>
           
         </div>
-        
+        <div class="containeropen" onclick="myFunction(this)">
+          <div class="bar1open"></div>
+          <div class="bar2open"></div>
+          <div class="bar3open"></div>
+        </div>
+        <!--<ul id="slide-out" class="sidenav" >
       <div class="wrap-menu">
         <div class="container" onclick="myFunction(this)">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
-        <nav id = "menuzinho"></nav>
-          <ul id="slide-out" class="sidenav">
-            <li><a  href="Sobre.html" >SOBRE</a></li>
-            <li><a  href="Login.html" >LOGIN</a>  </li>                
-            <li><a  href="Cadastro.html" >CADASTRE-SE</a></li>
-            <li><a  href="Contato.html" >CONTATO</a></li>
-            </ul>
+        <div  class="balon"></div>
+        <div class="hrUm"></div>
+            <li><a  id = "cadmin" href="Cadastro.html" >CADASTRE-SE</a></li><div class="hrDois"></div>
+            <li><a  id = "loginmin" href="Login.html" >LOGIN</a>  </li><div class="hrDois"></div>
+            <li><a  id = "sobremin" href="Sobre.html" >SOBRE</a></li><div class="hrDois"></div>
+            <li><a  id = "contmin" href="Contato.html" >CONTATO</a></li>
+            
           
           </div>
-    
+        </ul>-->
+        <ul id="slide-out" class="sidenav">
+            <li><div class="user-view">
+              <div class="background">
+                <img src="images/office.jpg">
+              </div>
+              <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+              <a href="#name"><span class="white-text name">John Doe</span></a>
+              <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+          </ul>
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
  
     </header>
     
