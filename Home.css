@@ -1,69 +1,120 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "montserrat", sans-serif;
+        font-size: 106%;
+        transition: all .3s ease;
+    }
 
-html
-{
-    z-index: -1;
-}
 
-body {
-    background-color: rgb(180, 231, 157);
-    z-index: -1;
-}
+    body {
+        background-color: rgb(180, 231, 157);
+    }
 
-header {
-    position: absolute;
-    width: 100%;
-}
+    .header {
+        height: 30em;
+        color: white;
+        
+        /* font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif; */
+    }
 
-.ondas {
-    width: 100%;
-    max-height: 30em;
-}
+    .ondas {
+        width: 100%;
+        max-height: 30em;
+    }
 
     .logo {
         width: 25%;
-        height: auto;
+        /* float: left; */
         position: absolute;
-        left: 5%;
-        top: 5%;
+        top: 0;
+        left: 0;
     }
 
-    nav{
-        max-width: 40%;
+
+    
+
+    .menu a
+    {
+        color: #fff;
+        text-decoration: none;
+        /* padding: 0 10px; */
+        padding: 20px;
+        
+        display: block;
+    }
+
+   
+
+    
+    .show-menu-btn,
+    .hide-menu-btn{
+        color: white;
+        position: absolute;
+        top: 2%;
+        left: 85%;
+    }
+
+   .ab:active
+   {
+    background: lightseagreen;
+   }
+   .hide-menu-btn i
+   {
+       color: lightseagreen;
+   }
+
+  
+    #chk
+    {
+        position: absolute;
+        top: 2%;
+        left: 85%;
+        visibility: hidden;
+        z-index: -1111;
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    .content
+    {
+        /* padding:  */
+        /* text-align: justify; */
+    }
+
+    
+    .hide-menu-btn
+    {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #chk:checked ~.menu{
+        right: 0;
+    }
+    .menu
+    {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: 1000;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
     }
 
 @media screen and (min-width: 600px) {
     body {
         background-color: blueviolet;
     }
-    #sobre,#login,#cadastro,#contato {
-        color: white;
-        float: center;
-        font-size: 120%;
-        /* font-size: 80%(width: ;; */
-        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-        visibility: initial;
-        margin-left: 1em;
-        cursor: pointer;
-    }
-    #navHeader
-    {
-        color: white;
-        position: relative;
-        top: 17em;
-        right: -30%;
-        width: 55%;
-        visibility: visible;
-        /* font-size: 80%(width: ;; */
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
 
-    .container {
-        visibility: hidden;
-      }
+    .show-menu-btn,.hide-menu-btn{
+        display: none;
+    }
+    
 }
 
 @media screen and (min-width: 800px) {
@@ -71,35 +122,19 @@ header {
         background-color: palevioletred;
     }
     
-    #botoes {
+    /* #botoes {
         /* position: relative; */
         /* top: -18em; */
-    }
-    .container {
-        visibility: hidden;
-      }
-      #sobre,#login,#cadastro,#contato {
-        color: white;
-        float: center;
-        font-size: 150%;
-        /* font-size: 80%(width: ;; */
-        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-        visibility: initial;
-    }
-    #navHeader
-    {
-        color: white;
-        position: relative;
-        top: 20em;
-        right: -30%;
-        width: 55%;
-        visibility: visible;
-        /* font-size: 80%(width: ;; */
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+        .show-menu-btn,.hide-menu-btn{
+            display: none;
+        }
+        
 
+        
+    }
+ 
       
-}
+
 
 /*#menu
 {
@@ -113,12 +148,12 @@ header {
 }*/
 
 
-
+/*
 #botoes {
     position: absolute;
     bottom: 30.5em;
     left: 10%;
-    /* z-index: 50; */
+    /* z-index: 50; *//*
 }
 
 .cadastro {
@@ -133,10 +168,10 @@ header {
 
 }
 #sobre,#login,#cadastro,#contato {
-    /* visibility: hidden; */
+    /* visibility: hidden; *//*
     color: white;
     float: center;
-    /* font-size: 80%(width: ;; */
+    /* font-size: 80%(width: ;; *//*
     position: relative;
     top: -30em;
     font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
@@ -159,56 +194,7 @@ header {
     background-image: url("./Imagens/menupt.png");
 }
 
-.btnMenu {
-    display: block;
-    background-repeat: no-repeat;
-    background-position: 15px center;
-    text-indent: -9999px;
-    padding: 20px 15px;
-}
-
-.menu-item-action {
-    color: black;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.menu-item {
-    padding: 20px 15px;
-    border-bottom: 1px solid rgba(116, 124, 129, 0.8);
-}
-
-.menu {
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: -5000;
-}
-.container {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    /* margin-right: 10%; */
-    top: 8;
-    left: 2em;
-    margin-top: 15;
-    z-index: 9;
-    
-  }
-  .containeropen {
-    display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    /* margin-right: 10%; */
-    top: 0;
-    left: 85%;
-    margin-top: 10;
-    z-index: 1;
-    
-  }
-  
-
+/*
   .bar1open, .bar2open, .bar3open {
     width: 23px;
     height: 3px;

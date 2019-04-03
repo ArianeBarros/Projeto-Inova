@@ -11,50 +11,32 @@
 <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
 <script>
-function myFunction(x) {
-  x.classList.toggle("change");
-  $("html").addClass("escuro");
-  $("#menuzinho").css({left : "70%"});
-}
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
 
 </script>
 
 </head>
 <body>
-<header>
+<div class = "header">
   <img class="ondas" src="./Imagens/ondas.png">
-        <div><img src="./Imagens/LOGO/logoofc.png"class="logo"></div>
+        <img src="./Imagens/LOGO/logoofc.png"class="logo">
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
         <input type="checkbox" id = "chk">
-        <label for="chk" class="show-mwnu-btn"><i class="fas fa-bars"></i></label>
-        <div id="navHeader">
-          
-            <a id = "sobre" href="Sobre.html" >SOBRE</a>
-            <a id = "login" href="Login.html" >LOGIN</a>
-            <a id = "cadastro" href="Cadastro.html" >CADASTRE-SE</a>
-            <a id = "contato" href="Contato.html" >CONTATO</a>
-          
+        <label for="chk" class="show-menu-btn"><i class="fa fa-bars fa-w-14 fa-2x"></i></label>
+        <ul class="menu">
+          <a class="ab" href="#">LOGIN</a>
+          <a class="ab" href="#">CADASTRE-SE</a>
+          <a class="ab" href="#">SOBRE</a>
+          <a class="ab" href="#">CONTATO</a>
+          <label for="chk" class="hide-menu-btn">
+            <a class="menu-barra"><i class="fa fa-times fa-w-14 fa-2x"></i></a>
+          </label>
+        </ul>
         </div>
-        <div class="containeropen" onclick="myFunction(this)">
-          <div class="bar1open"></div>
-          <div class="bar2open"></div>
-          <div class="bar3open"></div>
-        </div>
+        <div class="content">
+        <center>
+        </center>
+      </div>
         <!--<ul id="slide-out" class="sidenav" >
       <div class="wrap-menu">
         <div class="container" onclick="myFunction(this)">
@@ -72,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           </div>
         </ul>-->
+        <!--  
         <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
               <div class="background">
@@ -89,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
           </ul>
           <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
  
-    </header>
-    
+  
+    -->
     <section class="home-hero">
       
       <img class="frase" src="./Imagens/frase1.png">
