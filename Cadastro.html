@@ -4,6 +4,24 @@
         <link rel="shortcut icon" href="favicon.ico" >
         <link href="Cadastro.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
+
+        window.onload = function()
+        {
+            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+        }
+        
+            function CarregarPerfil()
+            {
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg'>";
+
+                document.getElementById("opcoesFotos").innerHTML += "<nav><ul>" + 
+                                                                                       "<a id ='home' href='Home.html'>HOME</a>" + 
+                                                                                       "<a id ='sobre' href='Sobre.html'>SOBRE</a>" + 
+                                                                                       "<a id ='loginNav' href='Login.html'>LOGIN</a>" + 
+                                                                                       "<a id ='contato' href='Contato.html'>CONTATO</a>" +
+                                                                                       "<a id ='principal' href='Principal.html'>PRINCIPAL</a></ul><nav>";
+            }
+
         </script>
         </head>
         <body>
@@ -19,9 +37,13 @@
                   <a id = "loginNav" href="Login.html" >LOGIN</a>
                   <a id = "contato" href="Contato.html"  >CONTATO</a>
                   <a id = "principal" href="Principal.html" >PRINCIPAL</a>
-                </ul>
-            </nav>
-         
+                </ul>                
+            </nav>   
+            
+            <div id="opcoesFotos">
+
+                </div>
+
             </header>
             
             <section id="loginSection">
