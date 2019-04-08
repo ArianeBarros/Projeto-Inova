@@ -6,21 +6,23 @@
         transition: all .3s ease;
     }
 
-
+    .menu-barra{
+       /* / cursor: pointer; */
+    }
     body {
         background-color: rgb(180, 231, 157);
     }
 
     .header {
-        height: 30em;
+        height: 35em;
         color: white;
         
         /* font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif; */
     }
 
     .ondas {
-        width: 100%;
-        max-height: 30em;
+        width: 130%;
+        max-height: 50em;
     }
 
     .logo {
@@ -53,6 +55,7 @@
         position: absolute;
         top: 2%;
         left: 85%;
+        cursor: pointer;
     }
 
    .ab:active
@@ -104,6 +107,7 @@
         text-align: center;
         padding: 80px 0;
         line-height: normal;
+        transition: unset;
     }
 
 @media screen and (min-width: 600px) {
@@ -113,6 +117,52 @@
 
     .show-menu-btn,.hide-menu-btn{
         display: none;
+    }
+    .menu{
+        background: none;
+        line-height: 100px;
+        position: fixed;
+        right: 0;
+        top: -45;
+        transition: unset;
+        }
+    .menu a
+    {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px; 
+        display: inline;
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif; 
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .coisinhas
+    {
+        display: none;
+    }
+    .coisinhas2
+    {
+        right: 0;
+        position: fixed;
+        top: 18em;
+        left: 3%;
+        width: 95%;
+        height: auto;
+        z-index: 1;
+        visibility: initial;
+    }
+        .btnComece img
+    {
+       right: 0;
+    }
+
+    .frase {
+        position: fixed;
+        top: 3em;
+        left: 20%;
+        width: 60%;
+        height: auto;
     }
     
 }
@@ -176,12 +226,38 @@
     top: -30em;
     font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-.frase {
-    width: 10em;
+*/
+.btnComece
+{
+    position: fixed;
+    top: 7em;
+    left: 30%;
+    width: 35%;
     height: auto;
+    z-index: 10;
 }
 
+.frase {
+    position: fixed;
+    top: 3em;
+    left: 20%;
+    width: 60%;
+    height: auto;
+}
+.coisinhas {
+    position: fixed;
+    top: 7.5em;
+    left: 12%;
+    width: 77%;
+    height: auto;
+    z-index: 1;
+}
+
+.coisinhas2
+{
+    visibility: hidden;
+}
+/*
 .btnMenu_open {
     background-image: url("./Imagens/menu3.png");
     height: 2em;

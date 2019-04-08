@@ -11,10 +11,26 @@
 <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
 <script>
+   if(window.innerWidth>600)
+    {
+    document.getElementById('coisinhas').style.transition = "unset";
+    document.getElementById('coisinhas2').style.transition = "unset";
+    document.getElementById('coisinhas').style.visibility = "hidden";
+    document.getElementById('coisinhas2').style.visibility = "visible";
+    document.getElementById('coisinhas').style.transition = "0.3s";
+    document.getElementById('coisinhas2').style.transition = "0.3s";
+    }
 
-
+  window.onresize = function() {
+    if(window.innerWidth>600)
+    {
+      var home = document.getElementsByClassName('home-hero');
+      var coisa = document.createElement('img');
+      home.appendChild(coisa);
+    }
+  }
+  
 </script>
-
 </head>
 <body>
 <div class = "header">
@@ -34,8 +50,7 @@
         </ul>
         </div>
         <div class="content">
-        <center>
-        </center>
+        <center></center>
       </div>
         <!--<ul id="slide-out" class="sidenav" >
       <div class="wrap-menu">
@@ -77,8 +92,10 @@
     <section class="home-hero">
       
       <img class="frase" src="./Imagens/frase1.png">
+      <a href="Cadastro.html"><img class="btnComece" src="./Imagens/ComeceJa.png"></a>
+      <img class="coisinhas" id="coisinhas" src="./Imagens/coisinhas.png" onclick="oi()">
+      <img class="coisinhas2" id="coisinhas2"src="./Imagens/coisinhas2.png">
     </section>
-    <a href="" class="button button-accent">COMECE JÁ</a>
 
 </body>
 </html>
