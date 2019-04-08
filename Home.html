@@ -24,6 +24,9 @@
   window.onresize = function() {
     if(window.innerWidth>600)
     {
+        var trocarImg = "<img class='coisinhas2' src='./Imagens / coisinhas2.png'>";
+        document.getElementById("coisinhas").innerHTML = trocarImg;
+
       var home = document.getElementsByClassName('home-hero');
       var coisa = document.createElement('img');
       home.appendChild(coisa);
