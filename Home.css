@@ -6,9 +6,6 @@
         transition: all .3s ease;
     }
 
-    .menu-barra{
-       /* / cursor: pointer; */
-    }
 
     .header {
         height: 35em;
@@ -37,9 +34,7 @@
     {
         color: #fff;
         text-decoration: none;
-        /* padding: 0 10px; */
-        padding: 20px;
-        
+        padding: 20px;        
         display: block;
     }
 
@@ -91,7 +86,7 @@
     }
 
     #chk:checked ~.menu{
-        right: 0;
+        right: 1;
     }
     .menu
     {
@@ -176,7 +171,6 @@
         {
             display: none;
         }
-        }
         .menu
         {
             left: 4%;
@@ -188,6 +182,9 @@
             font-size: 22px;
             padding: 0.6em;
         }
+        }
+        
+    
         
 
         
