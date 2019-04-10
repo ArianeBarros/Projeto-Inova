@@ -36,8 +36,23 @@
                else
                {
                 document.getElementById("parabens").style.display = "block"; 
+               }                  
+            }
+
+            function MostrarAgenda()
+            {
+                if(document.getElementById("secAgenda").style.display == "block")
+               {
+                   var a = "";
+
+                   document.getElementById("secAgenda").innerHTML = a;
+
+                  document.getElementById("secAgenda").style.display = "none";                    
+               }                 
+               else
+               {
+                document.getElementById("secAgenda").style.display = "block"; 
                }
-                  
             }
 
         </script>
@@ -55,11 +70,43 @@
                 <a id = "login" href="Login.html" >LOGIN</a>                  
                 <a id = "cadastro" href="Cadastro.html" >CADASTRE-SE</a>
                 <a id = "contato" href="Contato.html" >CONTATO</a>
+                <a id = "perfil" href="Perfil.html" >PERFIL</a>
                 </ul>
             </nav>
             
                 
             </header>
+
+            <button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>
+
+            <section id="secAgenda">AEEEE
+
+                <div id="calendario">
+                   <table>
+                        <tr>
+                            <td class="diaSemana">D</td>
+                            <td class="diaSemana">S</td>
+                            <td class="diaSemana">T</td>
+                            <td class="diaSemana">Q</td>
+                            <td class="diaSemana">Q</td>
+                            <td class="diaSemana">S</td>
+                            <td class="diaSemana">S</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="dias">a<span>1</span></td>
+                                <td class="dias">2</td>
+                                <td class="dias">3</td>
+                                <td class="dias">4</td>
+                                <td class="dias">5</td>
+                                <td class="dias">6</td>
+                                <td class="dias">7</td>
+                        </tr>
+                           
+                        </table>
+                    </div>
+
+            </section>
 
             <section id="sectionLeft">
                 <label class="lbl">Semana</label>

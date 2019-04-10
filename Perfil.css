@@ -77,15 +77,14 @@ width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre,#loginNav,#cadastro,#contato, #home, #principal, .cTemCadastro, #perfil
+#sobre,#loginNav,#cadastro,#contato, #home, #principal, .cTemCadastro
 {
   color: white;
 }
 
-#loginSection
+#perfilSection
 {
     background-color: black;
-    box-shadow:  10px 10px 10px 5px grey;
     height: 100%;
     width: 70%;
     align-self: center;
@@ -94,6 +93,18 @@ width: 100%;
     border-radius: 10%;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
+}
+
+#escolherNovaFoto
+{
+    width: 70%;
+    height: 60%;
+    border-radius: 100%;
+    background-color: grey;
+}
+#novaFoto
+{
+    border-radius: 100%;
 }
 
 footer{
@@ -105,7 +116,7 @@ footer{
     top: 1100px;
 }
 
-.login
+/* .login
 {
     font-size: 40px;
     position: absolute;
@@ -117,42 +128,16 @@ footer{
     font-size: 24px;
     position: absolute;
     left: 700px;
-}
-
-#btnLogin
-{
-   left: 700px;
-   font-size: 23px;
-   position: absolute;
-   top: 700px;
-}
-
-.cTemCadastro
-{
-    font-size: 30px;
-    position: absolute;
-    left: 300px;
-    font-style: italic;
-    top: 700px;
-}
-
-/* #menuPerfil
-{
-    background-color: white;
-    position: absolute;
-    top: 20%;
-    left: 70%;
-    width: 100%;
 } */
 
-#btnPerfil 
+/* #btnPerfil 
 {
    border-radius: 50%;
    width: 100%;
    height: 100%;
-}
+} */
 
-#opcoesFotos
+/* #opcoesFotos
 {
     border-radius: 50%;
     background-color: white;
@@ -161,7 +146,7 @@ footer{
     position: absolute;
     top: 8%;
     left: 80%;
-}
+} */
 
 #sobreV,#loginNavV,#cadastroV,#contatoV, #homeV, #principalV, #configV
 {
@@ -170,7 +155,7 @@ footer{
   left: 170%;
 }
 
-#menuV
+/* #menuV
 {  
     position: relative;
     right: 50%;
@@ -187,4 +172,4 @@ footer{
    position: relative;
    top: -2em;
    left: 100%;
-}
+} */

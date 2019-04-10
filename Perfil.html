@@ -1,0 +1,56 @@
+<html>
+        <head>
+        <title>Cadastro</title>
+        <link rel="shortcut icon" href="favicon.ico" >
+        <link href="Cadastro.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+       
+         var carregarPerfil = true;
+
+        window.onload = function()
+        {
+            document.getElementById("escolherNovaFoto").innerHTML = "<input id='novaFoto' type='image' src='./Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
+        }
+
+        function TrocarFoto()
+        {
+            alert("Deseja trocar sua foto de perfil?");
+            
+        }
+        
+       
+
+        </script>
+        </head>
+        <body>
+        <header>
+              <a href="#" class="brand-logo">
+                  <img class="ondas" src="./Imagens/ondas.png">
+                <div><img  class="logo" src="./Imagens/LOGO/logoofc.png"></div></a>
+               
+              <nav id="navHeader">
+              <ul>                 
+                 <a id = "home" href="Home.html" >HOME</a>
+                 <a id = "sobre" href="Sobre.html" >SOBRE</a>
+                  <a id = "loginNav" href="Login.html" >LOGIN</a>
+                  <a id = "cadastro" href="Cadastro.html">CADASTRO</a>
+                  <a id = "contato" href="Contato.html"  >CONTATO</a>
+                  <a id = "principal" href="Principal.html" >PRINCIPAL</a>
+                  <a id = "perfil" href="Perfil.html" >PERFIL</a>
+                </ul>                
+            </nav>   
+            
+            
+
+            </header>
+            
+            <section id="perfilSection">
+                    <div id="escolherNovaFoto">
+                            
+                     </div>
+            </section>
+
+               <footer></footer>
+        
+        </body>
+        </html>
