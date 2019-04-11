@@ -15,7 +15,6 @@ body
     background-image: url("./Imagens/fundoSobre.png");
 }
 
-
 header
 {
     
@@ -82,29 +81,57 @@ width: 100%;
   color: white;
 }
 
-#perfilSection
+#opcoesFotos
 {
-    background-color: black;
-    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 8%;
+    left: 80%;
+}
+
+#loginSection
+{  
+    background-color: rgb(180, 167, 158);
+    font-size: 35px;
+    height: 130%;
     width: 70%;
     align-self: center;
-    left: 200px;
+    left: 15%;
+    top: 80%;
     position: absolute;
     border-radius: 10%;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
+    color: white;  
+    text-align: center;        
 }
 
 #escolherNovaFoto
 {
-    width: 70%;
-    height: 60%;
+    width: 23%;
+    height: 25%;
+    left: 35%;
+    position: relative;
+    top: 0em;
     border-radius: 100%;
-    background-color: grey;
+    background-color: rgb(184, 144, 144);
 }
 #novaFoto
 {
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
+}
+
+#btnSalvar
+{
+    top: 87%;
+    position: absolute;
+    left: 80%;
+    width: 10%;
+    height: 5%;
 }
 
 footer{
@@ -148,12 +175,7 @@ footer{
     left: 80%;
 } */
 
-#sobreV,#loginNavV,#cadastroV,#contatoV, #homeV, #principalV, #configV
-{
-  color: black;
-  position: relative;
-  left: 170%;
-}
+
 
 /* #menuV
 {  
