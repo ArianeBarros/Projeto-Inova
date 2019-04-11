@@ -5,6 +5,37 @@
         <link rel="shortcut icon" href="favicon.ico" >
         <link href="Sobre.css" rel="stylesheet" type="text/css">
         <script type="text/javascript">
+
+window.onload = function()
+        {
+            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+        }
+        
+        function CarregarPerfil()
+        {
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg'>";
+
+            if(carregarPerfil == true)
+            {
+                document.getElementById("opcoesFotos").innerHTML += "<div id='divMenuV'><nav id ='menuV'><ul>" + 
+                                                                "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
+                                                                "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" + 
+                                                                "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" + 
+                                                                "<a id ='contatoV' href='Contato.html'>CONTATO</a><br><br>" +
+                                                                "<a id ='principalV' href='Principal.html'>PRINCIPAL</a><br><br>" +
+                                                                "<a id ='configV' href='Perfil.html'>PERFIL</a><br><br><br></ul><nav></div>";
+                carregarPerfil = false;
+                //alert(carregarPerfil);
+            }               
+            else
+            {
+                document.getElementById("menuV").innerHTML = "<nav></nav>"; 
+                carregarPerfil = true;
+                //alert(carregarPerfil);
+            }  
+            //alert(carregarPerfil);        
+        }
+
         </script>
         </head>
         <body>
@@ -23,6 +54,12 @@
                   <a id = "perfil" href="Perfil.html" >PERFIL</a>
                 </ul>
             </nav>
+
+            
+            <div id="opcoesFotos">
+                    
+            </div>
+                    
          
             </header>
             

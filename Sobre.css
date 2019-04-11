@@ -77,6 +77,17 @@ width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#opcoesFotos
+{
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 8%;
+    left: 80%;
+}
+
 #sobre,#login,#cadastro,#contato, #home, #principal, #perfil
 {
 color: white;
