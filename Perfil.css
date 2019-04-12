@@ -99,7 +99,7 @@ width: 100%;
     left: 80%;
 }
 
-#btnPerfil 
+.btnPerfil 
 {
    border-radius: 50%;
    width: 100%;
@@ -133,8 +133,8 @@ width: 100%;
     width: 70%;
     align-self: center;
     left: 15%;
-    top: 80%;
-    position: absolute;
+    top: 1%;
+    position: relative;
     border-radius: 10%;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;  
@@ -149,18 +149,30 @@ width: 100%;
     position: relative;
     top: 0em;
     border-radius: 100%;
-    background-color: rgb(184, 144, 144);
+    border-color: black;
+    border-width: 1em;
 }
 #novaFoto
 {
     width: 100%;
     height: 100%;
     border-radius: 100%;
+    /* border-color: black;
+    border-width: 1em; */
 }
 
 #btnSalvar
 {
     top: 87%;
+    position: absolute;
+    left: 80%;
+    width: 10%;
+    height: 5%;
+}
+
+#btnAlterar
+{
+    top: 28em;
     position: absolute;
     left: 80%;
     width: 10%;
@@ -173,7 +185,7 @@ footer{
     height: 20%;
     width: 100%;
     position: relative;
-    top: 1200px;
+    top: 20%;
 }
 
 #secEscolherFoto
@@ -188,6 +200,8 @@ footer{
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;  
     text-align: center; 
+    overflow: scroll;
+    scrollbar-base-color: bisque;
 }
 
 #navOpcoesFotos
@@ -195,4 +209,19 @@ footer{
     color: white;
     width: 100%;
     font-size: 20px;
+}
+
+#lblEscolherArquivo
+{
+    border-color: blue;
+    background-color: rgb(120, 180, 120);
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-width: 1em;
+}
+
+.exImg
+{
+    width: 10%;
+    height: 25%;
+    border-radius: 100%;
 }

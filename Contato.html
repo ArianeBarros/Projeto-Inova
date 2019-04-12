@@ -15,8 +15,7 @@ window.onload = function()
         {
             if(seMostraPerfil % 2 == 0)
             {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg' onclick='CarregarPerfil()'>" + 
-                                                                 "<div id='divMenuV'><nav id ='menuV'><ul>" + 
+                document.getElementById("opcoesFotos").innerHTML = "<div id='divMenuV'><nav id ='menuV'><ul>" + 
                                                                 "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
                                                                 "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" + 
                                                                 "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" + 
@@ -27,9 +26,9 @@ window.onload = function()
             }               
             else
             {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg' onclick='CarregarPerfil()'>";
-                seMostraPerfil++;
-            }          
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                seMostraPerfil++; 
+            }                     
         }
 
 
