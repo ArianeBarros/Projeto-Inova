@@ -9,38 +9,51 @@
 
         window.onload = function()
         {
-            document.getElementById("escolherNovaFoto").innerHTML = "<input id='novaFoto' type='image' src='./Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
+            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
+            document.getElementById("secEscolherFoto").style.display = "none";
         }
 
         function TrocarFoto()
         {
-            alert("Deseja trocar sua foto de perfil?");
-            document.getElementById("escolherNovaFoto").innerHTML = "<input id='novaFoto' type='image' src='./Imagens/marTeste.jpg'>";
+            if(window.confirm("Deseja trocar sua foto de perfil?"))//document.getElementById("secAgenda").style.display == "block")
+               {
+                document.getElementById("escolherNovaFoto").innerHTML = "<input id='novaFoto' type='image' src='./Imagens/marTeste.jpg'>";
+                
+                document.getElementById("secEscolherFoto").style.display = "block";                 
+               }                 
+               else
+               {
+                 document.getElementById("secEscolherFoto").style.display = "none"; 
+                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+               }
         }
         
+        var seMostraPerfil = 2;
         function CarregarPerfil()
         {
-            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg'>";
-
-            if(carregarPerfil == true)
+            if(seMostraPerfil % 2 == 0)
             {
-                document.getElementById("opcoesFotos").innerHTML += "<div id='divMenuV'><nav id ='menuV'><ul>" + 
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg' onclick='CarregarPerfil()'>" + 
+                                                                 "<div id='divMenuV'><nav id ='menuV'><ul>" + 
                                                                 "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
                                                                 "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" + 
                                                                 "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" + 
                                                                 "<a id ='contatoV' href='Contato.html'>CONTATO</a><br><br>" +
                                                                 "<a id ='principalV' href='Principal.html'>PRINCIPAL</a><br><br>" +
                                                                 "<a id ='configV' href='Perfil.html'>PERFIL</a><br><br><br></ul><nav></div>";
-                carregarPerfil = false;
-                //alert(carregarPerfil);
+                seMostraPerfil++;
             }               
             else
             {
-                document.getElementById("menuV").innerHTML = "<nav></nav>"; 
-                carregarPerfil = true;
-                //alert(carregarPerfil);
-            }  
-            //alert(carregarPerfil);        
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/marTeste.jpg' onclick='CarregarPerfil()'>";
+                seMostraPerfil++;
+            }          
+        }
+
+        function CarregarFotoEscolhida()
+        {
+            var foto = document.getElementById("arquivoEscolhido").innerHTML;
         }
 
         </script>
@@ -69,37 +82,44 @@
                     
             
             </header>
+
+            <section id="secEscolherFoto">Escolha uma foto para o seu Perfil!
+                    <div>A</div> 
+                    <input type="file" required id="arquivoEscolhido">
+                    <input type="submit" onclick="CarregarFotoEscolhida()">Escolher
+
+                </section>
             
-                     <section id="loginSection">
-                            <br><br>
-                            <div id="escolherNovaFoto">
-                                    
-                              </div>
-                       
-                         <h1>Seus dados:</h1>
+            <section id="loginSection">
+                <br><br>
+                <div id="escolherNovaFoto">
                         
-                      <div>
-                          <label  class="login" for="username2">Username: </label>
-                          <input  class="loginInput" id="username2" type="text" value="Aninha" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">                  
-                      </div><br><br>
-        
-                      <div>
-                          <label  class="login" for="email">Email: </label>
-                          <input  class="loginInput" id="email" type="email" value="anaclajuhs@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">                  
-                      </div><br><br>
-        
-                      <div>
-                          <label  class="login" for="tel">Telefone((99) 99999-9999): </label>
-                          <input  class="loginInput" id="tel" type="tel"  value="(19)9999-9999" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">                  
-                      </div><br><br>
-        
-                      <div>
-                          <label  class="login" for="aniversario">Data Nascimento: </label>
-                          <input  class="loginInput" type="date" id="data"  value="22/22/2222" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>                 
-                      </div><br><br>
-        
-                      <button id="btnSalvar" onclick="Salvar()">Salvar dados</button>
-                    </section>
+                    </div>
+            
+                <h1>Seus dados:</h1>
+            
+            <div>
+                <label  class="login" for="username2">Username: </label>
+                <input  class="loginInput" id="username2" type="text" value="Aninha" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">                  
+            </div><br><br>
+
+            <div>
+                <label  class="login" for="email">Email: </label>
+                <input  class="loginInput" id="email" type="email" value="anaclajuhs@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">                  
+            </div><br><br>
+
+            <div>
+                <label  class="login" for="tel">Telefone((99) 99999-9999): </label>
+                <input  class="loginInput" id="tel" type="tel"  value="(19)9999-9999" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">                  
+            </div><br><br>
+
+            <div>
+                <label  class="login" for="aniversario">Data Nascimento: </label>
+                <input  class="loginInput" type="date" id="data"  value="22/22/2222" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>                 
+            </div><br><br>
+
+            <button id="btnSalvar" onclick="Salvar()">Salvar dados</button>
+        </section>
 
 
                <footer></footer>

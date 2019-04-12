@@ -77,6 +77,13 @@ width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#sobreV,#loginNavV,#cadastroV,#contatoV, #homeV, #principalV, #configV
+{
+  color: black;
+  position: relative;
+  left: 170%;
+}
+
 #opcoesFotos
 {
     border-radius: 50%;
@@ -86,6 +93,32 @@ width: 100%;
     position: absolute;
     top: 8%;
     left: 80%;
+}
+
+#btnPerfil 
+{
+   border-radius: 50%;
+   width: 100%;
+   height: 100%;
+}
+
+#menuV
+{  
+    position: relative;
+    right: 50%;
+    width: 55%;
+    visibility: visible;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#divMenuV
+{
+   background-color: wheat;
+   width: 380%;
+   border-radius: 3%;
+   position: relative;
+   top: -2em;
+   left: 100%;
 }
 
 #sobre,#login,#cadastro,#contato, #home, #principal, #perfil
