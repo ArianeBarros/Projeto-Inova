@@ -86,7 +86,7 @@ width: 100%;
 {
     background-color: black;
     box-shadow:  10px 10px 10px 5px grey;
-    height: 107%;
+    height: 117%;
     width: 70%;
     align-self: center;
     left: 200px;
@@ -99,10 +99,10 @@ width: 100%;
 footer{
     background-color: #0B2161;
     text-align: center;
-    height: 20%;
+    height: 30%;
     width: 100%;
     position: relative;
-    top: 1100px;
+    top: 124%;
 }
 
 .login
@@ -119,12 +119,12 @@ footer{
     left: 700px;
 }
 
-#btnLogin
+#btnCadastrar
 {
    left: 700px;
    font-size: 23px;
    position: absolute;
-   top: 700px;
+   top: 750px;
 }
 
 .cTemCadastro
@@ -133,7 +133,7 @@ footer{
     position: absolute;
     left: 300px;
     font-style: italic;
-    top: 700px;
+    top: 750px;
 }
 
 #btnPerfil 
@@ -141,6 +141,13 @@ footer{
    border-radius: 50%;
    width: 100%;
    height: 100%;
+}
+
+#sobreV,#loginNavV,#cadastroV,#contatoV, #homeV, #principalV, #configV
+{
+  color: black;
+  position: relative;
+  left: 170%;
 }
 
 #opcoesFotos
@@ -154,13 +161,6 @@ footer{
     left: 80%;
 }
 
-#sobreV,#loginNavV,#cadastroV,#contatoV, #homeV, #principalV, #configV
-{
-  color: black;
-  position: relative;
-  left: 170%;
-}
-
 #menuV
 {  
     position: relative;
@@ -169,7 +169,6 @@ footer{
     visibility: visible;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 #divMenuV
 {
    background-color: wheat;
@@ -178,4 +177,34 @@ footer{
    position: relative;
    top: -2em;
    left: 100%;
+}
+
+.fot1
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 32%;
+    margin-top: 1em;
+    left: -30%;
+}
+
+.fot2
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: -22%;
+    margin-top: 1em;
+    left: 10px;
+}
+
+#cbNoti
+{
+    width: 20%;
+    height: 4%;
+    position: absolute;
+    top: 68%;
+    font-size: 24px;
+    left: 700px;
 }

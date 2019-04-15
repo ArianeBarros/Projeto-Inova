@@ -3,11 +3,19 @@
         <title>Cadastro</title>
         <link rel="shortcut icon" href="favicon.ico" >
         <link href="Cadastro.css" rel="stylesheet" type="text/css">
+
         <script type="text/javascript">
        
         window.onload = function()
         {
             document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+            
+            CarregarDadosBD();
+        }
+
+        function CarregarDadosBD()
+        {
+            
         }
         
         var seMostraPerfil = 2;
@@ -15,7 +23,8 @@
         {
             if(seMostraPerfil % 2 == 0)
             {
-                document.getElementById("opcoesFotos").innerHTML ="<a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" + 
+                                                                "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
                                                                 "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" + 
                                                                 "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" + 
                                                                 "<a id ='contatoV' href='Contato.html'>CONTATO</a><br><br>" +
@@ -27,7 +36,7 @@
             {
                 document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
                 seMostraPerfil++; 
-            }               
+            }                  
         }
 
         </script>
@@ -53,7 +62,7 @@
 
                 </div>
 
-            </header>
+            </header>          
             
             <section id="loginSection">
                 <br><br><br><br><br><br>
@@ -87,12 +96,25 @@
                   <input  class="loginInput" id="password2" type="password" onblur="Tool()     " class="validate" onfocus="TirarTool()" required>                   
               </div><br><br><br><br>
 
-              <!-- class="txtSubmit"  -->
-              <button id="btnLogin" onclick="carregar()">Cadastrar</button>
+              <h1 class="login">Preferência de notícias: </h1>
+
+              <select id="cbNoti">
+                    <option value="politica">Política</option>
+                    <option value="ongs">ONGS</option>
+                    <option value="animais">Animais</option>
+                    <option value="algo">Algo</option>
+                  </select>
+
+              <button id="btnCadastrar" onclick="carregar()">Cadastrar</button>
               <u><a href="Login.html"class="cTemCadastro"> Já tem cadastro?! </a></u>
             </section>
 
-               <footer></footer>
+               <footer>
+                    <h1 class="fot1">inovaAgora@gmail.com </h1>
+                    <h1 class="fot1">i9@hotmail.com </h1>
+                    <h1 class="fot2">(19)3336-5487 </h1>
+                    <h1 class="fot2">(19)5135-9804 </h1>
+               </footer>
         
         </body>
         </html>

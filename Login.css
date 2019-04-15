@@ -171,8 +171,28 @@ color: white;
 footer{
     background-color: #0B2161;
     text-align: center;
-    height: 20%;
+    height: 30%;
     width: 100%;
     position: relative;
     top: 500px;
+}
+
+.fot1
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 32%;
+    margin-top: 1em;
+    left: -30%;
+}
+
+.fot2
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: -22%;
+    margin-top: 1em;
+    left: 10px;
 }
