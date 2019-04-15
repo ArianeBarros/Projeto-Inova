@@ -225,3 +225,23 @@ footer{
     height: 25%;
     border-radius: 100%;
 }
+
+.fot1
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 32%;
+    margin-top: 1em;
+    left: -30%;
+}
+
+.fot2
+{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: -22%;
+    margin-top: 1em;
+    left: 10px;
+}

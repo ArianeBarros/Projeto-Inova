@@ -12,6 +12,13 @@
             document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
             document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
             document.getElementById("secEscolherFoto").style.display = "none";
+
+            CarregarDadosBD();
+        }
+
+        function CarregarDadosBD()
+        {
+
         }
 
         function TrocarFoto()
@@ -30,7 +37,7 @@
         {
             if(seMostraPerfil % 2 == 0)
             {
-                document.getElementById("opcoesFotos").innerHTML = "<div id='divMenuV'><nav id ='menuV'><ul>" + 
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" + 
                                                                 "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" + 
                                                                 "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" + 
                                                                 "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" + 
@@ -60,14 +67,23 @@
             document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='./Imagens/" + foto + "' onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none"; 
+
+           
         }
 
         function CarregarFotoEscolhida(a)
         {
-            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='" + a + "' onclick='CarregarPerfil()'>";
+            document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src='" + a + "' onclick='CarregarPerfil()'>";
             document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='" + a + "' onclick='TrocarFoto()'>"; 
 
-            document.getElementById("secEscolherFoto").style.display = "none";       
+            document.getElementById("secEscolherFoto").style.display = "none";     
+            SalvarDados();  
+        }
+
+        function SalvarDados()
+        {
+            //atualizar bd
+
         }
 
         </script>
@@ -142,11 +158,16 @@
                 <input  class="loginInput" type="date" id="data"  value="1008/03/22" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>                 
             </div><br><br>
 
-            <button class="cBtn" id="btnSalvar" onclick="Salvar()">Salvar dados</button>
+            <button class="cBtn" id="btnSalvar" onclick="SalvarDados()">Salvar dados</button>
         </section>
 
 
-               <footer></footer>
+               <footer>
+                    <h1 class="fot1">inovaAgora@gmail.com </h1>
+                    <h1 class="fot1">i9@hotmail.com </h1>
+                    <h1 class="fot2">(19)3336-5487 </h1>
+                    <h1 class="fot2">(19)5135-9804 </h1>
+               </footer>
         
         </body>
         </html>

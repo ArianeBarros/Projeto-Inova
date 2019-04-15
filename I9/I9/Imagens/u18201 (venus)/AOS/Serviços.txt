@@ -1,0 +1,9 @@
+Arquitetura Orientada a Serviços
+---------------------------------
+Serviços: como sites
+-não são acessados por pessoas
+-para serem usados para programas
+-apenas dados
+-dados podem vir em :
+	XML = linguagem parecida com HTML (TAGS PODEM SER INVENTADAS)=>serve para mostrar a estrutura de dados
+	|_descobre-se o fim de uma informação pelo encerramento da tag (</rua>) :pelas tags
