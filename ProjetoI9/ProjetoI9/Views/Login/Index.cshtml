@@ -1,64 +1,61 @@
 ﻿
-@{
-    Layout = null;
-}
-
-@*<!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
-    </head>
-    <body>
-        <div>
-        </div>
-    </body>
-    </html>*@
 
 <html>
-<meta name="viewport" content="width=device-width" />
-<title>Login</title>
-<link rel="shortcut icon" href="favicon.ico">
-<link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+<head>
+    <title>Login</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <script type="text/javascript">
 
-        window.onload = function()
-        {
-            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+        window.onload = function () {
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
 
             CarregarDadosBD();
         }
 
         function CarregarDadosBD()
         {
+            alert("InnerText email = " + document.getElementById("email").innerText);
+            alert("Value senha = " + document.getElementById("password").value);
 
-        }
+            var existe = false;
+
+            for (var usu in ViewBag.UsuarioI9)
+            {
+                if (document.getElementById("email").value == usu.email)
+                    if (document.getElementById("password").value == usu.senha)
+                        existe = true;
+            }
+
+            if (existe)
+                window.open('~/Cadastro/Index');
+            else
+                alert("Dados inválidos!");
+        }        
 
         var seMostraPerfil = 2;
-        function CarregarPerfil()
-        {
-            if(seMostraPerfil % 2 == 0)
-            {
+
+        function CarregarPerfil() {
+            if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                 "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                                                                 "<a id ='principalNavV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
-                                                                "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +       
-                                                                "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +   
-                                                                "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
-                                                                "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
+                    "<a id ='principalNavV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
+                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
+                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
+                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
-            else
-            {
+            else {
                 document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
         }
 
 
-</script>
-        </head>
+    </script>
+</head>
 <body>
     <header>
         <a href="#" class="brand-logo">
@@ -88,8 +85,7 @@
     <section id="login">
         <br><br><br><br>
         <div class="login">
-         @*+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate"*@
-            <label for="email">Email: </label>           
+            <label for="email">Email: </label>
             <input id="email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
         </div><br><br><br><br><br><br>
 
@@ -98,7 +94,7 @@
             <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
         </div><br><br><br><br><br><br>
 
-        <button id="btnEntrar" onclick="window.open('')">Entrar</button><br><br>
+        <button id="btnEntrar" onclick="CarregarDadosBD()">Entrar</button><br><br>
         <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
         <br><br>
     </section>
@@ -112,3 +108,4 @@
 
 </body>
 </html>
+

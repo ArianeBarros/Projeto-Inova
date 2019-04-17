@@ -14,13 +14,24 @@
         window.onload = function()
         {
             document.getElementById("opcoesFotos").innerHTML = " <input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-
+            document.getElementById("username").focus();
             CarregarDadosBD();
         }
 
         function CarregarDadosBD()
         {
 
+        }
+
+        function SenhasIguais() {
+            var ok = false;
+
+            if (document.getElementById("password").value == document.getElementById("password2").value)
+                ok = true;
+            else
+                alert("As senhas dadas não são iguais!");
+
+                return ok;
         }
 
         var seMostraPerfil = 2;
@@ -73,8 +84,8 @@
     <section id="loginSection">
         <br><br><br><br><br><br>
         <div>
-            <label class="login" for="username2">Username: </label>
-            <input class="loginInput" id="username2" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+            <label class="login" for="username">Username: </label>
+            <input class="loginInput" id="username" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
         </div><br><br><br><br>
 
         <div>
