@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Sobre</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/Content/SobreCSS.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+
+        window.onload = function()
+        {
+            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+
+            CarregarDadosBD();
+        }
+
+        var seMostraPerfil = 2;
+        function CarregarPerfil()
+        {
+            if(seMostraPerfil % 2 == 0)
+            {
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
+                                                                "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
+                                                                "<a id ='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
+                                                                "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
+                                                                "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
+                                                                "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +                                                                
+                                                                "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                seMostraPerfil++;
+            }
+            else
+            {
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                seMostraPerfil++;
+            }
+        }
+
+        function CarregarDadosBD()
+        {
+
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand-logo">
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
+        </a>
+
+        <nav id="navHeader">
+            <ul>
+                <a id="home" href="~/Home/Index">HOME</a>
+                <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
+                <a id="login" href="~/Login/Index">LOGIN</a>
+                <a id="cadastro" href="~/Cadastro/Index">CADASTRE-SE</a>
+                <a id="contato" href="~/Contato/Index">CONTATO</a>
+                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+            </ul>
+        </nav>
+
+
+        <div id="opcoesFotos">
+
+        </div>
+
+
+    </header>
+
+    <img src="~/Imagens/formigaSobre.png" class="cImagem">
+
+
+    <footer>
+        <h1 class="fot1">inovaAgora@gmail.com </h1>
+        <h1 class="fot1">i9@hotmail.com </h1>
+        <h1 class="fot2">(19)3336-5487 </h1>
+        <h1 class="fot2">(19)5135-9804 </h1>
+    </footer>
+
+</body>
+</html>

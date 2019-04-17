@@ -69,66 +69,7 @@ header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre, #loginNav, #contato, #home, #principal, .cTemCadastro, #perfil {
-    color: white;
-}
-
-#loginSection {
-    background-color: black;
-    box-shadow: 10px 10px 10px 5px grey;
-    height: 117%;
-    width: 70%;
-    align-self: center;
-    left: 200px;
-    position: absolute;
-    border-radius: 10%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-}
-
-footer {
-    background-color: #0B2161;
-    text-align: center;
-    height: 30%;
-    width: 100%;
-    position: relative;
-    top: 124%;
-}
-
-.login {
-    font-size: 40px;
-    position: absolute;
-    left: 200px;
-}
-
-.loginInput {
-    font-size: 24px;
-    position: absolute;
-    left: 700px;
-}
-
-#btnCadastrar {
-    left: 700px;
-    font-size: 23px;
-    position: absolute;
-    top: 750px;
-}
-
-.cTemCadastro {
-    font-size: 30px;
-    position: absolute;
-    left: 300px;
-    font-style: italic;
-    top: 750px;
-}
-
-#btnPerfil {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-}
-
-#sobreV, #login, #contatoV, #homeV, #principalV, #configV {
+#loginNavV, #cadastroV, #contatoV, #homeV, #principalV, #configV {
     color: black;
     position: relative;
     left: 170%;
@@ -142,6 +83,12 @@ footer {
     position: absolute;
     top: 8%;
     left: 80%;
+}
+
+#btnPerfil {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 #menuV {
@@ -161,6 +108,40 @@ footer {
     left: 100%;
 }
 
+#sobre, #login, #cadastro, #contato, #home, #principal, #perfil {
+    color: white;
+}
+
+footer {
+    background-color: #0B2161;
+    text-align: center;
+    height: 30%;
+    width: 100%;
+    position: relative;
+    top: 1000px;
+}
+
+#sectionPrincipal {
+    background-color: rgb(109, 83, 83);
+    height: 120%;
+    width: 60%;
+    align-self: center;
+    left: 250px;
+    position: absolute;
+}
+
+#navSectionLeft {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.cImagem {
+    position: absolute;
+    left: 350px;
+    width: 50%;
+    top: 500px;
+}
+
 .fot1 {
     font-size: 30px;
     color: white;
@@ -177,13 +158,4 @@ footer {
     top: -22%;
     margin-top: 1em;
     left: 10px;
-}
-
-#cbNoti {
-    width: 20%;
-    height: 4%;
-    position: absolute;
-    top: 68%;
-    font-size: 24px;
-    left: 700px;
 }

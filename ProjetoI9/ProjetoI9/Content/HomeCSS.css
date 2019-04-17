@@ -1,0 +1,518 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+    font-size: 106%;
+    transition: all .3s ease;
+}
+
+
+.header {
+    height: 35em;
+    color: white;
+    /* font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+.ondas {
+    position: absolute;
+    left: -30%;
+    width: 130%;
+    max-height: 50em;
+}
+
+.logo {
+    width: 25%;
+    /* float: left; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+
+
+
+.show-menu-btn,
+.hide-menu-btn {
+    color: white;
+    position: absolute;
+    top: 2%;
+    left: 85%;
+    cursor: pointer;
+}
+
+.ab:active {
+    background: lightseagreen;
+}
+
+.hide-menu-btn i {
+    color: lightseagreen;
+}
+
+
+#chk {
+    position: absolute;
+    top: 2%;
+    left: 85%;
+    visibility: hidden;
+    z-index: -1111;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.content {
+    /* padding:  */
+    /* text-align: justify; */
+}
+
+
+.hide-menu-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+#chk:checked ~ .menu {
+    right: 1;
+}
+
+.menu {
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    background: #333;
+    right: 1000;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: unset;
+    z-index: 10;
+}
+
+@media screen and (min-width: 600px) {
+
+    .show-menu-btn, .hide-menu-btn {
+        display: none;
+    }
+
+    .menu {
+        background: none;
+        line-height: 100px;
+        position: absolute;
+        top: -70;
+        left: 10%;
+        transition: unset;
+    }
+
+    .ondas {
+        width: 110%;
+    }
+
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px;
+        display: inline;
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+
+
+    .btnComece {
+        right: 0;
+    }
+
+    #comece {
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #h1, #h3 {
+        padding: 0px 0px 0px 200px;
+    }
+
+    #h2, #h4 {
+        padding: 0px 0px 0px 250px;
+    }
+
+    #form #h1, #h3 {
+        position: relative;
+        bottom: 8em;
+        /* left: 40%; */
+    }
+
+    #h2 {
+        position: relative;
+    }
+
+    #h4 {
+        position: relative;
+        bottom: 11em;
+    }
+
+    #formiga {
+        height: 70%;
+        position: relative;
+        left: 2%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    /* #botoes {
+        /* position: relative; */
+    /* top: -18em; */
+    .show-menu-btn, .hide-menu-btn {
+        display: none;
+    }
+
+    .ondas {
+        width: 100%;
+        max-height: 15em;
+    }
+
+    .frase {
+        display: none;
+    }
+
+    .coisinhas {
+        display: none;
+    }
+
+    .btnComece {
+        display: none;
+    }
+
+    .menu {
+        left: 4%;
+    }
+
+        .menu a {
+            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 22px;
+            padding: 0.6em;
+        }
+
+    .formiga {
+        height: 100%;
+        position: relative;
+        left: 15%;
+        top: 1em;
+    }
+
+    #form #h1 {
+        position: relative;
+        bottom: 0em;
+        width: 90%;
+    }
+
+    #h3 {
+        position: relative;
+        bottom: 10em;
+    }
+
+    #h4 {
+        position: relative;
+        bottom: 13.5em;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .menu {
+        left: 15%;
+    }
+
+        .menu a {
+            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+        }
+
+    #form #h1, #form #h2, #h3, #h4 {
+        right: -10%;
+    }
+
+    #formiga {
+        height: 90%;
+        position: relative;
+        top: 0px;
+        left: 15%;
+    }
+
+    #maos {
+        height: 70%;
+        position: relative;
+        top: 0px;
+        left: 15%;
+    }
+
+    #h1, #h3 {
+        width: 50%;
+    }
+
+    #h2, #h4 {
+        width: 90%;
+    }
+
+    #form #h1, #h3 {
+        position: relative;
+        left: 10%;
+    }
+
+    #form #h2, #h4 {
+        position: relative;
+        top: 10%;
+    }
+
+    #form {
+        height: 40%;
+    }
+}
+
+
+
+
+/*#menu
+{
+    position: absolute;
+    left: 17em;
+    top: 7em;
+    color: white;
+    font-family: Courier New, Courier, monospace;
+    font-size: 200%;
+    width: 400em;
+}*/
+
+
+/*
+#botoes {
+    position: absolute;
+    bottom: 30.5em;
+    left: 10%;
+    /* z-index: 50; */ /*
+}
+
+.cadastro {
+    width: 58%;
+    position: relative;
+    bottom: 0.1em;
+    margin-left: -0.5em;
+}
+
+.login {
+    width: 40%;
+
+}
+#sobre,#login,#cadastro,#contato {
+    /* visibility: hidden; */ /*
+    color: white;
+    float: center;
+    /* font-size: 80%(width: ;; */ /*
+    position: relative;
+    top: -30em;
+    font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+}
+*/
+.btnComece {
+    position: absolute;
+    top: 7em;
+    left: 30%;
+    width: 35%;
+    height: auto;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.frase {
+    position: absolute;
+    top: 3em;
+    left: 20%;
+    width: 60%;
+    height: auto;
+    z-index: 1;
+}
+
+.coisinhas {
+    position: absolute;
+    top: 7.5em;
+    left: 12%;
+    width: 77%;
+    height: auto;
+    z-index: 1;
+}
+
+.coisinhas2 {
+    visibility: hidden;
+}
+
+.content {
+    width: 100%;
+    height: 50%;
+    /* padding: 0em 0em 0em 10em; */
+}
+
+#form {
+    position: relative;
+    bottom: 18em;
+    background: #f4ff81;
+}
+
+#h1, #h3 {
+    font-size: 25px;
+    font-family: "Century Gothic";
+    font-weight: 600;
+    width: 90%;
+}
+
+
+#h2, #h4 {
+    font-size: 18px;
+    font-family: "Century Gothic";
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+
+.formiga {
+    position: relative;
+    top: 2em;
+    height: 80%;
+}
+
+#compromisso {
+    position: relative;
+    background: #ffab91;
+    width: 100%;
+    bottom: 0%;
+}
+
+#maos {
+    height: 75%;
+    width: auto;
+}
+
+/*
+.btnMenu_open {
+    background-image: url("./Imagens/menu3.png");
+    height: 2em;
+    position: relative;
+    left: 60%;
+}
+
+.btnMenu_close {
+    background-color: white;
+    background-image: url("./Imagens/menupt.png");
+}
+
+/*
+  .bar1open, .bar2open, .bar3open {
+    width: 23px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .bar1 {
+    width: 23px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+    -webkit-transform: rotate(-45deg) translate(-9px, 20px);
+    transform: rotate(-45deg) translate(-7px, -2px);
+  }
+  
+  .bar2 {opacity: 0;}
+  
+  .bar3 {
+    width: 23px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-9px, 2px);
+  }
+
+
+
+   #sobremin, #loginmin,#contmin
+   {
+    
+    font-family: "Century Gothic";
+    font-weight: 500;
+    font-size: 17px;
+    color: #757575;
+   }
+   #cadmin
+   {
+    font-family: "Century Gothic";
+    font-weight: 500;
+    font-size: 17px;
+    color: #757575;
+   }
+
+  .balon
+  {
+    background: url("./Imagens/logopretomin.png");
+    position: relative;
+    bottom: 20;
+    left: 38%;
+    width: 4em;
+    height: 2.3em;
+  }
+
+  /*.escuro
+  {
+      width: 100%;
+      height: 100%;
+      background: black;
+      position: absolute;
+      opacity: 0.5;
+      z-index: -1;
+  }
+  */
+#menuzinho {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 500%;
+    background: white;
+    z-index: 100;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.hrUm {
+    width: 12em;
+    height: 0.11em;
+    border-top: 1px solid #E6E6E6;
+    position: relative;
+    bottom: 1em;
+    margin-left: 0.5em;
+}
+
+.hrDois {
+    width: 12em;
+    height: 0.1em;
+    border-top: 1px solid #f5f5f5;
+    position: relative;
+    bottom: 1em;
+    margin-left: 0.5em;
+}

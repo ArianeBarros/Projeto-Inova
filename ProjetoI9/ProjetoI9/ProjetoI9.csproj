@@ -90,7 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CadastroCSS.css" />
+    <Content Include="Content\ContatoCSS.css" />
+    <Content Include="Content\HomeCSS.css" />
+    <Content Include="Content\LoginCSS.css" />
+    <Content Include="Content\PerfilCSS.css" />
     <Content Include="Content\PrincipalCSS.css" />
+    <Content Include="Content\SobreCSS.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Imagens\b.png" />
@@ -108,6 +113,22 @@
     <Content Include="Imagens\frase2.png" />
     <Content Include="Imagens\fundoSobre.png" />
     <Content Include="Imagens\imgPerfil.jpg" />
+    <Content Include="Imagens\LOGO\apple-icon-114x114.png" />
+    <Content Include="Imagens\LOGO\apple-icon-120x120.png" />
+    <Content Include="Imagens\LOGO\apple-icon-144x144.png" />
+    <Content Include="Imagens\LOGO\apple-icon-152x152.png" />
+    <Content Include="Imagens\LOGO\apple-icon-180x180.png" />
+    <Content Include="Imagens\LOGO\apple-icon-76x76.png" />
+    <Content Include="Imagens\LOGO\favicon.ico" />
+    <Content Include="Imagens\LOGO\logo.png" />
+    <Content Include="Imagens\LOGO\logo1.png" />
+    <Content Include="Imagens\LOGO\logo2.png" />
+    <Content Include="Imagens\LOGO\logo3-min.png" />
+    <Content Include="Imagens\LOGO\logo3.2.png" />
+    <Content Include="Imagens\LOGO\logo3.png" />
+    <Content Include="Imagens\LOGO\logo4-min.png" />
+    <Content Include="Imagens\LOGO\logo4.png" />
+    <Content Include="Imagens\LOGO\logoofc.png" />
     <Content Include="Imagens\marTeste.jpg" />
     <Content Include="Imagens\menu.png" />
     <Content Include="Imagens\menu2.png" />
@@ -136,7 +157,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +177,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Sobre\Index.cshtml" />
+    <Content Include="Views\Contato\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
