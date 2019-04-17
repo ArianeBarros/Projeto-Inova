@@ -4,18 +4,14 @@
 }
 
 <html>
-<!-- pushpin materialize -->
 <head>
     <title>Principal</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="PrincipalCSS.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
 
             window.onload = function(){
-                console.log("seraaaaa");
                 var cont = 0;
                 var noti = "";
                 var re = "";
@@ -30,7 +26,7 @@
                     cont++;
                 }
 
-                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
 
 
                 CarregarDadosBD();
@@ -46,18 +42,18 @@
             {
                 if(seMostraPerfil % 2 == 0)
                 {
-                    document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                    "<br><br><a id ='homeV' href='Home.html'>HOME</a><br><br>" +
-                                                                    "<a id ='sobreV' href='Sobre.html'>SOBRE</a><br><br>" +
-                                                                    "<a id ='loginNavV' href='Login.html'>LOGIN</a><br><br>" +
-                                                                    "<a id ='contatoV' href='Contato.html'>CONTATO</a><br><br>" +
-                                                                    "<a id ='principalV' href='Principal.html'>PRINCIPAL</a><br><br>" +
-                                                                    "<a id ='configV' href='Perfil.html'>PERFIL</a><br><br><br></ul><nav></div>";
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                                                                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
+                                                                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
+                                                                    "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
+                                                                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
+                                                                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
+                                                                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
                     seMostraPerfil++;
                 }
                 else
                 {
-                    document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
                     seMostraPerfil++;
                 }
             }
@@ -76,18 +72,18 @@
 
             function MostrarAgenda()
             {
-                if(document.getElementById("secAgenda").style.display == "block")
-               {
-                   var a = "";
+                   if(document.getElementById("secAgenda").style.display == "block")
+                   {
+                       var a = "";
 
-                   document.getElementById("secAgenda").innerHTML = a;
+                       document.getElementById("secAgenda").innerHTML = a;
 
-                  document.getElementById("secAgenda").style.display = "none";
-               }
-               else
-               {
-                document.getElementById("secAgenda").style.display = "block";
-               }
+                      document.getElementById("secAgenda").style.display = "none";
+                   }
+                   else
+                   {
+                    document.getElementById("secAgenda").style.display = "block";
+                   }
             }
 
     </script>
@@ -95,18 +91,18 @@
 <body>
     <header>
         <a href="#" class="brand-logo">
-            <img class="ondas" src="./Imagens/ondas.png">
-            <div><img class="logo" src="./Imagens/LOGO/logoofc.png"></div>
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div> <img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
         </a>
 
         <nav id="navHeader">
             <ul>
-                <a id="home" href="Home.html">HOME</a>
-                <a id="sobre" href="Sobre.html">SOBRE</a>
-                <a id="login" href="Login.html">LOGIN</a>
-                <a id="cadastro" href="Cadastro.html">CADASTRE-SE</a>
-                <a id="contato" href="Contato.html">CONTATO</a>
-                <a id="perfil" href="Perfil.html">PERFIL</a>
+                <a id="home" href="~/Home/Index">HOME</a>
+                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                <a id="login" href="~/Login/Index">LOGIN</a>
+                <a id="cadastro" href="~/Cadastro/Index">CADASTRE-SE</a>
+                <a id="contato" href="~/Contato/Index">CONTATO</a>
+                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
             </ul>
         </nav>
 
@@ -152,8 +148,8 @@
         <label class="lbl">Semana</label>
 
         <!-- <div class="realizacoes">
-            <label>Realizações</label> -->
-        </div>
+        <label>Realizações</label>
+    </div>-->
 
     </section>
 
@@ -184,4 +180,3 @@
 
 </body>
 </html>
-<!-- http://demo.geekslabs.com/materialize-v1.0/app-calendar.html -->

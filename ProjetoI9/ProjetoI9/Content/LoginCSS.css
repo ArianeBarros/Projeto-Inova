@@ -11,7 +11,7 @@ body {
     width: 100%;
     min-width: 600px;
     max-width: 2000px;
-    background-image: url("~/Imagens/fundoSobre.png");
+    background-image: url("./Imagens/fundoSobre.png");
 }
 
 
@@ -59,76 +59,7 @@ header {
     }
 }
 
-#navHeader {
-    position: relative;
-    top: -22em;
-    right: -40%;
-    width: 55%;
-    visibility: visible;
-    /* font-size: 80%(width: ;; */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#sobre, #login, #contato, #home, #principal, .cTemCadastro, #perfil {
-    color: white;
-}
-
-#loginSection {
-    background-color: black;
-    box-shadow: 10px 10px 10px 5px grey;
-    height: 107%;
-    width: 70%;
-    align-self: center;
-    left: 200px;
-    position: absolute;
-    border-radius: 10%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-}
-
-footer {
-    background-color: #0B2161;
-    text-align: center;
-    height: 30%;
-    width: 100%;
-    position: relative;
-    top: 124%;
-}
-
-.login {
-    font-size: 40px;
-    position: absolute;
-    left: 200px;
-}
-
-.loginInput {
-    font-size: 24px;
-    position: absolute;
-    left: 700px;
-}
-
-#btnCadastrar {
-    left: 700px;
-    font-size: 23px;
-    position: absolute;
-    top: 86%;
-}
-
-.cTemCadastro {
-    font-size: 30px;
-    position: absolute;
-    left: 300px;
-    font-style: italic;
-    top: 86%;
-}
-
-#btnPerfil {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-}
-
-#sobreV, #loginNavV, #contatoV, #homeV, #principalV, #configV {
+#sobreV, #cadastroV, #contatoV, #homeV, #principalV, #configV {
     color: black;
     position: relative;
     left: 170%;
@@ -142,6 +73,12 @@ footer {
     position: absolute;
     top: 8%;
     left: 80%;
+}
+
+#btnPerfil {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 #menuV {
@@ -161,6 +98,68 @@ footer {
     left: 100%;
 }
 
+#navHeader {
+    position: relative;
+    top: -22em;
+    right: -40%;
+    width: 55%;
+    visibility: visible;
+    /* font-size: 80%(width: ;; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#sobre, #cadastro, #contato, #home, #principal, .cNTemCadastro, #perfil {
+    color: white;
+}
+
+
+#login {
+    background-color: black;
+    color: white;
+    box-shadow: 10px 10px 10px 5px grey;
+    height: 50%;
+    width: 50%;
+    align-self: center;
+    left: 350px;
+    position: absolute;
+    border-radius: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login {
+    font-size: 40px;
+    position: absolute;
+    left: 200px;
+}
+
+
+#btnEntrar {
+    font-size: 25px;
+    position: absolute;
+    left: 200px;
+    font-style: italic;
+    top: 320px;
+    width: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.cNTemCadastro {
+    font-size: 30px;
+    position: absolute;
+    left: 400px;
+    font-style: italic;
+    top: 320px;
+}
+
+footer {
+    background-color: #0B2161;
+    text-align: center;
+    height: 30%;
+    width: 100%;
+    position: relative;
+    top: 500px;
+}
+
 .fot1 {
     font-size: 30px;
     color: white;
@@ -177,13 +176,4 @@ footer {
     top: -22%;
     margin-top: 1em;
     left: 10px;
-}
-
-#cbNoti {
-    width: 20%;
-    height: 4%;
-    position: absolute;
-    top: 68%;
-    font-size: 24px;
-    left: 700px;
 }
