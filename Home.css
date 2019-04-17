@@ -265,7 +265,7 @@
                 height: 90%;
                 position: relative;
                 top: 0px;
-                left: 15%;
+                left: 10%;
             }
             #maos
             {
@@ -428,6 +428,11 @@
         #maos
         {
             height: 75%;
+            width: auto;
+        }
+        #info
+        {
+            height: 60%;
             width: auto;
         }
 
