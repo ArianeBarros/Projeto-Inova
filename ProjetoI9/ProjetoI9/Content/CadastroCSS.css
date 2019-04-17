@@ -69,14 +69,14 @@ header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre, #loginNav, #contato, #home, #principal, .cTemCadastro, #perfil {
+#sobre, #login, #contato, #home, #principal, .cTemCadastro, #perfil {
     color: white;
 }
 
 #loginSection {
     background-color: black;
     box-shadow: 10px 10px 10px 5px grey;
-    height: 117%;
+    height: 107%;
     width: 70%;
     align-self: center;
     left: 200px;
@@ -111,7 +111,7 @@ footer {
     left: 700px;
     font-size: 23px;
     position: absolute;
-    top: 750px;
+    top: 86%;
 }
 
 .cTemCadastro {
@@ -119,7 +119,7 @@ footer {
     position: absolute;
     left: 300px;
     font-style: italic;
-    top: 750px;
+    top: 86%;
 }
 
 #btnPerfil {
@@ -128,7 +128,7 @@ footer {
     height: 100%;
 }
 
-#sobreV, #login, #contatoV, #homeV, #principalV, #configV {
+#sobreV, #loginNavV, #contatoV, #homeV, #principalV, #configV {
     color: black;
     position: relative;
     left: 170%;

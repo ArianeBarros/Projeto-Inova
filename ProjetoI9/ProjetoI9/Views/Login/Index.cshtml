@@ -17,7 +17,7 @@
     </html>*@
 
 <html>
-
+<meta name="viewport" content="width=device-width" />
 <title>Login</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
@@ -62,8 +62,8 @@
 <body>
     <header>
         <a href="#" class="brand-logo">
-            <img class="ondas" src="./Imagens/ondas.png">
-            <div><img class="logo" src="./Imagens/LOGO/logoofc.png"></div>
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
         </a>
 
         <nav id="navHeader">
@@ -88,8 +88,8 @@
     <section id="login">
         <br><br><br><br>
         <div class="login">
-            <label for="email">Email: </label>
-            @*+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate"*@
+         @*+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate"*@
+            <label for="email">Email: </label>           
             <input id="email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
         </div><br><br><br><br><br><br>
 
@@ -98,8 +98,8 @@
             <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
         </div><br><br><br><br><br><br>
 
-        <button id="btnEntrar" onclick="window.open('Home.html')">Entrar</button><br><br>
-        <u><a href="Cadastro.html" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
+        <button id="btnEntrar" onclick="window.open('')">Entrar</button><br><br>
+        <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
         <br><br>
     </section>
 
