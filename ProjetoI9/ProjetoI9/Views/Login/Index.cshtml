@@ -11,13 +11,13 @@
         window.onload = function () {
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
 
-            CarregarDadosBD();
+            //CarregarDadosBD();
         }
 
         function CarregarDadosBD()
         {
-            alert("InnerText email = " + document.getElementById("email").innerText);
-            alert("Value senha = " + document.getElementById("password").value);
+          //  alert("Value email = " + document.getElementById("email").value);
+           // alert("Value senha = " + document.getElementById("password").value);
 
             var existe = false;
 
@@ -28,8 +28,13 @@
                         existe = true;
             }
 
+            alert("Valor do existe: " + existe);
+
             if (existe)
-                window.open('~/Cadastro/Index');
+            {
+                alert("aeeee");
+                window.open("~/Principal/Index");
+            }             
             else
                 alert("Dados inválidos!");
         }        

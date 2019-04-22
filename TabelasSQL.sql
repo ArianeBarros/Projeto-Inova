@@ -13,7 +13,7 @@ pontuacao int
 select * from UsuarioI9
 
 create table Evento(
-cod int primary key,
+id int primary key,
 quando datetime,
 localizacao ntext,
 descricao ntext

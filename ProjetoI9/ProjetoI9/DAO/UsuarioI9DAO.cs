@@ -24,11 +24,11 @@ namespace ProjetoI9.DAO
                 return contexto.UsuarioI9.ToList();
             }
         }
-        public UsuarioI9 BuscaPorCod(int cod)
+        public UsuarioI9 BuscaPorCod(int id)
         {
             using (var contexto = new ProjetoContext())
             {
-                return contexto.UsuarioI9.Where(p => p.cod == cod).FirstOrDefault();
+                return contexto.UsuarioI9.Where(p => p.id == id).FirstOrDefault();
             }
         }
         public void Atualiza(UsuarioI9 usu)
