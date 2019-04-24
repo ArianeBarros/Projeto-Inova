@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="Content\CadastroCSS.css" />
     <Content Include="Content\ContatoCSS.css" />
+    <Content Include="Content\HomeCadastrado.css" />
     <Content Include="Content\HomeCSS.css" />
     <Content Include="Content\LoginCSS.css" />
     <Content Include="Content\PerfilCSS.css" />
@@ -268,8 +269,9 @@
     <Content Include="Views\Perfil\Index.cshtml" />
     <Content Include="Views\Sobre\Index.cshtml" />
     <Content Include="Views\Contato\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\HomeCadastrado.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

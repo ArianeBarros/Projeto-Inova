@@ -20,6 +20,13 @@
 
         function CarregarDadosBD()
         {
+            for (var usu in ViewBag.UsuarioI9)
+            {
+                if (document.getElementById("email").value == usu.email)
+                    alert("Esse e-mail já foi cadastrado. Tente fazer login caso já tenha um cadastro, ou crie uma nova conta usando outro endereço de e-mail.");
+            }
+
+            //Criar novo cadastro
 
         }
 
@@ -85,32 +92,32 @@
         <br><br><br><br><br><br>
         <div>
             <label class="login" for="username">Username: </label>
-            <input class="loginInput" id="username" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+            <input class="loginInput" id="username" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="email">Email: </label>
-        <input class="loginInput" id="email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
+        <input class="loginInput" id="email" type="email" required name="email">
         </div><br><br><br><br>
 
         <div>
-            <label class="login" for="tel">Telefone((99) 99999-9999): </label>
-            <input class="loginInput" id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
+            <label class="login" for="name">Nome: </label>
+            <input class="loginInput" id="nome" required name="nome">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="aniversario">Data Nascimento: </label>
-            <input class="loginInput" type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+            <input type="date" id="data" name="aniversario" class="datepicker, loginInput" pattern="^\d{2}/\d{2}/\d{4}$" required>
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="password">Senha: </label>
-            <input class="loginInput" id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
+            <input class="loginInput" id="password" type="password" required pattern=".{8,}" onblur="Tool()" name="senha">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="password2">Confirmar senha: </label>
-            <input class="loginInput" id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
+            <input class="loginInput" id="password2" type="password" onblur="Tool()" onfocus="TirarTool()" required>
         </div><br><br><br><br>
 
         <h1 class="login">Preferência de notícias: </h1>
