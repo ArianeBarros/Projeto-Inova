@@ -18,15 +18,5 @@ namespace ProjetoI9.Controllers
             ViewBag.UsuarioI9 = usu;
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Login(UsuarioI9 u)
-        {
-            UsuarioI9DAO dao = new UsuarioI9DAO();
-            UsuarioI9 usu = dao.BuscaPorCod(u.email);
-            if (usu != null && usu.senha == u.senha)
-                return View();
-            return null;
-        }
     }
 }

@@ -1,17 +1,116 @@
 ﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Login</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+
+            //CarregarDadosBD();
+        }
+
+        function CarregarDadosBD()
+        {
+          //  alert("Value email = " + document.getElementById("email").value);
+           // alert("Value senha = " + document.getElementById("password").value);
+
+            var existe = false;
+
+            for (var usu in ViewBag.UsuarioI9)
+            {
+                if (document.getElementById("email").value == usu.email)
+                    if (document.getElementById("password").value == usu.senha)
+                        existe = true;
+            }
+
+            alert("Valor do existe: " + existe);
+
+            if (existe)
+            {
+                alert("aeeee");
+                window.open("~/Principal/Index");
+            }             
+            else
+                alert("Dados inválidos!");
+        }        
+
+        var seMostraPerfil = 2;
+
+        function CarregarPerfil() {
+            if (seMostraPerfil % 2 == 0) {
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
+                    "<a id ='principalNavV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
+                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
+                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
+                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                seMostraPerfil++;
+            }
+            else {
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                seMostraPerfil++;
+            }
+        }
+
+
+    </script>
 </head>
 <body>
-    <div> AQUIIIII
-    </div>
+    <header>
+        <a href="#" class="brand-logo">
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
+        </a>
+
+        <nav id="navHeader">
+            <ul>
+                <a id="home" href="~/Home/Index">HOME</a>
+                <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
+                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                <a id="cadastro" href="~/Cadastro/Index">CADASTRE-SE</a>
+                <a id="contato" href="~/Contato/Index">CONTATO</a>
+                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+            </ul>
+        </nav>
+
+
+        <div id="opcoesFotos">
+
+        </div>
+
+
+    </header>
+
+    <section id="login">
+        <br><br><br><br>
+        <div class="login">
+            <label for="email">Email: </label>
+            <input id="email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
+        </div><br><br><br><br><br><br>
+
+        <div class="login">
+            <label for="password">Senha: </label>
+            <input id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
+        </div><br><br><br><br><br><br>
+
+        <button id="btnEntrar" onclick="CarregarDadosBD()">Entrar</button><br><br>
+        <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
+        <br><br>
+    </section>
+
+    <footer>
+        <h1 class="fot1">inovaAgora@gmail.com </h1>
+        <h1 class="fot1">i9@hotmail.com </h1>
+        <h1 class="fot2">(19)3336-5487 </h1>
+        <h1 class="fot2">(19)5135-9804 </h1>
+    </footer>
+
 </body>
 </html>
+
