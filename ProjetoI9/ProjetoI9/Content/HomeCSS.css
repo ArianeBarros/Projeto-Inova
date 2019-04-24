@@ -149,7 +149,7 @@
 
     #form #h1, #h3, #h5 {
         position: relative;
-        bottom: 8em;
+        top: -8em;
         /* left: 40%; */
     }
 
@@ -159,11 +159,11 @@
 
     #h4 {
         position: relative;
-        bottom: 11em;
+        top: -11em;
     }
 
     #formiga {
-        height: 70%;
+        width: 10%;
         position: relative;
         left: 2%;
     }
@@ -206,7 +206,7 @@
         }
 
     .formiga {
-        height: 100%;
+        width: 10%;
         position: relative;
         left: 15%;
         top: 1em;
@@ -214,7 +214,7 @@
 
     #form #h1 {
         position: relative;
-        bottom: 0em;
+        top: 0em;
         width: 90%;
     }
 
@@ -254,21 +254,21 @@
     }
 
     #formiga {
-        height: 90%;
+        width: 10%;
         position: relative;
         top: 0px;
         left: 10%;
     }
 
     #maos {
-        height: 70%;
+        width: 70%;
         position: relative;
         top: 0px;
         left: 15%;
     }
 
     #globo {
-        height: 70%;
+        width: 70%;
         position: relative;
         top: 2em;
         left: 15%;
@@ -279,7 +279,7 @@
     }
 
     #h2, #h4, #h6 {
-        width: 90%;
+        width: 70%;
     }
 
     #form #h1, #h3 {
@@ -293,7 +293,7 @@
     }
 
     #form {
-        height: 40%;
+        height: 17em;
     }
 }
 
@@ -404,7 +404,7 @@
 .formiga {
     position: relative;
     top: 2em;
-    height: 80%;
+    width: 10%;
 }
 
 #compromisso {
@@ -415,8 +415,8 @@
 }
 
 #maos {
-    height: 75%;
-    width: auto;
+    width: 75%;
+    height: auto;
 }
 
 #info {
@@ -425,19 +425,19 @@
 }
 
 #comp {
-    height: 30%;
-    width: auto;
+    height: auto;
+    width: 30%;
 }
 
 #globalizacao {
     position: relative;
     background: #7986cb;
-    width: 100%;
+    height: 100%;
 }
 
 #globo {
-    height: 75%;
-    width: auto;
+    width: 75%;
+    height: auto;
 }
 
 /*

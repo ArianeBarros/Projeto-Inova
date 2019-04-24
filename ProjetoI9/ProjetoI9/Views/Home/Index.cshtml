@@ -3,12 +3,9 @@
 <head>
     <title>I9</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="Home.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="~/Content/HomeCSS.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
         window.onload = function () {
             Organiza();
@@ -17,20 +14,20 @@
         function Organiza() {
             if (window.innerWidth >= 800) {
                 var fundo = document.getElementById("ondas");
-                fundo.src = '~/Imagens/ondas2.png';
+                //fundo.src = "~/Imagens/ondas2.png";
                 fundo.style.left = "0%";
 
                 var formiga = document.getElementById("formiga");
                 formiga.style.display = "initial";
                 var form = document.getElementById("form");
-                form.style.bottom = "18em";
+                form.style.top = "-18em";
                 var h1 = document.getElementById("h1");
                 h1.style.paddingLeft = "35%";
-                h1.style.top = "-8em";
+                h1.style.top = "-4.5em";
                 h1.style.fontSize = "25px";
                 var h2 = document.getElementById("h2");
                 h2.style.paddingLeft = "35%";
-                h2.style.top = "-9em";
+                h2.style.top = "-4em";
                 h2.style.fontSize = "22px";
 
                 var carinha = document.getElementById("compromisso");
@@ -56,10 +53,10 @@
                 info.style.height = "46%";
 
                 if (window.innerWidth >= 1000) {
-                    h1.style.top = "-8.5em";
+                    h1.style.top = "-6em";
                     h1.style.fontSize = "27.43px";
                     h1.style.paddingLeft = "20%";
-                    h2.style.top = "-8.5em";
+                    h2.style.top = "-5em";
                     h2.style.fontSize = "25px";
                     h2.style.paddingLeft = "20%";
                     h3.style.fontSize = "27.43px";
@@ -76,7 +73,7 @@
             }
             else {
                 var fundo = document.getElementById("ondas");
-                fundo.src = '~/Imagens/ondas.png';
+               // fundo.src = '~/Imagens/ondas.png';
                 var botao = document.getElementById("comece");
                 botao.style.width = "35%";
                 botao.style.top = "7em";
@@ -88,7 +85,6 @@
 
 
                 if (window.innerWidth >= 600) {
-                    formiga.style.display = "none";
                     var fundo = document.getElementById("ondas");
                     fundo.style.left = "-10%";
                     var formiga = document.getElementById("formiga");
@@ -96,7 +92,7 @@
                     var cara = document.getElementById("maos");
                     cara.style.display = "initial";
                     var coisa = document.getElementById("coisa2");
-                    coisa.src = '~/Imagens/coisinhas2.png';
+                //    coisa.src = '~/Imagens/coisinhas2.png';
                     coisa.style.top = "11.5em";
                     coisa.style.width = "95%";
                     coisa.style.left = "3%";
@@ -106,7 +102,7 @@
                     var botao = document.getElementById("comece");
                     botao.style.left = "65%";
                     var form = document.getElementById("form");
-                    form.style.bottom = "4.5em";
+                    form.style.top = "-4.5em";
                     var carinha = document.getElementById("compromisso");
                     carinha.style.top = "0%";
                     var h1 = document.getElementById("h1");
@@ -131,7 +127,7 @@
                     var carinha = document.getElementById("maos");
                     carinha.style.display = "none";
                     var coisa = document.getElementById("coisa2");
-                    coisa.src = 'Imagens/coisinhas.png';
+                  //  coisa.src = 'Imagens/coisinhas.png';
                     coisa.style.top = "7.5em";
                     coisa.style.width = "77%";
                     coisa.style.left = "12%";
@@ -141,12 +137,12 @@
                     var botao = document.getElementById("comece");
                     botao.style.left = "30%";
                     var form = document.getElementById("form");
-                    form.style.bottom = "8.5em";
+                    form.style.top = "-8.5em";
                     form.style.height = "50%";
                     var cara = document.getElementById("compromisso");
                     cara.style.top = "0%";
                     var h1 = document.getElementById("h1");
-                    h1.style.padding = "40px";
+                    h1.style.padding = "100px";
                     var h2 = document.getElementById("h2");
                     h2.style.paddingLeft = "50px";
                     var h3 = document.getElementById("h3");
@@ -234,7 +230,7 @@
     </section>
     <div class="content" id="form">
         <div>
-            <img class="formiga" id="formiga" src="~/Imagens/fo">
+            <img class="formiga" id="formiga" src="~/Imagens/formigaFofa.png">
         </div>
         <div id="h1"> A melhor forma de organizar seu dia a dia</div>
         <div id="h2">
