@@ -38,6 +38,9 @@
     display: block;
 }
 
+
+
+
 .show-menu-btn,
 .hide-menu-btn {
     color: white;
@@ -136,21 +139,21 @@
         z-index: 10;
     }
 
-    #h1, #h3 {
+    #h1, #h3, #h5 {
         padding: 0px 0px 0px 200px;
     }
 
-    #h2, #h4 {
+    #h2, #h4, #h6 {
         padding: 0px 0px 0px 250px;
     }
 
-    #form #h1, #h3 {
+    #form #h1, #h3, #h5 {
         position: relative;
         bottom: 8em;
         /* left: 40%; */
     }
 
-    #h2 {
+    #h2, #h6 {
         position: relative;
     }
 
@@ -215,6 +218,12 @@
         width: 90%;
     }
 
+    #h6 {
+        position: relative;
+        bottom: 0em;
+        width: 100%;
+    }
+
     #h3 {
         position: relative;
         bottom: 10em;
@@ -248,7 +257,7 @@
         height: 90%;
         position: relative;
         top: 0px;
-        left: 15%;
+        left: 10%;
     }
 
     #maos {
@@ -258,11 +267,18 @@
         left: 15%;
     }
 
-    #h1, #h3 {
+    #globo {
+        height: 70%;
+        position: relative;
+        top: 2em;
+        left: 15%;
+    }
+
+    #h1, #h3, #h5 {
         width: 50%;
     }
 
-    #h2, #h4 {
+    #h2, #h4, #h6 {
         width: 90%;
     }
 
@@ -369,7 +385,7 @@
     background: #f4ff81;
 }
 
-#h1, #h3 {
+#h1, #h3, #h5 {
     font-size: 25px;
     font-family: "Century Gothic";
     font-weight: 600;
@@ -377,7 +393,7 @@
 }
 
 
-#h2, #h4 {
+#h2, #h4, #h6 {
     font-size: 18px;
     font-family: "Century Gothic";
     font-weight: 500;
@@ -399,6 +415,27 @@
 }
 
 #maos {
+    height: 75%;
+    width: auto;
+}
+
+#info {
+    height: 30%;
+    width: auto;
+}
+
+#comp {
+    height: 30%;
+    width: auto;
+}
+
+#globalizacao {
+    position: relative;
+    background: #7986cb;
+    width: 100%;
+}
+
+#globo {
     height: 75%;
     width: auto;
 }
