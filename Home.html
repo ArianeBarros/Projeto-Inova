@@ -21,6 +21,7 @@
         var fundo = document.getElementById("ondas");
         fundo.src = 'Imagens/ondas2.png';
         fundo.style.left = "0%";
+
         var formiga = document.getElementById("formiga");
         formiga.style.display = "initial";
         var form = document.getElementById("form");
@@ -33,6 +34,7 @@
         h2.style.paddingLeft = "35%";
         h2.style.top = "-9em";
         h2.style.fontSize = "22px";
+
         var carinha = document.getElementById("compromisso");
         carinha.style.top = "-30%";
         var h3 = document.getElementById("h3");
@@ -43,6 +45,18 @@
         h4.style.paddingLeft = "50%";
         h4.style.fontSize = "22px";
         h4.style.top = "-11em";
+
+        var mundo = document.getElementById("globalizacao");
+        var h5 = document.getElementById("h5");
+        h5.style.paddingLeft = "50%";
+        h5.style.fontSize = "25px";
+        var h6 = document.getElementById("h6");
+        h6.style.paddingLeft = "50%";
+        h6.style.fontSize = "22px";
+        h6.style.top = "-8em";
+        var info = document.getElementById("info");
+        info.style.height = "46%";
+
         if(window.innerWidth>=1000)
         {
           h1.style.top = "-8.5em";
@@ -57,6 +71,10 @@
           h4.style.fontSize = "25px";
           h4.style.paddingLeft = "32%";
           h4.style.paddingTop = "1%";
+          h5.style.fontSize = "27.43px";
+          h6.style.fontSize = "25px";
+          info.style.height = "57%";
+          
         }
       }
       else{
@@ -70,8 +88,10 @@
         h2.style.paddingLeft = "40%";
         var h4 = document.getElementById("h4");
         h2.style.top = "-8em";
+       
 
         if (window.innerWidth >= 600) {
+          formiga.style.display = "none";
           var fundo = document.getElementById("ondas");
           fundo.style.left = "-10%";
           var formiga = document.getElementById("formiga");
@@ -101,6 +121,8 @@
           h3.style.paddingLeft = "50%";
           var h4 = document.getElementById("h4");
           h4.style.paddingLeft = "50%";
+          var info = document.getElementById("info");
+        info.style.height = "30%";
         // var cabecalho = document.getElementById("header");
           //cabecalho.style.width = "80%";
         }
@@ -237,8 +259,22 @@
           <center>
           <div>
             <img class="info" id ="info" src="Imagens/Home/img2.png">
+            <img class="comp" id="comp" src="Imagens/Home/imgComp.png">
+            <img class="atu" id="atu" src="Imagens/Home/imgAtu.png">
+            <img class="rec" id="rec" src="Imagens/Home/imgRec.png">
+            <img class="list" id="list" src="Imagens/Home/imgList.png">
           </div>
         </center>
+        <div class="content" id="globalizacao">
+          <div>
+            <img class="globo" id ="globo" src="Imagens/Home/img3.png">
+            </div>
+            <div id="h5"> Divulgação abrangente e atualizada de notícias </div>
+            <div id="h6"> Você não precisa mais perder a cabeça 
+                tentando controlar seus compromissos e tarefas,
+              te ajudaremos a montar estratégias a fim de atingir 
+              seus objetivos </div>
+            </div>
 
 </body>
 
