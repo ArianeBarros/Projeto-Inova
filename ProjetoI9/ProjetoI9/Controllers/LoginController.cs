@@ -18,5 +18,19 @@ namespace ProjetoI9.Controllers
             ViewBag.UsuarioI9 = usu;
             return View();
         }
+
+        public ActionResult HomeLogado(UsuarioI9 u)
+        {
+            //criar objeto a partir dos dados do formulário
+            
+            //gravar os dados no BD
+            UsuarioI9DAO dao = new UsuarioI9DAO();
+            UsuarioI9 usu =  dao.BuscaPorEmail(u.email);
+            if (usu != null && usu.senha == u.senha)
+                return View();
+
+            //redirecionar para a camada de visualização
+            return null;
+        }
     }
 }
