@@ -18,10 +18,7 @@
             CarregarDadosBD();
         }
 
-        function CarregarDadosBD()
-        {
-
-        }
+        
 
         function SenhasIguais() {
             var ok = false;
@@ -81,36 +78,33 @@
 
     </header>
 
-    <section id="loginSection">
+    <form id="loginSection" method="post" action="HomeCadastrado">
         <br><br><br><br><br><br>
         <div>
-            <label class="login" for="username">Username: </label>
-            <input class="loginInput" id="username" type="text" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+           
+
+        <label class="login" for="username">Nome: </label>
+        <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="email">Email: </label>
-        <input class="loginInput" id="email" type="email" pattern="[a-z0-9._%+-]+[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
-        </div><br><br><br><br>
-
-        <div>
-            <label class="login" for="tel">Telefone((99) 99999-9999): </label>
-            <input class="loginInput" id="tel" type="tel" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
+            <input class="loginInput" id="email" type="email" required name="u.email">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="aniversario">Data Nascimento: </label>
-            <input class="loginInput" type="date" id="data" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+            <input class="loginInput" type="date" id="data" name="u.dataNascimento" pattern="^\d{2}/\d{2}/\d{4}$" required>
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="password">Senha: </label>
-            <input class="loginInput" id="password" type="password" class="validate" required pattern=".{8,}" onblur="Tool()" name="senha">
+            <input class="loginInput" id="password" type="password" required pattern=".{2,}" onblur="Tool()" name="u.senha">
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="password2">Confirmar senha: </label>
-            <input class="loginInput" id="password2" type="password" onblur="Tool()" class="validate" onfocus="TirarTool()" required>
+            <input class="loginInput" id="password2" type="password" onblur="Tool()" onfocus="TirarTool()" required>
         </div><br><br><br><br>
 
         <h1 class="login">Preferência de notícias: </h1>
@@ -124,7 +118,7 @@
 
         <button id="btnCadastrar" onclick="carregar()">Cadastrar</button>
         <u><a href="~/Login/Index" class="cTemCadastro"> Já tem cadastro?! </a></u>
-    </section>
+    </form>
 
     <footer>
         <h1 class="fot1">inovaAgora@gmail.com </h1>
