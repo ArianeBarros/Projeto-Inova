@@ -99,8 +99,19 @@
     z-index: 10;
 }
 
+#h1{
+    width:10%;
+}
+
 @media screen and (min-width: 600px) {
 
+    #form #h1 {
+        width: 10%;
+    }
+
+    #form {
+        height: 12em;
+    }
     .show-menu-btn, .hide-menu-btn {
         display: none;
     }
@@ -139,18 +150,8 @@
         z-index: 10;
     }
 
-    #h1, #h3, #h5 {
-        padding: 0px 0px 0px 200px;
-    }
-
     #h2, #h4, #h6 {
         padding: 0px 0px 0px 250px;
-    }
-
-    #form #h1, #h3, #h5 {
-        position: relative;
-        top: -8em;
-        /* left: 40%; */
     }
 
     #h2, #h6 {
@@ -164,8 +165,6 @@
 
     #formiga {
         width: 10%;
-        position: relative;
-        left: 2%;
     }
 }
 
@@ -213,8 +212,6 @@
     }
 
     #form #h1 {
-        position: relative;
-        top: 0em;
         width: 90%;
     }
 
@@ -233,6 +230,7 @@
         position: relative;
         bottom: 13.5em;
     }
+
 }
 
 
@@ -283,17 +281,10 @@
     }
 
     #form #h1, #h3 {
-        position: relative;
-        left: 10%;
-    }
-
-    #form #h2, #h4 {
-        position: relative;
-        top: 10%;
     }
 
     #form {
-        height: 17em;
+        height: 14em;
     }
 }
 
@@ -401,7 +392,7 @@
 }
 
 
-.formiga {
+#formiga {
     position: relative;
     top: 2em;
     width: 10%;
