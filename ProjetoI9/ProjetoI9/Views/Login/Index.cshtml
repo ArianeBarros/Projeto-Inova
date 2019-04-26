@@ -10,40 +10,14 @@
 
         window.onload = function () {
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
-
-            //CarregarDadosBD();
+            
         }
-
-        //function CarregarDadosBD()
-        //{
-        //  //  alert("Value email = " + document.getElementById("email").value);
-        //   // alert("Value senha = " + document.getElementById("password").value);
-
-        //    var existe = false;
-
-        //    for (var usu in ViewBag.UsuarioI9)
-        //    {
-        //        if (document.getElementById("email").value == usu.email)
-        //            if (document.getElementById("password").value == usu.senha)
-        //                existe = true;
-        //    }
-
-        //    alert("Valor do existe: " + existe);
-
-        //    if (existe)
-        //    {
-        //        alert("aeeee");
-        //        window.open("~/Principal/Index");
-        //    }             
-        //    else
-        //        alert("Dados inválidos!");
-        //}        
 
         var seMostraPerfil = 2;
 
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
                     "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
                     "<a id ='principalNavV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
                     "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
