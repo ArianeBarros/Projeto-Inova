@@ -1,10 +1,9 @@
 ﻿<html>
-
 <head>
     <title>I9</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/HomeCSS.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- <link rel="stylesheet" href="<!-https://use.fontawesome.com/releases/v5.6.1/css/all.css">-->
 
     <script>
         window.onload = function () {
@@ -14,7 +13,7 @@
         function Organiza() {
             if (window.innerWidth >= 800) {
                 var fundo = document.getElementById("ondas");
-                //fundo.src = "~/Imagens/ondas2.png";
+                fundo.src = "/Imagens/ondas2.png";
                 fundo.style.left = "0%";
 
                 var formiga = document.getElementById("formiga");
@@ -93,7 +92,7 @@
             }
             else {
                 var fundo = document.getElementById("ondas");
-               // fundo.src = '~/Imagens/ondas.png';
+                // fundo.src = '~/Imagens/ondas.png';
                 var botao = document.getElementById("comece");
                 botao.style.width = "35%";
                 botao.style.top = "7em";
@@ -114,7 +113,7 @@
                     var cara = document.getElementById("maos");
                     cara.style.display = "initial";
                     var coisa = document.getElementById("coisa2");
-                //    coisa.src = '~/Imagens/coisinhas2.png';
+                    //    coisa.src = '~/Imagens/coisinhas2.png';
                     coisa.style.top = "11.5em";
                     coisa.style.width = "95%";
                     coisa.style.left = "3%";
@@ -129,7 +128,7 @@
                     var carinha = document.getElementById("compromisso");
                     carinha.style.top = "0%";
                     var h1 = document.getElementById("h1");
-                   // h1.style.padding = "0px";
+                    // h1.style.padding = "0px";
                     h1.style.paddingLeft = "40%";
                     h1.style.top = "-8em";
                     h1.style.width = "60%";
@@ -152,7 +151,7 @@
                     var carinha = document.getElementById("maos");
                     carinha.style.display = "none";
                     var coisa = document.getElementById("coisa2");
-                  //  coisa.src = 'Imagens/coisinhas.png';
+                    //  coisa.src = 'Imagens/coisinhas.png';
                     coisa.style.top = "7.5em";
                     coisa.style.width = "77%";
                     coisa.style.left = "12%";
