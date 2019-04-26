@@ -20,21 +20,21 @@ namespace ProjetoI9.Controllers
         }
 
         public ActionResult HomeCadastrado(UsuarioI9 u)
-        {     
-            //gravar os dados no BD
-            UsuarioI9DAO dao = new UsuarioI9DAO();
-            IList<UsuarioI9> usu = dao.Lista();
+        {
+            ////gravar os dados no BD
+            //UsuarioI9DAO dao = new UsuarioI9DAO();
+            //IList<UsuarioI9> usu = dao.Lista();
 
-            //criar objeto a partir dos dados do formulário
-            u.id = usu.Count() + 1;
-            u.pontuacao = 0;
-            u.imagem = "~/Imagens/imgPerfil.jpg";
-            
-            foreach (UsuarioI9 a in usu)
-            {
-                if (a.email == u.email)
-                    Erro();
-            }
+            ////criar objeto a partir dos dados do formulário
+            //u.id = usu.Count() + 1;
+            //u.pontuacao = 0;
+            //u.imagem = "~/Imagens/imgPerfil.jpg";
+
+            //foreach (UsuarioI9 a in usu)
+            //{
+            //    if (a.email == u.email)
+            //        Erro();
+            //}
 
             //UsuarioI9 novoU = new UsuarioI9()
             //{
@@ -45,15 +45,25 @@ namespace ProjetoI9.Controllers
             //    imagem = "~/Imagens/imgPerfil.jpg",
             //    email = u.email,
             //    pontuacao = 0
-            //};
+            //};            
 
-            dao.Adiciona(u);
-            return View();            
-        }        
+            if (u != null && ModelState.IsValid)
+            {
+                UsuarioI9DAO dao = new UsuarioI9DAO();
+                IList<UsuarioI9> usu = dao.Lista();
 
-        public ActionResult Erro()
-        {
-            return View();
+                u.id = usu.Count() + 1;
+                u.pontuacao = 0;
+                u.imagem = "~/Imagens/imgPerfil.jpg";
+
+                dao.Adiciona(u);
+
+                return RedirectToAction("~/Login/HomeLogado");
+            }
+            else
+            {
+                return View("~/Cadastro/Index");
+            }                    
         }
     }
 }

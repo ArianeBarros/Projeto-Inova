@@ -80,16 +80,18 @@
 
     <form id="loginSection" method="post" action="HomeCadastrado">
         <br><br><br><br><br><br>
-        <div>
-           
+                            <div>
 
-        <label class="login" for="username">Nome: </label>
-        <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
+
+            <label class="login" for="username">Nome: </label>
+            <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
+            @Html.ValidationMessage("u.nome")
         </div><br><br><br><br>
 
         <div>
             <label class="login" for="email">Email: </label>
             <input class="loginInput" id="email" type="email" required name="u.email">
+            @Html.ValidationMessage("u.email")
         </div><br><br><br><br>
 
         <div>
@@ -100,6 +102,7 @@
         <div>
             <label class="login" for="password">Senha: </label>
             <input class="loginInput" id="password" type="password" required pattern=".{2,}" onblur="Tool()" name="u.senha">
+            @Html.ValidationMessage("u.senha")
         </div><br><br><br><br>
 
         <div>
