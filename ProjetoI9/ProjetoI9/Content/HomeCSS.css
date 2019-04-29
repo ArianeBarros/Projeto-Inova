@@ -90,7 +90,7 @@
     width: 80%;
     height: 100vh;
     background: #333;
-    right: 1000;
+    right: 1000px;
     top: 0;
     text-align: center;
     padding: 80px 0;
@@ -120,8 +120,8 @@
         background: none;
         line-height: 100px;
         position: absolute;
-        top: -70;
-        left: 10%;
+        top: -70px;
+        left: 16%;
         transition: unset;
     }
 
@@ -180,6 +180,7 @@
     .ondas {
         width: 100%;
         max-height: 15em;
+        top:-50px;
     }
 
     .frase {
@@ -195,7 +196,8 @@
     }
 
     .menu {
-        left: 4%;
+        left: 20%;
+        top:-1em;
     }
 
         .menu a {
@@ -239,7 +241,7 @@
 
 @media screen and (min-width: 1000px) {
     .menu {
-        left: 15%;
+        left: 25%;
     }
 
         .menu a {
@@ -254,7 +256,6 @@
     #formiga {
         width: 10%;
         position: relative;
-        top: 0px;
         left: 10%;
     }
 
@@ -374,10 +375,11 @@
     position: relative;
     bottom: 18em;
     background: #f4ff81;
+    height:10em;
 }
 
 #h1, #h3, #h5 {
-    font-size: 25px;
+    font-size: 18px;
     font-family: "Century Gothic";
     font-weight: 600;
     width: 90%;
@@ -385,7 +387,7 @@
 
 
 #h2, #h4, #h6 {
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Century Gothic";
     font-weight: 500;
     line-height: 1.4em;
@@ -513,16 +515,7 @@
       z-index: -1;
   }
   */
-#menuzinho {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    height: 500%;
-    background: white;
-    z-index: 100;
-    border-radius: 5px;
-    opacity: 1;
-}
+
 
 .hrUm {
     width: 12em;
