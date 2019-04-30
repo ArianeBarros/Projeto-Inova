@@ -14,8 +14,8 @@
 
         window.onload = function()
         {
-            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='./Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
+            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
             document.getElementById("secEscolherFoto").style.display = "none";
 
             CarregarDadosBD();
@@ -33,7 +33,7 @@
             else
             {
                 document.getElementById("secEscolherFoto").style.display = "none";
-                document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
             }
         }
 
@@ -42,7 +42,7 @@
         {
             if(seMostraPerfil % 2 == 0)
             {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
                                                                 "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
                                                                 "<a id='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
                                                                 "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
@@ -53,12 +53,12 @@
             }
             else
             {
-                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
         }
 
-        function CarregarArquivoEscolhido()
+        function CarregarArquivoEscolhido()  //é esse aqui
         {
             var input = document.getElementById("arquivoEscolhido");
 
@@ -68,8 +68,8 @@
             if(input.files.length > 0) nome = input.files[0].name;
             input.innerHTML = ""; });
 
-            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='~/Imagens/" + foto + "' onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='~/Imagens/" + foto + "' onclick='TrocarFoto()'>";
+            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/" + foto + "' onclick='CarregarPerfil()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/" + foto + "' onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
@@ -78,6 +78,7 @@
 
         function CarregarFotoEscolhida(a)
         {
+            alert(a + "");
             document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src='" + a + "' onclick='CarregarPerfil()'>";
             document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='" + a + "' onclick='TrocarFoto()'>";
 
@@ -147,22 +148,18 @@
 
         <div>
             <label class="login" for="username2">Username: </label>
-            <input class="loginInput" id="username2" type="text" value="Aninha" class="validate" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
+            <input class="loginInput" id="username2" type="text" value="Aninha" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="user">
         </div><br><br>
 
         <div>
             <label class="login" for="email">Email: </label>
-            <input class="loginInput" id="email" type="email" value="anaclajuhs@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate" required name="email">
+            <input class="loginInput" id="email" type="email" value="anaclajuhs@gmail.com" required name="email">
         </div><br><br>
 
-        <div>
-            <label class="login" for="tel">Telefone((99) 99999-9999): </label>
-            <input class="loginInput" id="tel" type="tel" value="(19)9999-9999" pattern="[\(]\d{2}[\)]\d{5}[\-]\d{4}" class="validate" required name="tel">
-        </div><br><br>
 
         <div>
             <label class="login" for="aniversario">Data Nascimento: </label>
-            <input class="loginInput" type="date" id="data" value="1008/03/22" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" class="validate" required>
+            <input class="loginInput" type="date" id="data" value="1008/03/22" name="aniversario" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required>
         </div><br><br>
 
         <button class="cBtn" id="btnSalvar" onclick="SalvarDados()">Salvar dados</button>
