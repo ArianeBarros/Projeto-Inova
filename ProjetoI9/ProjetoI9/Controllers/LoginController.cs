@@ -25,12 +25,27 @@ namespace ProjetoI9.Controllers
             
             //gravar os dados no BD
             UsuarioI9DAO dao = new UsuarioI9DAO();
+            IList<UsuarioI9> usuLista = dao.Lista();
+
+            bool existe = false;
+            foreach(UsuarioI9 umUsuario in usuLista)
+            {
+                if (umUsuario.email == u.email)
+                    existe = true;
+            }
+
+            if (!existe)
+            {
+
+                return RedirectToAction("Index", "Login");
+            }               
+
             UsuarioI9 usu =  dao.BuscaPorEmail(u.email);
+
             if (usu != null && usu.senha == u.senha)
                 return View();
-
-            //redirecionar para a camada de visualização
-            return null;
+            else //redirecionar para a camada de visualização
+                return RedirectToAction("Index", "Login");
         }
     }
 }

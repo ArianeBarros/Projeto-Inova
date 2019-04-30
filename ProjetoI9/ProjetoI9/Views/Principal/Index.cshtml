@@ -26,7 +26,7 @@
                     cont++;
                 }
 
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
 
 
                 CarregarDadosBD();
@@ -42,7 +42,7 @@
             {
                 if(seMostraPerfil % 2 == 0)
                 {
-                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
                                                                     "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
                                                                     "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
                                                                     "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
@@ -53,7 +53,7 @@
                 }
                 else
                 {
-                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"~/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
                     seMostraPerfil++;
                 }
             }
