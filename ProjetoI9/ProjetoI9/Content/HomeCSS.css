@@ -5,7 +5,10 @@
     font-size: 106%;
     transition: all .3s ease;
 }
-
+html
+{
+    overflow-x: hidden;
+}
 
 .header {
     height: 35em;
@@ -165,6 +168,10 @@
 
     #formiga {
         width: 10%;
+    }
+    #h1
+    {
+        top :10em;
     }
 }
 
