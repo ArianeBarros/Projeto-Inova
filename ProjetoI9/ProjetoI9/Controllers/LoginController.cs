@@ -41,6 +41,7 @@ namespace ProjetoI9.Controllers
             }               
 
             UsuarioI9 usu =  dao.BuscaPorEmail(u.email);
+            ViewBag.Imagem = usu.imagem;
 
             if (usu != null && usu.senha == u.senha)
                 return View();

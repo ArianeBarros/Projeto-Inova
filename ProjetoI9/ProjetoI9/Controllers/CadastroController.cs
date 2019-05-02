@@ -47,7 +47,7 @@ namespace ProjetoI9.Controllers
 
                 dao.Adiciona(u);
 
-                return RedirectToAction("HomeLogado", "Cadastro");
+                return View();
             }
             else
             {

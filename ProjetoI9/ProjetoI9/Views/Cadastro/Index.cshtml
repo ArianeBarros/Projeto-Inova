@@ -8,7 +8,7 @@
     <title>Cadastro</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/CadastroCSS.css" rel="stylesheet" type="text/css">
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <script type="text/javascript">
 
         window.onload = function()
@@ -37,6 +37,7 @@
             else
                 alert("As senhas dadas não são iguais!");
 
+                 $('#loginSection').off(); //aqui
                 return ok;
         }
 
@@ -118,7 +119,7 @@
 
         <div>
             <label class="login" for="password2">Confirmar senha: </label>
-            <input class="loginInput" id="password2" type="password" onblur="Tool()" onfocus="TirarTool()" required>
+            <input class="loginInput" id="password2" type="password" required>  @*onblur="Tool()" onfocus="TirarTool()"*@
         </div><br><br><br><br>
 
         <h1 class="login">Preferência de notícias: </h1>
