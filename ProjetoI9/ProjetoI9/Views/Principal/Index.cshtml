@@ -43,7 +43,10 @@
                 while(img.indexOf("%2F") != -1)
                     img = img.replace("%2F", "/");
 
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"" + img + "\" onclick=\"CarregarPerfil()\">";
+                alert(nome)
+                alert(img);
+
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + img + "' onclick=\"CarregarPerfil()\">";
             }
 
             var seMostraPerfil = 2;
