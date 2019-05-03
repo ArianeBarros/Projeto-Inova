@@ -34,7 +34,16 @@
 
             function CarregarDadosBD()
             {
+                var string = window.location.href.substring(38);
+                var string = string.split("&");
+                var nome = string[0];
+                var img = string[1].substring(7);
+                while (nome.indexOf("%20") != -1)
+                    nome = nome.replace("%20", " ");
+                while(img.indexOf("%2F") != -1)
+                    img = img.replace("%2F", "/");
 
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"" + img + "\" onclick=\"CarregarPerfil()\">";
             }
 
             var seMostraPerfil = 2;

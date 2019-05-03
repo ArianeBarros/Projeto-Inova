@@ -32,8 +32,8 @@ namespace ProjetoI9.Controllers
                     if (umUsuario.email == u.email)
                     {
                         ViewBag.Nome = u.nome;
-                        ViewBag.Nome = u.dataNascimento;
-                        ViewBag.Nome = u.senha;
+                        ViewBag.Data = u.dataNascimento;
+                        ViewBag.Senha = u.senha;
                         existe = true;
                     }
                                                
@@ -46,8 +46,7 @@ namespace ProjetoI9.Controllers
                 u.imagem = "/Imagens/imgPerfil.jpg";
 
                 dao.Adiciona(u);
-
-                return View();
+                return RedirectToAction("Index", "Principal", new { u.nome, u.imagem });
             }
             else
             {

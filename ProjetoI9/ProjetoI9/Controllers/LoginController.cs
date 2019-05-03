@@ -36,7 +36,6 @@ namespace ProjetoI9.Controllers
 
             if (!existe)
             {
-
                 return RedirectToAction("Index", "Login");
             }               
 
@@ -44,7 +43,10 @@ namespace ProjetoI9.Controllers
             ViewBag.Imagem = usu.imagem;
 
             if (usu != null && usu.senha == u.senha)
-                return View();
+            {
+
+                return RedirectToAction("Index", "Principal", new { usu.nome, usu.imagem });
+            }                
             else //redirecionar para a camada de visualização
                 return RedirectToAction("Index", "Login");
         }

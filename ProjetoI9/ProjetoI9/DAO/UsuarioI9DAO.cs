@@ -31,6 +31,13 @@ namespace ProjetoI9.DAO
                 return contexto.UsuarioI9.Where(p => p.email == email).FirstOrDefault();
             }
         }
+        public UsuarioI9 BuscaPorId(int id)
+        {
+            using (var contexto = new ProjetoContext())
+            {
+                return contexto.UsuarioI9.Where(p => p.id == id).FirstOrDefault();
+            }
+        }
         public void Atualiza(UsuarioI9 usu)
         {
             using (var contexto = new ProjetoContext())
