@@ -247,6 +247,7 @@
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ParetoController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
@@ -274,6 +275,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\HomeLogado.cshtml" />
     <Content Include="Views\Cadastro\HomeCadastrado.cshtml" />
+    <Content Include="Views\Pareto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
