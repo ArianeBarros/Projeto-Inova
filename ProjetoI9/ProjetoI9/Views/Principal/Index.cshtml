@@ -63,7 +63,7 @@
             function Sair(end)
             {
                 alert("nao me deixe");
-                SairPagina(qualImg, qualId, end);
+                //SairPagina(qualImg, qualId, end);
             }
 
             var seMostraPerfil = 2;
@@ -126,12 +126,25 @@
 
         <nav id="navHeader">
             <ul>
+                @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
+    {
+            <a id="contato" href="~/Contato/Index">CONTATO</a>
+
+}
+
+                @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
+    {
+            <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
+
+}
                 <a id="home" href="~/Home/Index" onclick="Sair(this.href)">HOME</a>
                 <a id="sobre" href="~/Sobre/Index" onclick="Sair(this.href)">SOBRE</a>
-                <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
+
                 <a id="cadastro" href="~/Cadastro/Index" onclick="Sair(this.href)">CADASTRE-SE</a>
                 <a id="contato" href="~/Contato/Index" onclick="Sair(this.href)">CONTATO</a>
                 <a id="perfil" href="~/Perfil/Index" onclick="Sair(this.href)">PERFIL</a>
+
+
             </ul>
         </nav>
 
