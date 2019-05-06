@@ -116,9 +116,9 @@ footer {
     background-color: #0B2161;
     text-align: center;
     height: 30%;
-    width: 100%;
+    width: 10%;
     position: relative;
-    top: 1000px;
+    top: -40%;
 }
 
 #sectionPrincipal {
@@ -135,11 +135,18 @@ footer {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.cImagem {
+#imagem {
     position: absolute;
-    left: 350px;
-    width: 50%;
+    left: 380px;
+    width: 20%;
     top: 500px;
+}
+
+#po
+{
+    position: absolute;
+    top: 600px;
+    
 }
 
 .fot1 {

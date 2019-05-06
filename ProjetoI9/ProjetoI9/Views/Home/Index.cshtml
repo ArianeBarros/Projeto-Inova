@@ -10,6 +10,31 @@
             Organiza();
         }
 
+        var qualId = null;
+        var qualImg = null;
+
+        function CarregarDadosBD() {
+            var string = window.location.href.substring(39);
+            string = string.split("?");
+            qualId = string[0];
+            string = string[1];
+            string = string.split("&");
+            var nome = string[0].substring(5);
+            qualImg = string[1].substring(7);
+
+            while (nome.indexOf("%20") != -1)
+                nome = nome.replace("%20", " ");
+            while (qualImg.indexOf("%2F") != -1)
+                qualImg = qualImg.replace("%2F", "/");
+
+
+            //alert(nome);
+            //alert(qualImg);
+            //alert(qualId);
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+        }
+
         function Organiza() {
             var h1 = document.getElementById("h1");
             //h1.style.top = "350em";

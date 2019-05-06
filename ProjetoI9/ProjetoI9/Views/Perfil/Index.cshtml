@@ -10,12 +10,14 @@
     <link href="~/Content/PerfilCSS.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
-         var carregarPerfil = true;
+        var carregarPerfil = true;
+
+        var qualImg = null;
+        var qualId = null;
 
         window.onload = function()
         {
-            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
+          
             document.getElementById("secEscolherFoto").style.display = "none";
 
             CarregarDadosBD();
@@ -23,7 +25,26 @@
 
         function CarregarDadosBD()
         {
+            var string = window.location.href.substring(39);
+            string = string.split("?");
+            qualId = string[0];
+            string = string[1];
+            string = string.split("&");
+            var nome = string[0].substring(5);
+            qualImg = string[1].substring(7);
 
+            while (nome.indexOf("%20") != -1)
+                nome = nome.replace("%20", " ");
+            while (qualImg.indexOf("%2F") != -1)
+                qualImg = qualImg.replace("%2F", "/");
+
+            alert(qualId);
+            alert(nome);
+            alert(qualImg);
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + img + "' onclick=\"CarregarPerfil()\">";
+            
+            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='" + img + "' onclick='TrocarFoto()'>";
         }
 
         function TrocarFoto()
@@ -73,7 +94,7 @@
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
-
+            SalvarDados();
         }
 
         function CarregarFotoEscolhida(a)

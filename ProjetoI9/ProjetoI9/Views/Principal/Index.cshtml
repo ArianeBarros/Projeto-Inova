@@ -11,7 +11,9 @@
 
     <script type="text/javascript">
 
-            window.onload = function(){
+        
+
+        window.onload = function () {
                 var cont = 0;
                 var noti = "";
                 var re = "";
@@ -30,23 +32,38 @@
 
 
                 CarregarDadosBD();
-            }
+        }
+
+        var qualId = null;
+        var qualImg = null;
 
             function CarregarDadosBD()
             {
-                var string = window.location.href.substring(38);
-                var string = string.split("&");
-                var nome = string[0];
-                var img = string[1].substring(7);
+                var string = window.location.href.substring(39);
+                string = string.split("?");
+                qualId = string[0];
+                string = string[1];
+                string = string.split("&");
+                var nome = string[0].substring(5);
+                qualImg = string[1].substring(7);
+
                 while (nome.indexOf("%20") != -1)
                     nome = nome.replace("%20", " ");
-                while(img.indexOf("%2F") != -1)
-                    img = img.replace("%2F", "/");
+                while(qualImg.indexOf("%2F") != -1)
+                    qualImg = qualImg.replace("%2F", "/");
+                
 
-                alert(nome)
-                alert(img);
+                //alert(nome);
+                //alert(qualImg);
+                //alert(qualId);
 
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + img + "' onclick=\"CarregarPerfil()\">";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+            }
+            
+            function Sair(end)
+            {
+                alert("nao me deixe");
+                //SairPagina(qualImg, qualId, end);
             }
 
             var seMostraPerfil = 2;
@@ -55,12 +72,12 @@
                 if(seMostraPerfil % 2 == 0)
                 {
                     document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                                                                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
-                                                                    "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
-                                                                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
-                                                                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
-                                                                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                                                                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
+                                                                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
+                                                                    "<a id ='loginNavV' href='~/Login/Index'  onclick='Sair(this.href)'>LOGIN</a><br><br>" +
+                                                                    "<a id ='cadastroV' href='~/Cadastro/Index'  onclick='Sair(this.href)'>CADASTRE-SE</a><br><br>" +
+                                                                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
+                                                                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
                     seMostraPerfil++;
                 }
                 else
@@ -100,7 +117,7 @@
 
     </script>
 </head>
-<body>
+<body >
     <header>
         <a href="#" class="brand-logo">
             <img class="ondas" src="~/Imagens/ondas.png">
@@ -109,12 +126,25 @@
 
         <nav id="navHeader">
             <ul>
-                <a id="home" href="~/Home/Index">HOME</a>
-                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
-                <a id="login" href="~/Login/Index">LOGIN</a>
-                <a id="cadastro" href="~/Cadastro/Index">CADASTRE-SE</a>
-                <a id="contato" href="~/Contato/Index">CONTATO</a>
-                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+                @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
+    {
+            <a id="contato" href="~/Contato/Index">CONTATO</a>
+
+}
+
+                @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
+    {
+            <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
+
+}
+                <a id="home" href="~/Home/Index" onclick="Sair(this.href)">HOME</a>
+                <a id="sobre" href="~/Sobre/Index" onclick="Sair(this.href)">SOBRE</a>
+
+                <a id="cadastro" href="~/Cadastro/Index" onclick="Sair(this.href)">CADASTRE-SE</a>
+                <a id="contato" href="~/Contato/Index" onclick="Sair(this.href)">CONTATO</a>
+                <a id="perfil" href="~/Perfil/Index" onclick="Sair(this.href)">PERFIL</a>
+
+
             </ul>
         </nav>
 
