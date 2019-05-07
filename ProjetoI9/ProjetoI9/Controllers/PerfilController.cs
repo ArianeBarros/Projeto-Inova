@@ -15,14 +15,13 @@ namespace ProjetoI9.Controllers
         {
             return View();
         }
-
-        public ActionResult SalvarDados(string img, string id, string cont)
+        public ActionResult SalvarDados(string img, string id)
         {
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(id));
             usu.imagem = img;
 
-            return RedirectToAction("Index", cont, new { usu.nome, usu.imagem, usu.id });
+            return RedirectToAction("Index", "Principal", new { usu.nome, usu.imagem, usu.id });
         }
     }
 }
