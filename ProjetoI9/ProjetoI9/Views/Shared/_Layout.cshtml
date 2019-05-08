@@ -1,17 +1,69 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null; 
+}
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link rel="stylesheet" href="~/Content/CSS/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/CSS/Header.css" />
+    @*<script type="">
+
+        var qualImg = null;
+        var qualId = null;
+
+        window.onload = function ()
+        {
+            console.log("blz ent");
+            document.getElementById("opcoesFotos").innerHTML += "ENTROUUU";
+            
+
+            document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
+           
+
+            CarregarDadosBD();
+        }
+
+        function CarregarDadosBD() {
+            var string = window.location.href.substring(36);
+            string = string.split("?");
+            qualId = string[0];
+            string = string[1];
+            string = string.split("&");
+            var nome = string[0].substring(5);
+            qualImg = string[1].substring(7);
+
+            while (nome.indexOf("%20") != -1)
+                nome = nome.replace("%20", " ");
+            while (qualImg.indexOf("%2F") != -1)
+                qualImg = qualImg.replace("%2F", "/");
+
+             alert(qualId);
+              alert(nome);
+             alert(qualImg);
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + img + "' onclick=\"CarregarPerfil()\">";            
+        }
+
+       
+
+        </script>*@
 </head>
 <body>
+    <header>
+
+        <a href="#" class="brand-logo">
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
+        </a>
+
         @RenderBody()
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+       
+            @*<input id="btnPerfil" type="image" onclick="CarregarPerfil()">*@
+       
+
+    </header>
 </body>
 </html>
