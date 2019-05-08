@@ -412,7 +412,8 @@ html
     position: relative;
     background: #ffab91;
     width: 100%;
-    bottom: 0%;
+    bottom: 5em;
+    height: 15em;
 }
 
 #maos {
@@ -421,14 +422,39 @@ html
 }
 
 #info {
-    height: 30%;
+    height: 20%;
     width: auto;
 }
 
-#comp {
-    height: auto;
-    width: 30%;
+#atu{
+    width :auto;
+    height:5.5em;
 }
+#comp {
+    width: auto;
+    height: 12.5em;
+    position:relative;
+    top:1em;
+}
+
+#rec {
+    width: auto;
+    height: 4.5em;
+}
+#list {
+    width: auto;
+    height: 4.5em;
+    position: relative;
+    top: 1em;
+}
+#plan {
+    width: auto;
+    height: 5.5em;
+    position: relative;
+    top: 1em;
+}
+
+
 
 #globalizacao {
     position: relative;

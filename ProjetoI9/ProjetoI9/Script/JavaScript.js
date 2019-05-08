@@ -29,9 +29,13 @@ function CarregarDadosBD() {
 
 function Organiza() {
     var h1 = document.getElementById("h1");
+    var info = document.getElementById("info");
+    var conj = document.getElementById("conj");
     h1.style.position = "relative";
     //h1.style.top = "350em";
     if (window.innerWidth >= 800) {
+        info.style.display = "initial";
+        conj.style.display = "none";
         var fundo = document.getElementById("ondas");
         fundo.src = "/Imagens/ondas2.png";
         fundo.style.left = "0%";
@@ -75,8 +79,7 @@ function Organiza() {
         h6.style.paddingLeft = "50%";
         h6.style.fontSize = "22px";
         h6.style.top = "-8em";
-        var info = document.getElementById("info");
-        info.style.height = "46%";
+        
 
         if (window.innerWidth >= 1000) {
             formiga.style.width = "12%";
@@ -98,7 +101,6 @@ function Organiza() {
             h4.style.paddingTop = "1%";
             h5.style.fontSize = "27.43px";
             h6.style.fontSize = "25px";
-            info.style.height = "57%";
 
             if (window.innerWidth >= 1300) {
                 h1.style.paddingTop = "0em";
@@ -118,7 +120,6 @@ function Organiza() {
                 h4.style.paddingLeft = "32%";
                 h4.style.paddingTop = "1%";
                 h6.style.fontSize = "25px";
-                info.style.height = "57%";
 
             }
         }
@@ -131,8 +132,10 @@ function Organiza() {
         botao.style.top = "6em";
         var h1 = document.getElementById("h1");
         h1.style.fontSize = "24px";
+        //h3.style.fontSize = "24px";
         var h2 = document.getElementById("h2");
         h2.style.fontSize = "20px";
+        //h4.style.fontSize = "20px";
         h2.style.paddingLeft = "40%";
         var h4 = document.getElementById("h4");
         h2.style.top = "-8em";
@@ -141,13 +144,18 @@ function Organiza() {
 
 
         if (window.innerWidth >= 600) {
-
+            info.style.display = "initial";
+            conj.style.display = "none";
             var fundo = document.getElementById("ondas");
             fundo.style.left = "-10%";
             var formiga = document.getElementById("formiga");
             formiga.style.display = "initial";
             formiga.style.width = "20%";
             formiga.style.left = "10%";
+            var maos = document.getElementById("maos");
+            maos.style.display = "initial";
+            maos.style.width = "60%";
+            maos.style.left = "10%";
            // var cara = document.getElementById("maos");
            // cara.style.display = "initial";
             var coisa = document.getElementById("coisa2");
@@ -163,6 +171,8 @@ function Organiza() {
             var form = document.getElementById("form");
             form.style.top = "-9.8em";
             form.style.height = "15em";
+            var comp = document.getElementById("compromisso");
+            comp.style.height = "15em";
             //var carinha = document.getElementById("compromisso");
             //carinha.style.top = "0%";
             var h1 = document.getElementById("h1");
@@ -176,17 +186,14 @@ function Organiza() {
             h3.style.paddingLeft = "50%";
             var h4 = document.getElementById("h4");
             h4.style.paddingLeft = "50%";
-            var info = document.getElementById("info");
-            info.style.height = "30%";
             // var cabecalho = document.getElementById("header");
             //cabecalho.style.width = "80%";
         }
         else {
+            var comp = document.getElementById("compromisso");
+            comp.style.height = "11em";
             h1.style.position = "relative";
             h2.style.position = "relative";
-            var comp = document.getElementById("compromisso");
-            comp.style.position = "relative";
-            comp.style.top = "-50%";
             var fundo = document.getElementById("ondas");
             fundo.style.left = "-30%";
             var formiga = document.getElementById("formiga");
@@ -221,9 +228,14 @@ function Organiza() {
             h2.style.fontSize = "16px";
             h2.style.top = "0px";
             var h3 = document.getElementById("h3");
-            h3.style.padding = "40px";
+            h3.style.paddingLeft = "40px";
+            h3.style.paddingTop = "40px";
+            h3.style.paddingBottom = "10px";
             var h4 = document.getElementById("h4");
-            h4.style.paddingLeft = "50px";
+            h4.style.paddingLeft = "40px";
+            h4.style.top = "11em";
+            info.style.display = "none";
+            conj.style.display = "initial";
         }
     }
 }
