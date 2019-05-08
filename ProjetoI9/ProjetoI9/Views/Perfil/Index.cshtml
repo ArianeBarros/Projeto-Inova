@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <html>
@@ -10,18 +10,14 @@
     <link href="~/Content/PerfilCSS.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
-        var carregarPerfil = true;
+        //var carregarPerfil = true;
 
         var qualImg = null;
         var qualId = null;
 
         window.onload = function()
         {
-          
             document.getElementById("secEscolherFoto").style.display = "none";
-
-            document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
-
             document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
 
             CarregarDadosBD();
@@ -42,9 +38,9 @@
             while (qualImg.indexOf("%2F") != -1)
                 qualImg = qualImg.replace("%2F", "/");
 
-           // alert(qualId);
-          //  alert(nome);
-           // alert(qualImg);
+            alert(qualId);
+            alert(nome);
+            alert(qualImg);
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + img + "' onclick=\"CarregarPerfil()\">";
             
@@ -112,11 +108,6 @@
 </head>
 <body>
     <header>
-        <a href="#" class="brand-logo">
-            <img class="ondas" src="~/Imagens/ondas.png">
-            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
-        </a>
-
         <nav id="navHeader">
             <ul>
                 <a id="home" href="~/Home/Index">HOME</a>
@@ -126,14 +117,13 @@
             </ul>
         </nav>
 
-
         <div id="opcoesFotos">
 
         </div>
 
     </header>
 
-    <form id="form" method="post" action="SalvarDados">
+    <form id="form" method="post" action="SalvarDados(qualImg, qualId)">
 
         <section id="secEscolherFoto">
             Escolha uma foto para o seu Perfil!
