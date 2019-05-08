@@ -45,7 +45,7 @@ namespace ProjetoI9.Controllers
             if (usu != null && usu.senha == u.senha)
             {
 
-                return RedirectToAction("Index", "Principal", new { usu.nome, usu.imagem , usu.id});
+                return RedirectToAction("Index", "Perfil", new { usu.nome, usu.imagem , usu.id});
             }                
             else //redirecionar para a camada de visualização
                 return RedirectToAction("Index", "Login");

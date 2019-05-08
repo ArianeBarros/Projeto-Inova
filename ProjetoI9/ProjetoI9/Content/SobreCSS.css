@@ -11,7 +11,7 @@ body {
     width: 100%;
     min-width: 600px;
     max-width: 2000px;
-    background-image: url("~/Imagens/fundoSobre.png");
+    background-image: url(../Imagens/fundoSobre.png);
 }
 
 
@@ -116,9 +116,9 @@ footer {
     background-color: #0B2161;
     text-align: center;
     height: 30%;
-    width: 10%;
+    width: 100%;
     position: relative;
-    top: -40%;
+    top: 120%;
 }
 
 #sectionPrincipal {
@@ -137,17 +137,11 @@ footer {
 
 #imagem {
     position: absolute;
-    left: 380px;
-    width: 20%;
-    top: 500px;
+    left: 30%;
+    width: 40%;
+    top: 190%;
 }
 
-#po
-{
-    position: absolute;
-    top: 600px;
-    
-}
 
 .fot1 {
     font-size: 30px;

@@ -16,6 +16,7 @@ namespace ProjetoI9.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult SairPagina(string img, string i, string nomeController)
         {
             if (img == null)
