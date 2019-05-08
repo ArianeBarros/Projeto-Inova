@@ -239,7 +239,11 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+<<<<<<< HEAD
     <Content Include="Views\Login\favicon.ico" />
+=======
+    <Content Include="Script\JavaScript.js" />
+>>>>>>> 5b98b2d7d8eb7c8dd43b562335272f05d91b8b2f
     <Content Include="Web.config" />
     <Content Include="Views\Cadastro\Index.cshtml" />
     <Content Include="Views\Principal\Index.cshtml" />
@@ -286,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Tema1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
