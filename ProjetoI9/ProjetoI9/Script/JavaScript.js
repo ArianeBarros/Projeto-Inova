@@ -132,9 +132,11 @@ function Organiza() {
         botao.style.top = "6em";
         var h1 = document.getElementById("h1");
         h1.style.fontSize = "24px";
+       // h3.style.fontSize = "24px";
         //h3.style.fontSize = "24px";
         var h2 = document.getElementById("h2");
         h2.style.fontSize = "20px";
+        //h4.style.fontSize = "20px";
         //h4.style.fontSize = "20px";
         h2.style.paddingLeft = "40%";
         var h4 = document.getElementById("h4");
@@ -154,7 +156,7 @@ function Organiza() {
             formiga.style.left = "10%";
             var maos = document.getElementById("maos");
             maos.style.display = "initial";
-            maos.style.width = "60%";
+            maos.style.width = "55%";
             maos.style.left = "10%";
            // var cara = document.getElementById("maos");
            // cara.style.display = "initial";
@@ -182,10 +184,18 @@ function Organiza() {
             h1.style.width = "60%";
             h2.style.top = "-9em";
             var h3 = document.getElementById("h3");
-            h3.style.padding = "0px";
-            h3.style.paddingLeft = "50%";
+            h3.style.position = "absolute";
+            h3.style.paddingLeft = "55%";
+            h3.style.top = "1em";
+            h3.style.width = "45%";
+            h3.style.paddingBottom = "0px";
+            h3.style.fontSize = "24px";
             var h4 = document.getElementById("h4");
-            h4.style.paddingLeft = "50%";
+            h4.style.paddingLeft = "55%";
+            h4.style.top = "-9em";
+            h4.style.fontSize = "20px";
+            info.style.display = "none";
+            conj.style.display = "initial";
             // var cabecalho = document.getElementById("header");
             //cabecalho.style.width = "80%";
         }
