@@ -9,111 +9,146 @@
     <title>Principal</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
 
-        
+
 
         window.onload = function () {
-                var cont = 0;
-                var noti = "";
-                var re = "";
-                while(cont < 20)
-                {
-                    noti= noti +  " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
-                    document.getElementById("sectionPrincipal").innerHTML = noti;
+            var cont = 0;
+            var noti = "";
+            var re = "";
+            while (cont < 20) {
+                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
+                document.getElementById("sectionPrincipal").innerHTML = noti;
 
-                    re = re +  "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
-                    document.getElementById("sectionLeft").innerHTML = re;
+                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
+                document.getElementById("sectionLeft").innerHTML = re;
 
-                    cont++;
-                }
+                BuscaNoticia();
 
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+                cont++;
+            }
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
 
 
-                CarregarDadosBD();
+            CarregarDadosBD();
         }
 
         var qualId = "";
         var qualImg = "";
 
-            function CarregarDadosBD()
-            {
-                var string = window.location.href.substring(39);
-                string = string.split("?");
-                qualId = string[0];
-                string = string[1];
-                string = string.split("&");
-                var nome = string[0].substring(5);
-                qualImg = string[1].substring(7);
+        function CarregarDadosBD() {
+            var string = window.location.href.substring(39);
+            string = string.split("?");
+            qualId = string[0];
+            string = string[1];
+            string = string.split("&");
+            var nome = string[0].substring(5);
+            qualImg = string[1].substring(7);
 
-                while (nome.indexOf("%20") != -1)
-                    nome = nome.replace("%20", " ");
-                while(qualImg.indexOf("%2F") != -1)
-                    qualImg = qualImg.replace("%2F", "/");
-                
+            while (nome.indexOf("%20") != -1)
+                nome = nome.replace("%20", " ");
+            while (qualImg.indexOf("%2F") != -1)
+                qualImg = qualImg.replace("%2F", "/");
 
-                //alert(nome);
-                //alert(qualImg);
-                //alert(qualId);
 
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+            //alert(nome);
+            //alert(qualImg);
+            //alert(qualId);
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+        }
+
+        function Sair(end) {
+            alert("nao me deixe");
+            //SairPagina(qualImg, qualId, end);
+        }
+
+        var seMostraPerfil = 2;
+        function CarregarPerfil() {
+            if (seMostraPerfil % 2 == 0) {
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
+                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
+                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
+                seMostraPerfil++;
             }
-            
-            function Sair(end)
-            {
-                alert("nao me deixe");
-                //SairPagina(qualImg, qualId, end);
+            else {
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
+                seMostraPerfil++;
             }
+        }
 
-            var seMostraPerfil = 2;
-            function CarregarPerfil()
-            {
-                if(seMostraPerfil % 2 == 0)
-                {
-                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
-                                                                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
-                                                                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
-                                                                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
-                    seMostraPerfil++;
-                }
-                else
-                {
-                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
-                    seMostraPerfil++;
-                }
-            }
-
-            function Parabens()
-            {
-               if(document.getElementById("parabens").style.display == "block")
-               {
+        function Parabens() {
+            if (document.getElementById("parabens").style.display == "block") {
                 document.getElementById("parabens").style.display = "none";
-               }
-               else
-               {
+            }
+            else {
                 document.getElementById("parabens").style.display = "block";
-               }
             }
+        }
 
-            function MostrarAgenda()
-            {
-                   if(document.getElementById("secAgenda").style.display == "block")
-                   {
-                       var a = "";
+        function MostrarAgenda() {
+            if (document.getElementById("secAgenda").style.display == "block") {
+                var a = "";
 
-                       document.getElementById("secAgenda").innerHTML = a;
+                document.getElementById("secAgenda").innerHTML = a;
 
-                      document.getElementById("secAgenda").style.display = "none";
-                   }
-                   else
-                   {
-                    document.getElementById("secAgenda").style.display = "block";
-                   }
+                document.getElementById("secAgenda").style.display = "none";
             }
+            else {
+                document.getElementById("secAgenda").style.display = "block";
+            }
+        }
 
+        //COMEÇO DO WEB SERVICE
+
+        function BuscaNoticia() {
+            //let cep = document.getElementById('pesquisa').value
+            let url = 'http://gaarcampinas.org/quero-ajudar/';
+
+            axios.get(url)
+                .then(response => {
+                    MostraNoticia(response.data)
+                })
+                .catch(error => {
+                    alert("Erro BuscaNoticia(): " + error)
+                })
+
+            event.preventDefault()
+        }
+
+        function MostraNoticia(dados) {
+            var site = dados + "";
+            alert(site);
+            //cTitulo
+            //cImagem
+            //cLink
+
+
+            //document.getElementsByClass('cTitulo')[i].innerHTML = `Logradouro: ${dados.logradouro}`
+            //document.getElementById('bairro').innerHTML = `Bairro    : ${dados.bairro}`
+            //document.getElementById('cidade').innerHTML = `Cidade    : ${dados.cidade}`
+            //document.getElementById('estado').innerHTML = `Estado    : ${dados.estado}`
+            //document.getElementById('cep').innerHTML = `CEP       : ${dados.cep}`
+
+        }
+
+        //function mostraMensagem() {
+        //    document.getElementById('pesquisa').value = ''
+
+        //    document.getElementById('logradouro').className = 'oculto'
+        //    document.getElementById('bairro').className = 'oculto'
+        //    document.getElementById('cidade').className = 'oculto'
+        //    document.getElementById('estado').className = 'oculto'
+        //    document.getElementById('cep').className = 'oculto'
+        //    document.getElementById('mensagem').className = ''
+        //}
+
+        //FIM DO WEB SERVICE
     </script>
 </head>
 <body >
