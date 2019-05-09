@@ -1,8 +1,7 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-
 @*simpfrc@unicamp.br*@
 
 <html>
@@ -13,145 +12,130 @@
 
     <script type="text/javascript">
 
+        
+
         window.onload = function () {
-            var cont = 0;
-            var noti = "";
-            var re = "";
-            while (cont < 20) {
-                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
-                document.getElementById("sectionPrincipal").innerHTML = noti;
+                var cont = 0;
+                var noti = "";
+                var re = "";
+                while(cont < 20)
+                {
+                    noti= noti +  " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
+                    document.getElementById("sectionPrincipal").innerHTML = noti;
 
-                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
-                document.getElementById("sectionLeft").innerHTML = re;
+                    re = re +  "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
+                    document.getElementById("sectionLeft").innerHTML = re;
 
-                cont++;
-            }
+                    cont++;
+                }
 
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
 
 
-            CarregarDadosBD();
+                CarregarDadosBD();
         }
 
         var qualId = "";
         var qualImg = "";
 
-        function CarregarDadosBD() {
-            var string = window.location.href.substring(39);
-            string = string.split("?");
-            qualId = string[0];
-            string = string[1];
-            string = string.split("&");
-            var nome = string[0].substring(5);
-            qualImg = string[1].substring(7);
+            function CarregarDadosBD()
+            {
+                var string = window.location.href.substring(39);
+                string = string.split("?");
+                qualId = string[0];
+                string = string[1];
+                string = string.split("&");
+                var nome = string[0].substring(5);
+                qualImg = string[1].substring(7);
 
-            while (nome.indexOf("%20") != -1)
-                nome = nome.replace("%20", " ");
-            while (qualImg.indexOf("%2F") != -1)
-                qualImg = qualImg.replace("%2F", "/");
+                while (nome.indexOf("%20") != -1)
+                    nome = nome.replace("%20", " ");
+                while(qualImg.indexOf("%2F") != -1)
+                    qualImg = qualImg.replace("%2F", "/");
+                
 
+                //alert(nome);
+                //alert(qualImg);
+                //alert(qualId);
 
-            //alert(nome);
-            //alert(qualImg);
-            //alert(qualId);
-
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
-        }
-
-        function Sair(end) {
-            alert("nao me deixe");
-            //SairPagina(qualImg, qualId, end);
-        }
-
-        var seMostraPerfil = 2;
-        function CarregarPerfil() {
-            if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
-                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
-                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
-                seMostraPerfil++;
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
             }
-            else {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
-                seMostraPerfil++;
-            }
-        }
-
-        //WEB SERVICE
-
-        function BuscaNoticia
-        {
             
-            let url = `http://gaarcampinas.org`;
+            function Sair(end)
+            {
+                alert("nao me deixe");
+                //SairPagina(qualImg, qualId, end);
+            }
 
-            axios.get(url)
-                .then(response => {
-                    MostraNoticia(response.data)
-                })
-                .catch(error => {
-                    alert("Erro: " + error)
-                })
+            var seMostraPerfil = 2;
+            function CarregarPerfil()
+            {
+                if(seMostraPerfil % 2 == 0)
+                {
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                                                                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
+                                                                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
+                                                                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
+                                                                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
+                    seMostraPerfil++;
+                }
+                else
+                {
+                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
+                    seMostraPerfil++;
+                }
+            }
 
-            event.preventDefault()
-        }
-
-        function MostraNoticia()
-        {
-            var jaExibido = document.getElementById("sectionPrincipal").innerHTML;
-            var novaNoticia = "";
-
-            document.getElementById("sectionPrincipal").innerHTML += jaExibido + novaNoticia;
-        }
-
-
-        //WEB SERVICE
-
-        function Parabens() {
-            if (document.getElementById("parabens").style.display == "block") {
+            function Parabens()
+            {
+               if(document.getElementById("parabens").style.display == "block")
+               {
                 document.getElementById("parabens").style.display = "none";
-            }
-            else {
+               }
+               else
+               {
                 document.getElementById("parabens").style.display = "block";
+               }
             }
-        }
 
-        function MostrarAgenda() {
-            if (document.getElementById("secAgenda").style.display == "block") {
-                var a = "";
+            function MostrarAgenda()
+            {
+                   if(document.getElementById("secAgenda").style.display == "block")
+                   {
+                       var a = "";
 
-                document.getElementById("secAgenda").innerHTML = a;
+                       document.getElementById("secAgenda").innerHTML = a;
 
-                document.getElementById("secAgenda").style.display = "none";
+                      document.getElementById("secAgenda").style.display = "none";
+                   }
+                   else
+                   {
+                    document.getElementById("secAgenda").style.display = "block";
+                   }
             }
-            else {
-                document.getElementById("secAgenda").style.display = "block";
-            }
-        }
 
     </script>
 </head>
-<body>
+<body >
     <header>
-        @*<a href="#" class="brand-logo">
+        <a href="#" class="brand-logo">
             <img class="ondas" src="~/Imagens/ondas.png">
             <div> <img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
-        </a>*@
+        </a>
         <form id="menu" method="post" action="SairPagina(qualImg, qualId, Contato)">
             <nav id="navHeader">
                 <ul>
                     @*@using (Html.BeginForm("SairPagina(qualImg, qualId, Contato)", "PrincipalController", FormMethod.Get))
-                            {
-                                <a id="contato" href="#" onclick="Sair(this.href)">CONTATO</a>
+                {
+                    <a id="contato" href="#" onclick="Sair(this.href)">CONTATO</a>
 
-                        }
+            }
 
-                                @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
-                            {
-                                <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
+                    @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
+                {
+                    <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
 
-                        }*@
+            }*@
                     <a id="home" href="~/Home/Index" onclick="Sair(this.href)">HOME</a>
                     <a id="sobre" href="~/Sobre/Index" onclick="Sair(this.href)">SOBRE</a>
                     <a id="contato" href="~/Contato/Index" onclick="Sair(this.href)">CONTATO</a>
@@ -160,10 +144,10 @@
 
                 </ul>
             </nav>
-        </form>
-        <div id="opcoesFotos">
+            </form>
+            <div id="opcoesFotos">
 
-        </div>
+            </div>
 
     </header>
 
@@ -203,8 +187,8 @@
         <label class="lbl">Semana</label>
 
         <!-- <div class="realizacoes">
-            <label>Realizações</label>
-        </div>-->
+        <label>Realizações</label>
+    </div>-->
 
     </section>
 
