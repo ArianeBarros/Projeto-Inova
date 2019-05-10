@@ -13,6 +13,8 @@ namespace ProjetoI9.Controllers
         // GET: Perfil
         public ActionResult Index()
         {
+            object usuario = Session["usuarioLogado"];
+            ViewBag.UsuarioLogado = usuario;
             return View();
         }
         public ActionResult SalvarDados(string img, string id)

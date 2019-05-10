@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using ProjetoI9.Filtros;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace ProjetoI9.App_Start
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            //registrar um filtro global
+            //filters.Add(new AutorizacaoFilterAttribute());
+        }
+    }
+}

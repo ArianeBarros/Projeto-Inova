@@ -1,7 +1,4 @@
 ﻿
-@{
-    Layout = null;
-}
 @*simpfrc@unicamp.br*@
 
 <html>
@@ -12,13 +9,25 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
 
-
+        var qualImg = "";
 
         window.onload = function () {
+
+            CarregarNoticias();
+
+
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+
+
+            CarregarDadosBD();
+        }
+
+        function CarregarNoticias()
+        {
             var cont = 0;
             var noti = "";
             var re = "";
-            while (cont < 20) {
+            while (cont < @ViewBag.QuantasNot) {
                 noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
 
@@ -29,36 +38,34 @@
 
                 cont++;
             }
-
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-
-
-            CarregarDadosBD();
         }
 
-        var qualId = "";
-        var qualImg = "";
+
 
         function CarregarDadosBD() {
-            var string = window.location.href.substring(39);
-            string = string.split("?");
-            qualId = string[0];
-            string = string[1];
-            string = string.split("&");
-            var nome = string[0].substring(5);
-            qualImg = string[1].substring(7);
-
-            while (nome.indexOf("%20") != -1)
-                nome = nome.replace("%20", " ");
-            while (qualImg.indexOf("%2F") != -1)
-                qualImg = qualImg.replace("%2F", "/");
-
-
-            //alert(nome);
-            //alert(qualImg);
-            //alert(qualId);
-
+            qualImg = @ViewBag.UsuarioLogado.imagem;
+            
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+
+            //var string = window.location.href.substring(39);
+            //string = string.split("?");
+            //qualId = string[0];
+            //string = string[1];
+            //string = string.split("&");
+            //var nome = string[0].substring(5);
+            //qualImg = string[1].substring(7);
+
+            //while (nome.indexOf("%20") != -1)
+            //    nome = nome.replace("%20", " ");
+            //while (qualImg.indexOf("%2F") != -1)
+            //    qualImg = qualImg.replace("%2F", "/");
+
+
+            ////alert(nome);
+            ////alert(qualImg);
+            ////alert(qualId);
+
+            //document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
         }
 
         function Sair(end) {
@@ -107,18 +114,32 @@
         //COMEÇO DO WEB SERVICE
 
         function BuscaNoticia() {
-            //let cep = document.getElementById('pesquisa').value
-            let url = 'http://gaarcampinas.org/quero-ajudar/';
 
-            axios.get(url)
-                .then(response => {
-                    MostraNoticia(response.data)
-                })
-                .catch(error => {
-                    alert("Erro BuscaNoticia(): " + error)
-                })
+            document.getElementsByClassName("cTitulo").innerHTML = "FA &#199; A UMA BOA A&#199;&#195; O, ADOTE UM C&#195; O! ";
 
-            event.preventDefault()
+            @*foreach(ProjetoI9.Models.Noticia not in @ViewBag.Noticia)
+            {*@
+                @*document.getElementsByClassName("cTitulo")[0].innerHTML = "'" + @ViewBag.Noticia.manchete + "'";
+                document.getElementsByClassName("cImagem")[0].innerHTML = @ViewBag.Noticia.imagem;
+                document.getElementsByClassName("cLink")[0].innerHTML = @ViewBag.Noticia.link;*@
+            //}
+
+
+
+
+
+            ////let cep = document.getElementById('pesquisa').value
+            //let url = 'http://gaarcampinas.org/quero-ajudar/';
+
+            //axios.get(url)
+            //    .then(response => {
+            //        MostraNoticia(response.data)
+            //    })
+            //    .catch(error => {
+            //        alert("Erro BuscaNoticia(): " + error)
+            //    })
+
+            //event.preventDefault()
         }
 
         function MostraNoticia(dados) {

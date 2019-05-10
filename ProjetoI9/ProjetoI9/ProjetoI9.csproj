@@ -243,6 +243,7 @@
     <Content Include="Views\Principal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
@@ -251,11 +252,14 @@
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
+    <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\UsuarioI9DAO.cs" />
+    <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Noticia.cs" />
     <Compile Include="Models\UsuarioI9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
