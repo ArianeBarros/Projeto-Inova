@@ -178,6 +178,31 @@ html
     #h3 {
         top: 2em;
     }
+    #atu{
+    width :auto;
+    height:5.5em;
+}
+#comp {
+    width: auto;
+    height: 12.5em;
+    position:relative;
+    top:1em;
+}
+
+#rec {
+    width: auto;
+    height: 4.5em;
+}
+#list {
+    width: auto;
+    height: 4.5em;
+    position: relative;
+    top: 1em;
+}
+#plan {
+    width: auto;
+    height: 5.5em;
+}
 }
 
 @media screen and (min-width: 800px) {
@@ -455,10 +480,7 @@ html
 #plan {
     width: auto;
     height: 5.5em;
-    position: relative;
-    top: 1em;
 }
-
 
 
 #globalizacao {
