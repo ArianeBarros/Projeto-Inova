@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ProjetoI9.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using ProjetoI9.Filtros;
 
 namespace ProjetoI9
 {
@@ -13,6 +15,7 @@ namespace ProjetoI9
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }
