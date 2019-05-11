@@ -415,7 +415,7 @@ html
     height:10em;
 }
 
-#h1, #h3, #h5 {
+#h1, #h3, #h5,#h7 {
     font-size: 18px;
     font-family: "Century Gothic";
     font-weight: 600;
@@ -424,11 +424,12 @@ html
 }
 
 
-#h2, #h4, #h6 {
+#h2, #h4, #h6,#h8 {
     font-size: 16px;
     font-family: "Century Gothic";
     font-weight: 500;
     line-height: 1.4em;
+    position :relative;
 }
 
 
@@ -449,6 +450,13 @@ html
 #maos {
     width: 75%;
     height: auto;
+}
+#sonhos {
+    position: relative;
+    background: #c6ff00;
+    width: 100%;
+    bottom: 5em;
+    height: 15em;
 }
 
 #info {
