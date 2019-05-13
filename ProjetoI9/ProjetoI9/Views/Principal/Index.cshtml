@@ -15,9 +15,7 @@
 
             CarregarNoticias();
 
-
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-
 
             CarregarDadosBD();
         }
@@ -35,17 +33,29 @@
                 document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
-            }              
+            }
             BuscaNoticia();
         }
 
 
 
         function CarregarDadosBD() {
-
+            //IMAGEM
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+
+            //REALIZAÇÕES
+            @*while (cont < @ViewBag.QuantasNot)
+            {
+                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
+                document.getElementById("sectionPrincipal").innerHTML = noti;
+
+                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
+                document.getElementById("sectionLeft").innerHTML = re;
+
+                cont++;
+            }*@
         }
 
         var seMostraPerfil = 2;
@@ -89,15 +99,17 @@
         //COMEÇO DO WEB SERVICE
 
         function BuscaNoticia() {
-            
+
             var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
+
+            var qualIndice = Math.random() * (@ViewBag.QuantasNot - 0);
 
             for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
             {
 
-                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[cont].manchete)
-                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[cont].imagem);
-                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[cont].link);
+                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete)
+                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
+                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
             }
         }
 

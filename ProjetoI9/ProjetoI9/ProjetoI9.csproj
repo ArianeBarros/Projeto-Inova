@@ -257,6 +257,7 @@
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Controllers\TermosController.cs" />
+    <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\UsuarioI9DAO.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Noticia.cs" />
     <Compile Include="Models\UsuarioI9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

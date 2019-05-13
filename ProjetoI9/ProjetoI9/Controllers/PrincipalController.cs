@@ -21,7 +21,7 @@ namespace ProjetoI9.Controllers
                 NoticiaDAO dao = new NoticiaDAO();
                 IList<Noticia> not = dao.Lista();
                 ViewBag.QuantasNot = not.Count();
-              
+               // ViewBag.QuantasRealizacoes = not.Count();
                 ViewData["noticias"] = not;
                 
                 return View();
