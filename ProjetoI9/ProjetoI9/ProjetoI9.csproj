@@ -165,6 +165,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\CadastroCSS.css" />
     <Content Include="Content\ContatoCSS.css" />
     <Content Include="Content\Footer-with-button-logo.css" />
@@ -172,6 +173,7 @@
     <Content Include="Content\HomeCSS.css" />
     <Content Include="Content\LoginCSS.css" />
     <Content Include="Content\PerfilCSS.css" />
+    <Content Include="Content\PoliticaCSS.css" />
     <Content Include="Content\PrincipalCSS.css" />
     <Content Include="Content\SobreCSS.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -251,8 +253,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\PoliticaController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
+    <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\UsuarioI9DAO.cs" />
@@ -280,6 +284,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\HomeLogado.cshtml" />
     <Content Include="Views\Cadastro\HomeCadastrado.cshtml" />
+    <Content Include="Views\Termos\Index.cshtml" />
+    <Content Include="Views\Politica\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

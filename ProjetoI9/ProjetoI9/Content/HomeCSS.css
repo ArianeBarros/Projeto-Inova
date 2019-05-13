@@ -35,11 +35,12 @@ html
 
 
 
-.menu a {
+.menu div {
     color: #fff;
     text-decoration: none;
     padding: 20px;
     display: block;
+    line-height:15px;
 }
 
 
@@ -86,12 +87,12 @@ html
 }
 
 #chk:checked ~ .menu {
-    right: 1;
+    right: 0em;
 }
 
 .menu {
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 100vh;
     background: #333;
     right: 1000px;
@@ -108,229 +109,240 @@ html
     position:relative;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 576px) {
 
-    #form #h1 {
-        width: 10%;
+    #logo2 {
+        width: 300%;
     }
-
-    #form {
-        height: 12em;
-    }
-    .show-menu-btn, .hide-menu-btn {
-        display: none;
-    }
-
-    .menu {
-        background: none;
-        line-height: 100px;
-        position: absolute;
-        top: -70px;
-        left: 16%;
-        transition: unset;
-    }
-
-    .ondas {
-        width: 110%;
-    }
-
-    .menu a {
-        color: #fff;
-        text-decoration: none;
-        padding: 0 10px;
-        display: inline;
-        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-
-
-    .btnComece {
-        right: 0;
-    }
-
-    #comece {
-        cursor: pointer;
-        z-index: 10;
-    }
-
-    #h2, #h4, #h6 {
-        padding: 0px 0px 0px 250px;
-    }
-
-    #h2, #h6 {
-        position: relative;
-    }
-
-    #h4 {
-        position: relative;
-        top: -11em;
-    }
-
-    #formiga {
-        width: 10%;
-    }
-    #h1
-    {
-        top :10em;
-    }
-
-    #h3 {
-        top: 2em;
-    }
-    #atu{
-    width :auto;
-    height:5.5em;
-}
-#comp {
-    width: auto;
-    height: 12.5em;
-    position:relative;
-    top:1em;
 }
 
-#rec {
-    width: auto;
-    height: 4.5em;
-}
-#list {
-    width: auto;
-    height: 4.5em;
-    position: relative;
-    top: 1em;
-}
-#plan {
-    width: auto;
-    height: 5.5em;
-}
-}
+    @media screen and (min-width: 600px) {
 
-@media screen and (min-width: 800px) {
+        #form #h1 {
+            width: 10%;
+        }
 
-    /* #botoes {
+        #form {
+            height: 12em;
+        }
+
+        .show-menu-btn, .hide-menu-btn {
+            display: none;
+        }
+
+        .menu {
+            background: none;
+            line-height: 100px;
+            position: absolute;
+            top: -70px;
+            left: 16%;
+            transition: unset;
+        }
+
+        .ondas {
+            width: 110%;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+            display: inline;
+            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+
+
+        .btnComece {
+            right: 0;
+        }
+
+        #comece {
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #h2, #h4, #h6 {
+            padding: 0px 0px 0px 250px;
+        }
+
+        #h2, #h6 {
+            position: relative;
+        }
+
+        #h4 {
+            position: relative;
+            top: -11em;
+        }
+
+        #formiga {
+            width: 10%;
+        }
+
+        #h1 {
+            top: 10em;
+        }
+
+        #h3 {
+            top: 2em;
+        }
+
+        #atu {
+            width: auto;
+            height: 5.5em;
+        }
+
+        #comp {
+            width: auto;
+            height: 12.5em;
+            position: relative;
+            top: 1em;
+        }
+
+        #rec {
+            width: auto;
+            height: 4.5em;
+        }
+
+        #list {
+            width: auto;
+            height: 4.5em;
+            position: relative;
+            top: 1em;
+        }
+
+        #plan {
+            width: auto;
+            height: 5.5em;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+
+        /* #botoes {
         /* position: relative; */
-    /* top: -18em; */
-    .show-menu-btn, .hide-menu-btn {
-        display: none;
-    }
-
-    .ondas {
-        width: 100%;
-        max-height: 15em;
-        top:-50px;
-    }
-
-    .frase {
-        display: none;
-    }
-
-    .coisinhas {
-        display: none;
-    }
-
-    .btnComece {
-        display: none;
-    }
-
-    .menu {
-        left: 20%;
-        top:-1em;
-    }
-
-        .menu a {
-            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 22px;
-            padding: 0.6em;
+        /* top: -18em; */
+        .show-menu-btn, .hide-menu-btn {
+            display: none;
         }
 
-    .formiga {
-        width: 10%;
-        position: relative;
-        left: 15%;
-        top: 1em;
-    }
-
-    #form #h1 {
-        width: 90%;
-    }
-
-    #h6 {
-        position: relative;
-        bottom: 0em;
-        width: 100%;
-    }
-
-    #h3 {
-        position: relative;
-        bottom: 10em;
-    }
-
-    #h4 {
-        position: relative;
-        bottom: 13.5em;
-    }
-
-}
-
-
-
-
-
-@media screen and (min-width: 1000px) {
-    .menu {
-        left: 25%;
-    }
-
-        .menu a {
-            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 25px;
+        .ondas {
+            width: 100%;
+            max-height: 15em;
+            top: -50px;
         }
 
-    #form #h1, #form #h2, #h3, #h4 {
-        right: -10%;
+        .frase {
+            display: none;
+        }
+
+        .coisinhas {
+            display: none;
+        }
+
+        .btnComece {
+            display: none;
+        }
+
+        .menu {
+            left: 20%;
+            top: -1em;
+        }
+
+            .menu a {
+                font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 22px;
+                padding: 0.6em;
+            }
+
+        .formiga {
+            width: 10%;
+            position: relative;
+            left: 15%;
+            top: 1em;
+        }
+
+        #form #h1 {
+            width: 90%;
+        }
+
+        #h6 {
+            position: relative;
+            bottom: 0em;
+            width: 100%;
+        }
+
+        #h3 {
+            position: relative;
+            bottom: 10em;
+        }
+
+        #h4 {
+            position: relative;
+            bottom: 13.5em;
+        }
     }
 
-    #formiga {
-        width: 10%;
-        position: relative;
-        left: 10%;
+
+
+
+
+    @media screen and (min-width: 1000px) {
+        .menu {
+            left: 25%;
+        }
+
+            .menu a {
+                font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 25px;
+            }
+
+        #form #h1, #form #h2, #h3, #h4 {
+            right: -10%;
+        }
+
+        #formiga {
+            width: 10%;
+            position: relative;
+            left: 10%;
+        }
+
+        #maos {
+            width: 70%;
+            position: relative;
+            top: 0px;
+            left: 15%;
+        }
+
+        #globo {
+            width: 70%;
+            position: relative;
+            top: 2em;
+            left: 15%;
+        }
+
+        #h1, #h3, #h5 {
+            width: 50%;
+        }
+
+        #h2, #h4, #h6 {
+            width: 70%;
+        }
+
+        #form #h1, #h3 {
+        }
+
+        #form {
+            height: 14em;
+        }
     }
 
-    #maos {
-        width: 70%;
-        position: relative;
-        top: 0px;
-        left: 15%;
-    }
-
-    #globo {
-        width: 70%;
-        position: relative;
-        top: 2em;
-        left: 15%;
-    }
-
-    #h1, #h3, #h5 {
-        width: 50%;
-    }
-
-    #h2, #h4, #h6 {
-        width: 70%;
-    }
-
-    #form #h1, #h3 {
-    }
-
-    #form {
-        height: 14em;
-    }
-}
 
 
 
-
-/*#menu
+    /*#menu
 {
     position: absolute;
     left: 17em;
@@ -342,7 +354,7 @@ html
 }*/
 
 
-/*
+    /*
 #botoes {
     position: absolute;
     bottom: 30.5em;
@@ -371,139 +383,143 @@ html
     font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
 }
 */
-.btnComece {
-    position: absolute;
-    top: 7em;
-    left: 30%;
-    width: 35%;
-    height: auto;
-    z-index: 5;
-    cursor: pointer;
-}
+    .btnComece {
+        position: absolute;
+        top: 7em;
+        left: 30%;
+        width: 35%;
+        height: auto;
+        z-index: 5;
+        cursor: pointer;
+    }
 
-.frase {
-    position: absolute;
-    top: 3em;
-    left: 20%;
-    width: 60%;
-    height: auto;
-    z-index: 1;
-}
+    .frase {
+        position: absolute;
+        top: 3em;
+        left: 20%;
+        width: 60%;
+        height: auto;
+        z-index: 1;
+    }
 
-.coisinhas {
-    position: absolute;
-    top: 7.5em;
-    left: 12%;
-    width: 77%;
-    height: auto;
-    z-index: 1;
-}
+    .coisinhas {
+        position: absolute;
+        top: 7.5em;
+        left: 12%;
+        width: 77%;
+        height: auto;
+        z-index: 1;
+    }
 
-.coisinhas2 {
-    visibility: hidden;
-}
+    .coisinhas2 {
+        visibility: hidden;
+    }
 
-.content {
-    width: 100%;
-    height: 50%;
-    /* padding: 0em 0em 0em 10em; */
-}
+    .content {
+        width: 100%;
+        height: 50%;
+        /* padding: 0em 0em 0em 10em; */
+    }
 
-#form {
-    position: relative;
-    bottom: 18em;
-    background: #f4ff81;
-    height:10em;
-}
+    #form {
+        position: relative;
+        bottom: 18em;
+        background: #f4ff81;
+        height: 10em;
+    }
 
-#h1, #h3, #h5,#h7 {
-    font-size: 18px;
-    font-family: "Century Gothic";
-    font-weight: 600;
-    width: 90%;
-    position:relative;
-}
-
-
-#h2, #h4, #h6,#h8 {
-    font-size: 16px;
-    font-family: "Century Gothic";
-    font-weight: 500;
-    line-height: 1.4em;
-    position :relative;
-}
+    #h1, #h3, #h5, #h7 {
+        font-size: 18px;
+        font-family: "Century Gothic";
+        font-weight: 600;
+        width: 90%;
+        position: relative;
+    }
 
 
-#formiga {
-    position: relative;
-    top: 2em;
-    width: 10%;
-}
-
-#compromisso {
-    position: relative;
-    background: #ffab91;
-    width: 100%;
-    bottom: 5em;
-    height: 15em;
-}
-
-#maos {
-    width: 75%;
-    height: auto;
-}
-#sonhos {
-    position: relative;
-    background: #c6ff00;
-    width: 100%;
-    bottom: 5em;
-    height: 15em;
-}
-
-#info {
-    height: 20%;
-    width: auto;
-}
-
-#atu{
-    width :auto;
-    height:5.5em;
-}
-#comp {
-    width: auto;
-    height: 12.5em;
-    position:relative;
-    top:1em;
-}
-
-#rec {
-    width: auto;
-    height: 4.5em;
-}
-#list {
-    width: auto;
-    height: 4.5em;
-    position: relative;
-    top: 1em;
-}
-#plan {
-    width: auto;
-    height: 5.5em;
-}
+    #h2, #h4, #h6, #h8 {
+        font-size: 16px;
+        font-family: "Century Gothic";
+        font-weight: 500;
+        line-height: 1.4em;
+        position: relative;
+    }
 
 
-#globalizacao {
-    position: relative;
-    background: #7986cb;
-    height: 100%;
-}
+    #formiga {
+        position: relative;
+        top: 2em;
+        width: 10%;
+    }
 
-#globo {
-    width: 75%;
-    height: auto;
-}
+    #compromisso {
+        position: relative;
+        background: #ffab91;
+        width: 100%;
+        bottom: 5em;
+        height: 15em;
+    }
 
-/*
+    #maos {
+        width: 75%;
+        height: auto;
+    }
+
+    #sonhos {
+        position: relative;
+        background: #c6ff00;
+        width: 100%;
+        bottom: 5em;
+        height: 15em;
+    }
+
+    #info {
+        height: 20%;
+        width: auto;
+    }
+
+    #atu {
+        width: auto;
+        height: 5.5em;
+    }
+
+    #comp {
+        width: auto;
+        height: 12.5em;
+        position: relative;
+        top: 1em;
+    }
+
+    #rec {
+        width: auto;
+        height: 4.5em;
+    }
+
+    #list {
+        width: auto;
+        height: 4.5em;
+        position: relative;
+        top: 1em;
+    }
+
+    #plan {
+        width: auto;
+        height: 5.5em;
+    }
+
+
+    #globalizacao {
+        position: relative;
+        background: #7986cb;
+        height: 100%;
+    }
+
+    #globo {
+        width: 75%;
+        height: auto;
+    }
+
+    /*
 .btnMenu_open {
     background-image: url("./Imagens/menu3.png");
     height: 2em;
@@ -586,138 +602,157 @@ html
   }
   */
 
-
-.hrUm {
-    width: 12em;
-    height: 0.11em;
-    border-top: 1px solid #E6E6E6;
-    position: relative;
-    bottom: 1em;
-    margin-left: 0.5em;
-}
-
-.hrDois {
-    width: 12em;
-    height: 0.1em;
-    border-top: 1px solid #f5f5f5;
-    position: relative;
-    bottom: 1em;
-    margin-left: 0.5em;
-}
-
-
-
-#myFooter {
-    background-color: #3c3d41;
-    color: white;
-    padding-top: 30px;
-}
-
-    #myFooter .footer-copyright {
-        background-color: #333333;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        text-align: center;
+    .logo2 {
+        width: 150%;
     }
 
-    #myFooter .row {
-        margin-bottom: 60px;
+    .hrUm {
+        width: 12em;
+        height: 0.11em;
+        border-top: 1px solid #E6E6E6;
+        position: relative;
+        bottom: 1em;
+        margin-left: 0.5em;
     }
 
-    #myFooter .navbar-brand {
-        margin-top: 45px;
-        height: 65px;
+    .hrDois {
+        width: 12em;
+        height: 0.1em;
+        border-top: 1px solid #f5f5f5;
+        position: relative;
+        bottom: 1em;
+        margin-left: 0.5em;
     }
 
-    #myFooter .footer-copyright p {
-        margin: 10px;
-        color: #ccc;
-    }
 
-    #myFooter ul {
-        list-style-type: none;
-        padding-left: 0;
-        line-height: 1.7;
-    }
 
-    #myFooter h5 {
-        font-size: 18px;
+    #myFooter {
+        background-color: #3c3d41;
         color: white;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-
-    #myFooter h2 a {
-        font-size: 50px;
-        text-align: center;
-        color: #fff;
-    }
-
-    #myFooter a {
-        color: #d2d1d1;
-        text-decoration: none;
-    }
-
-        #myFooter a:hover,
-        #myFooter a:focus {
-            text-decoration: none;
-            color: white;
-        }
-
-    #myFooter .social-networks {
-        text-align: center;
         padding-top: 30px;
-        padding-bottom: 16px;
     }
 
-        #myFooter .social-networks a {
-            font-size: 32px;
-            color: #f9f9f9;
-            padding: 10px;
-            transition: 0.2s;
+        #myFooter .footer-copyright {
+            background-color: #333333;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            text-align: center;
         }
 
-            #myFooter .social-networks a:hover {
+        #myFooter .row {
+            margin-bottom: 60px;
+        }
+
+        #myFooter .navbar-brand {
+            margin-top: 45px;
+            height: 65px;
+        }
+
+        #myFooter .footer-copyright p {
+            margin: 10px;
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        #myFooter ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #myFooter h5 {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        #myFooter h2 a {
+            font-size: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #myFooter a {
+            color: #d2d1d1;
+            text-decoration: none;
+        }
+
+            #myFooter a:hover,
+            #myFooter a:focus {
                 text-decoration: none;
+                color: white;
             }
 
-    #myFooter .facebook:hover {
-        color: #0077e2;
+        #myFooter .social-networks {
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 16px;
+        }
+
+            #myFooter .social-networks a {
+                font-size: 32px;
+                color: #f9f9f9;
+                padding: 10px;
+                transition: 0.2s;
+            }
+
+                #myFooter .social-networks a:hover {
+                    text-decoration: none;
+                }
+
+        #myFooter .facebook:hover {
+            color: #0077e2;
+        }
+
+        #myFooter .google:hover {
+            color: #ef1a1a;
+        }
+
+        #myFooter .twitter:hover {
+            color: #00aced;
+        }
+
+        #myFooter .btn {
+            color: white;
+            background-color: #d84b6b;
+            border-radius: 20px;
+            border: none;
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+            line-height: 25px;
+        }
+
+
+
+    @media screen and (max-width: 767px) {
+        #myFooter {
+            text-align: center;
+        }
+
+        .col-sm-3 {
+            padding-left: 100px;
+        }
     }
 
-    #myFooter .google:hover {
-        color: #ef1a1a;
-    }
-
-    #myFooter .twitter:hover {
-        color: #00aced;
-    }
-
-    #myFooter .btn {
-        color: white;
-        background-color: #d84b6b;
-        border-radius: 20px;
-        border: none;
-        width: 150px;
-        display: block;
-        margin: 0 auto;
-        margin-top: 10px;
-        line-height: 25px;
-    }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 576px) {
     #myFooter {
         text-align: center;
     }
+
+    .col-sm-3 {
+        padding-left: 0%;
+    }
 }
 
 
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
+    /* CSS used for positioning the footers at the bottom of the page. */
+    /* You can remove this. */
 
 
 
-#myFooter {
-    flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-}
+    #myFooter {
+        flex: 0 0 auto;
+        -webkit-flex: 0 0 auto;
+    }

@@ -34,6 +34,8 @@ function Organiza() {
     h1.style.position = "relative";
     var sonhos = document.getElementById("sonhos");
     sonhos.style.position = "relative";
+    var footer = document.getElementById("myFooter");
+    footer.style.position = "relative";
     //h1.style.top = "350em";
     if (window.innerWidth >= 800) {
         info.style.display = "initial";
@@ -142,6 +144,8 @@ function Organiza() {
         h8.style.top = "-10em";
         h8.style.width = "50%";
 
+        footer.style.top = "0px";
+
         
         if (window.innerWidth >= 1000) {
             formiga.style.width = "12%";
@@ -203,6 +207,8 @@ function Organiza() {
             h8.style.paddingTop = "1.5%";
             h8.style.width = "63%";
 
+            footer.style.top = "0px";
+
             if (window.innerWidth >= 1300) {
                 h1.style.paddingTop = "0em";
                 h1.style.paddingBottom = "0em";
@@ -246,14 +252,15 @@ function Organiza() {
 
                 info.style.width = "80%";
 
-                terra.style.width = "30%";
+                terra.style.width = "29%";
                 terra.style.top = "1em";
                 terra.style.left = "10%";
 
-                nuvem.style.width = "23%";
+                nuvem.style.width = "20%";
                 nuvem.style.top = "0.3em";
                 nuvem.style.left = "10%";
 
+                footer.style.top = "0px";
             }
         }
     }
@@ -398,6 +405,12 @@ function Organiza() {
             h8.style.width = "50%";
 
             sonhos.style.top = "11em";
+            sonhos.style.height = "15em";
+
+            footer.style.top = "15em";
+            var soc = document.getElementsByClassName("col-sm-3");
+            soc.style.position = "relative";
+            soc.style.paddingLeft = "110em";
         }
         else {
             var comp = document.getElementById("compromisso");
@@ -451,7 +464,7 @@ function Organiza() {
 
             var h4 = document.getElementById("h4");
             h4.style.paddingLeft = "40px";
-            h4.style.top = "11em";
+            h4.style.top = "0em";
             h4.style.width = "89%";
             h4.style.fontSize = "16px";
 
@@ -475,7 +488,7 @@ function Organiza() {
 
             var h6 = document.getElementById("h6");
             h6.style.paddingLeft = "40px";
-            h6.style.top = "11em";
+            h6.style.top = "0em";
             h6.style.width = "89%";
             h6.style.fontSize = "16px";
         
@@ -501,9 +514,12 @@ function Organiza() {
 
             var h8 = document.getElementById("h8");
             h8.style.paddingLeft = "40px";
-            h8.style.top = "11em";
+            h8.style.top = "0em";
             h8.style.width = "89%";
             h8.style.fontSize = "16px";
+
+            footer.style.top = "25em";
+            
         }
     }
 }
