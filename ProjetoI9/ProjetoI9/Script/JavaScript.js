@@ -131,11 +131,13 @@ function Organiza() {
         var h7 = document.getElementById("h7");
         h7.style.top = "-9em";
         h7.style.paddingLeft = "50%";
+        h7.style.paddingTop = "0px";
         h7.style.fontSize = "25px";
         h7.style.width = "50%";
 
         var h8 = document.getElementById("h8");
         h8.style.paddingLeft = "50%";
+        h8.style.paddingTop = "0px";
         h8.style.fontSize = "22px";
         h8.style.top = "-10em";
         h8.style.width = "50%";
@@ -171,34 +173,34 @@ function Organiza() {
             h5.style.fontSize = "27.43px";
             h5.style.paddingTop = "2%";
             h5.style.paddingLeft = "43%";
-            h5.style.width = "70%";
+            h5.style.width = "55%";
 
             h6.style.fontSize = "25px";
             h6.style.paddingLeft = "43%";
             h6.style.paddingTop = "0.3%";
-            h6.style.width = "63%";
+            h6.style.width = "55%";
 
             var terra = document.getElementById("globo");
             terra.style.display = "initial";
-            terra.style.width = "35%";
+            terra.style.width = "34%";
             terra.style.position = "relative";
-            terra.style.top = "2em";
+            terra.style.top = "1.5em";
             terra.style.left = "5%";
 
             nuvem.style.display = "initial";
-            nuvem.style.width = "30%";
+            nuvem.style.width = "25%";
             nuvem.style.position = "relative";
             nuvem.style.left = "5%";
-            nuvem.style.top = "1em";
+            nuvem.style.top = "0.5em";
 
             h7.style.fontSize = "27.43px";
-            h7.style.paddingTop = "2%";
-            h7.style.paddingLeft = "43%";
+            h7.style.paddingTop = "5%";
+            h7.style.paddingLeft = "37%";
             h7.style.width = "70%";
 
             h8.style.fontSize = "25px";
-            h8.style.paddingLeft = "43%";
-            h8.style.paddingTop = "0.3%";
+            h8.style.paddingLeft = "37%";
+            h8.style.paddingTop = "1.5%";
             h8.style.width = "63%";
 
             if (window.innerWidth >= 1300) {
@@ -232,6 +234,13 @@ function Organiza() {
                 h6.style.top = "-8em";
                 h6.style.width = "52%";
 
+                h7.style.top = "-11em";
+                h7.style.width = "60%";
+
+                h8.style.fontSize = "25px";
+                h8.style.top = "-12em";
+                h8.style.width = "52%";
+
                 maos.style.width = "24%";
                 maos.style.left = "10%";
 
@@ -240,6 +249,10 @@ function Organiza() {
                 terra.style.width = "30%";
                 terra.style.top = "1em";
                 terra.style.left = "10%";
+
+                nuvem.style.width = "23%";
+                nuvem.style.top = "0.3em";
+                nuvem.style.left = "10%";
 
             }
         }

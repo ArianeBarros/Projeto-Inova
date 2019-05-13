@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="Content\CadastroCSS.css" />
     <Content Include="Content\ContatoCSS.css" />
+    <Content Include="Content\Footer-with-button-logo.css" />
     <Content Include="Content\HomeCadastrado.css" />
     <Content Include="Content\HomeCSS.css" />
     <Content Include="Content\LoginCSS.css" />
@@ -301,7 +302,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49685</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
