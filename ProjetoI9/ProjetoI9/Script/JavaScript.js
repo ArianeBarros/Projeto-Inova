@@ -246,11 +246,11 @@ function Organiza() {
 
                 info.style.width = "80%";
 
-                terra.style.width = "30%";
+                terra.style.width = "29%";
                 terra.style.top = "1em";
                 terra.style.left = "10%";
 
-                nuvem.style.width = "23%";
+                nuvem.style.width = "20%";
                 nuvem.style.top = "0.3em";
                 nuvem.style.left = "10%";
 

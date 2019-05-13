@@ -586,7 +586,9 @@ html
   }
   */
 
-
+.logo2{
+    width : 300%;
+}
 .hrUm {
     width: 12em;
     height: 0.11em;
@@ -637,7 +639,6 @@ html
     #myFooter ul {
         list-style-type: none;
         padding-left: 0;
-        line-height: 1.7;
     }
 
     #myFooter h5 {
