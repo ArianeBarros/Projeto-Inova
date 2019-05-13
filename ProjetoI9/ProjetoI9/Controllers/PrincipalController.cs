@@ -21,31 +21,27 @@ namespace ProjetoI9.Controllers
                 NoticiaDAO dao = new NoticiaDAO();
                 IList<Noticia> not = dao.Lista();
                 ViewBag.QuantasNot = not.Count();
-                ViewBag.Noticia = not[0];
+              
+                ViewData["noticias"] = not;
+                
                 return View();
             }
             else
                 return RedirectToAction("Index", "Login");
         }
 
-        public ActionResult SairPagina(string img, string i, string nomeController)
+        public void SairPagina(string img)
         {
-            if (img == null)
-                img = "/Imagens/imgPerfil.jpg";
+            //object usuario = Session["usuarioLogado"];
 
-            UsuarioI9DAO dao = new UsuarioI9DAO();
-            if(i != null)
-            {
-                UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(i));
+            //if (img == null)
+            //    img = "/Imagens/imgPerfil.jpg";
 
-                if(usu != null)
-                {
-                    usu.imagem = img;
-                  return RedirectToAction("Index", nomeController, new { usu.nome, usu.imagem, usu.id });
-                }
-            }
+            //UsuarioI9DAO dao = new UsuarioI9DAO();
+           
+            //UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(i));
 
-            return RedirectToAction("Index", "Principal");
+            //    usu.imagem = img;
 
         }
     }

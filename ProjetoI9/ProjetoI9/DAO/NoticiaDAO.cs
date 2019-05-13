@@ -26,7 +26,7 @@ namespace ProjetoI9.DAO
                 return contexto.Noticia.ToList();
             }
         }
-        public Noticia BuscaPorCod(int id)
+        public Noticia BuscaPorId(int id)
         {
             using (var contexto = new ProjetoContext())
             {

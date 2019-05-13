@@ -17,13 +17,11 @@ namespace ProjetoI9.Controllers
             ViewBag.UsuarioLogado = usuario;
             return View();
         }
-        public ActionResult SalvarDados(string img, string id)
+        public void SalvarDados(string img)
         {
             UsuarioI9DAO dao = new UsuarioI9DAO();
-            UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(id));
+            UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
             usu.imagem = img;
-
-            return RedirectToAction("Index", "Principal", new { usu.nome, usu.imagem, usu.id });
         }
     }
 }

@@ -21,34 +21,15 @@ namespace ProjetoI9.Controllers
 
         public ActionResult HomeLogado(UsuarioI9 u)
         {
-            //criar objeto a partir dos dados do formulário
-            
-            //gravar os dados no BD
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = dao.BuscaPorEmail(u.email);
-            //IList<UsuarioI9> usuLista = dao.Lista();
-
-            //bool existe = false;
-            //foreach(UsuarioI9 umUsuario in usuLista)
-            //{
-            //    if (umUsuario.email == u.email)
-            //        existe = true;
-            //}
-
-            //if (!existe)
-            //{
-            //    return RedirectToAction("Index", "Login");
-            //}               
-
-            //UsuarioI9 usu =  dao.BuscaPorEmail(u.email);
-            //ViewBag.Imagem = usu.imagem;
 
             if (usu != null && usu.senha == u.senha)
             {
                 Session["usuarioLogado"] = usu;
-                return RedirectToAction("Index", "Principal", new { usu.nome, usu.imagem , usu.id});
+                return RedirectToAction("Index", "Principal");
             }                
-            else //redirecionar para a camada de visualização
+            else 
                 return RedirectToAction("Index", "Login");
         }
     }

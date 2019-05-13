@@ -6,7 +6,7 @@
     <title>Principal</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    @*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
     <script type="text/javascript">
 
         var qualImg = "";
@@ -34,57 +34,32 @@
                 re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
                 document.getElementById("sectionLeft").innerHTML = re;
 
-                BuscaNoticia();
-
                 cont++;
-            }
+            }              
+            BuscaNoticia();
         }
 
 
 
         function CarregarDadosBD() {
-            qualImg = @ViewBag.UsuarioLogado.imagem;
-            
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
 
-            //var string = window.location.href.substring(39);
-            //string = string.split("?");
-            //qualId = string[0];
-            //string = string[1];
-            //string = string.split("&");
-            //var nome = string[0].substring(5);
-            //qualImg = string[1].substring(7);
+            qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
-            //while (nome.indexOf("%20") != -1)
-            //    nome = nome.replace("%20", " ");
-            //while (qualImg.indexOf("%2F") != -1)
-            //    qualImg = qualImg.replace("%2F", "/");
-
-
-            ////alert(nome);
-            ////alert(qualImg);
-            ////alert(qualId);
-
-            //document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
-        }
-
-        function Sair(end) {
-            alert("nao me deixe");
-            //SairPagina(qualImg, qualId, end);
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
         }
 
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='homeV' href='~/Home/Index'  onclick='Sair(this.href)'>HOME</a><br><br>" +
-                    "<a id ='sobreV' href='~/Sobre/Index'  onclick='Sair(this.href)'>SOBRE</a><br><br>" +
-                    "<a id ='contatoV' href='~/Contato/Index'  onclick='Sair(this.href)'>CONTATO</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'  onclick='Sair(this.href)'>PERFIL</a><br><br><br></ul><nav></div>";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
+                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
+                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
+                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
                 seMostraPerfil++;
             }
         }
@@ -114,87 +89,30 @@
         //COMEÇO DO WEB SERVICE
 
         function BuscaNoticia() {
+            
+            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
 
-            document.getElementsByClassName("cTitulo").innerHTML = "FA &#199; A UMA BOA A&#199;&#195; O, ADOTE UM C&#195; O! ";
+            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
+            {
 
-            @*foreach(ProjetoI9.Models.Noticia not in @ViewBag.Noticia)
-            {*@
-                @*document.getElementsByClassName("cTitulo")[0].innerHTML = "'" + @ViewBag.Noticia.manchete + "'";
-                document.getElementsByClassName("cImagem")[0].innerHTML = @ViewBag.Noticia.imagem;
-                document.getElementsByClassName("cLink")[0].innerHTML = @ViewBag.Noticia.link;*@
-            //}
-
-
-
-
-
-            ////let cep = document.getElementById('pesquisa').value
-            //let url = 'http://gaarcampinas.org/quero-ajudar/';
-
-            //axios.get(url)
-            //    .then(response => {
-            //        MostraNoticia(response.data)
-            //    })
-            //    .catch(error => {
-            //        alert("Erro BuscaNoticia(): " + error)
-            //    })
-
-            //event.preventDefault()
+                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[cont].manchete)
+                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[cont].imagem);
+                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[cont].link);
+            }
         }
-
-        function MostraNoticia(dados) {
-            var site = dados + "";
-            alert(site);
-            //cTitulo
-            //cImagem
-            //cLink
-
-
-            //document.getElementsByClass('cTitulo')[i].innerHTML = `Logradouro: ${dados.logradouro}`
-            //document.getElementById('bairro').innerHTML = `Bairro    : ${dados.bairro}`
-            //document.getElementById('cidade').innerHTML = `Cidade    : ${dados.cidade}`
-            //document.getElementById('estado').innerHTML = `Estado    : ${dados.estado}`
-            //document.getElementById('cep').innerHTML = `CEP       : ${dados.cep}`
-
-        }
-
-        //function mostraMensagem() {
-        //    document.getElementById('pesquisa').value = ''
-
-        //    document.getElementById('logradouro').className = 'oculto'
-        //    document.getElementById('bairro').className = 'oculto'
-        //    document.getElementById('cidade').className = 'oculto'
-        //    document.getElementById('estado').className = 'oculto'
-        //    document.getElementById('cep').className = 'oculto'
-        //    document.getElementById('mensagem').className = ''
-        //}
 
         //FIM DO WEB SERVICE
     </script>
 </head>
 <body >
     <header>
-        <a href="#" class="brand-logo">
-            <img class="ondas" src="~/Imagens/ondas.png">
-            <div> <img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
-        </a>
-        <form id="menu" method="post" action="SairPagina(qualImg, qualId, Contato)">
+        
+        <form id="menu" method="post">
             <nav id="navHeader">
-                <ul>
-                    @*@using (Html.BeginForm("SairPagina(qualImg, qualId, Contato)", "PrincipalController", FormMethod.Get))
-                {
-                    <a id="contato" href="#" onclick="Sair(this.href)">CONTATO</a>
-
-            }
-
-                    @using (Html.BeginForm("SairPagina", "PrincipalController", FormMethod.Get))
-                {
-                    <a id="login" href="~/Login/Index" onclick="Sair(this.href)">LOGIN</a>
-
-            }*@
-                    <a id="home" href="~/Home/Index" onclick="Sair(this.href)">HOME</a>
-                    <a id="sobre" href="~/Sobre/Index" onclick="Sair(this.href)">SOBRE</a>
-                    <a id="contato" href="~/Contato/Index" onclick="Sair(this.href)">CONTATO</a>
+                <ul>                   
+                    <a id="home" href="~/Home/Index">HOME</a>
+                    <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                    <a id="contato" href="~/Contato/Index">CONTATO</a>
                     <a id="perfil" href="~/Perfil/Index">PERFIL</a>
 
 
@@ -264,14 +182,6 @@
         <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
         <button id="btnParabens" onclick="Parabens()">OK</button>
     </section>
-
-
-    <footer>
-        <h1 class="fot1">inovaAgora@gmail.com </h1>
-        <h1 class="fot1">i9@hotmail.com </h1>
-        <h1 class="fot2">(19)3336-5487 </h1>
-        <h1 class="fot2">(19)5135-9804 </h1>
-    </footer>
 
 </body>
 </html>

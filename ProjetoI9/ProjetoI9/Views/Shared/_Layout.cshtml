@@ -4,14 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-        @RenderBody()
+    <header>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+        <a href="#" class="brand-logo">
+            <img class="ondas" src="~/Imagens/ondas.png">
+            <div> <img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
+        </a>
+
+        @RenderBody()
+    </header>
+
+
+    <footer>
+        <h1 class="fot1">inovaAgora@gmail.com </h1>
+        <h1 class="fot1">i9@hotmail.com </h1>
+        <h1 class="fot2">(19)3336-5487 </h1>
+        <h1 class="fot2">(19)5135-9804 </h1>
+    </footer>
 </body>
 </html>

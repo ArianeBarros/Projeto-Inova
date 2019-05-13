@@ -119,6 +119,7 @@ header {
     box-shadow: 10px 10px 10px 5px grey;
     height: 50%;
     width: 50%;
+    top: 80%;
     align-self: center;
     left: 350px;
     position: absolute;
@@ -164,7 +165,7 @@ footer {
     font-size: 30px;
     color: white;
     position: relative;
-    top: 32%;
+    top: 42%;
     margin-top: 1em;
     left: -30%;
 }
@@ -173,7 +174,7 @@ footer {
     font-size: 30px;
     color: white;
     position: relative;
-    top: -22%;
+    top: 42%;
     margin-top: 1em;
     left: 10px;
 }
