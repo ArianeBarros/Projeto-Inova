@@ -194,6 +194,24 @@ footer {
     width: 100%;
 }
 
+
+.localizacao {
+    font-size: 20px;
+    color: black;
+    height: 10%;
+    width: 100%;
+    background-color: green;
+}
+
+.descricao {
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 20%;
+    height: 70%;
+    width: 100%;
+}
+
 #parabens {
     background-color: #b1f1f4;
     width: 40%;

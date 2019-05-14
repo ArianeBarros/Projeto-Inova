@@ -25,15 +25,20 @@ namespace ProjetoI9.Controllers
 
                 EventoDAO eveDAO = new EventoDAO();
                 IList<Evento> e = eveDAO.Lista();
-                IList<Evento> nova = null;
+                IList<Evento> clone = eveDAO.Lista();
+                var qtd = e.Count();
 
-                foreach (var a in e)
+                foreach (var a in clone)
                 {
-                    if (a.id == usuario.id)
-                        nova.Add(a);
+                    if (a.idUsuario != usuario.id)
+                    {
+                        e.Remove(a);
+                        qtd--;
+                    }
+                        
                 }
-                ViewBag.QuantosEventos = e.Count();
-                ViewData["eventos"] = nova;
+                ViewBag.QuantosEventos = qtd;
+                ViewData["eventos"] = e;
                 
                 
                 return View();
