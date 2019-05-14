@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,7 +8,7 @@ namespace ProjetoI9.DAO
 {
     public class EventoDAO
     {
-        public void Adiciona(Noticia not)
+        public void Adiciona(Models.Noticia not)
         {
             using (var context = new ProjetoContext())
             {
@@ -15,21 +16,21 @@ namespace ProjetoI9.DAO
                 context.SaveChanges();
             }
         }
-        public IList<Noticia> Lista()
+        public IList<Models.Noticia> Lista()
         {
             using (var contexto = new ProjetoContext())
             {
                 return contexto.Noticia.ToList();
             }
         }
-        public Noticia BuscaPorId(int id)
+        public Models.Noticia BuscaPorId(int id)
         {
             using (var contexto = new ProjetoContext())
             {
                 return contexto.Noticia.Where(p => p.id == id).FirstOrDefault();
             }
         }
-        public void Atualiza(Noticia not)
+        public void Atualiza(Models.Noticia not)
         {
             using (var contexto = new ProjetoContext())
             {

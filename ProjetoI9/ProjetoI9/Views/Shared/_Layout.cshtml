@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/LayoutFooter.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style type="text/css"></style>
 </head>
 <body>
     <header>
@@ -18,12 +22,51 @@
         @RenderBody()
     </header>
 
-
-    <footer>
-        <h1 class="fot1">inovaAgora@gmail.com </h1>
-        <h1 class="fot1">i9@hotmail.com </h1>
-        <h1 class="fot2">(19)3336-5487 </h1>
-        <h1 class="fot2">(19)5135-9804 </h1>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo">
+                        <a href="#">
+                            <img src="~/Imagens/LOGO/logoofc.png" class="logo2" id="logo2">
+                        </a>
+                    </h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Comece já</h5>
+                    <ul>
+                        <li><a href="#">Cadastre-se</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Pareto</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Políticas</h5>
+                    <ul>
+                        <li><a href="~/Termos/Index">Termos e Condições</a></li>
+                        <li><a href="~/Termos/Index">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <div class="btn btn-default">Siga-nos</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2019 - Inova - Todos os direitos reservados </p>
+        </div>
     </footer>
 </body>
 </html>
