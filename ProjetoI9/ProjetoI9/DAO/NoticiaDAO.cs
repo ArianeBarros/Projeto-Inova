@@ -18,7 +18,7 @@ namespace ProjetoI9.DAO
                 context.SaveChanges();
             }
         }
-        public IList<Noticia> Lista()
+        public List<Noticia> Lista()
         {
             using (var contexto = new ProjetoContext())
             {

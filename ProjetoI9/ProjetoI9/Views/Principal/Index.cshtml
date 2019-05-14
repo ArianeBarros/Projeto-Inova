@@ -4,12 +4,15 @@
 <html>
 <head>
     <title>Principal</title>
-    <link rel="shortcut icon" href="favicon.ico">
+
+    @*<link rel="shortcut icon" href="favicon.ico">*@
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
+
     @*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
     <script type="text/javascript">
 
         var qualImg = "";
+
 
         window.onload = function () {
 
@@ -28,9 +31,6 @@
             while (cont < @ViewBag.QuantasNot) {
                 noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
-
-                re = re + "<div class='eventoSemana'><label class='data'></label></div>";
-                document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
             }
@@ -54,6 +54,15 @@
                 document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
+
+                //re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
+                //document.getElementById("sectionLeft").innerHTML = re + " <label class='lbl'>Semana</label><div class='adicionarEvento'>" +
+                //    "<label>Adicionar Evento</label><div id='divAdicionarEvento'>" +
+                //    "<label> Data: </label><input id='dataEvento' type='text'>" +
+                //    "<label> Descrição: </label><input id='descricaoEvento' type='text'>" +
+                //    "<label> Localização: </label><input id='localizacaoEvento' type='text'></div>";
+
+                //cont++;
             }
 
             BuscaEvento();
@@ -135,31 +144,29 @@
 
         //COMEÇO DO WEB SERVICE
 
-
+         
 
         //FIM DO WEB SERVICE
     </script>
 </head>
-<body >
-    <header>
-        
-        <form id="menu" method="post">
-            <nav id="navHeader">
-                <ul>                   
-                    <a id="home" href="~/Home/Index">HOME</a>
-                    <a id="sobre" href="~/Sobre/Index">SOBRE</a>
-                    <a id="contato" href="~/Contato/Index">CONTATO</a>
-                    <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+<body>
+    @*<header>*@
 
+    <form id="menu" method="post">
+        <nav id="navHeader">
+            <ul>
+                <a id="home" href="~/Home/Index">HOME</a>
+                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                <a id="contato" href="~/Contato/Index">CONTATO</a>
+                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+            </ul>
+        </nav>
+    </form>
+    <div id="opcoesFotos">
 
-                </ul>
-            </nav>
-            </form>
-            <div id="opcoesFotos">
+    </div>
 
-            </div>
-
-    </header>
+    @*</header>*@
 
     <button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>
 
@@ -194,13 +201,25 @@
     </section>
 
     <section id="sectionLeft">
-        <label class="lbl">Semana</label>
+        @*<label class="lbl">Semana</label>
 
-        <!-- <div class="realizacoes">
-        <label>Realizações</label>
-    </div>-->
+                 <div class="adicionarEvento">
+                <label>Adicionar Evento</label>
+                     <div id="divAdicionarEvento">
+                        <label> Data: </label><input id="dataEvento" type="text">
+                        <label> Descrição: </label><input id="descricaoEvento" type="text">
+                        <label> Localização: </label><input id="localizacaoEvento" type="text">
+            </div>*@
 
     </section>
+             
+    <aside class="adicionarEvento">
+            <label>Adicionar Evento</label>
+                 <aside id="divAdicionarEvento">
+                    <label> Data: </label><input id="dataEvento" type="text">
+                    <label> Descrição: </label><input id="descricaoEvento" type="text">
+                    <label> Localização: </label><input id="localizacaoEvento" type="text">
+        </aside>
 
     <section id="sectionRight">
         <label class="lbl">Sonhos</label>

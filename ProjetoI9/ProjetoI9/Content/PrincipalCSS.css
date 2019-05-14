@@ -61,8 +61,7 @@ header {
 #sobreV, #loginNavV, #cadastroV, #contatoV, #homeV, #configV {
     color: black;
     position: relative;
-    /*left: 170%;*/
-    left: 100%;
+    left: 170%;
 }
 
 #opcoesFotos {
@@ -357,16 +356,32 @@ footer {
     width: 20%;
 }
 
-/* .realizacoes
+ .adicionarEvento
 {
-    background-color: #f6e58d;
+    background-color: antiquewhite;
     color: black;
     height: 40%;
-    width: 100%;
-    position: relative;
+    width: 40%;
+    position: absolute;
     margin-top: 1em;
     border-radius: 10%;
+    font-family: 'Times New Roman', Times, serif;
     left: 3%;
     top: 80%;
-} */
+    float: left;
+}
+
+.descricaoEvento
+{
+    height: 80%;
+}
+
+.dataEvento 
+{
+    height: 10%;
+}
+
+.localizacaoEvento {
+    height: 10%;
+}
 

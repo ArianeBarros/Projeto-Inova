@@ -11,7 +11,6 @@ namespace ProjetoI9.Controllers
 {
     public class PrincipalController : Controller
     {
-        // GET: Home
         public ActionResult Index()
         {
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
@@ -19,28 +18,23 @@ namespace ProjetoI9.Controllers
             if (usuario != null)
             {
                 NoticiaDAO dao = new NoticiaDAO();
-                IList<Noticia> not = dao.Lista(); 
+                IList<Noticia> not = dao.Lista();
                 ViewBag.QuantasNot = not.Count();
                 ViewData["noticias"] = not;
 
                 EventoDAO eveDAO = new EventoDAO();
                 IList<Evento> e = eveDAO.Lista();
-                IList<Evento> clone = eveDAO.Lista();
-                var qtd = e.Count();
+                List<Evento> clone = new List<Evento>();
 
-                foreach (var a in clone)
+                foreach (var a in e)
                 {
-                    if (a.idUsuario != usuario.id)
-                    {
-                        e.Remove(a);
-                        qtd--;
-                    }
-                        
+                    if (a.idUsuario == usuario.id)
+                        clone.Add(a);
                 }
-                ViewBag.QuantosEventos = qtd;
-                ViewData["eventos"] = e;
-                
-                
+
+                ViewBag.QuantosEventos = clone.Count();
+                ViewData["eventos"] = clone;
+
                 return View();
             }
             else

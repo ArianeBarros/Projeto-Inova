@@ -12,7 +12,29 @@
 </head>
 <body>
     <header>
-       
+        <div class="header" id="header">
+            <img class="ondas" id="ondas" src="~/Imagens/ondas.png">
+            <img src="~/Imagens/LOGO/logoofc.png" class="logo">
+            <!-- <img class="barra" src="./Imagens/nav.png"> -->
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-menu-btn">
+                <i class="fa fa-bars fa-w-14 fa-2x"></i>
+            </label>
+            <ul class="menu">
+                <div class="ab" onclick="oi('Login')">LOGIN</div>
+                <div class="ab" onclick="oi('Cadastro')">CADASTRE-SE</div>
+                <div class="ab" onclick="oi('Sobre')">SOBRE</div>
+                <div class="ab" onclick="oi('Contato')">CONTATO</div>
+                <label for="chk" class="hide-menu-btn">
+                    <a class="menu-barra">
+                        <i class="fa fa-times fa-w-14 fa-2x"></i>
+                    </a>
+                </label>
+            </ul>
+            <div id="opcoesFotos">
+
+            </div>
+        </div>
     </header>
 
     <form id="login" method="post" action="HomeLogado">
