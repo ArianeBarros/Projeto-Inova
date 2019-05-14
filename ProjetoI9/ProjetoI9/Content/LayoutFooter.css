@@ -3,7 +3,6 @@
     color: white;
     padding-top: 30px;
     font-size: 106%;
-    
 }
 
     #myFooter .footer-copyright {
@@ -107,6 +106,7 @@
 @media screen and (max-width: 767px) {
     #myFooter {
         text-align: center;
+       height:50%;
     }
 
     .col-sm-3 {
@@ -117,13 +117,14 @@
 @media screen and (max-width: 576px) {
     #myFooter {
         text-align: center;
+        height:75%;
     }
 
     .col-sm-3 {
         padding-left: 0%;
     }
     #logo2 {
-        width: 300%;
+        width: 100%;
     }
 }
 
@@ -137,7 +138,7 @@
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    top: 100em;
+    top: 50em;
 }
 
 * {
