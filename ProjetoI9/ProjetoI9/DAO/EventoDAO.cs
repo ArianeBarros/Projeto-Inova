@@ -2,38 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.EntityFrameworkCore;
+using ProjetoI9.Models;
 
 namespace ProjetoI9.DAO
 {
     public class EventoDAO
     {
-        public void Adiciona(Noticia not)
+        public void Adiciona(Evento eve)
         {
             using (var context = new ProjetoContext())
             {
-                context.Noticia.Add(not);
+                context.Evento.Add(eve);
                 context.SaveChanges();
             }
         }
-        public IList<Noticia> Lista()
+        public IList<Evento> Lista()
         {
             using (var contexto = new ProjetoContext())
             {
-                return contexto.Noticia.ToList();
+                return contexto.Evento.ToList();
             }
         }
-        public Noticia BuscaPorId(int id)
+        public Evento BuscaPorId(int id)
         {
             using (var contexto = new ProjetoContext())
             {
-                return contexto.Noticia.Where(p => p.id == id).FirstOrDefault();
+                return contexto.Evento.Where(p => p.id == id).FirstOrDefault();
             }
         }
-        public void Atualiza(Noticia not)
+        public void Atualiza(Evento eve)
         {
             using (var contexto = new ProjetoContext())
             {
-                contexto.Entry(not).State = EntityState.Modified;
+                contexto.Entry(eve).State = EntityState.Modified;
                 contexto.SaveChanges();
             }
         }

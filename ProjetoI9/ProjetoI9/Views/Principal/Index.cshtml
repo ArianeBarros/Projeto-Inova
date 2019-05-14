@@ -6,7 +6,6 @@
     <title>Principal</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
-    @*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
     <script type="text/javascript">
 
         var qualImg = "";
@@ -20,17 +19,16 @@
             CarregarDadosBD();
         }
 
+
         function CarregarNoticias()
         {
             var cont = 0;
             var noti = "";
             var re = "";
-            while (cont < @ViewBag.QuantasNot) {
+            while (cont < @ViewBag.QuantasNot)
+            {
                 noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
-
-                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
-                document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
             }
@@ -45,31 +43,90 @@
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
 
-            //REALIZAÇÕES
-            @*while (cont < @ViewBag.QuantasNot)
+            //EVENTOS
+            var cont = 0;
+            var eve = "";
+            var re = "";
+            while (cont < @ViewBag.QuantosEventos)
             {
-                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
-                document.getElementById("sectionPrincipal").innerHTML = noti;
-
-                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
+                re = re + "<div class='eventoSemana'><label class='data'></label><div class='descricaoEvento'></div><div class='localizacaoEvento'></div></div>";
                 document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
-            }*@
+            }
+            BuscaEventos();
+        }
+
+        
+
+         function BuscaNoticia() {
+
+            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
+
+            var qualIndice = Math.floor(Math.random() * (@ViewBag.QuantasNot - 0));
+            var jaFoiExibida = "";
+
+            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
+            {
+                while (jaFoiExibida.includes(qualIndice))
+                    qualIndice = Math.floor(Math.random() * (@ViewBag.QuantasNot - 0));
+
+                jaFoiExibida += "," + qualIndice;
+
+                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete)
+                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
+                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
+            }
+         }
+
+        //Colocar no css
+        /*
+            .descricaoEvento
+             {
+
+            }
+
+        .localizacaoEvento
+            {
+
+            }
+
+            //.data{}
+        */
+
+        function BuscaEventos() {
+
+            var lista = @Html.Raw(Json.Encode(@ViewData["eventos"]));
+
+            @*var qualIndice = Math.random() * (@ViewBag.QuantosEventos - 0);*@
+
+            for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
+            {
+
+                if (@ViewBag.UsuarioLogado.id == JSON.stringify(lista[qualIndice].idUsuario))
+                {
+                    document.getElementsByClassName("descricaoEvento")[cont].innerHTML = JSON.stringify(lista[cont].quando)
+                    document.getElementsByClassName("data")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
+                    document.getElementsByClassName("localizacaoEvento")[cont].innerHTML = JSON.stringify(lista[cont].localizacao);
+
+                }
+            }
         }
 
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\"><div id='divMenuV'><nav id ='menuV'><ul>" +
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
                     "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
+                    "<a id ='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
+                    "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
+                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
                     "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
                     "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
         }
@@ -98,20 +155,7 @@
 
         //COMEÇO DO WEB SERVICE
 
-        function BuscaNoticia() {
 
-            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
-
-            var qualIndice = Math.random() * (@ViewBag.QuantasNot - 0);
-
-            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
-            {
-
-                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete)
-                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
-                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
-            }
-        }
 
         //FIM DO WEB SERVICE
     </script>

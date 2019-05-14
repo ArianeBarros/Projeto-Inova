@@ -19,10 +19,15 @@ namespace ProjetoI9.Controllers
             if (usuario != null)
             {
                 NoticiaDAO dao = new NoticiaDAO();
-                IList<Noticia> not = dao.Lista();
+                IList<Noticia> not = dao.Lista(); 
                 ViewBag.QuantasNot = not.Count();
-               // ViewBag.QuantasRealizacoes = not.Count();
                 ViewData["noticias"] = not;
+
+                EventoDAO eveDAO = new EventoDAO();
+                IList<Evento> e = eveDAO.Lista();
+                ViewBag.QuantosEventos = e.Count();
+                ViewData["eventos"] = e;
+                
                 
                 return View();
             }
