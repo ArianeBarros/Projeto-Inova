@@ -45,17 +45,42 @@
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
 
-            //REALIZAÇÕES
-            @*while (cont < @ViewBag.QuantasNot)
+            //EVENTOS
+            while (cont < @ViewBag.QuantosEventos)
             {
-                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
-                document.getElementById("sectionPrincipal").innerHTML = noti;
-
-                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label></div>";
+                re = re + "<div class='eventoSemana'><label class='data'> 20/12/2002, S&aacute;bado</label><div class='descricao'></div><div class='localizacao'></div></div>";
                 document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
-            }*@
+            }
+        }
+
+          function BuscaNoticia() {
+
+            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
+
+            var qualIndice = Math.random() * (@ViewBag.QuantasNot - 0);
+
+            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
+            {
+                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete)
+                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
+                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
+            }
+          }
+
+        function BuscaEvento() {
+
+            var lista = @Html.Raw(Json.Encode(@ViewData["eventos"]));
+
+            @*var qualIndice = Math.random() * (@ViewBag.QuantosEventos - 0);*@
+
+            for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
+            {
+                document.getElementsByClassName("data")[cont].innerHTML = JSON.stringify(lista[cont].quando);
+                document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
+                document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao);
+            }
         }
 
         var seMostraPerfil = 2;
@@ -98,20 +123,7 @@
 
         //COMEÇO DO WEB SERVICE
 
-        function BuscaNoticia() {
 
-            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
-
-            var qualIndice = Math.random() * (@ViewBag.QuantasNot - 0);
-
-            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
-            {
-
-                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete)
-                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
-                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
-            }
-        }
 
         //FIM DO WEB SERVICE
     </script>

@@ -10,10 +10,12 @@ namespace ProjetoI9.Models
     {
         public int id { get; set; }
         [Required]
-        public string link { get; set; }
+        public int idUsuario { get; set; }
         [Required]
-        public string imagem { get; set; }
+        public string descricao { get; set; }
         [Required]
-        public string manchete { get; set; }
+        public string localizacao { get; set; }
+        [Required]
+        public string quando { get; set; }
     }
 }

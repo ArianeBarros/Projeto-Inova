@@ -14,7 +14,7 @@ namespace ProjetoI9.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            object usuario = Session["usuarioLogado"];
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
             ViewBag.UsuarioLogado = usuario;
             if (usuario != null)
             {
@@ -25,10 +25,15 @@ namespace ProjetoI9.Controllers
 
                 EventoDAO eveDAO = new EventoDAO();
                 IList<Evento> e = eveDAO.Lista();
+                IList<Evento> nova = null;
 
-                while()
+                foreach (var a in e)
+                {
+                    if (a.id == usuario.id)
+                        nova.Add(a);
+                }
                 ViewBag.QuantosEventos = e.Count();
-                ViewData["eventos"] = e;
+                ViewData["eventos"] = nova;
                 
                 
                 return View();
