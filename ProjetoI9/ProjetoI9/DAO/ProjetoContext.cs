@@ -9,7 +9,6 @@ namespace ProjetoI9.DAO
 {
     public class ProjetoContext: DbContext
     {
-        public DbSet<Evento> Evento { get; set; }
         public DbSet<UsuarioI9> UsuarioI9 { get; set; }
         public DbSet<Noticia> Noticia { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -7,14 +7,13 @@ using System.Web;
 namespace ProjetoI9.Models
 {
     public class Noticia
-    {       
-
+    {
         public int id { get; set; }
         [Required]
-        public string link { get; set; }
+        public string descricao { get; set; }
         [Required]
-        public string imagem { get; set; }
+        public string quando { get; set; }
         [Required]
-        public string manchete { get; set; }
+        public string localizacao { get; set; }
     }
 }

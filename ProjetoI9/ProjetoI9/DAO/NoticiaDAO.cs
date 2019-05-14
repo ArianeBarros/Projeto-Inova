@@ -10,6 +10,7 @@ namespace ProjetoI9.DAO
 {
     public class NoticiaDAO
     {
+
         public void Adiciona(Noticia not)
         {
             using (var context = new ProjetoContext())
