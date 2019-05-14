@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/CadastroCSS.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="~/Script/JavaScript.js"></script>
     <script type="text/javascript">
 
         window.onload = function()
@@ -62,13 +63,32 @@
     </script>
 </head>
 <body>
-    <header>
-        <a href="#" class="brand-logo">
-            <img class="ondas" src="~/Imagens/ondas.png">
-            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
-        </a>
+    <div class="header" id="header">
+        <img class="ondas" id="ondas" src="~/Imagens/ondas.png">
+        <img src="~/Imagens/LOGO/logoofc.png" class="logo">
+        <!-- <img class="barra" src="./Imagens/nav.png"> -->
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fa fa-bars fa-w-14 fa-2x"></i>
+        </label>
+        <ul class="menu">
+            <div class="ab" onclick="oi('Login')">LOGIN</div>
+            <div class="ab" onclick="oi('Cadastro')">CADASTRE-SE</div>
+            <div class="ab" onclick="oi('Sobre')">SOBRE</div>
+            <div class="ab" onclick="oi('Contato')">CONTATO</div>
+            <label for="chk" class="hide-menu-btn">
+                <a class="menu-barra">
+                    <i class="fa fa-times fa-w-14 fa-2x"></i>
+                </a>
+            </label>
+        </ul>
+        <div id="opcoesFotos">
 
-        <nav id="navHeader">
+        </div>
+    </div>
+
+    @*<header>
+            <nav id="navHeader">
             <ul>
                 <a id="home" href="~/Home/Index">HOME</a>
                 <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
@@ -83,7 +103,7 @@
 
         </div>
 
-    </header>
+    </header>*@
 
     <form id="loginSection" method="post" action="HomeCadastrado">
         <br><br><br><br><br><br>
@@ -91,7 +111,7 @@
 
 
             <label class="login" for="username">Nome: </label>
-            
+
             <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
             @Html.ValidationMessage("u.nome")
         </div><br><br><br><br>
@@ -131,13 +151,6 @@
         <button id="btnCadastrar" onclick="SenhasIguais()">Cadastrar</button>
         <u><a href="~/Login/Index" class="cTemCadastro"> Já tem cadastro?! </a></u>
     </form>
-
-    <footer>
-        <h1 class="fot1">inovaAgora@gmail.com </h1>
-        <h1 class="fot1">i9@hotmail.com </h1>
-        <h1 class="fot2">(19)3336-5487 </h1>
-        <h1 class="fot2">(19)5135-9804 </h1>
-    </footer>
 
 </body>
 </html>
