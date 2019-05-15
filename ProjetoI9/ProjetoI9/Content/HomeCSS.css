@@ -239,7 +239,7 @@ html
             top: -1em;
         }
 
-            .menu a {
+            .menu div {
                 font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
                 font-size: 22px;
                 padding: 0.6em;
@@ -282,7 +282,7 @@ html
             left: 25%;
         }
 
-            .menu a {
+            .menu div {
                 font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
                 font-size: 25px;
             }

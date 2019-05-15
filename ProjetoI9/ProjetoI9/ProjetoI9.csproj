@@ -165,7 +165,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animate2.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CadastroCSS.css" />
     <Content Include="Content\ContatoCSS.css" />
     <Content Include="Content\Footer-with-button-logo.css" />
@@ -182,6 +185,7 @@
     <Content Include="Imagens\b.png" />
     <Content Include="Imagens\balao.png" />
     <Content Include="Imagens\banner.jpg" />
+    <Content Include="Imagens\bg-01.jpg" />
     <Content Include="Imagens\btnCadastre-se.png" />
     <Content Include="Imagens\btnLogin.png" />
     <Content Include="Imagens\coisinhas.png" />
@@ -203,6 +207,8 @@
     <Content Include="Imagens\Home\imgPlan.png" />
     <Content Include="Imagens\Home\imgRec.png" />
     <Content Include="Imagens\Home\ondas2.png" />
+    <Content Include="Imagens\icons\favicon.ico" />
+    <Content Include="Imagens\img-01.png" />
     <Content Include="Imagens\imgPerfil.jpg" />
     <Content Include="Imagens\LOGO\apple-icon-114x114.png" />
     <Content Include="Imagens\LOGO\apple-icon-120x120.png" />
@@ -237,6 +243,7 @@
     <Content Include="Imagens\paisagem6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap.min" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

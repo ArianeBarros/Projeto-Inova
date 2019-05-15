@@ -5,15 +5,14 @@
     <title>Cadastro</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/CadastroCSS.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/animate.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/CadastroCSS.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <script type="text/javascript" src="~/Script/CadScript.js"></script>
     <script type="text/javascript">
 
         window.onload = function()
         {
-            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
-            //document.getElementById("username").focus();
-
             Carregar();
             Organiza();
         }
@@ -21,13 +20,20 @@
         window.onresize = function () {
             Organiza();
         }
+
         function Organiza() {
             var fundo = document.getElementById("ondas");
-            if (window.innerWidth >= 1000) {
-                fundo.src = "/Imagens/ondas2.png";
+            if (window.innerWidth >= 1300) {
+                fundo.style.height = "12em";
             }
-            else
-                fundo.src = "/Imagens/ondas.png";
+            else {
+                fundo.style.height = "10em";
+                if (window.innerWidth >= 800) {
+                    fundo.style.width = "100%";
+                }
+                else
+                    fundo.style.width = "170%";
+            }
         }
 
         function Carregar() //função chamada sempre que o usuario tenta fazer cadastro
@@ -52,32 +58,13 @@
                 return ok;
         }
 
-        var seMostraPerfil = 2;
-        function CarregarPerfil()
-        {
-            if(seMostraPerfil % 2 == 0)
-            {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                                                                "<a id ='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
-                                                                "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
-                                                                "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
-                                                                "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
-                                                                "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
-                seMostraPerfil++;
-            }
-            else
-            {
-                document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-                seMostraPerfil++;
-            }
-        }
+
 
     </script>
 </head>
 <body>
     <div class="header" id="header">
-        <img class="ondas" id="ondas" src="~/Imagens/ondas.png">
+        <img class="ondas" id="ondas" src="~/Imagens/ondas2.png">
         <img src="~/Imagens/LOGO/logoofc.png" class="logo">
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
         <input type="checkbox" id="chk">
@@ -95,74 +82,112 @@
                 </a>
             </label>
         </ul>
-        <div id="opcoesFotos">
 
-        </div>
     </div>
 
     @*<header>
-            <nav id="navHeader">
-            <ul>
-                <a id="home" href="~/Home/Index">HOME</a>
-                <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
-                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
-                <a id="login" href="~/Login/Index">LOGIN</a>
-                <a id="contato" href="~/Contato/Index">CONTATO</a>
-                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
-            </ul>
-        </nav>
+                <nav id="navHeader">
+                <ul>
+                    <a id="home" href="~/Home/Index">HOME</a>
+                    <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
+                    <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                    <a id="login" href="~/Login/Index">LOGIN</a>
+                    <a id="contato" href="~/Contato/Index">CONTATO</a>
+                    <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+                </ul>
+            </nav>
 
-        <div id="opcoesFotos">
+            <div id="opcoesFotos">
 
-        </div>
+            </div>
 
-    </header>*@
+        </header>*@
 
-    <form id="loginSection" method="post" action="HomeCadastrado">
-        <br><br><br><br><br><br>
-        <div>
+        <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
+            <div class="container-contact100">
+                <div class="wrap-contact100">
+                    <div class="contact100-pic js-tilt" data-tilt>
+                        <img src="~/Imagens/img-01.png" alt="IMG">
+                    </div>
+
+                        <span class="contact100-form-title">
+                            Get in touch
+                        </span>
+
+                        <div class="wrap-input100 validate-input" data-validate="Name is required">
+                            <input class="input100" type="text" name="name" placeholder="Name">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="email" placeholder="Email">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Message is required">
+                            <textarea class="input100" name="message" placeholder="Message"></textarea>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="container-contact100-form-btn">
+                            <button class="contact100-form-btn">
+                                Send
+                            </button>
+                        </div>
+                </div>
+            </div>
+    <!--
+    <br><br><br><br><br><br>
+    <div>
 
 
-            <label class="login" for="username">Nome: </label>
+        <label class="login" for="username">Nome: </label>
 
-            <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
-            @Html.ValidationMessage("u.nome")
-        </div><br><br><br><br>
+        <input class="loginInput" id="nome" type="text" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
+        @*Html.ValidationMessage("u.nome")
+    </div><br><br><br><br>
 
-        <div>
-            <label class="login" for="email">Email: </label>
-            <input class="loginInput" id="email" type="email" required name="u.email">
-            @Html.ValidationMessage("u.email")
-        </div><br><br><br><br>
+    <div>
+        <label class="login" for="email">Email: </label>
+        <input class="loginInput" id="email" type="email" required name="u.email">
+        @*Html.ValidationMessage("u.email")
+    </div><br><br><br><br>
 
-        <div>
-            <label class="login" for="aniversario">Data Nascimento: </label>
-            <input class="loginInput" type="date" id="data" name="u.dataNascimento" pattern="^\d{2}/\d{2}/\d{4}$" required>
-            @Html.ValidationMessage("u.dataNascimento")
-        </div><br><br><br><br>
+    <div>
+        <label class="login" for="aniversario">Data Nascimento: </label>
+        <input class="loginInput" type="date" id="data" name="u.dataNascimento" pattern="^\d{2}/\d{2}/\d{4}$" required>
+        @Html.ValidationMessage("u.dataNascimento")
+    </div><br><br><br><br>
 
-        <div>
-            <label class="login" for="password">Senha: </label>
-            <input class="loginInput" id="password" type="password" required pattern=".{2,}" onblur="Tool()" name="u.senha">
-            @Html.ValidationMessage("u.senha")
-        </div><br><br><br><br>
+    <div>
+        <label class="login" for="password">Senha: </label>
+        <input class="loginInput" id="password" type="password" required pattern=".{2,}" onblur="Tool()" name="u.senha">
+        @Html.ValidationMessage("u.senha")
+    </div><br><br><br><br>
 
-        <div>
-            <label class="login" for="password2">Confirmar senha: </label>
-            <input class="loginInput" id="password2" type="password" required>  @*onblur="Tool()" onfocus="TirarTool()"*@
-        </div><br><br><br><br>
+    <div>
+        <label class="login" for="password2">Confirmar senha: </label>
+        <input class="loginInput" id="password2" type="password" required>  @*onblur="Tool()" onfocus="TirarTool()"*@
+    </div><br><br><br><br>
 
-        <h1 class="login">Preferência de notícias: </h1>
+    <h1 class="login">Preferência de notícias: </h1>
 
-        <select id="cbNoti">
-            <option value="politica">Política</option>
-            <option value="ongs">ONGS</option>
-            <option value="animais">Animais</option>
-            <option value="algo">Algo</option>
-        </select>
+    <select id="cbNoti">
+        <option value="politica">Política</option>
+        <option value="ongs">ONGS</option>
+        <option value="animais">Animais</option>
+        <option value="algo">Algo</option>
+    </select>
 
-        <button id="btnCadastrar" onclick="SenhasIguais()">Cadastrar</button>
-        <u><a href="~/Login/Index" class="cTemCadastro"> Já tem cadastro?! </a></u>
+    <button id="btnCadastrar" onclick="SenhasIguais()">Cadastrar</button>
+    <u><a href="~/Login/Index" class="cTemCadastro"> Já tem cadastro?! </a></u>
+        -->
     </form>
 
 </body>
