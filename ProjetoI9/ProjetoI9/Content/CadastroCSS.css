@@ -184,16 +184,10 @@ header {
 }
 
 #loginSection {
-    background-color: black;
-    box-shadow: 10px 10px 10px 5px grey;
-    height: 107%;
-    width: 70%;
     align-self: center;
-    left: 200px;
-    position: absolute;
-    border-radius: 10%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
+    left: 15%;
+    top:3em;
+    position: relative;
 }
 
 footer {
@@ -255,7 +249,7 @@ footer {
 }
 
 #divMenuV {
-    background-color: wheat;
+    background-color: white;
     width: 380%;
     border-radius: 3%;
     position: relative;
