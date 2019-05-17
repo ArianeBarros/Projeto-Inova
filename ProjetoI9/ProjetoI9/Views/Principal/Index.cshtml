@@ -1,10 +1,8 @@
-﻿
-@*simpfrc@unicamp.br*@
+﻿@*simpfrc@unicamp.br*@
 
 <html>
 <head>
     <title>Principal</title>
-
     @*<link rel="shortcut icon" href="favicon.ico">*@
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
 
@@ -144,13 +142,13 @@
 
         //COMEÇO DO WEB SERVICE
 
-         
+
 
         //FIM DO WEB SERVICE
     </script>
 </head>
 <body>
-    @*<header>*@
+    <header>
 
     <form id="menu" method="post">
         <nav id="navHeader">
@@ -166,9 +164,9 @@
 
     </div>
 
-    @*</header>*@
+    </header>
 
-    <button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>
+    @*<button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>*@
 
     <section id="secAgenda">
         AEEEE
@@ -212,31 +210,31 @@
             </div>*@
 
     </section>
-             
+
     <aside class="adicionarEvento">
-            <label>Adicionar Evento</label>
-                 <aside id="divAdicionarEvento">
-                    <label> Data: </label><input id="dataEvento" type="text">
-                    <label> Descrição: </label><input id="descricaoEvento" type="text">
-                    <label> Localização: </label><input id="localizacaoEvento" type="text">
+        <label>Adicionar Evento</label>
+        <aside id="divAdicionarEvento">
+            <label> Data: </label><input id="dataEvento" type="text">
+            <label> Descrição: </label><input id="descricaoEvento" type="text">
+            <label> Localização: </label><input id="localizacaoEvento" type="text">
         </aside>
 
-    <section id="sectionRight">
-        <label class="lbl">Sonhos</label>
+        <section id="sectionRight">
+            <label class="lbl">Sonhos</label>
 
-        <div id="chkSonhos">
-            <input type="checkbox">Adotar um cachorro<br>
-        </div>
+            <div id="chkSonhos">
+                <input type="checkbox">Adotar um cachorro<br>
+            </div>
 
-    </section>
+        </section>
 
-    <section id="sectionPrincipal"></section>
+        <section id="sectionPrincipal"></section>
 
-    <section id="parabens">
-        <div id="lblParabens">Parabéns !! </div><br><br>
-        <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
-        <button id="btnParabens" onclick="Parabens()">OK</button>
-    </section>
+        <section id="parabens">
+            <div id="lblParabens">Parabéns !! </div><br><br>
+            <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
+            <button id="btnParabens" onclick="Parabens()">OK</button>
+        </section>
 
 </body>
 </html>

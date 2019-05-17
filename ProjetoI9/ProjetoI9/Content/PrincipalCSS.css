@@ -112,15 +112,6 @@ header {
     color: white;
 }
 
-footer {
-    background-color: #0B2161;
-    text-align: center;
-    height: 20%;
-    width: 100%;
-    position: relative;
-    top: 880px;
-}
-
 #sectionLeft {
     background-color: #FEA47F;
     box-shadow: 10px 10px 5px grey;
