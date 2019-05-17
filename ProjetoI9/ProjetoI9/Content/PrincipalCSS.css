@@ -58,7 +58,7 @@ header {
     }
 }
 
-#sobreV, #loginNavV, #cadastroV, #contatoV, #homeV, #configV {
+#configV {
     color: black;
     position: relative;
     left: 170%;
@@ -92,23 +92,22 @@ header {
     background-color: wheat;
     width: 380%;
     border-radius: 3%;
-    position: relative;
+    position: absolute;
     top: -2em;
-    left: 100%;
+    left: 40%;
 }
 
 #navHeader {
     position: relative;
-    top: -22em;
+    top: -18em;
     left: -1%;
     right: -40%;
     width: 55%;
     visibility: visible;
-    /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre, #login, #cadastro, #contato, #home, #principal, #perfil {
+#sobre, #contato, #home, #perfil {
     color: white;
 }
 
@@ -146,10 +145,10 @@ header {
     scrollbar-base-color: bisque;
 }
 
-.navSectionLeft {
+/*.navSectionLeft {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+}*/
 
 .cNoticia {
     background-color: #f6e58d;
@@ -167,7 +166,6 @@ header {
     top: 20px;
     height: 21%;
     width: 100%;
-    /* align-content: center; */
 }
 
 .cImagem {
@@ -188,42 +186,42 @@ header {
 .localizacao {
     font-size: 20px;
     color: black;
-    height: 10%;
+    height: 16%;
     width: 100%;
     background-color: green;
 }
 
 .descricao {
     font-size: 20px;
-    color: white;
+    color: black;
     position: relative;
     top: 20%;
     height: 70%;
     width: 100%;
 }
 
-#parabens {
+/*#parabens {
     background-color: #b1f1f4;
     width: 40%;
     height: 30%;
     border-color: #361bc4;
     border-style: dotted;
-    /* box-shadow: 10px 10px 5px grey; */
+    /* box-shadow: 10px 10px 5px grey;
     left: 450px;
     top: 600px;
     position: absolute;
     border-radius: 10%;
     display: none;
-}
+}*/
 
-#lblParabens {
+/*#lblParabens {
     font-family: 'Times New Roman', Times, serif;
     color: #8b4513;
     font-size: 48px;
     text-align: center;
-}
+}*/
 
-#lblVoceRealizouUmSonho {
+/*#lblVoceRealizouUmSonho {
     font-family: 'Times New Roman', Times, serif;
     color: #8b4513;
     font-size: 48px;
@@ -238,7 +236,7 @@ header {
     left: 500px;
     top: 200px;
     position: absolute;
-}
+}*/
 
 #chkSonhos {
     background-color: #f6e58d;
@@ -247,14 +245,6 @@ header {
     top: 10%;
     left: 5%;
     position: absolute;
-}
-
-.lbl {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-    color: green;
-    height: 80%;
-    margin-left: 35%;
 }
 
 .eventoSemana {
@@ -274,7 +264,6 @@ header {
     background-color: #FEA47F;
     box-shadow: 10px 10px 5px grey;
     height: 60%;
-    /*width: 105%;*/
     width: 100%;
     float: right;
 }
@@ -347,32 +336,56 @@ header {
     width: 20%;
 }
 
- .adicionarEvento
-{
+#adicionarEvento {
     background-color: antiquewhite;
     color: black;
-    height: 40%;
-    width: 40%;
-    position: absolute;
+    height: 32%;
+    width: 28%;
+    position: relative;
     margin-top: 1em;
     border-radius: 10%;
     font-family: 'Times New Roman', Times, serif;
-    left: 3%;
-    top: 80%;
-    float: left;
+    left: 30%;
+    top: 20%;
+    z-index: 2;
+    text-align: center;
 }
 
-.descricaoEvento
-{
+.descricaoEvento {
+    position: absolute;
+    left: 2em;
+    top: 2em;
     height: 80%;
 }
 
-.dataEvento 
-{
+.dataEvento {
+    position: absolute;
+    left: 2em;
+    top: 2em;
     height: 10%;
 }
 
 .localizacaoEvento {
-    height: 10%;
+    position: absolute;
+    left: 2em;
+    top: 2em;
+    height: 36%;
 }
 
+#semana
+{
+    color: green;
+    position: relative;
+    left: 1em;
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btnAdicionarEvento, #btnFecharNovoEvento {
+    position: relative;
+    left: 8em;
+    width: 10%;
+    height: 5%;
+    z-index: 1;
+    background-color: transparent;
+}

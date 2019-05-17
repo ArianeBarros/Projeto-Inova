@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Principal</title>
-    @*<link rel="shortcut icon" href="favicon.ico">*@
+    <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
 
     @*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
@@ -17,6 +17,8 @@
             CarregarNoticias();
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+            document.getElementById("adicionarEvento").style.display = "none";
+
 
             CarregarDadosBD();
         }
@@ -45,7 +47,7 @@
 
             //EVENTOS
             var cont = 0;
-            var re = "";
+            var re = "<label id='semana'>Semana</label><button id='btnAdicionarEvento' onclick='AdicionarEvento()'>+</button>";
             while (cont < @ViewBag.QuantosEventos)
             {
                 re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
@@ -95,8 +97,8 @@
             for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
             {
                 document.getElementsByClassName("data")[cont].textContent = JSON.stringify(lista[cont].quando);
-                document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
-                document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao);
+                document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao);
+                document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
             }
         }
 
@@ -104,12 +106,8 @@
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg  + " onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                    "<a id ='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
-                    "<a id ='loginNavV' href='~/Login/Index'>LOGIN</a><br><br>" +
-                    "<a id ='cadastroV' href='~/Cadastro/Index'>CADASTRE-SE</a><br><br>" +
-                    "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                    "<br><br><a id ='sairV' href='#'>Sair</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
@@ -118,27 +116,29 @@
             }
         }
 
-        function Parabens() {
-            if (document.getElementById("parabens").style.display == "block") {
-                document.getElementById("parabens").style.display = "none";
-            }
-            else {
-                document.getElementById("parabens").style.display = "block";
-            }
-        }
+        //function Parabens() {
+        //    if (document.getElementById("parabens").style.display == "block") {
+        //        document.getElementById("parabens").style.display = "none";
+        //    }
+        //    else {
+        //        document.getElementById("parabens").style.display = "block";
+        //    }
+        //}
 
         function MostrarAgenda() {
-            if (document.getElementById("secAgenda").style.display == "block") {
-                var a = "";
-
-                document.getElementById("secAgenda").innerHTML = a;
-
+            if (document.getElementById("secAgenda").style.display == "block")
                 document.getElementById("secAgenda").style.display = "none";
-            }
-            else {
+            else
                 document.getElementById("secAgenda").style.display = "block";
-            }
         }
+
+        function AdicionarEvento() {
+            if (document.getElementById("adicionarEvento").style.display == "block")
+                document.getElementById("adicionarEvento").style.display = "none";
+            else
+                document.getElementById("adicionarEvento").style.display = "block";
+        }
+        
 
         //COMEÇO DO WEB SERVICE
 
@@ -199,6 +199,7 @@
     </section>
 
     <section id="sectionLeft">
+        
         @*<label class="lbl">Semana</label>
 
                  <div class="adicionarEvento">
@@ -211,13 +212,15 @@
 
     </section>
 
-    <aside class="adicionarEvento">
-        <label>Adicionar Evento</label>
-        <aside id="divAdicionarEvento">
-            <label> Data: </label><input id="dataEvento" type="text">
-            <label> Descrição: </label><input id="descricaoEvento" type="text">
-            <label> Localização: </label><input id="localizacaoEvento" type="text">
-        </aside>
+    <div id="adicionarEvento">
+        @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
+        <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
+        <br>
+        <label>Adicionar Evento</label><br><br>
+        <label> Data: </label><input id="dataEvento" type="text"><br><br>
+        <label> Descrição: </label><input id="descricaoEvento" type="text"><br><br>
+        <label> Localização: </label><input id="localizacaoEvento" type="text"><br><br>
+    </div>
 
         <section id="sectionRight">
             <label class="lbl">Sonhos</label>
@@ -230,11 +233,11 @@
 
         <section id="sectionPrincipal"></section>
 
-        <section id="parabens">
+        @*<section id="parabens">
             <div id="lblParabens">Parabéns !! </div><br><br>
             <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
             <button id="btnParabens" onclick="Parabens()">OK</button>
-        </section>
+        </section>*@
 
 </body>
 </html>
