@@ -102,14 +102,12 @@ function Organiza() {
         h5.style.top = "-7em";
         h5.style.paddingLeft = "50%";
         h5.style.fontSize = "25px";
-        h5.style.width = "50%";
         h5.style.paddingTop = "0px";
 
         var h6 = document.getElementById("h6");
         h6.style.paddingLeft = "50%";
         h6.style.fontSize = "22px";
         h6.style.top = "-7em";
-        h6.style.width = "50%";
         h6.style.paddingTop = "0px";
 
         var terra = document.getElementById("globo");
@@ -135,14 +133,12 @@ function Organiza() {
         h7.style.paddingLeft = "50%";
         h7.style.paddingTop = "0px";
         h7.style.fontSize = "25px";
-        h7.style.width = "50%";
 
         var h8 = document.getElementById("h8");
         h8.style.paddingLeft = "50%";
         h8.style.paddingTop = "0px";
         h8.style.fontSize = "22px";
         h8.style.top = "-10em";
-        h8.style.width = "50%";
 
         footer.style.top = "0px";
 
@@ -163,6 +159,7 @@ function Organiza() {
             h2.style.top = "-6.8em";
             h2.style.fontSize = "25px";
             h2.style.paddingLeft = "20%";
+            h2.style.width = "63%";
 
             h3.style.fontSize = "27.43px";
             h3.style.paddingTop = "2%";
@@ -172,17 +169,16 @@ function Organiza() {
             h4.style.fontSize = "25px";
             h4.style.paddingLeft = "27%";
             h4.style.paddingTop = "0.3%";
-            h4.style.width = "63%";
+            h4.style.width = "60%";
 
             h5.style.fontSize = "27.43px";
-            h5.style.paddingTop = "2%";
             h5.style.paddingLeft = "43%";
-            h5.style.width = "55%";
+            h5.style.top = "-7.5em";
 
             h6.style.fontSize = "25px";
             h6.style.paddingLeft = "43%";
-            h6.style.paddingTop = "0.3%";
             h6.style.width = "55%";
+            h6.style.top = "-7.5em";
 
             var terra = document.getElementById("globo");
             terra.style.display = "initial";
@@ -200,12 +196,13 @@ function Organiza() {
             h7.style.fontSize = "27.43px";
             h7.style.paddingTop = "5%";
             h7.style.paddingLeft = "37%";
-            h7.style.width = "70%";
+            h7.style.top = "-10em";
 
             h8.style.fontSize = "25px";
             h8.style.paddingLeft = "37%";
             h8.style.paddingTop = "1.5%";
             h8.style.width = "63%";
+            h8.style.top = "-11em";
 
             footer.style.top = "0px";
 
@@ -226,37 +223,31 @@ function Organiza() {
                 
                 h3.style.top = "-9em";
                 h3.style.paddingLeft = "28%";
-                h3.style.width = "60%";
 
                 h4.style.fontSize = "25px";
                 h4.style.paddingLeft = "28%";
                 h4.style.top = "-9em";
-                h4.style.width = "60%";
 
-                h5.style.top = "-8em";
-                h5.style.width = "60%";
+                h5.style.top = "-7em";
 
                 h6.style.fontSize = "25px";
-                h6.style.top = "-8em";
-                h6.style.width = "52%";
+                h6.style.top = "-7em";
 
-                h7.style.top = "-11em";
-                h7.style.width = "60%";
+                h7.style.top = "-10em";
 
                 h8.style.fontSize = "25px";
-                h8.style.top = "-12em";
-                h8.style.width = "52%";
+                h8.style.top = "-11em";
 
-                maos.style.width = "24%";
+                maos.style.width = "23%";
                 maos.style.left = "10%";
 
                 info.style.width = "80%";
 
-                terra.style.width = "29%";
+                terra.style.width = "27%";
                 terra.style.top = "1em";
                 terra.style.left = "10%";
 
-                nuvem.style.width = "20%";
+                nuvem.style.width = "19%";
                 nuvem.style.top = "0.3em";
                 nuvem.style.left = "10%";
 
@@ -325,34 +316,29 @@ function Organiza() {
             //var carinha = document.getElementById("compromisso");
             //carinha.style.top = "0%";
             var h1 = document.getElementById("h1");
-            h1.style.top = "-8em";
+            h1.style.top = "-9em";
             h1.style.padding = "0px";
             h1.style.paddingLeft = "40%";
-            h1.style.width = "60%";
 
-            h2.style.top = "-9em";
-            h2.style.width = "60%";
+            h2.style.top = "-10em";
 
             var h3 = document.getElementById("h3");
             h3.style.position = "relative";
             h3.style.paddingLeft = "55%";
-            h3.style.top = "-9.5em";
-            h3.style.width = "45%";
+            h3.style.top = "-10.5em";
             h3.style.paddingBottom = "0px";
             h3.style.paddingTop = "0px";
             h3.style.fontSize = "23px";
 
             var h4 = document.getElementById("h4");
             h4.style.paddingLeft = "55%";
-            h4.style.top = "-11em";
+            h4.style.top = "-12em";
             h4.style.fontSize = "19px";
-            h4.style.width = "45%";
 
             var h5 = document.getElementById("h5");
             h5.style.position = "relative";
             h5.style.paddingLeft = "55%";
             h5.style.top = "-7.5em";
-            h5.style.width = "45%";
             h5.style.paddingBottom = "0px";
             h5.style.paddingTop = "0px";
             h5.style.fontSize = "23px";
@@ -361,7 +347,6 @@ function Organiza() {
             h6.style.paddingLeft = "55%";
             h6.style.top = "-8.6em";
             h6.style.fontSize = "19px";
-            h6.style.width = "45%";
 
             var terra = document.getElementById("globo");
             terra.style.display = "initial";
@@ -392,7 +377,6 @@ function Organiza() {
             h7.style.position = "relative";
             h7.style.paddingLeft = "50%";
             h7.style.top = "-9em";
-            h7.style.width = "50%";
             h7.style.paddingBottom = "0px";
             h7.style.paddingTop = "0px";
             h7.style.fontSize = "23px";
@@ -402,7 +386,6 @@ function Organiza() {
             h8.style.position = "relative";
             h8.style.top = "-10em";
             h8.style.fontSize = "19px";
-            h8.style.width = "50%";
 
             sonhos.style.top = "11em";
             sonhos.style.height = "15em";
@@ -415,27 +398,36 @@ function Organiza() {
         else {
             var comp = document.getElementById("compromisso");
             comp.style.height = "11em";
+            comp.style.top = "-3em";
+
             h1.style.position = "relative";
             h2.style.position = "relative";
+
             var fundo = document.getElementById("ondas");
             fundo.style.left = "-30%";
+
             var formiga = document.getElementById("formiga");
             formiga.style.display = "none";
+
             var maos = document.getElementById("maos");
             maos.style.display = "none";
+
             var coisa = document.getElementById("coisa2");
             coisa.src = '/Imagens/coisinhas.png';
             coisa.style.top = "5.4em";
             coisa.style.width = "77%";
             coisa.style.left = "12%";
+
             var frase = document.getElementById("frase");
             frase.style.top = "1.5em";
             frase.style.left = "20%";
+
             var botao = document.getElementById("comece");
             botao.style.left = "30%";
             botao.style.top = "5.3em";
+
             var form = document.getElementById("form");
-            form.style.top = "-12.8em";
+            form.style.top = "-10.8em";
             form.style.height = "11em";
             
             var h1 = document.getElementById("h1");
@@ -480,17 +472,17 @@ function Organiza() {
 
             var h5 = document.getElementById("h5");
             h5.style.top = "0em";
-            h5.style.width = "89%";
             h5.style.paddingLeft = "40px";
             h5.style.paddingTop = "40px";
             h5.style.paddingBottom = "10px";
             h5.style.fontSize = "18px";
+            h5.style.width = "89%";
 
             var h6 = document.getElementById("h6");
             h6.style.paddingLeft = "40px";
             h6.style.top = "0em";
-            h6.style.width = "89%";
             h6.style.fontSize = "16px";
+            h6.style.width = "89%";
         
             var plan = document.getElementById("plan");
             plan.style.position = "relative";
@@ -506,17 +498,17 @@ function Organiza() {
 
             var h7 = document.getElementById("h7");
             h7.style.top = "0em";
-            h7.style.width = "89%";
             h7.style.paddingLeft = "40px";
             h7.style.paddingTop = "40px";
             h7.style.paddingBottom = "10px";
             h7.style.fontSize = "18px";
+            h7.style.width = "89%";
 
             var h8 = document.getElementById("h8");
             h8.style.paddingLeft = "40px";
             h8.style.top = "0em";
-            h8.style.width = "89%";
             h8.style.fontSize = "16px";
+            h8.style.width = "89%";
 
             footer.style.top = "25em";
             

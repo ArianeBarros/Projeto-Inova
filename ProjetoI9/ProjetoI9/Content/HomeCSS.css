@@ -107,9 +107,6 @@ html
 
     @media screen and (min-width: 600px) {
 
-        #form #h1 {
-            width: 10%;
-        }
 
         #form {
             height: 12em;
@@ -315,8 +312,11 @@ html
             width: 50%;
         }
 
-        #h2, #h4, #h6 {
-            width: 70%;
+        #h2, #h4 {
+            width: 90%;
+        }
+        #h6, #h8 {
+            width: 95%;
         }
 
         #form #h1, #h3 {
@@ -420,9 +420,16 @@ html
         font-size: 18px;
         font-family: "Century Gothic";
         font-weight: 600;
-        width: 90%;
         position: relative;
     }
+#h1 {
+    width: 90%;
+}
+
+.ab
+{
+    cursor:pointer;
+}
 
 
     #h2, #h4, #h6, #h8 {
