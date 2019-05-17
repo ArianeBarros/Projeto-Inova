@@ -5391,6 +5391,7 @@ iframe {
 [  ]*/
 .contact100-form {
     width: 390px;
+    font-family: "Century Gothic", sans-serif;
 }
 
 .contact100-form-title {
@@ -5399,7 +5400,6 @@ iframe {
     font-size: 30px;
     color: white;
     line-height: 1.2;
-    padding-left:16%;
     text-align: center;
     font-weight:600;
 }
@@ -5409,7 +5409,6 @@ iframe {
     font-size: 20px;
     color: #ccc;
     line-height: 1.2;
-    padding-left: 11%;
     text-align: center;
     padding-bottom: 36px;
 }
@@ -5596,7 +5595,9 @@ textarea.input100 {
 @media (max-width: 576px) {
     .wrap-contact100 {
         padding: 110px 15px 157px 15px;
+        width: 463px;
     }
+     
 }
 
 

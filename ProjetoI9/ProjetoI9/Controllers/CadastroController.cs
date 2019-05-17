@@ -46,7 +46,7 @@ namespace ProjetoI9.Controllers
                 u.imagem = "/Imagens/imgPerfil.jpg";
 
                 dao.Adiciona(u);
-                return RedirectToAction("Index", "Principal", new { u.nome, u.imagem, u.id });
+                return RedirectToAction("Index", "Principal");
             }
             else
             {

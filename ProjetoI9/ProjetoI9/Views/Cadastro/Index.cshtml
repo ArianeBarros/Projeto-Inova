@@ -8,7 +8,22 @@
     <link href="~/Content/animate.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <script type="text/javascript" src="~/Script/CadScript.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script type="text/javascript">
+
+        $(function () {
+            $('#datetimepicker9').datetimepicker({
+                viewMode: 'years'
+            });
+        });
 
         window.onload = function()
         {
@@ -23,12 +38,11 @@
         function Organiza() {
             var fundo = document.getElementById("ondas");
             if (window.innerWidth >= 1300) {
-                fundo.style.height = "12em";
+                fundo.style.width = "100%";
             }
             else {
-                fundo.style.height = "10em";
                 if (window.innerWidth >= 800) {
-                    fundo.style.width = "100%";
+                    fundo.style.width = "120%";
                 }
                 else
                     fundo.style.width = "170%";
@@ -99,14 +113,15 @@
             </div>
 
         </header>*@
+    <center>
         <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
             <div class="wrap-contact100">
-                    <span class="contact100-form-title">
-                        CADASTRE-SE E SE JUNTE A NÓS!
-                    </span>
-                    <span class="contact100-form-title2">
-                        Preencha os campos abaixo com seus dados pessoais
-                    </span>
+                <span class="contact100-form-title">
+                    CADASTRE-SE E JUNTE-SE A NÓS!
+                </span>
+                <span class="contact100-form-title2">
+                    Preencha os campos abaixo com seus dados pessoais
+                </span>
                 <div class="contact100-pic js-tilt" data-tilt>
                     <img src="~/Imagens/img-01.png" alt="IMG">
                 </div>
@@ -114,7 +129,7 @@
 
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -122,11 +137,24 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
+                </div>
+
+                 $(function () {
+                            $('#datetimepicker9').datetimepicker({
+                                viewMode: 'years'
+                            });
+                        });
+                </div>
+
+                
+                    <script type="text/javascript">
+                       
+                    </script>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Message is required">
@@ -188,6 +216,7 @@
         <u><a href="~/Login/Index" class="cTemCadastro"> Já tem cadastro?! </a></u>
             -->
         </form>
+    </center>
 
 </body>
 </html>
