@@ -269,6 +269,7 @@
     <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
+    <Compile Include="DAO\SonhoDAO.cs" />
     <Compile Include="DAO\UsuarioI9DAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -276,6 +277,7 @@
     </Compile>
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Noticia.cs" />
+    <Compile Include="Models\Sonho.cs" />
     <Compile Include="Models\UsuarioI9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

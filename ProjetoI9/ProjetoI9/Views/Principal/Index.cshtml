@@ -47,7 +47,7 @@
 
             //EVENTOS
             var cont = 0;
-            var re = "<label id='semana'>Semana</label><button id='btnAdicionarEvento' onclick='AdicionarEvento()'>+</button>";
+            var re = "<label id='semana'>Semana</label><button id='btnMais' onclick='AdicionarEvento()'>+</button>";
             while (cont < @ViewBag.QuantosEventos)
             {
                 re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
@@ -66,10 +66,23 @@
             }
 
             BuscaEvento();
+
+            //SONHOS
+            var s = "<label class='lbl'>Sonhos</label>";
+            while (cont < @ViewBag.QuantosSonhos)
+            {
+                s = s + "<label class='lbl'>Sonhos</label><div><input type='checkbox'  class= 'chkSonhos'></div>";
+                document.getElementById("sectionRight").innerHTML = s;
+
+                cont++;
+
+            }
+
+            BuscaSonho();
         }
 
-          function BuscaNoticia() {
-
+        function BuscaNoticia()
+        {
             var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
 
             var qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
@@ -86,7 +99,7 @@
                 document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem);
                 document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link);
             }
-          }
+        }
 
         function BuscaEvento() {
 
@@ -96,9 +109,19 @@
 
             for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
             {
-                document.getElementsByClassName("data")[cont].textContent = JSON.stringify(lista[cont].quando);
+                document.getElementsByClassName("data")[cont].textContent = JSON.stringify(lista[cont].dia) + "," + JSON.stringify(lista[cont].diaSemana);
                 document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao);
                 document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
+            }
+        }
+
+        function BuscaSonho()
+        {
+           var lista = @Html.Raw(Json.Encode(@ViewData["sonhos"]));
+            
+            for (var cont = 0; cont < @ViewBag.QuantosSonhos; cont++)
+            {
+                document.getElementsByClassName("chkSonhos")[cont].innerHTML = JSON.stringify(lista[cont].descricao);
             }
         }
 
@@ -138,7 +161,7 @@
             else
                 document.getElementById("adicionarEvento").style.display = "block";
         }
-        
+
 
         //COMEÇO DO WEB SERVICE
 
@@ -212,22 +235,29 @@
 
     </section>
 
+    <form id="frm" method="post" action="AdicionarEvento">
     <div id="adicionarEvento">
         @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
         <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
         <br>
         <label>Adicionar Evento</label><br><br>
-        <label> Data: </label><input id="dataEvento" type="text"><br><br>
-        <label> Descrição: </label><input id="descricaoEvento" type="text"><br><br>
-        <label> Localização: </label><input id="localizacaoEvento" type="text"><br><br>
+        <label class="lbl"> Data: </label>
+        <select id="diaDaSemana">
+            <option name="not.diaSemana">Segunda-Feira</option>
+            <option name="not.diaSemana">Terça-Feira</option>
+            <option name="not.diaSemana">Quarta-Feira</option>
+            <option name="not.diaSemana">Quinta-Feira</option>
+            <option name="not.diaSemana">Sexta-Feira</option>
+            <option name="not.diaSemana">Sábado</option>
+            <option name="not.diaSemana">Domingo</option>
+        </select><input id="diaEvento" type="text" name="not.dia"><br><br>
+        <label class="lbl"> Descrição: </label><input id="descricaoEvento" type="text" name="not.descricao"><br><br>
+        <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao"><br><br>
+        <button id="btnAdicionarEvento" onclick="document.getElementById('frm').submit()">Ok</button>
     </div>
-
+</form>
         <section id="sectionRight">
-            <label class="lbl">Sonhos</label>
-
-            <div id="chkSonhos">
-                <input type="checkbox">Adotar um cachorro<br>
-            </div>
+            
 
         </section>
 

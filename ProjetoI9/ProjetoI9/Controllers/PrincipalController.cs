@@ -20,7 +20,14 @@ namespace ProjetoI9.Controllers
                 NoticiaDAO dao = new NoticiaDAO();
                 IList<Noticia> not = dao.Lista();
                 ViewBag.QuantasNot = not.Count();
+
                 ViewData["noticias"] = not;
+
+                SonhoDAO daoS = new SonhoDAO();
+                IList<Sonho> l = daoS.Lista();
+                ViewBag.QuantosSonhos = l.Count();
+
+                ViewData["sonhos"] = l;
 
                 EventoDAO eveDAO = new EventoDAO();
                 IList<Evento> e = eveDAO.Lista();
@@ -41,19 +48,17 @@ namespace ProjetoI9.Controllers
                 return RedirectToAction("Index", "Login");
         }
 
-        public void SairPagina(string img)
+        public ActionResult AdicionarEvento(Evento not)
         {
-            //object usuario = Session["usuarioLogado"];
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+            EventoDAO dao = new EventoDAO();
 
-            //if (img == null)
-            //    img = "/Imagens/imgPerfil.jpg";
+            not.idUsuario = usuario.id;
+            not.id = (dao.Lista()).Count() + 1;
 
-            //UsuarioI9DAO dao = new UsuarioI9DAO();
-           
-            //UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(i));
+            dao.Adiciona(not);
 
-            //    usu.imagem = img;
-
+            return RedirectToAction("Index", "Principal");
         }
     }
 }
