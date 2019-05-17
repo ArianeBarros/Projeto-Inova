@@ -1,10 +1,15 @@
 ﻿
+@{
+    Layout = null;
+}
+
 
 <html>
 <head>
     <title>Login</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/LayoutFooter.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <script type="text/javascript">
 
@@ -18,7 +23,8 @@
             <!-- <img class="barra" src="./Imagens/nav.png"> -->
             <input type="checkbox" id="chk">
             <label for="chk" class="show-menu-btn">
-                <i class="fa fa-bars fa-w-14 fa-2x"></i>
+                <i class="fa fa-
+                   .bars fa-w-14 fa-2x"></i>
             </label>
             <ul class="menu">
                 <div class="ab" onclick="oi('Login')">LOGIN</div>
@@ -31,10 +37,7 @@
                     </a>
                 </label>
             </ul>
-            <div id="opcoesFotos">
-
-            </div>
-        </div>
+             </div>
     </header>
 
     <form id="login" method="post" action="HomeLogado">
@@ -53,6 +56,53 @@
         <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
         <br><br>
     </form>
+
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo">
+                        <a href="#">
+                            <img src="~/Imagens/LOGO/logoofc.png" class="logo2" id="logo2">
+                        </a>
+                    </h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Comece já</h5>
+                    <ul>
+                        <li><a href="#">Cadastre-se</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Pareto</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Políticas</h5>
+                    <ul>
+                        <li><a href="~/Termos/Index">Termos e Condições</a></li>
+                        <li><a href="~/Termos/Index">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <div class="btn btn-default">Siga-nos</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2019 - Inova - Todos os direitos reservados </p>
+        </div>
+    </footer>
 
 </body>
 </html>
