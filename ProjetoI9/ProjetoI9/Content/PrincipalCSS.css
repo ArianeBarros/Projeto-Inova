@@ -238,7 +238,7 @@ header {
     position: absolute;
 }*/
 
-#chkSonhos {
+.chkSonhos {
     background-color: #f6e58d;
     width: 90%;
     height: 3%;
@@ -348,32 +348,35 @@ header {
     left: 30%;
     top: 20%;
     z-index: 2;
-    text-align: center;
+    text-align: left;
 }
 
-.descricaoEvento {
+#descricaoEvento {
     position: absolute;
-    left: 2em;
-    top: 2em;
-    height: 80%;
+    left: 24%;
+    top: 50%;
+    margin: 1em;
 }
 
-.dataEvento {
+#diaEvento {
     position: absolute;
-    left: 2em;
-    top: 2em;
-    height: 10%;
+    left: 44%;
+    top: 26%;
+    margin: 1em;
 }
 
-.localizacaoEvento {
+#localizacaoEvento {
     position: absolute;
-    left: 2em;
-    top: 2em;
-    height: 36%;
+    left: 24%;
+    top: 76%;
+    margin: 1em;
 }
 
-#semana
-{
+.lbl {
+    margin: 1em;
+}
+
+#semana {
     color: green;
     position: relative;
     left: 1em;
@@ -381,11 +384,33 @@ header {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#btnAdicionarEvento, #btnFecharNovoEvento {
+#btnMais
+{
     position: relative;
-    left: 8em;
+    left: 9em;
     width: 10%;
     height: 5%;
     z-index: 1;
     background-color: transparent;
+}
+
+#icones 
+{
+    position: relative;
+    left: 90%;
+    top: 6px;
+    width: 10%;
+    height: 5%;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#btnAdicionarEvento
+{
+    position: absolute;
+    left:80%;
+    top: 73%;
+    width: 10%;
+    height: 20%;
+    border-radius: 50%;
 }

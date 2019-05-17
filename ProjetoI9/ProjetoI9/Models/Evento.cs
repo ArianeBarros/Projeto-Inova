@@ -8,6 +8,7 @@ namespace ProjetoI9.Models
 {
     public class Evento
     {
+        [Required]
         public int id { get; set; }
         [Required]
         public int idUsuario { get; set; }
@@ -16,6 +17,8 @@ namespace ProjetoI9.Models
         [Required]
         public string localizacao { get; set; }
         [Required]
-        public string quando { get; set; }
+        public string dia { get; set; }
+        [Required]
+        public string diaSemana { get; set; }
     }
 }
