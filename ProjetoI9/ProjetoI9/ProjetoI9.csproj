@@ -299,6 +299,7 @@
     <Content Include="Views\Cadastro\HomeCadastrado.cshtml" />
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />
+    <Content Include="Views\Principal\AdicionarEvento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
