@@ -26,25 +26,10 @@
         var qualImg = null;
 
         function CarregarDadosBD() {
-            var string = window.location.href.substring(35);
-            string = string.split("?");
-            qualId = string[0];
-            string = string[1];
-            string = string.split("&");
-            var nome = string[0].substring(5);
-            qualImg = string[1].substring(7);
+              //IMAGEM
+            qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
-            while (nome.indexOf("%20") != -1)
-                nome = nome.replace("%20", " ");
-            while (qualImg.indexOf("%2F") != -1)
-                qualImg = qualImg.replace("%2F", "/");
-
-
-            //alert(nome);
-            //alert(qualImg);
-            //alert(qualId);
-
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
         }
 
         var seMostraPerfil = 2;
@@ -64,7 +49,7 @@
                 seMostraPerfil++;
             }
         }
-        
+
         //GRÁFICO DE PARETO
         var data = {
             animation: {

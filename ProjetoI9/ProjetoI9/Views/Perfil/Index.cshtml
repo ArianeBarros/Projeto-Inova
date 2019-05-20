@@ -23,7 +23,9 @@
 
         function CarregarDadosBD()
         {
+            //IMAGEM
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
+
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
         }
 

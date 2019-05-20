@@ -13,9 +13,16 @@ namespace ProjetoI9.Controllers
         // GET: Perfil
         public ActionResult Index()
         {
-            object usuario = Session["usuarioLogado"];
-            ViewBag.UsuarioLogado = usuario;
-            return View();
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+
+            if (usuario != null)
+            {
+                ViewBag.UsuarioLogado = usuario;
+
+                return View();
+            }
+            else
+                return RedirectToAction("Index", "Login");
         }
         public void SalvarDados(string img)
         {
