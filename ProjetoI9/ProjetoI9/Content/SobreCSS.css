@@ -69,7 +69,7 @@ header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#loginNavV, #cadastroV, #contatoV, #homeV, #principalV, #configV {
+#sairV, #configV {
     color: black;
     position: relative;
     left: 170%;
@@ -108,7 +108,7 @@ header {
     left: 100%;
 }
 
-#sobre, #login, #cadastro, #contato, #home, #principal, #perfil {
+#contato, #home, #principal, #perfil {
     color: white;
 }
 

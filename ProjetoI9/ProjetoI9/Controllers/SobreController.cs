@@ -14,7 +14,7 @@ namespace ProjetoI9.Controllers
         public ActionResult Index()
         {
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
-            
+
             if (usuario != null)
             {
                 ViewBag.UsuarioLogado = usuario;
@@ -22,15 +22,7 @@ namespace ProjetoI9.Controllers
                 return View();
             }
             else
-                return RedirectToAction("Index", "Login");            
-        }
-
-        public ActionResult SalvarDados(string img, string id, string cont)
-        {
-            UsuarioI9DAO dao = new UsuarioI9DAO();
-            UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(id));
-
-            return RedirectToAction("Index", cont, new { usu.nome, usu.imagem, usu.id });
+                return RedirectToAction("Index", "Login");
         }
     }
 }

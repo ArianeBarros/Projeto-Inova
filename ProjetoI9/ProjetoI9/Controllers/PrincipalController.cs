@@ -24,7 +24,7 @@ namespace ProjetoI9.Controllers
                 ViewData["noticias"] = not;
 
                 SonhoDAO daoS = new SonhoDAO();
-                IList<Sonho> l = daoS.Lista();
+                List<Sonho> l = daoS.Lista();
                 ViewBag.QuantosSonhos = l.Count();
 
                 ViewData["sonhos"] = l;
@@ -50,15 +50,22 @@ namespace ProjetoI9.Controllers
 
         public ActionResult AdicionarEvento(Evento not)
         {
-            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
-            EventoDAO dao = new EventoDAO();
+            try
+            {
+                UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+                EventoDAO dao = new EventoDAO();
 
-            not.idUsuario = usuario.id;
-            not.id = (dao.Lista()).Count() + 1;
+                not.idUsuario = usuario.id;
+                not.id = (dao.Lista()).Count() + 1;
 
-            dao.Adiciona(not);
+                dao.Adiciona(not);
 
-            return RedirectToAction("Index", "Principal");
+                return RedirectToAction("Index", "Principal");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
