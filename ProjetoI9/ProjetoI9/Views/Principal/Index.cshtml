@@ -16,12 +16,11 @@
 
 
         window.onload = function () {
-
             CarregarNoticias();
 
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
             document.getElementById("adicionarEvento").style.display = "none";
-
+            document.getElementById("adicionarSonho").style.display = "none";
 
             CarregarDadosBD();
         }
@@ -50,7 +49,7 @@
 
             //EVENTOS
             var cont = 0;
-            var re = "<label id='semana'>Semana</label><button id='btnMais' onclick='AdicionarEvento()'>+</button>";
+            var re = "<label class='semana'>Semana</label><button class='btnMais' onclick='AdicionarEvento()'>+</button>";
             while (cont < @ViewBag.QuantosEventos)
             {
                 re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
@@ -72,11 +71,11 @@
 
             //SONHOS
             cont = 0;
-            var s = "<label class='lbl'>Sonhos</label>";
+            var s = "<label class='semana'>Sonhos</label><button class='btnMais' onclick='AdicionarSonho()'>+</button>";
 
             while (cont < @ViewBag.QuantosSonhos)
             {
-                s = s + "<div><input type='checkbox'  class= 'chkSonhos'></div>";
+                s = s + "<div class='divSonho'><input type='checkbox' class='inputSonhos'><label class='chkSonhos'></label></div><br><br>";
                 document.getElementById("sectionRight").innerHTML = s;
 
                 cont++;
@@ -125,14 +124,15 @@
 
             for (var cont = 0; cont < @ViewBag.QuantosSonhos; cont++)
             {
-                document.getElementsByClassName("chkSonhos")[cont].value = lista[cont].descricao;
+                document.getElementsByClassName("chkSonhos")[cont].innerText = lista[cont].descricao;
             }
         }
 
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg  + " onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
+                    "<div id='divMenuV'><nav id ='menuV'><ul>" +
                     "<br><br><a id ='sairV' href='#'>Sair</a><br><br>" +
                     "<a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -166,7 +166,13 @@
                 document.getElementById("adicionarEvento").style.display = "block";
         }
 
-
+        function AdicionarSonho() {
+            if (document.getElementById("adicionarSonho").style.display == "block")
+                document.getElementById("adicionarSonho").style.display = "none";
+            else
+                document.getElementById("adicionarSonho").style.display = "block";
+        }
+        
         //COMEÇO DO WEB SERVICE
 
 
@@ -177,19 +183,19 @@
 <body>
     <header>
 
-    <form id="menu" method="post">
-        <nav id="navHeader">
-            <ul>
-                <a id="home" href="~/Home/Index">HOME</a>
-                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
-                <a id="contato" href="~/Contato/Index">CONTATO</a>
-                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
-            </ul>
-        </nav>
-    </form>
-    <div id="opcoesFotos">
+        <form id="menu" method="post">
+            <nav id="navHeader">
+                <ul>
+                    <a id="home" href="~/Home/Index">HOME</a>
+                    <a id="sobre" href="~/Sobre/Index">SOBRE</a>
+                    <a id="contato" href="~/Contato/Index">CONTATO</a>
+                    <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+                </ul>
+            </nav>
+        </form>
+        <div id="opcoesFotos">
 
-    </div>
+        </div>
 
     </header>
 
@@ -225,38 +231,36 @@
 
     </section>
 
-    <section id="sectionLeft">
-    </section>
+    <section id="sectionLeft"></section>
 
-    <form id="frm" method="post" action="AdicionarEvento">
-    <div id="adicionarEvento">
-        @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
-        <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
-        <br>
-        <label>Adicionar Evento</label><br><br>
-        <label class="lbl"> Data: </label>
-        <select id="diaDaSemana">
-            <option name="not.diaSemana">Segunda-Feira</option>
-            <option name="not.diaSemana">Terça-Feira</option>
-            <option name="not.diaSemana">Quarta-Feira</option>
-            <option name="not.diaSemana">Quinta-Feira</option>
-            <option name="not.diaSemana">Sexta-Feira</option>
-            <option name="not.diaSemana">Sábado</option>
-            <option name="not.diaSemana">Domingo</option>
-        </select><input id="diaEvento" type="text" name="not.dia"><br><br>
-        <label class="lbl"> Descrição: </label><input id="descricaoEvento" type="text" name="not.descricao"><br><br>
-        <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao"><br><br>
-        <button id="btnAdicionarEvento">Ok</button>
-    </div>
-</form>
-        <section id="sectionRight">
-            
+    <form method="post" action="/Principal/AdicionarEvento">
+        <div id="adicionarEvento">
+            @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
+            <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
+            <br>
+            <label>Adicionar Evento</label><br><br>
+            <label class="lbl"> Data: </label><input id="diaEvento" type="text" name="not.dia"><br><br>
+            <label class="lbl"> Descrição: </label><input id="descricaoEvento" type="text" name="not.descricao"><br><br>
+            <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao"><br><br>
+            <button id="btnAdicionarEvento">Ok</button>
+        </div>
+    </form>
 
-        </section>
+    <form method="post" action="/Principal/AdicionarSonho">
+        <div id="adicionarSonho">
+            <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarSonho()"></i>
+            <br>
+            <label>Adicionar Evento</label><br><br>            
+            <label class="lbl"> Descrição: </label><input id="descricaoSonho" type="text" name="sonho.descricao"><br><br>
+            <button id="btnAdicionarEvento">Ok</button>
+        </div>
+    </form>
 
-        <section id="sectionPrincipal"></section>
+    <section id="sectionRight"></section>
 
-        @*<section id="parabens">
+    <section id="sectionPrincipal"></section>
+
+    @*<section id="parabens">
             <div id="lblParabens">Parabéns !! </div><br><br>
             <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
             <button id="btnParabens" onclick="Parabens()">OK</button>
