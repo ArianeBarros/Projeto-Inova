@@ -97,6 +97,73 @@
                 return ok;
         }
 
+        function Data() {
+            var dig = document.getElementById("data").value;
+            if (isNaN(dig[dig.length - 1])) {
+                document.getElementById("data").value = dig.substring(0, dig.length - 1);
+            }
+            else {
+                if (dig.length == 2)
+                    document.getElementById("data").value = dig + "/";
+
+                if (dig.length == 5)
+                    document.getElementById("data").value = dig + "/";
+            }
+        }
+
+        function Nome(dig) {
+            
+            var val = true;
+            if (dig == "")
+                val = false;
+            if (dig.length < 6)
+                val = false;
+
+            if (!val) {
+                document.getElementById("nome").style.boxShadow = "5px 5px red";
+                document.getElementById("nomeS").style.color = "red";
+                document.getElementById("nomeF").style.color = "red";
+            }
+            else {
+                document.getElementById("nome").style.boxShadow = "5px 5px green";
+                document.getElementById("nomeS").style.color = "green";
+                document.getElementById("nomeF").style.color = "green";
+            }
+        }
+
+        function DataFinal(dig) {
+            if (dig == "")
+                val = false;
+            else {
+                var dia = dig.substring(0, 2);
+                var mes = dig.substring(3, 5);
+                var ano = dig.substring(6);
+                var data = new Date(ano, mes, dia);
+                var val = true;
+                
+                if (data.getTime() < (new Date("1960", "01", "01").getTime())) 
+                val = false;
+
+                if (data.getTime() > (new Date("2019", "01", "01").getTime()))
+                    val = false;
+                alert(data.getMonth());
+
+                if (data.getMonth() > 12)
+                    val = false;
+                document.getElementById("data").value = data.toLocaleDateString();
+            }
+            if (!val) {
+                document.getElementById("data").style.boxShadow = "5px 5px red";
+                document.getElementById("dataS").style.color = "red";
+                document.getElementById("dataF").style.color = "red";
+            }
+            else {
+                document.getElementById("data").style.boxShadow = "5px 5px green";
+                document.getElementById("dataS").style.color = "green";
+                document.getElementById("dataF").style.color = "green";
+            }
+        }
+
 
 
     </script>
@@ -155,21 +222,28 @@
 
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)">
+                    <span class="focus-input100" id="nomeF"></span>
+                    <span class="symbol-input100" id="nomeS">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <input class="input100" placeholder="Email" id="email" type="email" required name="u.email">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
+                    <span class="focus-input100" id="emailF"></span>
+                    <span class="symbol-input100"id="emailS">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
-                <p>Date: <input type="text" id="datepicker" size="30"></p>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.data"required onkeyup="Data()" onblur="DataFinal(value)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </span>
+                </div>
 
             </div>
 
