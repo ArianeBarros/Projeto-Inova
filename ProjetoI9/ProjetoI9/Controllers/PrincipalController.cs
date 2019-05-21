@@ -35,7 +35,7 @@ namespace ProjetoI9.Controllers
 
                 foreach (var a in e)
                 {
-                    if (a.idUsuario == usuario.id)
+                    if (a.idUsuario == usuario.id && SeForDessaSemana(a.dia))
                         clone.Add(a);
                 }
 
@@ -57,8 +57,82 @@ namespace ProjetoI9.Controllers
 
                 not.idUsuario = usuario.id;
                 not.id = (dao.Lista()).Count() + 1;
+                DateTime d = d = Convert.ToDateTime(not.dia);
+                not.diaSemana = d.DayOfWeek.ToString();
+
+                if (not.diaSemana == "Wednesday")
+                    not.diaSemana = "Quarta-Feira";
+                else
+                {
+                    if(not.diaSemana == "Monday")
+                        not.diaSemana = "Segunda-Feira";
+                    else
+                        if(not.diaSemana == "Tuesday")
+                            not.diaSemana = "Terça-Feira";
+                        else
+                            if(not.diaSemana == "Thursday")
+                                not.diaSemana = "Quarta-Feira";
+                            else
+                                if(not.diaSemana == "Friday")
+                                   not.diaSemana = "Sexta-Feira";
+                                else
+                                    if(not.diaSemana == "Saturday")
+                                        not.diaSemana = "Sábado";
+                                    else
+                                       not.diaSemana = "Domingo";
+                }
 
                 dao.Adiciona(not);
+
+                return RedirectToAction("Index", "Principal");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public bool SeForDessaSemana(string d)
+        {
+            string[] data = d.Split('/');
+            string dia = data[0];
+
+            if (dia[0] == '0')
+                dia = dia[1].ToString();
+
+            string mes = data[1];
+
+            if (mes[0] == '0')
+                mes = mes[1].ToString();
+
+            string ano = data[2];
+
+            if (DateTime.Today.Month.ToString() != mes || DateTime.Today.Year.ToString() != ano || DateTime.Today.Day.ToString().CompareTo(dia) > 0)
+                return false;
+
+            if(DateTime.Today.Day.ToString().CompareTo("21") >= 0)
+                return true;
+            else
+            {
+                int semana = DateTime.Today.Day + 7;
+
+                if (Convert.ToUInt32(d) <= semana && Convert.ToUInt32(d) >= DateTime.Today.Day)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public ActionResult AdicionarSonho(Sonho sonho)
+        {
+            try
+            {
+                UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+                SonhoDAO dao = new SonhoDAO();
+                
+                sonho.id = (dao.Lista()).Count() + 1;
+
+                dao.Adiciona(sonho);
 
                 return RedirectToAction("Index", "Principal");
             }

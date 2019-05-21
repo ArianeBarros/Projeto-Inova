@@ -58,10 +58,10 @@ header {
     }
 }
 
-#configV {
+#configV, #sairV {
     color: black;
     position: relative;
-    left: 170%;
+    left: -3em;
 }
 
 #opcoesFotos {
@@ -83,7 +83,7 @@ header {
 #menuV {
     position: relative;
     right: 50%;
-    width: 55%;
+    width: 100%;
     visibility: visible;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -93,8 +93,8 @@ header {
     width: 380%;
     border-radius: 3%;
     position: absolute;
-    top: -2em;
-    left: 40%;
+    top: 3em;
+    left: 80%;
 }
 
 #navHeader {
@@ -239,12 +239,24 @@ header {
 }*/
 
 .chkSonhos {
+    font-size: 20px;
+    margin-left: 1em;
+    position: relative;
+    top: 30%;
+}
+
+.inputSonhos {
+    left: 2%;
+    top: 30%;
+    position: relative;
+}
+
+.divSonho {
     background-color: #f6e58d;
-    width: 100%;
-    height: 3%;
-    top: 10%;
-    left: 5%;
-    position: absolute;
+    height: 5%;
+    width: 90%;
+    position: relative;
+    left: 1em;
 }
 
 .eventoSemana {
@@ -297,13 +309,7 @@ header {
     font-size: 28px;
 }
 
-.diaSemana {
-    color: blue;
-    background-color: purple;
-    font-size: 28px;
-}
-
-.dias {
+.dias { 
     color: greenyellow;
     background-color: black;
     font-size: 38px;
@@ -362,7 +368,6 @@ header {
     position: absolute;
     left: 44%;
     top: 26%;
-    margin: 1em;
 }
 
 #localizacaoEvento {
@@ -372,11 +377,7 @@ header {
     margin: 1em;
 }
 
-.lbl {
-    margin: 1em;
-}
-
-#semana {
+.semana{
     color: green;
     position: relative;
     left: 1em;
@@ -384,7 +385,7 @@ header {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#btnMais
+.btnMais
 {
     position: relative;
     left: 9em;
@@ -413,4 +414,26 @@ header {
     width: 10%;
     height: 20%;
     border-radius: 50%;
+}
+
+#adicionarSonho {
+    background-color: antiquewhite;
+    color: black;
+    height: 32%;
+    width: 28%;
+    position: relative;
+    margin-top: 1em;
+    border-radius: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    left: 30%;
+    top: 20%;
+    z-index: 2;
+    text-align: left;
+}
+
+#descricaoSonho {
+    position: absolute;
+    left: 24%;
+    top: 50%;
+    margin: 1em;
 }
