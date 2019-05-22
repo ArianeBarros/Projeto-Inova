@@ -138,19 +138,23 @@
                 var dia = dig.substring(0, 2);
                 var mes = dig.substring(3, 5);
                 var ano = dig.substring(6);
-                var data = new Date(ano, mes, dia);
-                var val = true;
-                
-                if (data.getTime() < (new Date("1960", "01", "01").getTime())) 
-                val = false;
 
-                if (data.getTime() > (new Date("2019", "01", "01").getTime()))
+                if (mes > 12)
                     val = false;
-                alert(data.getMonth());
+                else {
+                    var data = new Date(ano, mes, dia);
+                    var val = true;
 
-                if (data.getMonth() > 12)
-                    val = false;
-                document.getElementById("data").value = data.toLocaleDateString();
+                    if (data.getTime() < (new Date("1960", "01", "01").getTime()))
+                        val = false;
+
+                    if (data.getTime() > (new Date("2019", "01", "01").getTime()))
+                        val = false;
+
+                    if (data.getMonth() > 12)
+                        val = false;
+                    document.getElementById("data").value = data.toLocaleDateString();
+                }
             }
             if (!val) {
                 document.getElementById("data").style.boxShadow = "5px 5px red";
@@ -229,28 +233,35 @@
                     </span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email">
+                <div class="tooltip" data-direction="bottom">
+                    <div class="tooltip__initiator">
+                        <!-- element with tooltip hover call -->
+                        <i class="fa fa-info-circle"></i>
+                    </div>
+                    <div class="tooltip__item">
+                        Hello! I'm a pure css tooltip
+                    </div>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" data-tooltip="oiiiiii">
+                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii">
                     <span class="focus-input100" id="emailF"></span>
-                    <span class="symbol-input100"id="emailS">
+                    <span class="symbol-input100" id="emailS">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.data"required onkeyup="Data()" onblur="DataFinal(value)">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
+                <div class="wrap-input100 validate-input" data-validate="Valid date is required: 00/00/0000">
+                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.data" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000">
+                    <span class="focus-input100" id="dataF"></span>
+                    <span class="symbol-input100" id="dataS">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                     </span>
                 </div>
 
             </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Message is required">
-                    <textarea class="input100" name="message" placeholder="Message"></textarea>
-                    <span class="focus-input100"></span>
-                </div>
+                
 
                 <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">
