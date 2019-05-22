@@ -14,10 +14,6 @@
         {
             document.getElementById("secEscolherFoto").style.display = "none";
 
-            document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
-
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='TrocarFoto()'>";
-
             CarregarDadosBD();
         }
 
@@ -26,7 +22,9 @@
             //IMAGEM
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image'  src=" + qualImg + " onclick='TrocarFoto()'>";
         }
 
         function TrocarFoto()
@@ -41,20 +39,16 @@
         }
 
         var seMostraPerfil = 2;
-        function CarregarPerfil()
-        {
-            if(seMostraPerfil % 2 == 0)
-            {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                                                                "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                                                                "<a id='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
-                                                                "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
-                                                                "<a id ='contatoV' href='~/Contato/Index'>CONTATO</a><br><br><br></ul><nav></div>";
+        function CarregarPerfil() {
+            if (seMostraPerfil % 2 == 0) {
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
+                    "<div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<br><br><a id ='sairV' href='#'>Sair</a><br><br>" +
+                    "<a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
-            else
-            {
-                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+            else {
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
         }
@@ -114,8 +108,6 @@
 
     </header>
 
-    <form id="form" method="post">
-
         <section id="secEscolherFoto">
             Escolha uma foto para o seu Perfil!
             <br><br>
@@ -159,7 +151,6 @@
 
             <button class="cBtn" id="btnSalvar" type="submit">Salvar dados</button>
         </section>
-    </form>
 
 
 

@@ -68,14 +68,14 @@ header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#sobre, #loginNav, #cadastro, #contato, #home, #principal, .cTemCadastro {
+#sobre, #contato, #home, #principal, .cTemCadastro {
     color: white;
 }
 
-#sobreV, #loginNavV, #cadastroV, #contatoV, #homeV, #principalV{
+#configV, #sairV {
     color: black;
     position: relative;
-    left: 170%;
+    left: -3em;
 }
 
 #opcoesFotos {
@@ -88,7 +88,18 @@ header {
     left: 80%;
 }
 
-.btnPerfil {
+#btnPerfil {
+    position: absolute;
+    top: 20%;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+#btnFotoPerfil {
+    position: absolute;
+    left: 40%;
+    top: 2em;
     border-radius: 50%;
     width: 100%;
     height: 100%;
@@ -97,7 +108,7 @@ header {
 #menuV {
     position: relative;
     right: 50%;
-    width: 55%;
+    width: 100%;
     visibility: visible;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -106,9 +117,9 @@ header {
     background-color: wheat;
     width: 380%;
     border-radius: 3%;
-    position: relative;
-    top: -2em;
-    left: 100%;
+    position: absolute;
+    top: 3em;
+    left: 80%;
 }
 
 #loginSection {
@@ -118,7 +129,7 @@ header {
     width: 70%;
     align-self: center;
     left: 15%;
-    top: 1%;
+    top: 30%;
     position: relative;
     border-radius: 10%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -131,7 +142,7 @@ header {
     height: 25%;
     left: 35%;
     position: relative;
-    top: 0em;
+    top: 30%;
     border-radius: 100%;
     border-color: black;
     border-width: 1em;
@@ -146,11 +157,12 @@ header {
 }
 
 #btnSalvar {
-    top: 87%;
+    top: 80%;
     position: absolute;
     left: 80%;
-    width: 10%;
-    height: 5%;
+    width: 15%;
+    height: 10%;
+    font-size: 28px;
 }
 
 #btnAlterar {
@@ -171,12 +183,13 @@ footer {
 }
 
 #secEscolherFoto {
+    z-index: 1;
     background-color: rgb(31, 28, 27);
     font-size: 35px;
     height: 40%;
     width: 50%;
     left: 25%;
-    top: 30%;
+    top: 80%;
     position: absolute;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
