@@ -214,9 +214,25 @@ header {
     background:white;
     visibility:visible;
 }
-#alertNome{
-    height:50%;
-    width:50%;
+#alertNome {
+    position: relative;
+    top: -0.8em;
+    left: 9em;
+    height: 60%;
+    width: 60%;
+    z-index: 100;
+    display: none;
+    transition: display 50s;
+}
+#alertEmail,#alertData {
+    position: relative;
+    top: -0.8em;
+    left: 8em;
+    height: 62%;
+    width: 62%;
+    z-index: 100;
+    display:none;
+    transition:display 50s;
 }
     .tooltip .tooltiptext {
         visibility: visible;
