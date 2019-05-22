@@ -10,9 +10,9 @@
     <script type="text/javascript" src="~/Script/CadScript.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script href="~/Scripts/datepicker-pt-BR.js"></script>
 
     <script>
         $(function () {
@@ -72,7 +72,7 @@
                 else
                     fundo.style.width = "170%";
             }
-            
+
         }
 
         function Carregar() //função chamada sempre que o usuario tenta fazer cadastro
@@ -112,7 +112,7 @@
         }
 
         function Nome(dig) {
-            
+
             var val = true;
             if (dig == "")
                 val = false;
@@ -223,8 +223,6 @@
                     <img src="~/Imagens/img-01.png" alt="IMG">
                 </div>
 
-
-
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
                     <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)">
                     <span class="focus-input100" id="nomeF"></span>
@@ -232,16 +230,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
+                <img id="alertNome" src="~/Imagens/alertNome.png" />
 
-                <div class="tooltip" data-direction="bottom">
-                    <div class="tooltip__initiator">
-                        <!-- element with tooltip hover call -->
-                        <i class="fa fa-info-circle"></i>
-                    </div>
-                    <div class="tooltip__item">
-                        Hello! I'm a pure css tooltip
-                    </div>
-                </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" data-tooltip="oiiiiii">
                     <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii">
@@ -250,6 +240,7 @@
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
+                <img id="alertEmail" src="~/Imagens/alertEmail.png" />
 
                 <div class="wrap-input100 validate-input" data-validate="Valid date is required: 00/00/0000">
                     <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.data" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000">
@@ -258,6 +249,7 @@
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                     </span>
                 </div>
+                <img id="alertData" src="~/Imagens/alertData.png" />
 
             </div>
 

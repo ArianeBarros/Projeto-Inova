@@ -182,6 +182,11 @@
     <Content Include="Content\SobreCSS.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Imagens\alertData.png" />
+    <Content Include="Imagens\alertEmail.png" />
+    <Content Include="Imagens\alertNome.png" />
+    <Content Include="Imagens\alertSenha.png" />
+    <Content Include="Imagens\alertVer.png" />
     <Content Include="Imagens\b.png" />
     <Content Include="Imagens\balao.png" />
     <Content Include="Imagens\banner.jpg" />
