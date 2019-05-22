@@ -3,6 +3,9 @@
 <head>
     <title>Perfil</title>
     <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
     <link href="~/Content/PerfilCSS.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
@@ -13,7 +16,7 @@
         window.onload = function()
         {
             document.getElementById("secEscolherFoto").style.display = "none";
-
+          
             CarregarDadosBD();
         }
 
@@ -24,7 +27,7 @@
 
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
 
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image'  src=" + qualImg + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' name='imagee'   src=" + qualImg + " onclick='TrocarFoto()'>";
         }
 
         var seMostraPerfil = 2;
@@ -45,7 +48,15 @@
 
         function TrocarFoto() {
             if (window.confirm("Deseja trocar sua foto de perfil?"))
+            {
+                //$("#sectionLogin").submit(function (e) {
+                //    e.preventDefault();
+                //    alert("nao vou submitar");
+                //});
+
                 document.getElementById("secEscolherFoto").style.display = "block";
+                //document.getElementById("loginSection").preventDefault();
+            }
             else {
                 document.getElementById("secEscolherFoto").style.display = "none";
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
@@ -63,7 +74,7 @@
             input.innerHTML = ""; });
 
             document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src=" + foto + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='imagee' type='image' src=" + foto + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
@@ -71,19 +82,19 @@
 
             alert(qualImg);
 
-             document.getElementById("tagInvisivel").innerHTML = qualImg;
+            document.getElementById("btnFotoPerfil").value = qualImg;
         }
 
         function CarregarFotoEscolhida(a)
         {
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src=" + a + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='imagee'  type='image' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = a;
 
-            document.getElementById("tagInvisivel").innerHTML = qualImg;
+            document.getElementById("btnFotoPerfil").value = qualImg;
         }
 
     </script>
@@ -105,7 +116,8 @@
         </div>
 
     </header> 
-    <label id="tagInvisivel" name="u.imagem" style="visibility:hidden"></label>
+
+    @*<label id="tagInvisivel" name="u.imagem" style="visibility:hidden"></label>*@
 
         <section id="secEscolherFoto">
             Escolha uma foto para o seu Perfil!

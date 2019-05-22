@@ -99,7 +99,7 @@ header {
 #btnFotoPerfil {
     z-index: 1;
     position: absolute;
-    left: 25%;
+    left: 20%;
     top: -362px;
     height: 90%;
     width: 100%;
@@ -130,7 +130,7 @@ header {
     width: 70%;
     align-self: center;
     left: 15%;
-    top: 30%;
+    top: 1em;
     position: relative;
     border-radius: 10%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -149,13 +149,13 @@ header {
     border-width: 1em;
 }
 
-#novaFoto {
+/*#novaFoto {
     width: 100%;
     height: 100%;
     border-radius: 100%;
     /* border-color: black;
     border-width: 1em; */
-}
+}*/
 
 #btnSalvar {
     top: 80%;
