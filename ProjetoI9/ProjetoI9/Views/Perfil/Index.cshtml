@@ -26,7 +26,7 @@
 
             document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image'  src=" + qualImg + " onclick='TrocarFoto()'>";
         }
-        
+
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
@@ -51,8 +51,6 @@
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
             }
         }
-                
-        var imgBD = '<%=this.qualImagem%>';
 
         function CarregarArquivoEscolhido()
         {
@@ -65,33 +63,27 @@
             input.innerHTML = ""; });
 
             document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src='/Imagens/" + foto + "' onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src=" + foto + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = "/Imagens/" + foto;
-            alert("bora");
-            var imgBD = '<%=this.qualImagem%>';
-            imgBD = qualImg;
 
             alert(qualImg);
-            //Session["usuarioLogado"].imagem = foto;
 
+             document.getElementById("tagInvisivel").innerHTML = qualImg;
         }
 
         function CarregarFotoEscolhida(a)
         {
-            //alert(a + "");
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
             document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = a;
-            alert("bora");
-            var imgBD = '<%=this.qualImagem%>';
-            imgBD = qualImg;
-            /*Session["usuarioLogado"].imagem = foto;*/
+
+            document.getElementById("tagInvisivel").innerHTML = qualImg;
         }
 
     </script>
@@ -112,7 +104,8 @@
 
         </div>
 
-    </header>
+    </header> 
+    <label id="tagInvisivel" name="u.imagem" style="visibility:hidden"></label>
 
         <section id="secEscolherFoto">
             Escolha uma foto para o seu Perfil!
