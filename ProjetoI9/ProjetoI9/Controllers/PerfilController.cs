@@ -10,7 +10,6 @@ namespace ProjetoI9.Controllers
 {
     public class PerfilController : Controller
     {
-        // GET: Perfil
         public ActionResult Index()
         {
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
@@ -24,11 +23,16 @@ namespace ProjetoI9.Controllers
             else
                 return RedirectToAction("Index", "Login");
         }
-        public void SalvarDados(string img)
+        public ActionResult SalvarDados(UsuarioI9 u)
         {
+            if (u.imagem == null)//mandar mensagemmmm
+                return RedirectToAction("Index", "Perfil");
+
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
-            usu.imagem = img;
+            usu.imagem = u.imagem;
+
+           return RedirectToAction("Index", "Perfil"); 
         }
     }
 }
