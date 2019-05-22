@@ -34,7 +34,7 @@
             else
             {
                 document.getElementById("secEscolherFoto").style.display = "none";
-                document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
             }
         }
 
@@ -63,8 +63,8 @@
             if(input.files.length > 0) nome = input.files[0].name;
             input.innerHTML = ""; });
 
-            document.getElementById("opcoesFotos").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src='/Imagens/" + foto + "' onclick='TrocarFoto()'>";
+            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src='/Imagens/" + foto + "' onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
@@ -78,8 +78,8 @@
         function CarregarFotoEscolhida(a)
         {
             //alert(a + "");
-            document.getElementById("opcoesFotos").innerHTML = "<input class='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input class='btnPerfil' type='image' src=" + a + " onclick='TrocarFoto()'>";
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
