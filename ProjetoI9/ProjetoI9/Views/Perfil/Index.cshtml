@@ -26,18 +26,7 @@
 
             document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' type='image'  src=" + qualImg + " onclick='TrocarFoto()'>";
         }
-
-        function TrocarFoto()
-        {
-            if(window.confirm("Deseja trocar sua foto de perfil?"))
-                document.getElementById("secEscolherFoto").style.display = "block";
-            else
-            {
-                document.getElementById("secEscolherFoto").style.display = "none";
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
-            }
-        }
-
+        
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
@@ -52,6 +41,18 @@
                 seMostraPerfil++;
             }
         }
+        //TROCAR FOTO
+
+        function TrocarFoto() {
+            if (window.confirm("Deseja trocar sua foto de perfil?"))
+                document.getElementById("secEscolherFoto").style.display = "block";
+            else {
+                document.getElementById("secEscolherFoto").style.display = "none";
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
+            }
+        }
+                
+        var imgBD = '<%=this.qualImagem%>';
 
         function CarregarArquivoEscolhido()
         {
@@ -69,8 +70,11 @@
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = "/Imagens/" + foto;
+            alert("bora");
+            var imgBD = '<%=this.qualImagem%>';
+            imgBD = qualImg;
 
-            PerfilController.SalvarDados(qualImg);
+            alert(qualImg);
             //Session["usuarioLogado"].imagem = foto;
 
         }
@@ -84,8 +88,10 @@
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = a;
-            PerfilController.SalvarDados(qualImg);
-             //Session["usuarioLogado"].imagem = foto;
+            alert("bora");
+            var imgBD = '<%=this.qualImagem%>';
+            imgBD = qualImg;
+            /*Session["usuarioLogado"].imagem = foto;*/
         }
 
     </script>
@@ -121,11 +127,11 @@
 
             <br><br>
             <label for="arquivoEscolhido">Selecionar arquivo da foto</label>
-            <input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none">
+            <input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="u.imagem">
             <br><br>
         </section>
 
-        <section id="loginSection">
+        <form id="loginSection" method="post" action="/Perfil/SalvarDados">
             <br><br>
             <div id="escolherNovaFoto">
 
@@ -150,7 +156,7 @@
             </div><br><br>
 
             <button class="cBtn" id="btnSalvar" type="submit">Salvar dados</button>
-        </section>
+        </form>
 
 
 
