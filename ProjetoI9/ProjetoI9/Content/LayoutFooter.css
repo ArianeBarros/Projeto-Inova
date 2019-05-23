@@ -117,7 +117,7 @@
 @media screen and (max-width: 576px) {
     #myFooter {
         text-align: center;
-        height:75%;
+        height:90%;
     }
 
     .col-sm-3 {
@@ -138,7 +138,7 @@
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    top: 50em;
+    top: 10em;
 }
 
 * {

@@ -10,10 +10,14 @@
     <script type="text/javascript" src="~/Script/CadScript.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
+        var bNome = false;
+        var bEmail = false;
+        var bData = false;
+        var bSenha = false;
+        var bVer = false;
 
         window.onload = function()
         {
@@ -50,16 +54,21 @@
             //password
         }
 
-        function SenhasIguais() {
-            var ok = false;
+        function Pode() {
+            if (!bNome)
+                document.getElementById("nome").value = "";
 
-            if (document.getElementById("password").value == document.getElementById("password2").value)
-                ok = true;
-            else
-                alert("As senhas dadas não são iguais!");
+            if (!bEmail)
+                document.getElementById("email").value = "";
 
-                 $('#loginSection').off(); //aqui
-                return ok;
+            if (!bData)
+                document.getElementById("data").value = "";
+
+            if (!bSenha)
+                document.getElementById("senha").value = "";
+
+            if (!bVer)
+                document.getElementById("ver").value = "";
         }
 
         function Data() {
@@ -77,23 +86,89 @@
         }
 
         function Nome(dig) {
-
+            var lista = @Html.Raw(Json.Encode(ViewData["List"]));
             var val = true;
+            var val2 = true;
             if (dig == "")
                 val = false;
             if (dig.length < 6)
                 val = false;
-
+            for (var i = 0; i <@ViewBag.Qtos;i++) {
+                var nome = JSON.stringify(lista[i].nome).split('"');
+                nome=nome[1];
+                if (nome == dig)
+                    val2 = false;
+            }
             if (!val) {
+                document.getElementById("alertNome").style.display = "block";
+                document.getElementById("alertNome2").style.display = "none";
                 document.getElementById("nome").style.boxShadow = "5px 5px red";
                 document.getElementById("nomeS").style.color = "red";
                 document.getElementById("nomeF").style.color = "red";
-                document.getElementById("alertNome").style.display = "block";
+                bNome = false;
             }
-            else {
+            if (!val2) {
+                document.getElementById("alertNome").style.display = "none";
+                document.getElementById("alertNome2").style.display = "block";
+                document.getElementById("nome").style.boxShadow = "5px 5px red";
+                document.getElementById("nomeS").style.color = "red";
+                document.getElementById("nomeF").style.color = "red";
+                bNome = false;
+            }
+            if (val && val2) {
                 document.getElementById("nome").style.boxShadow = "5px 5px green";
                 document.getElementById("nomeS").style.color = "green";
                 document.getElementById("nomeF").style.color = "green";
+                bNome = true;
+            }
+        }
+        function Email(dig) {
+            var lista = @Html.Raw(Json.Encode(ViewData["List"]));
+            var val = true;
+            var val2 = true;
+            if (dig == "")
+                val = false;
+
+            var tem = false;
+            for (var i = 0; i < dig.length; i++) {
+                if (dig.charCodeAt(i) == 64)
+                    tem = true;
+            }
+
+            if (tem) {
+                if (dig.indexOf(".com") < 1)
+                    tem = false;
+            }
+            if (!tem)
+                val = false;
+
+             for (var i = 0; i <@ViewBag.Qtos;i++) {
+                var email = JSON.stringify(lista[i].email).split('"');
+                email=email[1];
+                if (email == dig)
+                    val2 = false;
+            }
+             if (!val) {
+                 document.getElementById("email").style.boxShadow = "5px 5px red";
+                 document.getElementById("emailS").style.color = "red";
+                 document.getElementById("emailF").style.color = "red";
+                 document.getElementById("alertEmail").style.display = "block";
+                 document.getElementById("alertEmail2").style.display = "none";
+                 bEmail = false;
+             }
+            if (!val2) {
+                document.getElementById("email").style.boxShadow = "5px 5px red";
+                document.getElementById("emailS").style.color = "red";
+                document.getElementById("emailF").style.color = "red";
+                document.getElementById("alertEmail2").style.display = "block";
+                document.getElementById("alertEmail").style.display = "none";
+                bEmail = false;
+            }
+            if(val && val2) {
+                document.getElementById("email").style.boxShadow = "5px 5px green";
+                document.getElementById("emailS").style.color = "green";
+                document.getElementById("emailF").style.color = "green";
+                bEmail = true;
             }
         }
 
@@ -108,7 +183,7 @@
                 if (mes > 12)
                     val = false;
                 else {
-                    var data = new Date(ano, mes, dia);
+                    var data = new Date(ano, mes-1, dia);
                     var val = true;
 
                     if (data.getTime() < (new Date("1960", "01", "01").getTime()))
@@ -127,23 +202,84 @@
                 document.getElementById("dataS").style.color = "red";
                 document.getElementById("dataF").style.color = "red";
                 document.getElementById("alertData").style.display = "block";
+                bData = false;
             }
             else {
                 document.getElementById("data").style.boxShadow = "5px 5px green";
                 document.getElementById("dataS").style.color = "green";
                 document.getElementById("dataF").style.color = "green";
+                bData = true;
+            }
+        }
+        function Senha(dig) {
+
+            var val = true;
+            if (dig == "")
+                val = false;
+            if (dig.length < 6)
+                val = false;
+
+            if (!val) {
+                document.getElementById("senha").style.boxShadow = "5px 5px red";
+                document.getElementById("senhaS").style.color = "red";
+                document.getElementById("senhaF").style.color = "red";
+                document.getElementById("alertSenha").style.display = "block";
+                bSenha = false;
+            }
+            else {
+                document.getElementById("senha").style.boxShadow = "5px 5px green";
+                document.getElementById("senhaS").style.color = "green";
+                document.getElementById("senhaF").style.color = "green";
+                bSenha = true;
+            }
+        }
+        function Ver(dig) {
+
+            var val = true;
+            if (dig == "")
+                val = false;
+            if (dig != document.getElementById("senha").value)
+                val = false;
+            if (document.getElementById("senhaS").style.color == "red")
+                val = false;
+
+            if (!val) {
+                document.getElementById("ver").style.boxShadow = "5px 5px red";
+                document.getElementById("verS").style.color = "red";
+                document.getElementById("verF").style.color = "red";
+                document.getElementById("alertVer").style.display = "block";
+                bVer = false;
+            }
+            else {
+                document.getElementById("ver").style.boxShadow = "5px 5px green";
+                document.getElementById("verS").style.color = "green";
+                document.getElementById("verF").style.color = "green";
+                bVer = true;
             }
         }
 
-        window.document.getElementById("nome").onchange = function () {
-            alert("alo");
+        function ClickNome() {
+            document.getElementById("alertNome").style.display = "none";
+            document.getElementById("alertNome2").style.display = "none";
         }
-
-
+        function ClickEmail() {
+            document.getElementById("alertEmail").style.display = "none";
+            document.getElementById("alertEmail2").style.display = "none";
+        }
+        function ClickData() {
+            document.getElementById("alertData").style.display = "none";
+        }
+        function ClickSenha() {
+            document.getElementById("alertSenha").style.display = "none";
+        }
+        function ClickVer() {
+            document.getElementById("alertVer").style.display = "none";
+        }
+        
 
     </script>
 </head>
-<body>
+<body >
     <div class="header" id="header">
             <!-- <img class="barra" src="./Imagens/nav.png"> -->
         <input type="checkbox" id="chk">
@@ -195,26 +331,28 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
                     <span class="focus-input100" id="nomeF"></span>
                     <span class="symbol-input100" id="nomeS">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
                 <img id="alertNome" src="~/Imagens/alertNome.png" />
+                <img id="alertNome2" src="~/Imagens/alertNome2.png" />
 
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" data-tooltip="oiiiiii">
-                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii">
+                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii" onblur="Email(value)" onclick="ClickEmail()">
                     <span class="focus-input100" id="emailF"></span>
                     <span class="symbol-input100" id="emailS">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
                 <img id="alertEmail" src="~/Imagens/alertEmail.png" />
+                <img id="alertEmail2" src="~/Imagens/alertEmail2.png" />
 
                 <div class="wrap-input100 validate-input" data-validate="Valid date is required: 00/00/0000">
-                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.data" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000">
+                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.dataNascimento" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000" onclick="ClickData()">
                     <span class="focus-input100" id="dataF"></span>
                     <span class="symbol-input100" id="dataS">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -222,12 +360,27 @@
                 </div>
                 <img id="alertData" src="~/Imagens/alertData.png" />
 
+                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                    <input class="input100" placeholder="Senha" id="senha" type="password" name="u.senha" required onblur="Senha(value)" title="No mínimo 6 caracteres" onclick="ClickSenha()">
+                    <span class="focus-input100" id="senhaF"></span>
+                    <span class="symbol-input100" id="senhaS">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <img id="alertSenha" src="~/Imagens/alertSenha.png" />
+
+                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                    <input class="input100" placeholder="Confirmar Senha" id="ver" type="password" required onblur="Ver(value)" title="Digite novamente a senha" onclick="ClickVer()">
+                    <span class="focus-input100" id="verF"></span>
+                    <span class="symbol-input100" id="verS">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <img id="alertVer" src="~/Imagens/alertVer.png" />
+
             </div>
-
-                
-
                 <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
+                    <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
                         Cadastrar
                     </button>
                 </div>

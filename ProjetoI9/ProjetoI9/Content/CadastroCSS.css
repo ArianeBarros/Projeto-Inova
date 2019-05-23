@@ -214,7 +214,7 @@ header {
     background:white;
     visibility:visible;
 }
-#alertNome {
+#alertNome,#alertNome2 {
     position: relative;
     top: -0.8em;
     left: 9em;
@@ -224,15 +224,45 @@ header {
     display: none;
     transition: display 50s;
 }
-#alertEmail,#alertData {
+#alertEmail,#alertEmail2 {
     position: relative;
-    top: -0.8em;
+    top: -0.9em;
     left: 8em;
     height: 62%;
     width: 62%;
     z-index: 100;
     display:none;
     transition:display 50s;
+}
+#alertData {
+    position: relative;
+    top: -0.9em;
+    left: 8em;
+    height: 66%;
+    width: 66%;
+    z-index: 100;
+    display: none;
+    transition: display 50s;
+}
+#alertSenha {
+    position: relative;
+    top: -0.9em;
+    left: 10em;
+    height: 54%;
+    width: 54%;
+    z-index: 100;
+    display: none;
+    transition: display 50s;
+}
+#alertVer {
+    position: relative;
+    top: -0.9em;
+    left: 10em;
+    height: 53%;
+    width: 53%;
+    z-index: 100;
+    display: none;
+    transition: display 50s;
 }
     .tooltip .tooltiptext {
         visibility: visible;
@@ -260,6 +290,15 @@ header {
     position: relative;
     left:2%;
 }
+#btnCadastrar {
+    position: relative;
+    top: -6em;
+    width:400px;
+    left:-11.5%;
+    font-family:'Century Gothic';
+    font-size:22px;
+    font-weight:500;
+}
 
 footer {
     background-color: #0B2161;
@@ -282,12 +321,6 @@ footer {
     left: 700px;
 }
 
-#btnCadastrar {
-    left: 700px;
-    font-size: 23px;
-    position: absolute;
-    top: 86%;
-}
 
 .cTemCadastro {
     font-size: 30px;
