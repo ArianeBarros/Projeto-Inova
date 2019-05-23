@@ -47,6 +47,7 @@ namespace ProjetoI9.Controllers
                 u.imagem = "/Imagens/imgPerfil.jpg";
 
                 dao.Adiciona(u);
+                Session["usuarioLogado"] = u;
                 return RedirectToAction("Index", "Principal");
             }
             else
