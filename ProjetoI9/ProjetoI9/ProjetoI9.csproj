@@ -303,7 +303,6 @@
     <Content Include="Views\Contato\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Login\HomeLogado.cshtml" />
     <Content Include="Views\Cadastro\HomeCadastrado.cshtml" />
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />

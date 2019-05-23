@@ -10,12 +10,17 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <script type="text/javascript">
-
-         window.onload = function () {
-            if (@Session["erro"] != null)
-                if (@Session["erro"].ToString() == "email")
-                    alert("Email não existe, faça um cadastro!");
+        
+        window.onload = function () {
+            var a = JSON.stringify("@ViewBag.Erro");
+           
+            a = a[1];
             
+            if (a != "o") {
+                  if (a == "e")
+                    alert("Email não existe, faça um cadastro!");
+            }
+
          }
 
         function VerificarSenhas()
@@ -30,9 +35,9 @@
 </head>
 <body>
     <form method="post" action="TrocarSenha">
-        <input  type="text" id="email" required name="u.nome"> 
-        <input  type="text" id="senha" required name="u.senha">
-        <input  type="text" id="confirmaSenha" required onmouseout="VerificarSenhas()">
+        E-mail: <input type="text" id="email" required name="u.nome"><br><br>
+        Senha: <input type="password" id="senha" required name="u.senha"><br><br>
+        Confirmar senha: <input type="password" id="confirmaSenha" required onchange="VerificarSenhas()"><br><br>
         <input type="submit" id="btnTrocarSenha">Trocar senha
     </form>
 </body>

@@ -121,7 +121,6 @@ header {
     height: 50%;
     width: 50%;
     top: 80%;
-    align-self: center;
     left: 350px;
     position: absolute;
     border-radius: 10%;
@@ -136,13 +135,14 @@ header {
 
 #email, #password {
     font-size: 40px;
+    left: 1em;
 }
 
 
 #btnEntrar {
     font-size: 25px;
     position: absolute;
-    left: 200px;
+    left: 100px;
     font-style: italic;
     top: 320px;
     width: 10%;
@@ -151,10 +151,18 @@ header {
 
 .cNTemCadastro {
     font-size: 30px;
-    position: absolute;
-    left: 400px;
+    position: relative;
     font-style: italic;
-    top: 320px;
+    top: 1%;
+    left: 25%;
+}
+
+.trocarSenha {
+    font-size: 30px;
+    position: relative;
+    font-style: italic;
+    top: 1%;
+    left: 30%;
 }
 
 footer {

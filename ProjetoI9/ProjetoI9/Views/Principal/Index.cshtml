@@ -2,10 +2,10 @@
 
 <html>
 <head>
-    @*<script type="text/javascript">var</script>*@
-    <title>Principal</title>
 
-    <link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">
+    <title>Principal</title>
+    
+    @*<link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">*@
 
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
 
@@ -56,15 +56,6 @@
                 document.getElementById("sectionLeft").innerHTML = re;
 
                 cont++;
-
-                //re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
-                //document.getElementById("sectionLeft").innerHTML = re + " <label class='lbl'>Semana</label><div class='adicionarEvento'>" +
-                //    "<label>Adicionar Evento</label><div id='divAdicionarEvento'>" +
-                //    "<label> Data: </label><input id='dataEvento' type='text'>" +
-                //    "<label> Descrição: </label><input id='descricaoEvento' type='text'>" +
-                //    "<label> Localização: </label><input id='localizacaoEvento' type='text'></div>";
-
-                //cont++;
             }
 
             BuscaEvento();
@@ -133,8 +124,8 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='sairV' href='#'>Sair</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
+                    "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
+                    "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
@@ -172,7 +163,12 @@
             else
                 document.getElementById("adicionarSonho").style.display = "block";
         }
-        
+
+        function Erro()
+        {
+            document.getElementById("invisivel").submit();
+        }
+
         //COMEÇO DO WEB SERVICE
 
 
@@ -233,10 +229,14 @@
 
     <section id="sectionLeft"></section>
 
+    <form id="invisivel" method="post" action="/Principal/Erro">
+        </form>
+
     <form method="post" action="/Principal/AdicionarEvento">
         <div id="adicionarEvento">
             @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
             <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
+            
             <br>
             <label>Adicionar Evento</label><br><br>
             <label class="lbl"> Data: </label><input id="diaEvento" type="text" name="not.dia"><br><br>

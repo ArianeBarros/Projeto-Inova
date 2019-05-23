@@ -10,12 +10,19 @@ namespace ProjetoI9.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
         public ActionResult Index()
         {
+            string a = "o";
+            if (Session["erro"] != null)
+                a = Session["erro"].ToString();
+
             UsuarioI9DAO dao = new UsuarioI9DAO();
             IList<UsuarioI9> usu = dao.Lista();
-            ViewBag.UsuarioI9 = usu;
+            ViewBag.Erro = a;
+            
+            ViewData["usuarios"] = usu;
+            ViewBag.QtdUsuarios = usu.Count();
+
             return View();
         }
 
@@ -28,15 +35,13 @@ namespace ProjetoI9.Controllers
             {
                 Session["usuarioLogado"] = usu;
                 return RedirectToAction("Index", "Principal");
-            }                
+            }
             else
             {
-                if (usu == null)
-                    Session["erro"] = "email";
-                else
-                    Session["erro"] = "senha";
+                Session["erro"] = "s" + u.email;
                 return RedirectToAction("Index", "Login");
-            }               
+            }
+           
         }
     }
 }

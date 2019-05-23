@@ -13,6 +13,10 @@ namespace ProjetoI9.Controllers
         // GET: TrocarSenha
         public ActionResult Index()
         {
+            string a = "ok";
+            if (Session["erro"] != null)
+                a = Session["erro"].ToString();
+            ViewBag.Erro = a;
             return View();
         }
 
@@ -29,7 +33,7 @@ namespace ProjetoI9.Controllers
             }
             else
             {
-                Session["erro"] = "email";
+                Session["erro"] = "e";
                 
                 return RedirectToAction("Index", "TrocarSenha");
             }

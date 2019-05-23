@@ -27,7 +27,7 @@
 
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
 
-            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' name='u.imagem' src=" + qualImg + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + qualImg + " onclick='TrocarFoto()'>";
         }
 
         var seMostraPerfil = 2;
@@ -74,7 +74,7 @@
             input.innerHTML = ""; });
 
             document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='u.imagem' type='image' src=" + foto + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + foto + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
@@ -82,19 +82,20 @@
 
             alert(qualImg);
 
-            document.getElementById("btnFotoPerfil").value = qualImg;
+            document.getElementById("tagInvisivel").value = qualImg;
         }
 
         function CarregarFotoEscolhida(a)
         {
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='u.imagem'  type='image' src=" + a + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
             qualImg = a;
 
-            document.getElementById("btnFotoPerfil").value = qualImg;
+            document.getElementById("tagInvisivel").value = qualImg;
+            
         }
 
     </script>
@@ -117,7 +118,7 @@
 
     </header> 
 
-    @*<label id="tagInvisivel" name="u.imagem" style="visibility:hidden"></label>*@
+    <input id="tagInvisivel" name="u.imagem" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
 
         <section id="secEscolherFoto">
             Escolha uma foto para o seu Perfil!
@@ -138,9 +139,9 @@
 
         <form id="loginSection" method="post" action="/Perfil/SalvarDados">
             <br><br>
-            <div id="escolherNovaFoto">
-
-            </div>
+                <div id="escolherNovaFoto">
+                    <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
+                </div>
 
             <h1>Seus dados:</h1>
 
@@ -151,7 +152,7 @@
 
             <div>
                 <label class="login" for="email">Email: </label>
-                <input class="loginInput" id="email" type="email" required name="email"  value="@ViewBag.UsuarioLogado.email">
+                <input class="loginInput" id="email" type="email" required name="u.email"  value="@ViewBag.UsuarioLogado.email">
             </div><br><br>
 
 

@@ -13,13 +13,42 @@
     <meta charset="utf-8">
     <script type="text/javascript">
 
-        window.onload = function () {
-            if (@Session["erro"] != null)
-                if (@Session["erro"].ToString() == "email")
-                    alert("Email inválido");
-                else
-                    alert("Senha errada");
+        window.onload = function ()
+        {
+            var erro = JSON.stringify("@ViewBag.Erro");
+           
+            erro = erro.split('"')[1];
             
+            if (erro != "o") {
+                alert("Senha errada");
+                erro = erro.split('s')[1];
+                document.getElementById("email").value = erro;
+            }
+        }
+
+        function VerificarCadastro()
+        {
+            
+            if (document.getElementById("email").value != "")
+            {
+                    var lista = @Html.Raw(Json.Encode(@ViewData["usuarios"]));
+                    var estaCadastrado = false;
+
+                    for (var i = 0; i < @ViewBag.QtdUsuarios; i++)
+                    {
+                        var email = (JSON.stringify(lista[i].email).split('"'))[1];
+                        
+                        if (document.getElementById("email").value == email)
+                            estaCadastrado = true;
+                    }
+
+                    if (!estaCadastrado)
+                    {
+                        alert("Esse e-mail não está cadastrado!");
+                        document.getElementById("email").value = "";
+
+                    }
+            }
         }
 
     </script>
@@ -53,17 +82,17 @@
         <br><br><br><br>
         <div class="login">
             <label for="email">Email: </label>
-            <input id="email" type="text" class="validate" required name="u.email">
+            <input id="email" type="text" class="validate" required onchange="VerificarCadastro()" name="u.email">
         </div><br><br><br><br><br><br>
 
         <div class="login">
             <label for="password">Senha: </label>
-            <input id="password" type="password" class="validate" required pattern=".{2,}" onblur="Tool()" name="u.senha">
+            <input id="password" type="password" class="validate" required pattern=".{2,}" name="u.senha">
         </div><br><br><br><br><br><br>
 
         <button id="btnEntrar">Entrar</button><br><br>
-        <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
-        <u><a href="~/TrocarSenha/Index" class="cNTemCadastro"> Esqueceu a senha? </a></u><br><br>
+        <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u>
+        <u><a href="~/TrocarSenha/Index" class="trocarSenha"> Esqueceu a senha? </a></u>
         <br><br>
     </form>
 
