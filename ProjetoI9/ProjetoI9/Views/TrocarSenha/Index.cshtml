@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript">
+
+         window.onload = function () {
+            if (@Session["erro"] != null)
+                if (@Session["erro"].ToString() == "email")
+                    alert("Email não existe, faça um cadastro!");
+            
+         }
+
+        function VerificarSenhas()
+        {
+            if (document.getElementById("senha").value == document.getElementById("confirmaSenha").value)
+                ok = true;
+            else
+                alert("As senhas dadas não são iguais!");
+        }
+
+    </script>
+</head>
+<body>
+    <form method="post" action="TrocarSenha">
+        <input  type="text" id="email" required name="u.nome"> 
+        <input  type="text" id="senha" required name="u.senha">
+        <input  type="text" id="confirmaSenha" required onmouseout="VerificarSenhas()">
+        <input type="submit" id="btnTrocarSenha">Trocar senha
+    </form>
+</body>
+</html>

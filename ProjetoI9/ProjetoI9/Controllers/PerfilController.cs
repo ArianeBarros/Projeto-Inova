@@ -38,45 +38,34 @@ namespace ProjetoI9.Controllers
         /*
          * public ActionResult SalvarDados(Usuario u, HttpPostedFileBase upload)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            //if (dao.BuscaPorEmail(user.Email) == null)
-            //  return RedirectToAction("Home", "HomePagina");
+            UsuarioI9DAO dao = new UsuarioI9DAO();
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
 
             //if (ModelState.IsValid)
             //{
             if (upload != null)
             {
                 string caminhoArquivo = null;
-                var uploadPath = Server.MapPath("~/img/imgUsers");
-                caminhoArquivo = Path.Combine(@uploadPath, user.NomeUsuario + Path.GetExtension(upload.FileName));
+                var uploadPath = Server.MapPath("~/Imagens");
+                caminhoArquivo = Path.Combine(@uploadPath, Path.GetExtension(upload.FileName));
 
-                string[] extensãoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+                string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
-                for (int i = 0; i < extensãoPermitida.Length; i++)
-                    if (Path.GetExtension(caminhoArquivo) == extensãoPermitida[i])
+                for (int i = 0; i < extensaoPermitida.Length; i++)
+                    if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
                     {
                         upload.SaveAs(caminhoArquivo);
                         break;
                     }
-                user.ImgPerfil = "img/imgUsers/" + user.NomeUsuario + Path.GetExtension(upload.FileName);
+                usuario.imagem = "Imagens/" + Path.GetExtension(upload.FileName);
             }
             else
             {
-                user.ImgPerfil = "img/UsuarioPadrao.png";
+                usuario.imagem = "img/UsuarioPadrao.png";
             }
-            dao.Adiciona(user);
-            Session["emailUsuario"] = user.Email;
-            Session["nomeUsuario"] = user.NomeUsuario;
-            Session["imgPerfil"] = user.ImgPerfil;
 
-            return RedirectToAction("Index", "Home");
-            // }
-
-            //return RedirectToAction("Cadastro", "Usuario");
+            return RedirectToAction("Index", "Perfil");
         }
-         * 
-         * 
-         * 
          * */
     }
 }

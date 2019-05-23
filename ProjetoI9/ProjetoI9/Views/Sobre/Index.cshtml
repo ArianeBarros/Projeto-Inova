@@ -21,8 +21,7 @@
 
             CarregarDadosBD();
         }
-
-        var qualId = null;
+        
         var qualImg = null;
 
         function CarregarDadosBD() {
@@ -36,8 +35,8 @@
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='sairV' href='#'>Sair</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
+                    "<br><br><a id ='sairV' href='~/SairDaPagina/Index'>Sair</a><br><br>" +
+                    "<i class='glyphicon glyphicon-cog'></i><a id ='configV' href='~/Perfil/Index'>Configurar conta</a><br><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {

@@ -13,6 +13,15 @@
     <meta charset="utf-8">
     <script type="text/javascript">
 
+        window.onload = function () {
+            if (@Session["erro"] != null)
+                if (@Session["erro"].ToString() == "email")
+                    alert("Email inválido");
+                else
+                    alert("Senha errada");
+            
+        }
+
     </script>
 </head>
 <body>
@@ -54,6 +63,7 @@
 
         <button id="btnEntrar">Entrar</button><br><br>
         <u><a href="~/Cadastro/Index" class="cNTemCadastro"> Não tem cadastro?! </a></u><br><br>
+        <u><a href="~/TrocarSenha/Index" class="cNTemCadastro"> Esqueceu a senha? </a></u><br><br>
         <br><br>
     </form>
 

@@ -27,7 +27,7 @@
 
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
 
-            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' name='imagee'   src=" + qualImg + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' name='u.imagem' src=" + qualImg + " onclick='TrocarFoto()'>";
         }
 
         var seMostraPerfil = 2;
@@ -74,7 +74,7 @@
             input.innerHTML = ""; });
 
             document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='imagee' type='image' src=" + foto + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='u.imagem' type='image' src=" + foto + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 
@@ -88,7 +88,7 @@
         function CarregarFotoEscolhida(a)
         {
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='imagee'  type='image' src=" + a + " onclick='TrocarFoto()'>";
+            document.getElementById("escolherNovaFoto").innerHTML = " <input id='btnFotoPerfil' name='u.imagem'  type='image' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
 

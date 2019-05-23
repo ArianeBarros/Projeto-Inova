@@ -29,8 +29,14 @@ namespace ProjetoI9.Controllers
                 Session["usuarioLogado"] = usu;
                 return RedirectToAction("Index", "Principal");
             }                
-            else 
+            else
+            {
+                if (usu == null)
+                    Session["erro"] = "email";
+                else
+                    Session["erro"] = "senha";
                 return RedirectToAction("Index", "Login");
+            }               
         }
     }
 }

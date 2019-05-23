@@ -270,8 +270,10 @@
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PoliticaController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\SairDaPaginaController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Controllers\TermosController.cs" />
+    <Compile Include="Controllers\TrocarSenhaController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
@@ -307,6 +309,8 @@
     <Content Include="Views\Politica\Index.cshtml" />
     <Content Include="Views\Principal\AdicionarEvento.cshtml" />
     <Content Include="Views\Perfil\SalvarDados.cshtml" />
+    <Content Include="Views\SairDaPagina\Index.cshtml" />
+    <Content Include="Views\TrocarSenha\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
