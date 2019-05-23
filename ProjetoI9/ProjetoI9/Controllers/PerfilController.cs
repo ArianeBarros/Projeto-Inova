@@ -23,7 +23,7 @@ namespace ProjetoI9.Controllers
             else
                 return RedirectToAction("Index", "Login");
         }
-        public ActionResult SalvarDados(UsuarioI9 u, string imagee)
+        public ActionResult SalvarDados(UsuarioI9 u)
         {
             if (u.imagem == null)//mandar mensagemmmm
                 return RedirectToAction("Index", "Perfil");

@@ -64,6 +64,15 @@ header {
     left: -3em;
 }
 
+#iconeConfig 
+{
+    position: absolute;
+    width: 800%;
+    top: 20%;
+    left: -2em;
+}
+
+
 #opcoesFotos {
     border-radius: 50%;
     background-color: white;

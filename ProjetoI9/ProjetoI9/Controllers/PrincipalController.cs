@@ -141,5 +141,11 @@ namespace ProjetoI9.Controllers
                 return View();
             }
         }
+
+        public ActionResult Erro()
+        {
+            Session["usuarioLogado"] = null;
+            return RedirectToAction("Index", "Login");
+        }
     }
 }
