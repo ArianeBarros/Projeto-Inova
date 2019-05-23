@@ -13,9 +13,10 @@ namespace ProjetoI9.Controllers
         // GET: Cadastro
         public ActionResult Index()
         {
-            //UsuarioI9DAO dao = new UsuarioI9DAO();
-            //IList<UsuarioI9> usu = dao.Lista();
-            //ViewBag.UsuarioI9 = new UsuarioI9();
+            UsuarioI9DAO dao = new UsuarioI9DAO();
+            IList<UsuarioI9> list = dao.Lista();
+            ViewData["List"] = list;
+            ViewBag.Qtos = list.Count;
             return View();
         }
 
