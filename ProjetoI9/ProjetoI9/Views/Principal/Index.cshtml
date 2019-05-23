@@ -2,18 +2,15 @@
 
 <html>
 <head>
-
     <title>Principal</title>
-
     @*<link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">*@
-    
+
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
 
     @*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
     <script type="text/javascript">
 
         var qualImg = "";
-        var
 
         window.onload = function () {
             CarregarNoticias();
@@ -98,8 +95,7 @@
         function BuscaEvento() {
 
             var lista = @Html.Raw(Json.Encode(@ViewData["eventos"]));
-
-            @*var qualIndice = Math.random() * (@ViewBag.QuantosEventos - 0);*@
+            
 
             for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
             {

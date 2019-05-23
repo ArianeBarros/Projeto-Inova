@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,7 +33,9 @@ namespace ProjetoI9.Controllers
             UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
             usu.imagem = u.imagem;
 
-           return RedirectToAction("Index", "Perfil"); 
+            dao.Atualiza(usu);
+
+            return RedirectToAction("Index", "Perfil"); 
         }
 
         /*
