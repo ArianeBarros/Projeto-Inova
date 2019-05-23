@@ -42,8 +42,10 @@
                 if (window.innerWidth >= 800) {
                     fundo.style.width = "120%";
                 }
-                else
-                    fundo.style.width = "170%";
+                else {
+                    document.getElementById("loginSection").style.left = "-10%";
+                fundo.style.width = "170%";
+                }
             }
 
         }
@@ -284,6 +286,9 @@
     </script>
 </head>
 <body>
+    <img class="ondas" id="ondas" src="~/Imagens/ondas2.png">
+    <img src="~/Imagens/LOGO/logoofc.png" class="logo">
+
     <div class="header" id="header">
         <!-- <img class="barra" src="./Imagens/nav.png"> -->
         <input type="checkbox" id="chk">

@@ -5189,7 +5189,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
 }
 
 body, html {
@@ -5595,7 +5594,7 @@ textarea.input100 {
 @media (max-width: 576px) {
     .wrap-contact100 {
         padding: 110px 15px 157px 15px;
-        width: 463px;
+        width: 74%;
     }
      
 }

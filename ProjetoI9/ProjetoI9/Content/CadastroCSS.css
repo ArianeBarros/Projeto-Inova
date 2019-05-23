@@ -284,17 +284,15 @@ header {
         visibility: visible;
     }
 #loginSection {
-    text-align:center;
-    align-self: center;
     top:3em;
     position: relative;
-    left:2%;
+    left:-10%;
 }
 #btnCadastrar {
     position: relative;
     top: -6em;
     width:400px;
-    left:-11.5%;
+    left:0%;
     font-family:'Century Gothic';
     font-size:22px;
     font-weight:500;
@@ -495,7 +493,7 @@ footer {
 @media screen and (max-width: 767px) {
     #myFooter {
         text-align: center;
-        height: 70%;
+        height: 50%;
     }
 
     .col-sm-3 {
@@ -506,7 +504,7 @@ footer {
 @media screen and (max-width: 576px) {
     #myFooter {
         text-align: center;
-        height: 90%;
+        height: 80%;
     }
 
     .col-sm-3 {
