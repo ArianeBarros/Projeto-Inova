@@ -206,14 +206,8 @@ header {
 #sobre, #login, #contato, #home, #principal, .cTemCadastro, #perfil {
     color: white;
 }
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted white;
-    color:white;
-    background:white;
-    visibility:visible;
-}
+
+
 #alertNome,#alertNome2 {
     position: relative;
     top: -0.8em;
@@ -264,29 +258,11 @@ header {
     display: none;
     transition: display 50s;
 }
-    .tooltip .tooltiptext {
-        visibility: visible;
-        width: 120px;
-        background-color: white;
-        color: white;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        top: 100%;
-        left: 50%;
-        margin-left: -60px;
-    }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
-#loginSection {
-    top:3em;
+.container {
+    top: 3em;
     position: relative;
-    left:-10%;
+    left: calc(26%)
 }
 #btnCadastrar {
     position: relative;

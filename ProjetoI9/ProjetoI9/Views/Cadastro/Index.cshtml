@@ -43,7 +43,6 @@
                     fundo.style.width = "120%";
                 }
                 else {
-                    document.getElementById("loginSection").style.left = "-10%";
                 fundo.style.width = "170%";
                 }
             }
@@ -326,75 +325,75 @@
             </div>
 
         </header>*@
-    <center>
-        <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
-            <div class="wrap-contact100">
-                <span class="contact100-form-title">
-                    CADASTRE-SE E JUNTE-SE A NÓS!
-                </span>
-                <span class="contact100-form-title2">
-                    Preencha os campos abaixo com seus dados pessoais
-                </span>
-                <div class="contact100-pic js-tilt" data-tilt>
-                    <img src="~/Imagens/img-01.png" alt="IMG">
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
-                    <span class="focus-input100" id="nomeF"></span>
-                    <span class="symbol-input100" id="nomeS">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+        <div class="container">
+            <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
+                <div class="wrap-contact100">
+                    <span class="contact100-form-title">
+                        CADASTRE-SE E JUNTE-SE A NÓS!
                     </span>
-                </div>
-                <img id="alertNome" src="~/Imagens/alertNome.png" />
-                <img id="alertNome2" src="~/Imagens/alertNome2.png" />
-
-
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" data-tooltip="oiiiiii">
-                    <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii" onblur="Email(value)" onclick="ClickEmail()">
-                    <span class="focus-input100" id="emailF"></span>
-                    <span class="symbol-input100" id="emailS">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span class="contact100-form-title2">
+                        Preencha os campos abaixo com seus dados pessoais
                     </span>
-                </div>
-                <img id="alertEmail" src="~/Imagens/alertEmail.png" />
-                <img id="alertEmail2" src="~/Imagens/alertEmail2.png" />
+                    <div class="contact100-pic js-tilt" data-tilt>
+                        <img src="~/Imagens/img-01.png" alt="IMG">
+                    </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Valid date is required: 00/00/0000">
-                    <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.dataNascimento" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000" onclick="ClickData()">
-                    <span class="focus-input100" id="dataF"></span>
-                    <span class="symbol-input100" id="dataS">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <img id="alertData" src="~/Imagens/alertData.png" />
+                    <div class="wrap-input100 validate-input" data-validate="Name is required">
+                        <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
+                        <span class="focus-input100" id="nomeF"></span>
+                        <span class="symbol-input100" id="nomeS">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <img id="alertNome" src="~/Imagens/alertNome.png" />
+                    <img id="alertNome2" src="~/Imagens/alertNome2.png" />
 
-                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
-                    <input class="input100" placeholder="Senha" id="senha" type="password" name="u.senha" required onblur="Senha(value)" title="No mínimo 6 caracteres" onclick="ClickSenha()">
-                    <span class="focus-input100" id="senhaF"></span>
-                    <span class="symbol-input100" id="senhaS">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <img id="alertSenha" src="~/Imagens/alertSenha.png" />
 
-                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
-                    <input class="input100" placeholder="Confirmar Senha" id="ver" type="password" required onblur="Ver(value)" title="Digite novamente a senha" onclick="ClickVer()">
-                    <span class="focus-input100" id="verF"></span>
-                    <span class="symbol-input100" id="verS">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <img id="alertVer" src="~/Imagens/alertVer.png" />
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" data-tooltip="oiiiiii">
+                        <input class="input100" placeholder="Email" id="email" type="email" required name="u.email" title="ex@abc.xyz" data-tooltip="oiiiiii" onblur="Email(value)" onclick="ClickEmail()">
+                        <span class="focus-input100" id="emailF"></span>
+                        <span class="symbol-input100" id="emailS">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <img id="alertEmail" src="~/Imagens/alertEmail.png" />
+                    <img id="alertEmail2" src="~/Imagens/alertEmail2.png" />
 
-            </div>
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
-                    Cadastrar
-                </button>
-            </div>
-        </form>
-    </center>
+                    <div class="wrap-input100 validate-input" data-validate="Valid date is required: 00/00/0000">
+                        <input class="input100" placeholder="Data Nascimento" id="data" type="datetime" name="u.dataNascimento" required onkeyup="Data()" onblur="DataFinal(value)" title="00/00/0000" onclick="ClickData()">
+                        <span class="focus-input100" id="dataF"></span>
+                        <span class="symbol-input100" id="dataS">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <img id="alertData" src="~/Imagens/alertData.png" />
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                        <input class="input100" placeholder="Senha" id="senha" type="password" name="u.senha" required onblur="Senha(value)" title="No mínimo 6 caracteres" onclick="ClickSenha()">
+                        <span class="focus-input100" id="senhaF"></span>
+                        <span class="symbol-input100" id="senhaS">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <img id="alertSenha" src="~/Imagens/alertSenha.png" />
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                        <input class="input100" placeholder="Confirmar Senha" id="ver" type="password" required onblur="Ver(value)" title="Digite novamente a senha" onclick="ClickVer()">
+                        <span class="focus-input100" id="verF"></span>
+                        <span class="symbol-input100" id="verS">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <img id="alertVer" src="~/Imagens/alertVer.png" />
+
+                </div>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
 
     <footer id="myFooter">
         <div class="container">
