@@ -98,7 +98,7 @@
     }
 
 .logo2 {
-    width: 300%;
+    width: 100%;
 }
 
 
@@ -138,7 +138,7 @@
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    top: 10em;
+    margin-top: 40em;
 }
 
 * {
