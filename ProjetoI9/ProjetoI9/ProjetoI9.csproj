@@ -310,6 +310,7 @@
     <Content Include="Views\Perfil\SalvarDados.cshtml" />
     <Content Include="Views\SairDaPagina\Index.cshtml" />
     <Content Include="Views\TrocarSenha\Index.cshtml" />
+    <Content Include="Views\Login\HomeLogado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

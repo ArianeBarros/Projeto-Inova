@@ -1,18 +1,5 @@
 ﻿
 
-@*<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>*@
-
 <html>
 <head>
     <title>Contato</title>
@@ -22,51 +9,36 @@
     <script type="text/javascript">
 
         window.onload = function () {
-            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
-
-
+           
             CarregarDadosBD();
         }
 
-        var qualId = null;
         var qualImg = null;
 
         function CarregarDadosBD() {
-            var string = window.location.href.substring(37);
-            string = string.split("?");
-            qualId = string[0];
-            string = string[1];
-            string = string.split("&");
-            var nome = string[0].substring(5);
-            qualImg = string[1].substring(7);
+            //IMAGEM
+            qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
-            while (nome.indexOf("%20") != -1)
-                nome = nome.replace("%20", " ");
-            while (qualImg.indexOf("%2F") != -1)
-                qualImg = qualImg.replace("%2F", "/");
-
-
-            //alert(nome);
-            //alert(qualImg);
-            //alert(qualId);
-
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src='" + qualImg + "' onclick=\"CarregarPerfil()\">";
+            document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
         }
 
         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
-                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'><div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<br><br><a id ='homeV' href='~/Home/Index'>HOME</a><br><br>" +
-                    "<a id ='principalV' href='~/Principal/Index'>PRINCIPAL</a><br><br>" +
-                    "<a id ='sobreV' href='~/Sobre/Index'>SOBRE</a><br><br>" +
-                    "<a id ='configV' href='~/Perfil/Index'>PERFIL</a><br><br><br></ul><nav></div>";
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
+                    "<div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
+                    "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
-                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='~/Imagens/imgPerfil.jpg' onclick='CarregarPerfil()'>";
+                document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
+        }
+
+        function Erro() {
+            document.getElementById("invisivel").submit();
         }
 
 
@@ -74,10 +46,6 @@
 </head>
 <body>
     <header>
-        @*<a href="#" class="brand-logo">
-            <img class="ondas" src="~/Imagens/ondas.png">
-            <div><img class="logo" src="~/Imagens/LOGO/logoofc.png"></div>
-        </a>*@
 
         <nav id="navHeader">
             <ul>
@@ -94,6 +62,8 @@
         </div>
 
     </header>
+
+    <form id="invisivel" method="post" action="/Contato/Erro"></form>
 
     <section id="contatoSection">
         <img id="imgBalao" src="~/Imagens/balao.png">

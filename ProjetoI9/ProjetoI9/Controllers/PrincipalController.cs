@@ -50,46 +50,39 @@ namespace ProjetoI9.Controllers
 
         public ActionResult AdicionarEvento(Evento not)
         {
-            try
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+            EventoDAO dao = new EventoDAO();
+
+            not.idUsuario = usuario.id;
+            not.id = (dao.Lista()).Count() + 1;
+            DateTime d = d = Convert.ToDateTime(not.dia);
+            not.diaSemana = d.DayOfWeek.ToString();
+
+            if (not.diaSemana == "Wednesday")
+                not.diaSemana = "Quarta-Feira";
+            else
             {
-                UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
-                EventoDAO dao = new EventoDAO();
-
-                not.idUsuario = usuario.id;
-                not.id = (dao.Lista()).Count() + 1;
-                DateTime d = d = Convert.ToDateTime(not.dia);
-                not.diaSemana = d.DayOfWeek.ToString();
-
-                if (not.diaSemana == "Wednesday")
-                    not.diaSemana = "Quarta-Feira";
+                if(not.diaSemana == "Monday")
+                    not.diaSemana = "Segunda-Feira";
                 else
-                {
-                    if(not.diaSemana == "Monday")
-                        not.diaSemana = "Segunda-Feira";
+                    if(not.diaSemana == "Tuesday")
+                        not.diaSemana = "Terça-Feira";
                     else
-                        if(not.diaSemana == "Tuesday")
-                            not.diaSemana = "Terça-Feira";
+                        if(not.diaSemana == "Thursday")
+                            not.diaSemana = "Quarta-Feira";
                         else
-                            if(not.diaSemana == "Thursday")
-                                not.diaSemana = "Quarta-Feira";
+                            if(not.diaSemana == "Friday")
+                                not.diaSemana = "Sexta-Feira";
                             else
-                                if(not.diaSemana == "Friday")
-                                   not.diaSemana = "Sexta-Feira";
+                                if(not.diaSemana == "Saturday")
+                                    not.diaSemana = "Sábado";
                                 else
-                                    if(not.diaSemana == "Saturday")
-                                        not.diaSemana = "Sábado";
-                                    else
-                                       not.diaSemana = "Domingo";
-                }
-
-                dao.Adiciona(not);
-
-                return RedirectToAction("Index", "Principal");
+                                    not.diaSemana = "Domingo";
             }
-            catch
-            {
-                return View();
-            }
+
+            dao.Adiciona(not);
+
+            return RedirectToAction("Index", "Principal");
         }
 
         public bool SeForDessaSemana(string d)

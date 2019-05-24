@@ -24,5 +24,11 @@ namespace ProjetoI9.Controllers
             else
                 return RedirectToAction("Index", "Login");
         }
+
+        public ActionResult Erro()
+        {
+            Session["usuarioLogado"] = null;
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

@@ -13,7 +13,16 @@ namespace ProjetoI9.Controllers
         // GET: Contato
         public ActionResult Index()
         {
-            return View();
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+
+            if (usuario != null)
+            {
+                ViewBag.UsuarioLogado = usuario;
+
+                return View();
+            }
+            else
+                return RedirectToAction("Index", "Login");
         }
 
         public ActionResult SalvarDados(string img, string id, string cont)
@@ -22,6 +31,12 @@ namespace ProjetoI9.Controllers
             UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(id));
 
             return RedirectToAction("Index", cont, new { usu.nome, usu.imagem, usu.id });
+        }
+
+        public ActionResult Erro()
+        {
+            Session["usuarioLogado"] = null;
+            return RedirectToAction("Index", "Login");
         }
     }
 }
