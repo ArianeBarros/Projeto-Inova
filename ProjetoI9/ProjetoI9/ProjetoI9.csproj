@@ -193,6 +193,7 @@
     <Content Include="Imagens\bg-01.jpg" />
     <Content Include="Imagens\btnCadastre-se.png" />
     <Content Include="Imagens\btnLogin.png" />
+    <Content Include="Imagens\cad.png" />
     <Content Include="Imagens\coisinhas.png" />
     <Content Include="Imagens\coisinhas2.png" />
     <Content Include="Imagens\comeceJa.png" />
