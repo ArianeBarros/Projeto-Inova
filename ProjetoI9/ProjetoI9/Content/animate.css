@@ -5374,6 +5374,7 @@ iframe {
     padding: 110px 130px 157px 148px;
     position:relative;
     left:0%;
+    height:60%;
 }
 
 /*------------------------------------------------------------------
@@ -5535,7 +5536,7 @@ textarea.input100 {
     width: 100%;
     height: 50px;
     border-radius: 25px;
-    background: #846add;
+    background: #6600ff;
     font-family: "montserrat", sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -5555,7 +5556,7 @@ textarea.input100 {
 }
 
     .contact100-form-btn:hover {
-        background: #6600ff;
+        background: #8E41FF;
     }
 
 /*------------------------------------------------------------------
