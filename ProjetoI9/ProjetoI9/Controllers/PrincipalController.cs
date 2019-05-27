@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using ProjetoI9.DAO;
 using ProjetoI9.Models;
 using ProjetoI9.Filtros;
+using System.Net;
+using System.IO;
 
 namespace ProjetoI9.Controllers
 {
@@ -139,6 +141,23 @@ namespace ProjetoI9.Controllers
         {
             Session["usuarioLogado"] = null;
             return RedirectToAction("Index", "Login");
+        }
+        
+        public string PegarNoticia(string url)
+        {
+            WebRequest request = WebRequest.Create(url);
+            request.Credentials = CredentialCache.DefaultCredentials;
+            WebResponse response = request.GetResponse();
+
+            using (Stream data = response.GetResponseStream())
+            {
+                StreamReader reader = new StreamReader(data);
+                string resposta = reader.ReadToEnd();
+
+                response.Close();
+
+                return resposta;
+            }
         }
     }
 }

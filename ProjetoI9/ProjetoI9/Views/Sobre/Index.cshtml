@@ -56,18 +56,21 @@
                     var ctx = this.chart.ctx;
                     ctx.textAlign = "center";
                     ctx.textBaseline = "middle";
+                    ctx.fontSize = "400px";
 
                     this.chart.config.data.datasets.forEach(function (dataset) {
-                        ctx.font = "20px Arial";
+                        ctx.font = "2000px Arial";
                         switch (dataset.type) {
                             case "line":
                                 ctx.fillStyle = "Black";
+                                ctx.fontSize = "400px";
                                 dataset.metaData.forEach(function (p) {
                                     ctx.fillText(p._chart.config.data.datasets[p._datasetIndex].data[p._index], p._model.x, p._model.y - 20);
                                 });
                                 break;
                             case "bar":
                                 ctx.fillStyle = "White";
+                                ctx.fontSize = "40px";
                                 dataset.metaData.forEach(function (p) {
                                     ctx.fillText(p._chart.config.data.datasets[p._datasetIndex].data[p._index], p._model.x, p._model.y + 20);
                                 });
@@ -76,27 +79,27 @@
                     });
                 }
             },
-            labels: ["Boa organização", "Perda de eventos/compromissos por falta de organização", "Desejo de aderir rotinas", "Possui rotinas", "Costume de anotar compromissos em agenda", "Interesse em ser mais organizado(a)", "Elaboração de estratégias para realizar sonhos/objetivos", "Sonhos realizados", "Acredita que organização diminui estresse", "Interesse em aderir ao I9"],
+            labels: ["Boa organização", "Perda de eventos/compromissos por falta de organização", "Desejo de aderir rotinas", "Possui rotinas", "Costume de anotar compromissos em agenda", "Interesse em ser mais organizado(a)", "Elaboração de estratégias para realizar sonhos/objetivos", "Sonhos realizados com planejamento", "Sonhos realizados sem planejamento", "Acredita que organização diminui estresse", "Interesse em aderir à um software como o I9"],
             datasets: [{
                 type: "line",
                 label: "Acumulado",
                 borderColor: "#1a237e",
-                fontSize: 20,
+                fontSize: 640,
                 backgroundColor: "#1a237e",
                 pointBorderWidth: 5,
                 fill: false,
-                data: [40.4, 36.2, 21.3, 40.4, 42.6, 72.3, 55.3, 74.5, 76.6, 74.5],
+                data: [41.9, 38.7, 21, 24.18, 45.2, 67.7, 61.3, 59.7, 14.5, 79, 67.7],
                 yAxisID: 'y-axis-2',
-                fontSize: 20
+                fontSize: "64px"
             }, {
                 type: "bar",
-                label: "Erros",
-                fontSize: 20,
+                label: "Dados",
+                fontSize: "64px",
                 borderColor: "#ffab91",
                 backgroundColor: "#ffab91",
-                data: [46, 18, 9, 6, 5],
+                data: [26, 24, 13, 39, 28, 42, 38, 37, 9, 49, 42],
                 yAxisID: 'y-axis-1',
-                fontSize: 20
+                fontSize: "64px"
             }]
         };
 
@@ -107,14 +110,15 @@
                     position: "left",
                     id: "y-axis-1",
                     stacked: true,
-                    fontSize: 20,
+                    
                     ticks: {
-                        suggestedMin: 0
+                        suggestedMin: 0,
+                        fontSize: 26
                     },
                     scaleLabel: {
                         display: true,
                         labelString: "Frequência",
-                        fontSize: 20
+                        fontSize: 26
                     }
                 }, {
                     type: "linear",
@@ -125,12 +129,13 @@
                         callback: function (value) {
                             return value + "%";
                         },
-                        fontSize: 20
+                        fontSize: 26,
+                        color: "red"
                     },
                     scaleLabel: {
                         display: true,
                         labelString: "Porcentagem",
-                        fontSize: 20
+                        fontSize: 26
                     }
                 }]
             }
