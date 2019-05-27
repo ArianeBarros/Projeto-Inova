@@ -5361,7 +5361,7 @@ iframe {
 
 .wrap-contact100 {
     width: 823px;
-    background:black;
+    background: #1a1a1a;
     border-radius: 10px;
     overflow: hidden;
     display: -webkit-box;
@@ -5372,9 +5372,10 @@ iframe {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 110px 130px 157px 148px;
-    position:relative;
-    left:0%;
-    height:60%;
+    position: relative;
+    left: 0%;
+    height: 60%;
+    height: auto;
 }
 
 /*------------------------------------------------------------------
@@ -5585,6 +5586,7 @@ textarea.input100 {
         padding: 110px 130px 157px 148px;
         position: relative;
         left: 0%;
+        height: auto;
     }
 }
 
@@ -5604,6 +5606,7 @@ textarea.input100 {
         justify-content: space-between;
         position: relative;
         left: 0%;
+        height: auto;
     }
 
     .contact100-pic {
@@ -5625,7 +5628,8 @@ textarea.input100 {
 @media (max-width: 768px) {
     .wrap-contact100 {
         padding: 110px 80px 157px 80px;
-        width:363px;
+        width: 363px;
+        height: auto;
     }
 
     .contact100-pic {
@@ -5664,6 +5668,7 @@ textarea.input100 {
         padding: 110px 15px 157px 15px;
         width: 74%;
         left: 0%;
+        height:auto;
     }
      
 }

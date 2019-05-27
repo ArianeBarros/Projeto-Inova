@@ -25,7 +25,6 @@
 
         window.onload = function()
         {
-            Carregar();
             Organiza();
         }
 
@@ -38,6 +37,15 @@
             var fundo = document.getElementById("ondas");
             var cont = document.getElementById("cont");
             var log = document.getElementById("login");
+
+            var aNome = document.getElementById("alertNome");
+            var aNome2 = document.getElementById("alertNome2");
+            var aEmail = document.getElementById("alertEmail");
+            var aEmail2 = document.getElementById("alertEmail2");
+            var aData = document.getElementById("alertData");
+            var aSenha = document.getElementById("alertSenha");
+            var aVer = document.getElementById("alertVer");
+
             log.style.top = "-7em";
             btn.style.top = "-7em";
             if (window.innerWidth >= 1300) {
@@ -45,6 +53,34 @@
                 cont.style.left = "2%";
                 btn.style.left = "154%";
                 log.style.left = "174%";
+
+                aNome.style.left = "25.5em";
+                aNome.style.height = " 0%";
+                aNome.style.width = " 40%";
+
+                aNome2.style.left = "25.5em";
+                aNome2.style.height = " 0%";
+                aNome2.style.width = " 40%";
+
+                aEmail.style.left = "24.5em";
+                aEmail.style.height = " 42%";
+                aEmail.style.width = " 42%";
+
+                aEmail2.style.left = "24.5em";
+                aEmail2.style.height = " 42%";
+                aEmail2.style.width = " 42%";
+
+                aData.style.left = "24em";
+                aData.style.height = " 46%";
+                aData.style.width = " 46%";
+
+                aSenha.style.left = "26em";
+                aSenha.style.height = " 35%";
+                aSenha.style.width = " 35%";
+
+                aVer.style.left = "26em";
+                aVer.style.height = " 33%";
+                aVer.style.width = " 33%";
             }
             else {
                 cont.style.left = "4%";
@@ -52,6 +88,34 @@
                     btn.style.left = "150%";
                     btn.style.width = "222%";
                     log.style.left = "170%";
+
+                    aNome.style.left = "25.5em";
+                    aNome.style.height = " 0%";
+                    aNome.style.width = " 40%";
+
+                    aNome2.style.left = "25.5em";
+                    aNome2.style.height = " 0%";
+                    aNome2.style.width = " 40%";
+
+                    aEmail.style.left = "24.5em";
+                    aEmail.style.height = " 42%";
+                    aEmail.style.width = " 42%";
+
+                    aEmail2.style.left = "24.5em";
+                    aEmail2.style.height = " 42%";
+                    aEmail2.style.width = " 42%";
+
+                    aData.style.left = "24em";
+                    aData.style.height = " 46%";
+                    aData.style.width = " 46%";
+
+                    aSenha.style.left = "26em";
+                    aSenha.style.height = " 35%";
+                    aSenha.style.width = " 35%";
+
+                    aVer.style.left = "26em";
+                    aVer.style.height = " 33%";
+                    aVer.style.width = " 33%";
                 }
                 else {
                     if (window.innerWidth >= 800) {
@@ -59,11 +123,67 @@
                             btn.style.left = "106%";
                             btn.style.width = "92%";
                             log.style.left = "126%";
+
+                            aNome.style.left = "17.5em";
+                            aNome.style.height = " 10%";
+                            aNome.style.width = " 50%";
+
+                            aNome2.style.left = "17.5em";
+                            aNome2.style.height = " 10%";
+                            aNome2.style.width = " 50%";
+
+                            aEmail.style.left = "16.5em";
+                            aEmail.style.height = " 52%";
+                            aEmail.style.width = " 52%";
+
+                            aEmail2.style.left = "16.5em";
+                            aEmail2.style.height = " 52%";
+                            aEmail2.style.width = " 52%";
+
+                            aData.style.left = "16em";
+                            aData.style.height = " 56%";
+                            aData.style.width = " 56%";
+
+                            aSenha.style.left = "18em";
+                            aSenha.style.height = " 45%";
+                            aSenha.style.width = " 45%";
+
+                            aVer.style.left = "18em";
+                            aVer.style.height = " 43%";
+                            aVer.style.width = " 43%";
                         }
                         else {
                             fundo.style.width = "120%";
                             btn.style.left = "74%";
                             log.style.left = "94%";
+
+                            aNome.style.left = "12.5em";
+                            aNome.style.height = " 20%";
+                            aNome.style.width = " 60%";
+
+                            aNome2.style.left = "12.5em";
+                            aNome2.style.height = " 20%";
+                            aNome2.style.width = " 60%";
+
+                            aEmail.style.left = "11.5em";
+                            aEmail.style.height = " 62%";
+                            aEmail.style.width = " 62%";
+
+                            aEmail2.style.left = "11.5em";
+                            aEmail2.style.height = " 62%";
+                            aEmail2.style.width = " 62%";
+
+                            aData.style.left = "11em";
+                            aData.style.height = " 66%";
+                            aData.style.width = " 66%";
+
+                            aSenha.style.left = "13em";
+                            aSenha.style.height = " 55%";
+                            aSenha.style.width = " 55%";
+
+                            aVer.style.left = "13em";
+                            aVer.style.height = " 53%";
+                            aVer.style.width = " 53%";
                         }
                     }
                     else {
@@ -71,17 +191,101 @@
                             btn.style.left = "78%";
                             btn.style.width = "80%";
                             log.style.left = "98%";
+
+                            aNome.style.left = "12.5em";
+                            aNome.style.height = " 20%";
+                            aNome.style.width = " 60%";
+
+                            aNome2.style.left = "12.5em";
+                            aNome2.style.height = " 20%";
+                            aNome2.style.width = " 60%";
+
+                            aEmail.style.left = "11.5em";
+                            aEmail.style.height = " 62%";
+                            aEmail.style.width = " 62%";
+
+                            aEmail2.style.left = "11.5em";
+                            aEmail2.style.height = " 62%";
+                            aEmail2.style.width = " 62%";
+
+                            aData.style.left = "11em";
+                            aData.style.height = " 66%";
+                            aData.style.width = " 66%";
+
+                            aSenha.style.left = "13em";
+                            aSenha.style.height = " 55%";
+                            aSenha.style.width = " 55%";
+
+                            aVer.style.left = "13em";
+                            aVer.style.height = " 53%";
+                            aVer.style.width = " 53%";
                         }
                         else
                             if (window.innerWidth >= 576) {
                                 btn.style.left = "-1%";
-                                btn.style.width = "67%";
+                                btn.style.width = "67%"; 
                                 log.style.left = "27%";
+
+                                aNome.style.left= "8.5em";
+                                aNome.style.height=" 20%";
+                                aNome.style.width = " 60%";
+
+                                aNome2.style.left = "8.5em";
+                                aNome2.style.height = " 20%";
+                                aNome2.style.width = " 60%";
+
+                                aEmail.style.left = "7.5em";
+                                aEmail.style.height = " 62%";
+                                aEmail.style.width = " 62%";
+
+                                aEmail2.style.left = "7.5em";
+                                aEmail2.style.height = " 62%";
+                                aEmail2.style.width = " 62%";
+
+                                aData.style.left = "7em";
+                                aData.style.height = " 66%";
+                                aData.style.width = " 66%";
+
+                                aSenha.style.left = "9em";
+                                aSenha.style.height = " 55%";
+                                aSenha.style.width = " 55%";
+
+                                aVer.style.left = "9em";
+                                aVer.style.height = " 53%";
+                                aVer.style.width = " 53%";
                             }
                             else {
                                 btn.style.left = "-10%";
                                 btn.style.width = "75%";
                                 log.style.left = "18%";
+
+                                aNome.style.left = "8.5em";
+                                aNome.style.height = " 20%";
+                                aNome.style.width = " 60%";
+
+                                aNome2.style.left = "8.5em";
+                                aNome2.style.height = " 20%";
+                                aNome2.style.width = " 60%";
+
+                                aEmail.style.left = "7.5em";
+                                aEmail.style.height = " 62%";
+                                aEmail.style.width = " 62%";
+
+                                aEmail2.style.left = "7.5em";
+                                aEmail2.style.height = " 62%";
+                                aEmail2.style.width = " 62%";
+
+                                aData.style.left = "7em";
+                                aData.style.height = " 66%";
+                                aData.style.width = " 66%";
+
+                                aSenha.style.left = "9em";
+                                aSenha.style.height = " 55%";
+                                aSenha.style.width = " 55%";
+
+                                aVer.style.left = "9em";
+                                aVer.style.height = " 53%";
+                                aVer.style.width = " 53%";
                             }
                     }
                 }
@@ -93,15 +297,7 @@
             window.location = link;
         }
 
-        function Carregar() //função chamada sempre que o usuario tenta fazer cadastro
-        {
-            @*if (@ViewBag.Nome == null)
-                document.getElementById("nome").innerHTML.value = "blz";
-            else
-                document.getElementById("nome").innerHTML.value = @ViewBag.Nome;*@
-            //data
-            //password
-        }
+   
 
         function Pode() {
             if (!bNome)

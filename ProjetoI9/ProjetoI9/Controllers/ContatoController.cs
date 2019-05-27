@@ -22,7 +22,12 @@ namespace ProjetoI9.Controllers
                 return View();
             }
             else
-                return RedirectToAction("Index", "Login");
+            {
+                UsuarioI9 usua = new UsuarioI9();
+                usua.imagem = "n";
+                ViewBag.UsuarioLogado = usua;
+                return View();
+            }
         }
 
         public ActionResult SalvarDados(string img, string id, string cont)

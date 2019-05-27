@@ -30,6 +30,7 @@ function CarregarDadosBD() {
 function Organiza() {
     var h1 = document.getElementById("h1");
     var info = document.getElementById("info");
+    info.style.height = "auto";
     var conj = document.getElementById("conj");
     h1.style.position = "relative";
     var sonhos = document.getElementById("sonhos");
@@ -80,6 +81,7 @@ function Organiza() {
         
         var info = document.getElementById("info");
         info.style.width = "100%";
+        info.style.height = "auto";
         info.style.position = "relative";
         info.style.top = "-10em";
 
@@ -242,6 +244,7 @@ function Organiza() {
                 maos.style.left = "10%";
 
                 info.style.width = "80%";
+                info.style.height = "auto";
 
                 terra.style.width = "27%";
                 terra.style.top = "1em";
