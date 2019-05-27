@@ -5499,7 +5499,7 @@ textarea.input100 {
     align-items: center;
     position: absolute;
     border-radius: 25px;
-    bottom: 0;
+    bottom: 4;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -5636,10 +5636,11 @@ textarea.input100 {
         width: 100%;
     }
 
-    .input100{
-        width:100%;
-        position:relative;
-        left:0%;
+    .input100 {
+        width: 100%;
+        position: relative;
+        left: 0%;
+        bottom: 0;
     }
     .symbol-input100{
         left:0%;

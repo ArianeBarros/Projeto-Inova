@@ -177,9 +177,9 @@ header {
     }
 }
 @media screen and (min-width: 1000px) {
-    .menu {
-        left: 22%;
-    }
+        .menu {
+            left: 22%;
+        }
 
         .menu div {
             font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
@@ -274,6 +274,20 @@ header {
     display: none;
     transition: display 50s;
 }
+
+#login{
+    position:relative;
+    top :-7em;
+    left:18%;
+}
+#log{
+    font-size :25px;
+    font-family:'Century Gothic';
+    color:white;
+}
+    #log:hover {
+        color: #c9a5ff;
+    }
 
 .container {
     top: 3em;
@@ -476,7 +490,7 @@ footer {
     }
 
 .logo2 {
-    width: 200%;
+    width: 350%;
 }
 
 

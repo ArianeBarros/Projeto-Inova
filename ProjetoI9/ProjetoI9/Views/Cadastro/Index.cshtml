@@ -37,51 +37,60 @@
             var btn = document.getElementById("btnCadastrar");
             var fundo = document.getElementById("ondas");
             var cont = document.getElementById("cont");
+            var log = document.getElementById("login");
+            log.style.top = "-7em";
+            btn.style.top = "-7em";
             if (window.innerWidth >= 1300) {
                 fundo.style.width = "100%";
                 cont.style.left = "2%";
-                btn.style.left = "150%";
+                btn.style.left = "154%";
+                log.style.left = "174%";
             }
             else {
                 cont.style.left = "4%";
                 if (window.innerWidth >= 1200) {
                     btn.style.left = "150%";
                     btn.style.width = "222%";
-                    btn.style.top = "-7em";
+                    log.style.left = "170%";
                 }
                 else {
                     if (window.innerWidth >= 800) {
                         if (window.innerWidth >= 992) {
                             btn.style.left = "106%";
                             btn.style.width = "92%";
-                            btn.style.top = "-7em";
+                            log.style.left = "126%";
                         }
                         else {
                             fundo.style.width = "120%";
-                            btn.style.top = "-7em";
+                            btn.style.left = "74%";
+                            log.style.left = "94%";
                         }
                     }
                     else {
                         if (window.innerWidth >= 770) {
                             btn.style.left = "78%";
                             btn.style.width = "80%";
-                            btn.style.top = "-7em";
+                            log.style.left = "98%";
                         }
                         else
                             if (window.innerWidth >= 576) {
                                 btn.style.left = "-1%";
-                                btn.style.top = "-7em";
                                 btn.style.width = "67%";
+                                log.style.left = "27%";
                             }
                             else {
                                 btn.style.left = "-10%";
-                                btn.style.top = "-7em";
                                 btn.style.width = "75%";
+                                log.style.left = "18%";
                             }
                     }
                 }
             }
 
+        }
+        function abrir(pag) {
+            var link = '/' + pag + "/Index";
+            window.location = link;
         }
 
         function Carregar() //função chamada sempre que o usuario tenta fazer cadastro
@@ -330,10 +339,10 @@
             <i class="fa fa-bars fa-w-14 fa-2x"></i>
         </label>
         <ul class="menu">
-            <div class="ab" onclick="oi('Login')">LOGIN</div>
-            <div class="ab" onclick="oi('Cadastro')">CADASTRE-SE</div>
-            <div class="ab" onclick="oi('Sobre')">SOBRE</div>
-            <div class="ab" onclick="oi('Contato')">CONTATO</div>
+            <div class="ab" onclick="abrir('Home')">HOME</div>
+            <div class="ab" onclick="abrir('Login')">LOGIN</div>
+            <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
+            <div class="ab" onclick="abrir('Contato')">CONTATO</div>
             <label for="chk" class="hide-menu-btn">
                 <a class="menu-barra">
                     <i class="fa fa-times fa-w-14 fa-2x"></i>
@@ -427,7 +436,7 @@
                         Cadastrar
                     </button>
                 </div>
-                <a href="#">Já possui cadastro?</a>
+                <div id="login"><a href="#" id="log">Já possui cadastro?</a></div>
             </form>
         </div>
 
