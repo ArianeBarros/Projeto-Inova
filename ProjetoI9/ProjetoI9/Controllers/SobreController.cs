@@ -35,5 +35,7 @@ namespace ProjetoI9.Controllers
             Session["usuarioLogado"] = null;
             return RedirectToAction("Index", "Login");
         }
+
+        
     }
 }
