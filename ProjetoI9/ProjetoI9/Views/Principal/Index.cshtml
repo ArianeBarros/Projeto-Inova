@@ -16,9 +16,28 @@
         window.onload = function () {
             CarregarNoticias();
             $.post("Principal/PegarNoticia", {
-                url: "https://news.google.com/rss/search?q="+"animais"+"&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+                url: "https://news.google.com/rss/search?q="+"Brasil"+"&hl=pt-BR&gl=BR&ceid=BR:pt-419"
             }, function (resposta) {
-                alert(resposta);
+                var r = resposta;
+                r = r.split("<item><title>");
+                //alert(r.length);
+                for (var i = 1; i < r.length; i++)
+                {
+                    var tudo = r[i];
+                    var t = tudo.split("</title><link>");
+                    //alert("T: " + t[0]);
+                    var l = t[1].split("</link>");
+                    //alert("L: " + l[0]);
+                    //alert("Um item: " + r[1]);
+
+                var noti = noti + " <section class='cNoticia'><div class='cTitulo'>"+ t[0] +"</div><br><div class='cImagem'>Imagem</div><br><a href="+ l[0] +" class='cLink'>"+ l[0] +"</a></section>";
+                document.getElementById("sectionPrincipal").innerHTML = noti;
+
+            
+                }
+
+
+
                 })
             document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
             document.getElementById("adicionarEvento").style.display = "none";
