@@ -20,14 +20,18 @@
 
             CarregarDadosBD();
         }
-        
+
         var qualImg = null;
 
         function CarregarDadosBD() {
-              //IMAGEM
+            
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
-
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+            var img = qualImg.split('"')[1];
+            if (img == "n")
+                document.getElementById("opcoesFotos").style.display = "none";
+            else
+                   document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+            
         }
 
         var seMostraPerfil = 2;
