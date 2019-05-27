@@ -16,7 +16,7 @@
         window.onload = function()
         {
             document.getElementById("secEscolherFoto").style.display = "none";
-          
+            
             CarregarDadosBD();
         }
 
@@ -69,7 +69,7 @@
             var input = document.getElementById("arquivoEscolhido");
 
             var foto = input.files[0].name;
-
+    
             input.addEventListener("change", function(){
             if(input.files.length > 0) nome = input.files[0].name;
             input.innerHTML = ""; });
@@ -82,9 +82,6 @@
             qualImg = "/Imagens/" + foto;
 
             alert(qualImg);
-
-            document.getElementById("tagInvisivel").value = qualImg;
-
         }
 
         function CarregarFotoEscolhida(a)
@@ -175,55 +172,86 @@
         <img class="exImg" src="~/Imagens/paisagem6.jpg" onclick="CarregarFotoEscolhida(this.src)">
 
         <br><br>
-        <label for="arquivoEscolhido">Selecionar arquivo da foto</label>
-        <input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="u.imagem">
+        @*<label for="arquivoEscolhido">Selecionar arquivo da foto</label>*@
+        @*<input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="upload">*@
         <br><br>
     </section>
 
-    <form id="loginSection" method="post" action="/Perfil/SalvarDados">
-        <br><br>
-        <div id="escolherNovaFoto">
-            <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
-        </div>
+        <form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
+            <br><br>
+            <div id="escolherNovaFoto">
+                <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
+            </div>
 
-        <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
-
-        <h1>Seus dados:</h1><br>
-
-        <div>
-            <label class="login" for="username2">Username: </label>
-            <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
-        </div><br><br>
-
-        <div>
-            <label class="login" for="email">Email: </label>
-            <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
-        </div><br><br>
+            <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
 
 
-        <div>
-            <label class="login" for="aniversario">Data Nascimento: </label>
-            <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
-        </div><br><br>
+            <h1>Seus dados:</h1><br>
+
+            <div>
+                <label class="login" for="username2">Username: </label>
+                <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
+            </div><br><br>
+
+            <div>
+                <label class="login" for="email">Email: </label>
+                <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
+            </div><br><br>
 
 
+            <div>
+                <label class="login" for="aniversario">Data Nascimento: </label>
+                <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
+            </div><br><br>
 
-        <button class="cBtn" id="btnSalvar">Salvar dados</button>
 
-    </form>
+            <input type="file" name="upload" />
+            <input class="cBtn" id="btnSalvar" type="submit" value="Upload" />
+            <br />
+            </form>
+            @*<form id="loginSection" method="post" action="/Perfil/SalvarDados">
+                    <br><br>
+                    <div id="escolherNovaFoto">
+                        <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
+                    </div>
 
-    <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
+                    <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
 
-    <form id="frmTrocarSenha" method="post" action="/Perfil/TrocarSenha" style="display: none">
-        <div id="divTrocarSenha">
-            <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="TrocarSenha()"></i><br>
-            <u><label class="lblTrocarSenha"> Trocar de Senha </label></u><br>
-            <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onchange="VerificarSenhaAtual()" required><br>
-            <label class="lblSenhas">Senha nova: </label><input id="senhaNova" class="lblSenhas" type="password" required><br>
-            <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
-            <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>
-        </div>
-    </form>
 
-</body>
+                    <h1>Seus dados:</h1><br>
+
+                    <div>
+                        <label class="login" for="username2">Username: </label>
+                        <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
+                    </div><br><br>
+
+                    <div>
+                        <label class="login" for="email">Email: </label>
+                        <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
+                    </div><br><br>
+
+
+                    <div>
+                        <label class="login" for="aniversario">Data Nascimento: </label>
+                        <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
+                    </div><br><br>
+
+                    <button type="submit" class="cBtn" id="btnSalvar">Salvar dados</button>
+
+                </form>*@
+
+            <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
+
+            <form id="frmTrocarSenha" method="post" action="/Perfil/TrocarSenha" style="display: none">
+                <div id="divTrocarSenha">
+                    <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="TrocarSenha()"></i><br>
+                    <u><label class="lblTrocarSenha"> Trocar de Senha </label></u><br>
+                    <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onchange="VerificarSenhaAtual()" required><br>
+                    <label class="lblSenhas">Senha nova: </label><input id="senhaNova" class="lblSenhas" type="password" required><br>
+                    <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
+                    <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>
+                </div>
+            </form>
+
+    </body>
 </html>

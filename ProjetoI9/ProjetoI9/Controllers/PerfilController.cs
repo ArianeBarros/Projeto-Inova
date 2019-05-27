@@ -57,7 +57,7 @@ namespace ProjetoI9.Controllers
             return RedirectToAction("Index", "Login");
         }
 
-
+        [HttpPost]
         public ActionResult SalvarDados(UsuarioI9 u, HttpPostedFileBase upload)
         {
             if (u.imagem == null)//mandar mensagemmmm
@@ -66,13 +66,13 @@ namespace ProjetoI9.Controllers
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 if (upload != null)
                 {
                     string caminhoArquivo = null;
                     var uploadPath = Server.MapPath("~/Imagens");
-                    caminhoArquivo = Path.Combine(@uploadPath, Path.GetExtension(upload.FileName));
+                    caminhoArquivo = Path.Combine(@uploadPath, upload.FileName);
 
                     string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
@@ -82,10 +82,12 @@ namespace ProjetoI9.Controllers
                             upload.SaveAs(caminhoArquivo);
                             break;
                         }
-                    usu.imagem = "Imagens/" + Path.GetExtension(upload.FileName);
+                    usu.imagem = "../Imagens/" + upload.FileName;
                 }
-            }
-
+            //}
+            //else
+            //    usu.imagem = u.imagem;
+            dao.Atualiza(usu);
             return RedirectToAction("Index", "Perfil");
         }
     }
