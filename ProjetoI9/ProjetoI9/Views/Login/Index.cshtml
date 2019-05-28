@@ -108,11 +108,11 @@
         <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
             <div class="wrap-contact100">
                 <div class="contact100-pic js-tilt" data-tilt>
-                    <img src="~/Imagens/cad.png" alt="IMG">
+                    <img src="~/Imagens/login.png" alt="IMG">
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" name="u.nome" required onblur="Nome(value)" onclick="ClickNome()">
                     <span class="focus-input100" id="nomeF"></span>
                     <span class="symbol-input100" id="nomeS">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -121,7 +121,7 @@
                 @*<img id="alertNome2" src="~/Imagens/alertNome2.png" />*@
 
                 <div class="wrap-input100 validate-input" data-validate="Valid password is required">
-                    <input class="input100" placeholder="Senha" id="senha" type="password" name="u.senha" required onblur="Senha(value)" title="No mínimo 6 caracteres" onclick="ClickSenha()">
+                    <input class="input100" placeholder="Senha" id="senha" type="password" name="u.senha" required onblur="Senha(value)" onclick="ClickSenha()">
                     <span class="focus-input100" id="senhaF"></span>
                     <span class="symbol-input100" id="senhaS">
                         <i class="fa fa-lock" aria-hidden="true"></i>

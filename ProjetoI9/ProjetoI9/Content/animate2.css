@@ -8278,7 +8278,7 @@ iframe {
 }
 
 .wrap-contact100 {
-    width: 323px;
+    width: 343px;
     background: #1a1a1a;
     border-radius: 20px;
     overflow: hidden;
@@ -8289,7 +8289,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 110px 130px 157px 148px;
+    padding: 90px 70px 150px 70px;
     position: relative;
     left: 0%;
     height: 70%;
@@ -8299,10 +8299,11 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .contact100-pic {
-    width: 30%;
-    padding-top: 80px;
-    position: absolute;
-    left: 1em;
+    width: 65%;
+    padding-top: 0px;
+    position: relative;
+    top:-3em;
+    left: 0em;
 }
 
     .contact100-pic img {
@@ -8343,6 +8344,7 @@ input.input100 {
     height: 50px;
     border-radius: 25px;
     padding: 0 30px 0 50px;
+    color: #8e8e8e
 }
 
     input.input100[name="email"] {
@@ -8361,6 +8363,7 @@ textarea.input100 {
     width: 100%;
     z-index: 1;
     margin-bottom: 10px;
+    bottom:130;
 }
 
 .input100 {
@@ -8408,6 +8411,11 @@ textarea.input100 {
         box-shadow: 0px 0px 60px 25px;
         opacity: 0;
     }
+}
+#cad {
+    font-size: 25px;
+    font-family: 'Century Gothic';
+    color: white;
 }
 
 .symbol-input100 {
@@ -8457,8 +8465,8 @@ textarea.input100 {
     height: 50px;
     border-radius: 25px;
     background: #6600ff;
-    font-family: "montserrat", sans-serif;
-    font-size: 15px;
+    font-family: 'Century Gothic';
+    font-size: 30px;
     line-height: 1.5;
     color: #fff;
     display: -webkit-box;
@@ -8553,18 +8561,45 @@ textarea.input100 {
     }
 
     .contact100-pic {
-        display: none;
+        position:relative;
+        display: initial;
+        top:-10em;
+        left:6em;
+    }
+
+    .contact100-pic img{
+        width:405%;
     }
 
     .contact100-form {
         width: 100%;
     }
+    #cad {
+        position:relative;
+        top: -8em;
+        font-size: 25px;
+        font-family: 'Century Gothic';
+        color: white;
+        left:4em;
+    }
+
+        #cad:hover {
+            color: #c9a5ff;
+        }
+    .contact100-form-btn {
+        width: 70%;
+        position:relative;
+        top:-9em;
+        left:-10%;
+    }
+        .contact100-form-btn:hover {
+            background: #8E41FF;
+        }
 
     .input100 {
         width: 100%;
         position: relative;
         left: 0%;
-        bottom: 0;
     }
 
     .symbol-input100 {
@@ -8575,7 +8610,6 @@ textarea.input100 {
         display: block;
         position: absolute;
         border-radius: 25px;
-        bottom: 0;
         left: 0%;
         z-index: -1;
         width: 100%;
