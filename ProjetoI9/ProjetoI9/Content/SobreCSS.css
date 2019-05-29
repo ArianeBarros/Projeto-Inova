@@ -112,13 +112,8 @@ header {
     color: white;
 }
 
-footer {
-    background-color: #0B2161;
-    text-align: center;
-    height: 30%;
-    width: 100%;
-    position: relative;
-    top: 120%;
+#myFooter {
+    margin-top: 14em;
 }
 
 #sectionPrincipal {

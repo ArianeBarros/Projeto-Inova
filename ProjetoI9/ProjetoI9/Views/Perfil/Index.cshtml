@@ -22,10 +22,14 @@
 
         function CarregarDadosBD()
         {
+            var xmlhttp = new XMLHttpRequest();
             //IMAGEM
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
 
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
+
+            if (xmlhttp.readyState == 404)
+                document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type=\"image\" src='/Imagens/imgPerfil.jpg' onclick=\"CarregarPerfil()\">";
 
             document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + qualImg + " onclick='TrocarFoto()'>";
         }
@@ -66,26 +70,29 @@
 
         function CarregarArquivoEscolhido()
         {
-            var input = document.getElementById("arquivoEscolhido");
-
-            var foto = input.files[0].name;
-    
-            input.addEventListener("change", function(){
-            if(input.files.length > 0) nome = input.files[0].name;
-            input.innerHTML = ""; });
-
-            document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
-            document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + foto + " onclick='TrocarFoto()'>";
-
             document.getElementById("secEscolherFoto").style.display = "none";
+            alert("Salve as mudanças feitas para carregar a foto escolhida!");
+            //var input = document.getElementById("arquivoEscolhido");
 
-            qualImg = "/Imagens/" + foto;
+            //var foto = input.files[0].name;
+    
+            //input.addEventListener("change", function(){
+            //if(input.files.length > 0) nome = input.files[0].name;
+            //input.innerHTML = ""; });
 
-            alert(qualImg);
+            ////document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src='/Imagens/" + foto + " onclick='CarregarPerfil()'>";
+            ////document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + foto + " onclick='TrocarFoto()'>";
+
+            //document.getElementById("secEscolherFoto").style.display = "none";
+
+            //qualImg = "/Imagens/" + foto;
+
+            //alert(qualImg);
         }
 
         function CarregarFotoEscolhida(a)
         {
+            document.getElementById("secEscolherFoto").style.display = "none";
             document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + a + " onclick='CarregarPerfil()'>";
             document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + a + " onclick='TrocarFoto()'>";
 
@@ -93,8 +100,7 @@
             
             qualImg = "/Imagens/" + (a.split('/'))[4];
 
-            document.getElementById("tagInvisivel").value = qualImg;
-            //alert(document.getElementById("tagInvisivel").value);
+            document.getElementById("arquivoEscolhido").value = qualImg;
         }
 
         function Erro() {
@@ -160,7 +166,7 @@
 
     <form id="invisivel" method="post" action="/Perfil/Erro"></form>
 
-    <section id="secEscolherFoto">
+    @*<section id="secEscolherFoto">
         Escolha uma foto para o seu Perfil!
         <br><br>
 
@@ -173,42 +179,58 @@
 
         <br><br>
         @*<label for="arquivoEscolhido">Selecionar arquivo da foto</label>*@
-        @*<input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="upload">*@
+        @*<input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="upload">
         <br><br>
-    </section>
+    </section>*@
 
-        <form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
+    <form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
+        <br><br>
+        <div id="escolherNovaFoto">
+            <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
+        </div>
+
+        <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
+
+
+        <h1>Seus dados:</h1><br>
+
+        <div>
+            <label class="login" for="username2">Username: </label>
+            <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
+        </div><br><br>
+
+        <div>
+            <label class="login" for="email">Email: </label>
+            <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
+        </div><br><br>
+
+
+        <div>
+            <label class="login" for="aniversario">Data Nascimento: </label>
+            <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
+        </div><br><br>
+
+        <section id="secEscolherFoto" enctype="multipart/form-data">
+            Escolha uma foto para o seu Perfil!
             <br><br>
-            <div id="escolherNovaFoto">
-                <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
-            </div>
 
-            <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
+            <img class="exImg" src="~/Imagens/paisagem1.jpg" onclick="CarregarFotoEscolhida(this.src)">
+            <img class="exImg" src="~/Imagens/paisagem2.jpg" onclick="CarregarFotoEscolhida(this.src)">
+            <img class="exImg" src="~/Imagens/paisagem3.jpg" onclick="CarregarFotoEscolhida(this.src)">
+            <img class="exImg" src="~/Imagens/paisagem4.jpg" onclick="CarregarFotoEscolhida(this.src)">
+            <img class="exImg" src="~/Imagens/paisagem5.jpg" onclick="CarregarFotoEscolhida(this.src)">
+            <img class="exImg" src="~/Imagens/paisagem6.jpg" onclick="CarregarFotoEscolhida(this.src)">
 
+            <br><br>
+            <label for="arquivoEscolhido">Selecionar arquivo da foto</label>
+            <input type="file" id="arquivoEscolhido" style="display: none" onclick="CarregarArquivoEscolhido()" name="upload">
+            <br><br>
+        </section>
 
-            <h1>Seus dados:</h1><br>
-
-            <div>
-                <label class="login" for="username2">Username: </label>
-                <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
-            </div><br><br>
-
-            <div>
-                <label class="login" for="email">Email: </label>
-                <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
-            </div><br><br>
-
-
-            <div>
-                <label class="login" for="aniversario">Data Nascimento: </label>
-                <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
-            </div><br><br>
-
-
-            <input type="file" name="upload" />
-            <input class="cBtn" id="btnSalvar" type="submit" value="Upload" />
-            <br />
-            </form>
+        @*<input type="file" name="upload" />*@
+        <input class="cBtn" id="btnSalvar" type="submit" value="Salvar dados" />
+        <br />
+    </form>
             @*<form id="loginSection" method="post" action="/Perfil/SalvarDados">
                     <br><br>
                     <div id="escolherNovaFoto">

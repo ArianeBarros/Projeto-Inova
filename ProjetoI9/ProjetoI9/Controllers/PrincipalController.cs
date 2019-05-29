@@ -44,7 +44,17 @@ namespace ProjetoI9.Controllers
 
                 foreach (var a in e)
                 {
-                    if (a.idUsuario == usuario.id && SeForDessaSemana(a.dia))
+                    string[] data = (a.dia).Split('/');
+                    string ano = data[2];
+                    string mes = data[1];
+
+                    if (mes[0] == '0')
+                        mes = mes[1].ToString();
+
+                    if (DateTime.Today.Year.ToString().CompareTo(ano) > 0 || ('"' + DateTime.Today.Month.ToString() + '"').CompareTo(mes) > 0)
+                        eveDAO.Excluir(a);
+                    else
+                       if (a.idUsuario == usuario.id && SeForDessaSemana(a.dia))
                         clone.Add(a);
                 }
 
@@ -107,7 +117,7 @@ namespace ProjetoI9.Controllers
             if (mes[0] == '0')
                 mes = mes[1].ToString();
 
-            string ano = data[2];
+            string ano = data[2];           
 
             if (DateTime.Today.Month.ToString() != mes || DateTime.Today.Year.ToString() != ano || DateTime.Today.Day.ToString().CompareTo(dia) > 0)
                 return false;
@@ -122,7 +132,7 @@ namespace ProjetoI9.Controllers
                     return true;
                 else
                     return false;
-            }
+            }            
         }
 
         public ActionResult AdicionarSonho(Sonho sonho)
