@@ -19,11 +19,11 @@ namespace ProjetoI9.Controllers
             ViewBag.UsuarioLogado = usuario;
             if (usuario != null)
             {
-                NoticiaDAO dao = new NoticiaDAO();
-                IList<Noticia> not = dao.Lista();
-                ViewBag.QuantasNot = not.Count();
+                //NoticiaDAO dao = new NoticiaDAO();
+                //IList<Noticia> not = dao.Lista();
+                //ViewBag.QuantasNot = not.Count();
 
-                ViewData["noticias"] = not;
+                //ViewData["noticias"] = not;
 
                 SonhoDAO daoS = new SonhoDAO();
                 IList<Sonho> s = daoS.Lista();

@@ -17,10 +17,10 @@
             document.getElementById("adicionarEvento").style.display = "none";
             document.getElementById("adicionarSonho").style.display = "none";
 
-            CarregarNoticias();            
+            CarregarNoticias();
 
             //document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-           
+
 
             CarregarDadosBD();
         }
@@ -30,10 +30,10 @@
             var cont = 0;
             var noti = "";
             var re = "";
-            while (cont < @ViewBag.QuantasNot) {
+            while (cont < 11) {
                 noti = noti + "<section class='cNoticia'><img id='carregandoImagem' src='/Imagens/carregandoImagem.png'></section>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
-            
+
                 cont++;
             }
             var conteudos = ["Brasil", "Animais", "ONGS"];
@@ -55,8 +55,10 @@
                         noti += " <section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><div class='cImagem'></div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section>";
                         document.getElementById("sectionPrincipal").innerHTML = noti;
                     }
-                })
-            }         
+                    })
+
+                qualConteudo++;
+            }
         }
 
 
@@ -98,7 +100,7 @@
             BuscaSonho();
         }
 
-        function BuscaNoticia()
+        @*function BuscaNoticia()
         {
             var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
 
@@ -119,13 +121,13 @@
                 @*while (jaFoiExibido.includes(qualIndice)) //se for 1 ou 10 dá erradoooo
                     qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
 
-                jaFoiExibido += "," + qualIndice;*@
+                jaFoiExibido += "," + qualIndice;
 
                 document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete).split('"')[1];
                 document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem).split('"')[1];
                 document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link).split('"')[1];
             }
-        }
+        }*@
 
         function BuscaEvento() {
 
