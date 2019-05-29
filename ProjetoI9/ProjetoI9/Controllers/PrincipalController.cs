@@ -26,9 +26,16 @@ namespace ProjetoI9.Controllers
                 ViewData["noticias"] = not;
 
                 SonhoDAO daoS = new SonhoDAO();
-                List<Sonho> l = daoS.Lista();
-                ViewBag.QuantosSonhos = l.Count();
+                IList<Sonho> s = daoS.Lista();
+                List<Sonho> l = new List<Sonho>();
 
+                foreach (var a in s)
+                {
+                    if (a.idUsuario == usuario.id )
+                        l.Add(a);
+                }
+
+                ViewBag.QuantosSonhos = l.Count();
                 ViewData["sonhos"] = l;
 
                 EventoDAO eveDAO = new EventoDAO();
@@ -126,6 +133,7 @@ namespace ProjetoI9.Controllers
                 SonhoDAO dao = new SonhoDAO();
                 
                 sonho.id = (dao.Lista()).Count() + 1;
+                sonho.idUsuario = usuario.id;
 
                 dao.Adiciona(sonho);
 

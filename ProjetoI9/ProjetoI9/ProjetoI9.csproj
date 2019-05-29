@@ -194,6 +194,7 @@
     <Content Include="Imagens\btnCadastre-se.png" />
     <Content Include="Imagens\btnLogin.png" />
     <Content Include="Imagens\cad.png" />
+    <Content Include="Imagens\carregandoImagem.png" />
     <Content Include="Imagens\coisinhas.png" />
     <Content Include="Imagens\coisinhas2.png" />
     <Content Include="Imagens\comeceJa.png" />
@@ -306,7 +307,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />
-    <Content Include="Views\Principal\AdicionarEvento.cshtml" />
     <Content Include="Views\SairDaPagina\Index.cshtml" />
     <Content Include="Views\TrocarSenha\Index.cshtml" />
     <Content Include="Views\Login\HomeLogado.cshtml" />
