@@ -11,6 +11,8 @@ namespace ProjetoI9.Models
         [Required]
         public int id { get; set; }
         [Required]
-        public string descricao { get; set; }       
+        public string descricao { get; set; }
+        [Required]
+        public int idUsuario { get; set; }
     }
 }

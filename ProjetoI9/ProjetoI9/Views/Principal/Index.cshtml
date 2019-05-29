@@ -14,34 +14,13 @@
         var qualImg = "";
 
         window.onload = function () {
-            CarregarNoticias();
-            $.post("Principal/PegarNoticia", {
-                url: "https://news.google.com/rss/search?q="+"Brasil"+"&hl=pt-BR&gl=BR&ceid=BR:pt-419"
-            }, function (resposta) {
-                var r = resposta;
-                r = r.split("<item><title>");
-                //alert(r.length);
-                for (var i = 1; i < r.length; i++)
-                {
-                    var tudo = r[i];
-                    var t = tudo.split("</title><link>");
-                    //alert("T: " + t[0]);
-                    var l = t[1].split("</link>");
-                    //alert("L: " + l[0]);
-                    //alert("Um item: " + r[1]);
-
-                var noti = noti + " <section class='cNoticia'><div class='cTitulo'>"+ t[0] +"</div><br><div class='cImagem'>Imagem</div><br><a href="+ l[0] +" class='cLink'>"+ l[0] +"</a></section>";
-                document.getElementById("sectionPrincipal").innerHTML = noti;
-
-            
-                }
-
-
-
-                })
-            document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
             document.getElementById("adicionarEvento").style.display = "none";
             document.getElementById("adicionarSonho").style.display = "none";
+
+            CarregarNoticias();            
+
+            //document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
+           
 
             CarregarDadosBD();
         }
@@ -52,12 +31,32 @@
             var noti = "";
             var re = "";
             while (cont < @ViewBag.QuantasNot) {
-                noti = noti + " <section class='cNoticia'><div class='cTitulo'>Titulo</div><br><div class='cImagem'>Imagem</div><br><div class='cLink'>Link</div></section>";
+                noti = noti + "<section class='cNoticia'><img id='carregandoImagem' src='/Imagens/carregandoImagem.png'></section>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
-
+            
                 cont++;
             }
-            BuscaNoticia();
+            var conteudos = ["Brasil", "Animais", "ONGS"];
+            var qualConteudo = 0;
+            while (qualConteudo < conteudos.length)
+            {
+                var noti = "";
+                $.post("Principal/PegarNoticia", {
+                    url: "https://news.google.com/rss/search?q=" + conteudos[qualConteudo] + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+                }, function (resposta) {
+                    var r = resposta;
+                    r = r.split("<item><title>");
+
+                    for (var i = 1; i < (r.length) / 3; i++) {
+                        var tudo = r[i];
+                        var t = tudo.split("</title><link>");
+                        var l = t[1].split("</link>");
+
+                        noti += " <section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><div class='cImagem'></div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section>";
+                        document.getElementById("sectionPrincipal").innerHTML = noti;
+                    }
+                })
+            }         
         }
 
 
@@ -70,7 +69,9 @@
 
             //EVENTOS
             var cont = 0;
-            var re = "<label class='semana'>Semana</label><button class='btnMais' onclick='AdicionarEvento()'>+</button>";
+            var a = "<label class='semana'>Semana</label><button class='btnMais' onclick='AdicionarEvento()'>+</button>";
+            document.getElementById("sectionLeft").innerHTML = a;
+            var re = "";
             while (cont < @ViewBag.QuantosEventos)
             {
                 re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
@@ -83,12 +84,13 @@
 
             //SONHOS
             cont = 0;
-            var s = "<label class='semana'>Sonhos</label><button class='btnMais' onclick='AdicionarSonho()'>+</button>";
-
+            var a = "<label class='semana'>Sonhos</label><button class='btnMais' onclick='AdicionarSonho()'>+</button>";
+            document.getElementById("sectionRight").innerHTML = a;
+            var s = "";
             while (cont < @ViewBag.QuantosSonhos)
             {
                 s = s + "<div class='divSonho'><input type='checkbox' class='inputSonhos'><label class='chkSonhos'></label></div><br><br>";
-                document.getElementById("sectionRight").innerHTML = s;
+                document.getElementById("sectionRight").innerHTML += s;
 
                 cont++;
             }
@@ -102,6 +104,7 @@
 
             var qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
             var jaFoiExibido = "";
+            alert(@ViewBag.QuantasNot);
 
             for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
             {
