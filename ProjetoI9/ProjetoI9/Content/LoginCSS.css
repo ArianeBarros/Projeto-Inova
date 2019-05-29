@@ -252,7 +252,7 @@ header {
 }*/
 
 #logo2 {
-    width: 350%;
+    width: 250%;
 }
 
 #login {
@@ -476,6 +476,14 @@ footer {
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    top: 45em;
+    top: 5em;
+}
+
+#alertLogin{
+    width:50%;
+    height:20%;
+    position:relative;
+    top:-10em;
+
 }
 
