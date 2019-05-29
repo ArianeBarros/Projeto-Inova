@@ -2,9 +2,7 @@
 
 <html>
 <head>
-
     <title>Principal</title>
-
     <link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
@@ -36,7 +34,7 @@
 
                 cont++;
             }
-            var conteudos = ["Brasil", "Animais", "ONGS"];
+            var conteudos = ["Amor", "Animais", "ONGS", "Notícias boas", "Caridade", "Boas ações"];
             var qualConteudo = 0;
             while (qualConteudo < conteudos.length)
             {
@@ -47,7 +45,7 @@
                     var r = resposta;
                     r = r.split("<item><title>");
 
-                    for (var i = 1; i < (r.length) / 3; i++) {
+                    for (var i = 1; i < (r.length) / 6; i++) {
                         var tudo = r[i];
                         var t = tudo.split("</title><link>");
                         var l = t[1].split("</link>");

@@ -39,5 +39,17 @@ namespace ProjetoI9.DAO
                 contexto.SaveChanges();
             }
         }
+
+        public bool Excluir(Evento eve)
+        {
+            using (var contexto = new ProjetoContext())
+            {
+                contexto.Evento.Remove(eve);
+                if (contexto.Evento.Contains<Evento>(eve))
+                    return false;
+                else
+                    return true;
+            }
+        }
     }
 }
