@@ -105,14 +105,14 @@
         </div>
     </header>
     <div class="container" id="cont">
-        <form id="loginSection" method="post" action="HomeCadastrado" class="contact100-form validate-form" style:"background:#black;">
+        <form id="loginSection" method="post"  action="/Login/HomeLogado" class="contact100-form validate-form" style:"background:#black;">
             <div class="wrap-contact100">
                 <div class="contact100-pic js-tilt" data-tilt>
                     <img src="~/Imagens/login.png" alt="IMG">
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" name="u.nome" required onblur="Nome(value)" onclick="ClickNome()">
+                    <input class="input100" type="text" id="email" placeholder="Email" name="u.email" required onblur="Email(value)" onclick="ClickEmail()">
                     <span class="focus-input100" id="nomeF"></span>
                     <span class="symbol-input100" id="nomeS">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -135,7 +135,7 @@
                     Login
                 </button>
             </div>
-            <div id="cadastro"><a href="#" id="cad">Já possui cadastro?</a></div>
+            <div id="cadastro"><a href="#" id="cad">Ainda não possui cadastro?</a></div>
         </form>
     </div>
     @*<form id="login" method="post" action="/Login/HomeLogado">
