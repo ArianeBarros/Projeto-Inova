@@ -137,7 +137,7 @@ header {
 footer {
     background-color: #0B2161;
     text-align: center;
-    height: 30%;
+    height: 50%;
     width: 100%;
     position: relative;
     top: 900px;
@@ -157,6 +157,7 @@ footer {
 }
 
 #contatoSection {
+    width: 80%;
     text-align: center;
     font-size: 30px;
     margin-top: 2px;
@@ -165,7 +166,7 @@ footer {
 #h1Contato {
     top: 2em;
     position: absolute;
-    left: 20%;
+    left: 30%;
     font-style: italic;
 }
 
@@ -178,20 +179,3 @@ footer {
     font-style: italic;
 }
 
-.fot1 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: 32%;
-    margin-top: 1em;
-    left: -30%;
-}
-
-.fot2 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: -22%;
-    margin-top: 1em;
-    left: 10px;
-}

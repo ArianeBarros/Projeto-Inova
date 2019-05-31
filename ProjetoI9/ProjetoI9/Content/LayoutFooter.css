@@ -138,7 +138,7 @@
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    margin-top: 70em;
+    /*margin-top: 70em;*/
 }
 
 * {

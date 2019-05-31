@@ -66,28 +66,25 @@ namespace ProjetoI9.Controllers
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
 
-            //if (ModelState.IsValid)
-            //{
-                if (upload != null)
-                {
-                    string caminhoArquivo = null;
-                    var uploadPath = Server.MapPath("~/Imagens");
-                    caminhoArquivo = Path.Combine(@uploadPath, upload.FileName);
+            if (upload != null)
+            {
+                string caminhoArquivo = null;
+                var uploadPath = Server.MapPath("~/Imagens");
+                caminhoArquivo = Path.Combine(@uploadPath, upload.FileName);
 
-                    string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
+                string[] extensaoPermitida = { ".gif", ".png", ".jpeg", ".jpg" };
 
-                    for (int i = 0; i < extensaoPermitida.Length; i++)
-                        if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
-                        {
-                            upload.SaveAs(caminhoArquivo);
-                            break;
-                        }
-                    usu.imagem = "../Imagens/" + upload.FileName;
-                }
-            //}
-            //else
-            //    usu.imagem = u.imagem;
+                for (int i = 0; i < extensaoPermitida.Length; i++)
+                    if (Path.GetExtension(caminhoArquivo) == extensaoPermitida[i])
+                    {
+                        upload.SaveAs(caminhoArquivo);
+                        break;
+                    }
+                usu.imagem = "../Imagens/" + upload.FileName;
+            }
+
             dao.Atualiza(usu);
+            
             return RedirectToAction("Index", "Perfil");
         }
     }

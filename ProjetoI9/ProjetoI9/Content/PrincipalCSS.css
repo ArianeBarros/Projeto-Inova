@@ -72,6 +72,15 @@ header {
     left: -2em;
 }
 
+footer {
+    background-color: #0B2161;
+    text-align: center;
+    height: 55%;
+    width: 100%;
+    position: relative;
+    top: 140%;
+}
+
 
 #opcoesFotos {
     border-radius: 50%;
@@ -331,7 +340,7 @@ header {
     height: 100%;
 }
 
-.fot1 {
+/*.fot1 {
     font-size: 30px;
     color: white;
     position: relative;
@@ -351,7 +360,7 @@ header {
     margin-top: 1em;
     left: 50%;
     width: 20%;
-}
+}*/
 
 #adicionarEvento {
     background-color: antiquewhite;
