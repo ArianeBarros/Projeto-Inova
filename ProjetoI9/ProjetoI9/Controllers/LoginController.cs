@@ -14,7 +14,11 @@ namespace ProjetoI9.Controllers
         {
             string a = "o";
             if (Session["erro"] != null)
+            {
                 a = Session["erro"].ToString();
+                Session["erro"] = null;
+            }
+               
 
             UsuarioI9DAO dao = new UsuarioI9DAO();
             IList<UsuarioI9> usu = dao.Lista();
@@ -30,7 +34,6 @@ namespace ProjetoI9.Controllers
         {
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = dao.BuscaPorEmail(u.email);
-
             if (usu != null && usu.senha == u.senha)
             {
                 Session["usuarioLogado"] = usu;

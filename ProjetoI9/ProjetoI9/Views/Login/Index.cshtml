@@ -14,34 +14,71 @@
     <link href="~/Content/animate2.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <script type="text/javascript">
-
+        var load = 0;
         window.onload = function ()
         {
-            var erro = JSON.stringify("@ViewBag.Erro");
-
-            erro = erro.split('"')[1];
-
-            if (erro != "o") {
-                alert("Senha errada");
-                erro = erro.split('s')[1];
-                document.getElementById("email").value = erro;
-            }
+                var erro = JSON.stringify("@ViewBag.Erro");
+                erro = erro.split('"')[1];
+                if (erro != "o") {
+                    erro = erro.split('s')[1];
+                    document.getElementById("email").value = erro;
+                    document.getElementById("alertLogin2").style.display = "block";
+                    document.getElementById("senha").style.boxShadow = "5px 5px red";
+                    document.getElementById("senhaS").style.color = "red";
+                    document.getElementById("senhaF").style.color = "red";
+                }
+            
+            
             Organiza();
         }
         window.onresize = function () {
             Organiza();
         }
 
+        function Pode() {
+            if (document.getElementById("alertLogin").style.display == "block")
+                document.getElementById("email").value = "";
+        }
+
         function Organiza() {
             var fundo = document.getElementById("ondas");
+            var alert = document.getElementById("alertLogin");
+            var alert2 = document.getElementById("alertLogin2");
             if (window.innerWidth >= 1300) {
                 fundo.style.width = "100%";
+                alert.style.width = "65%";
+                alert.style.left = "15%";
+                alert2.style.width = "65%";
+                alert2.style.left = "14%";
             }
             else {
+                if (window.innerWidth >= 1000){
+                    alert.style.width = "70%";
+                    alert.style.left = "12%";
+                    alert2.style.width = "70%";
+                    alert2.style.left = "14%";
+                }
+                else
                 if (window.innerWidth >= 800) {
                     fundo.style.width = "120%";
+                    alert.style.width = "90%";
+                    alert.style.left = "4.5%";
+                    alert2.style.width = "90%";
+                    alert2.style.left = "4.5%";
                 }
-
+                else
+                    if (window.innerWidth >= 567) {
+                        alert.style.width = "90%";
+                        alert.style.left = "4.5%";
+                        alert2.style.width = "90%";
+                        alert2.style.left = "4.5%";
+                    }
+                    else {
+                        alert.style.width = "80%";
+                        alert.style.left = "9%";
+                        alert2.style.width = "80%";
+                        alert2.style.left = "10%";
+                    }
             }
         }
         function abrir(pag) {
@@ -65,11 +102,17 @@
                             estaCadastrado = true;
                     }
 
-                    if (!estaCadastrado)
-                    {
-                        alert("Esse e-mail não está cadastrado!");
-                        document.getElementById("email").value = "";
-
+                    if (!estaCadastrado) {
+                        document.getElementById("alertLogin").style.display = "block";
+                        document.getElementById("email").style.boxShadow = "5px 5px red";
+                        document.getElementById("emailS").style.color = "red";
+                        document.getElementById("emailF").style.color = "red";
+                    }
+                    else {
+                        document.getElementById("alertLogin").style.display = "none";
+                        document.getElementById("email").style.boxShadow = "5px 5px green";
+                        document.getElementById("emailS").style.color = "green";
+                        document.getElementById("emailF").style.color = "green";
                     }
             }
         }
@@ -111,10 +154,11 @@
                     <img src="~/Imagens/login.png" alt="IMG">
                 </div>
                 <img id="alertLogin" src="~/Imagens/alertLogin.png" />
+                <img id="alertLogin2" src="~/Imagens/alertLogin2.png" />
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="email" placeholder="Email" name="u.email" required onblur="Email(value)" onclick="ClickEmail()">
-                    <span class="focus-input100" id="nomeF"></span>
-                    <span class="symbol-input100" id="nomeS">
+                    <input class="input100" type="text" id="email" placeholder="Email" name="u.email" required onblur="Email(value)" onclick="ClickEmail()" onchange="VerificarCadastro()">
+                    <span class="focus-input100" id="emailF"></span>
+                    <span class="symbol-input100" id="emailS">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
@@ -135,7 +179,7 @@
                     Login
                 </button>
             </div>
-            <div id="cadastro"><a href="#" id="cad">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
+            <div id="cadastro"><a href="~/Cadastro/Index" id="cad"onclick="Abrir'Cadastro'">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
         </form>
     </div>
     @*<form id="login" method="post" action="/Login/HomeLogado">
