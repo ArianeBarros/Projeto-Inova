@@ -112,18 +112,23 @@ header {
     color: white;
 }
 
-#myFooter {
-    margin-top: 14em;
+footer {
+    background-color: #0B2161;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    position: relative;
+    top: 900px;
 }
 
-#sectionPrincipal {
+/*#sectionPrincipal {
     background-color: rgb(109, 83, 83);
     height: 120%;
     width: 60%;
     align-self: center;
     left: 250px;
     position: absolute;
-}
+}*/
 
 #navSectionLeft {
     text-align: center;
@@ -138,7 +143,7 @@ header {
 }
 
 
-.fot1 {
+/*.fot1 {
     font-size: 30px;
     color: white;
     position: relative;
@@ -154,4 +159,4 @@ header {
     top: -22%;
     margin-top: 1em;
     left: 10px;
-}
+}*/

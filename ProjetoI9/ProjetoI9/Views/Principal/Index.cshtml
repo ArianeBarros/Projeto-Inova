@@ -75,7 +75,7 @@
             while (cont < @ViewBag.QuantosEventos)
             {
                 re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
-                document.getElementById("sectionLeft").innerHTML = re;
+                document.getElementById("sectionLeft").innerHTML = a + re;
 
                 cont++;
             }
@@ -228,7 +228,7 @@
 
     @*<button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>*@
 
-    <section id="secAgenda">
+    @*<section id="secAgenda">
         AEEEE
 
         <div id="calendario">
@@ -256,7 +256,7 @@
             </table>
         </div>
 
-    </section>
+    </section>*@
 
     <section id="sectionLeft"></section>
 
@@ -281,7 +281,7 @@
         <div id="adicionarSonho">
             <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarSonho()"></i>
             <br>
-            <label>Adicionar Evento</label><br><br>
+            <label>Adicionar Sonho</label><br><br>
             <label class="lbl"> Descrição: </label><input id="descricaoSonho" type="text" name="sonho.descricao"><br><br>
             <button id="btnAdicionarEvento">Ok</button>
         </div>

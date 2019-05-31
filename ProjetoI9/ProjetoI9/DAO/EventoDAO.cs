@@ -45,6 +45,7 @@ namespace ProjetoI9.DAO
             using (var contexto = new ProjetoContext())
             {
                 contexto.Evento.Remove(eve);
+                contexto.SaveChanges();
                 if (contexto.Evento.Contains<Evento>(eve))
                     return false;
                 else

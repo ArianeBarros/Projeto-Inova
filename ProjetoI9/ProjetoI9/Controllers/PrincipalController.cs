@@ -51,11 +51,13 @@ namespace ProjetoI9.Controllers
                     if (mes[0] == '0')
                         mes = mes[1].ToString();
 
-                    if (DateTime.Today.Year.ToString().CompareTo(ano) > 0 || ('"' + DateTime.Today.Month.ToString() + '"').CompareTo(mes) > 0)
+                    //if (DateTime.Today.Year.ToString().CompareTo(ano) > 0 || ('"' + DateTime.Today.Month.ToString() + '"').CompareTo(mes) > 0)
+                    //    eveDAO.Excluir(a);
+                    if (EhPassado(data[0], mes, ano, a.dia))
                         eveDAO.Excluir(a);
                     else
-                       if (a.idUsuario == usuario.id && SeForDessaSemana(a.dia))
-                        clone.Add(a);
+                        if (a.idUsuario == usuario.id && SeForDessaSemana(data[0], mes, ano, a.dia))
+                             clone.Add(a);
                 }
 
                 ViewBag.QuantosEventos = clone.Count();
@@ -104,35 +106,74 @@ namespace ProjetoI9.Controllers
             return RedirectToAction("Index", "Principal");
         }
 
-        public bool SeForDessaSemana(string d)
+        public bool SeForDessaSemana(string d, string m, string a, string data)
         {
-            string[] data = d.Split('/');
-            string dia = data[0];
+            //if (DateTime.Today.Month != Convert.ToInt32(m) || DateTime.Today.Year != Convert.ToInt32(a))
+            //    return false;
+           
+            DateTime dataTabela = Convert.ToDateTime(data);
+            DateTime intervalo = DateTime.Today.AddDays(7);
 
-            if (dia[0] == '0')
-                dia = dia[1].ToString();
+            int result = DateTime.Compare(dataTabela,DateTime.Today);
+            int result2 = DateTime.Compare(dataTabela, intervalo);
 
-            string mes = data[1];
+            if (result >= 0 && result2 <= 0)
+                return true;       
+          
 
-            if (mes[0] == '0')
-                mes = mes[1].ToString();
+            return false;
+            //string[] data = d.Split('/');
+            //string dia = data[0];
 
-            string ano = data[2];           
+            //if (dia[0] == '0')
+            //    dia = dia[1].ToString();
 
-            if (DateTime.Today.Month.ToString() != mes || DateTime.Today.Year.ToString() != ano || DateTime.Today.Day.ToString().CompareTo(dia) > 0)
-                return false;
+            //string mes = data[1];
 
-            if(DateTime.Today.Day.ToString().CompareTo("21") >= 0)
+            //if (mes[0] == '0')
+            //    mes = mes[1].ToString();
+
+            //string ano = data[2];           
+
+            //if (DateTime.Today.Month != Convert.ToInt32(mes) || DateTime.Today.Year != Convert.ToInt32(ano) || DateTime.Today.Day > Convert.ToInt32(dia))
+            //    return false;
+
+            ////if(dia.CompareTo((DateTime.Today.Day.ToString())) >= 0)
+            ////    return true;
+            ////else
+            ////{
+            //    int semana = DateTime.Today.Day + 7;
+            //    if (semana > 23)
+            //        semana = 23 - semana;
+
+            //    if (Convert.ToUInt32(d) <= semana && Convert.ToUInt32(d) >= DateTime.Today.Day)
+            //        return true;
+            //else
+            //    return false;
+            ////}            
+        }
+
+        public bool EhPassado(string d, string m, string a , string data)
+        {
+            DateTime d2 = Convert.ToDateTime(data);
+            int result = DateTime.Compare(d2, DateTime.Today);
+
+            if (result < 0)
                 return true;
-            else
-            {
-                int semana = DateTime.Today.Day + 7;
 
-                if (Convert.ToUInt32(d) <= semana && Convert.ToUInt32(d) >= DateTime.Today.Day)
-                    return true;
-                else
-                    return false;
-            }            
+            //string dataAtual = DateTime.Today.ToString();
+
+            //if (DateTime.Today.Year.ToString().CompareTo(a) > 0)
+            //    return true;
+            //else
+            //     if (DateTime.Today.Month.ToString().CompareTo(m) > 0)
+            //         return true;
+            //     else
+            //        if (DateTime.Today.Day.ToString().CompareTo(d) > 0)
+            //            return true;
+
+
+            return false;
         }
 
         public ActionResult AdicionarSonho(Sonho sonho)
