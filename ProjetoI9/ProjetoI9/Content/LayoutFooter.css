@@ -1,7 +1,6 @@
 ﻿#myFooter {
     background-color: #3c3d41;
     color: white;
-    padding-top: 30px;
     font-size: 106%;
 }
 
@@ -22,7 +21,7 @@
     }
 
     #myFooter .footer-copyright p {
-        margin: 10px;
+        margin: 26px;
         color: #ccc;
         font-size: 16px;
     }
@@ -36,7 +35,6 @@
         font-size: 18px;
         color: white;
         font-weight: bold;
-        margin-top: 30px;
     }
 
     #myFooter h2 a {
@@ -95,18 +93,23 @@
         margin: 0 auto;
         margin-top: 10px;
         line-height: 25px;
+        position: relative;
+        top: -0.5em;
     }
 
 .logo2 {
-    width: 100%;
+    width: 350%;
 }
 
-
+.container {
+    top: 3em;
+    position: relative;
+}
 
 @media screen and (max-width: 767px) {
     #myFooter {
         text-align: center;
-       height:50%;
+        height: 50%;
     }
 
     .col-sm-3 {
@@ -117,12 +120,13 @@
 @media screen and (max-width: 576px) {
     #myFooter {
         text-align: center;
-        height:90%;
+        height: 70%;
     }
 
     .col-sm-3 {
         padding-left: 0%;
     }
+
     #logo2 {
         width: 100%;
     }
@@ -132,18 +136,13 @@
 /* CSS used for positioning the footers at the bottom of the page. */
 /* You can remove this. */
 
-
+#logo2 {
+    width: 250%;
+}
 
 #myFooter {
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
-    /*margin-top: 70em;*/
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat", sans-serif;
-    transition: all .3s ease;
+    top: 5em;
 }

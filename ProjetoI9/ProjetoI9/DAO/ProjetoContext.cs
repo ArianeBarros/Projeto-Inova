@@ -15,7 +15,7 @@ namespace ProjetoI9.DAO
         public DbSet<Noticia> Noticia { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=regulus;Initial Catalog=PR118201;User ID=PR118201;Password=PR118201");
+            optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118201;User ID=PR118201;Password=PR118201");
         }
     }
 }
