@@ -1,5 +1,0 @@
-trocar de senha
-adicionar evento
-login de outras páginas
-arrumar menu de sair da conta e configurações
-exibir sonhos

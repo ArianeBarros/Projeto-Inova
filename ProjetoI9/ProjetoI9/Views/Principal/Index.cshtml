@@ -16,10 +16,6 @@
             document.getElementById("adicionarSonho").style.display = "none";
 
             CarregarNoticias();
-
-            //document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=\"/Imagens/imgPerfil.jpg\" onclick=\"CarregarPerfil()\">";
-
-
             CarregarDadosBD();
         }
 
@@ -97,35 +93,6 @@
 
             BuscaSonho();
         }
-
-        @*function BuscaNoticia()
-        {
-            var lista = @Html.Raw(Json.Encode(@ViewData["noticias"]));
-
-            var qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
-            var jaFoiExibido = "";
-            alert(@ViewBag.QuantasNot);
-
-            for (var cont = 0; cont < @ViewBag.QuantasNot; cont++)
-            {
-                var vet = jaFoiExibido.split(',');
-                for (var i = 0; i < vet.length; i++)
-                {
-                    if (vet[i] == qualIndice)
-                        qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
-                    else
-                        jaFoiExibido += "," + qualIndice;
-                }
-                @*while (jaFoiExibido.includes(qualIndice)) //se for 1 ou 10 dá erradoooo
-                    qualIndice = Math.floor(Math.random() * @ViewBag.QuantasNot);
-
-                jaFoiExibido += "," + qualIndice;
-
-                document.getElementsByClassName("cTitulo")[cont].innerHTML = JSON.stringify(lista[qualIndice].manchete).split('"')[1];
-                document.getElementsByClassName("cImagem")[cont].innerHTML = JSON.stringify(lista[qualIndice].imagem).split('"')[1];
-                document.getElementsByClassName("cLink")[cont].innerHTML = JSON.stringify(lista[qualIndice].link).split('"')[1];
-            }
-        }*@
 
         function BuscaEvento() {
 
@@ -217,10 +184,6 @@
             document.getElementById("invisivelSalvar").submit();
         }
 
-        //window.onclose = function () {
-        //    document.getElementById("invisivelSalvar").submit();
-        //}
-
     </script>
 </head>
 <body>
@@ -242,38 +205,6 @@
 
     </header>
 
-    @*<button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>*@
-
-    @*<section id="secAgenda">
-            AEEEE
-
-            <div id="calendario">
-                <table>
-                    <tr>
-                        <td class="diaSemana">D</td>
-                        <td class="diaSemana">S</td>
-                        <td class="diaSemana">T</td>
-                        <td class="diaSemana">Q</td>
-                        <td class="diaSemana">Q</td>
-                        <td class="diaSemana">S</td>
-                        <td class="diaSemana">S</td>
-                    </tr>
-
-                    <tr>
-                        <td class="dias">a<span>1</span></td>
-                        <td class="dias">2</td>
-                        <td class="dias">3</td>
-                        <td class="dias">4</td>
-                        <td class="dias">5</td>
-                        <td class="dias">6</td>
-                        <td class="dias">7</td>
-                    </tr>
-
-                </table>
-            </div>
-
-        </section>*@
-
     <section id="sectionLeft"></section>
 
     <form id="invisivel" method="post" action="/Principal/Erro"></form>
@@ -286,7 +217,7 @@
 
     <form method="post" action="/Principal/AdicionarEvento">
         <div id="adicionarEvento">
-            @*<button id="btnFecharNovoEvento" onclick="AdicionarEvento()"><i class="fa fa-times fa-w-14 fa-2x"></i></button>*@
+
             <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
 
             <br>

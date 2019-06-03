@@ -31,7 +31,7 @@ namespace ProjetoI9.Controllers
 
                 foreach (var a in s)
                 {
-                    if (a.idUsuario == usuario.id )
+                    if (a.idUsuario == usuario.id)
                         l.Add(a);
                 }
 
@@ -57,7 +57,7 @@ namespace ProjetoI9.Controllers
                         eveDAO.Excluir(a);
                     else
                         if (a.idUsuario == usuario.id && SeForDessaSemana(data[0], mes, ano, a.dia))
-                             clone.Add(a);
+                        clone.Add(a);
                 }
 
                 ViewBag.QuantosEventos = clone.Count();
@@ -83,22 +83,22 @@ namespace ProjetoI9.Controllers
                 not.diaSemana = "Quarta-Feira";
             else
             {
-                if(not.diaSemana == "Monday")
+                if (not.diaSemana == "Monday")
                     not.diaSemana = "Segunda-Feira";
                 else
-                    if(not.diaSemana == "Tuesday")
-                        not.diaSemana = "Terça-Feira";
-                    else
-                        if(not.diaSemana == "Thursday")
-                            not.diaSemana = "Quarta-Feira";
-                        else
-                            if(not.diaSemana == "Friday")
-                                not.diaSemana = "Sexta-Feira";
-                            else
-                                if(not.diaSemana == "Saturday")
-                                    not.diaSemana = "Sábado";
-                                else
-                                    not.diaSemana = "Domingo";
+                    if (not.diaSemana == "Tuesday")
+                    not.diaSemana = "Terça-Feira";
+                else
+                        if (not.diaSemana == "Thursday")
+                    not.diaSemana = "Quarta-Feira";
+                else
+                            if (not.diaSemana == "Friday")
+                    not.diaSemana = "Sexta-Feira";
+                else
+                                if (not.diaSemana == "Saturday")
+                    not.diaSemana = "Sábado";
+                else
+                    not.diaSemana = "Domingo";
             }
 
             dao.Adiciona(not);
@@ -108,52 +108,20 @@ namespace ProjetoI9.Controllers
 
         public bool SeForDessaSemana(string d, string m, string a, string data)
         {
-            //if (DateTime.Today.Month != Convert.ToInt32(m) || DateTime.Today.Year != Convert.ToInt32(a))
-            //    return false;
-           
             DateTime dataTabela = Convert.ToDateTime(data);
             DateTime intervalo = DateTime.Today.AddDays(7);
 
-            int result = DateTime.Compare(dataTabela,DateTime.Today);
+            int result = DateTime.Compare(dataTabela, DateTime.Today);
             int result2 = DateTime.Compare(dataTabela, intervalo);
 
             if (result >= 0 && result2 <= 0)
-                return true;       
-          
+                return true;
 
-            return false;
-            //string[] data = d.Split('/');
-            //string dia = data[0];
 
-            //if (dia[0] == '0')
-            //    dia = dia[1].ToString();
-
-            //string mes = data[1];
-
-            //if (mes[0] == '0')
-            //    mes = mes[1].ToString();
-
-            //string ano = data[2];           
-
-            //if (DateTime.Today.Month != Convert.ToInt32(mes) || DateTime.Today.Year != Convert.ToInt32(ano) || DateTime.Today.Day > Convert.ToInt32(dia))
-            //    return false;
-
-            ////if(dia.CompareTo((DateTime.Today.Day.ToString())) >= 0)
-            ////    return true;
-            ////else
-            ////{
-            //    int semana = DateTime.Today.Day + 7;
-            //    if (semana > 23)
-            //        semana = 23 - semana;
-
-            //    if (Convert.ToUInt32(d) <= semana && Convert.ToUInt32(d) >= DateTime.Today.Day)
-            //        return true;
-            //else
-            //    return false;
-            ////}            
+            return false;           
         }
 
-        public bool EhPassado(string d, string m, string a , string data)
+        public bool EhPassado(string d, string m, string a, string data)
         {
             DateTime d2 = Convert.ToDateTime(data);
             int result = DateTime.Compare(d2, DateTime.Today);
@@ -161,45 +129,33 @@ namespace ProjetoI9.Controllers
             if (result < 0)
                 return true;
 
-            //string dataAtual = DateTime.Today.ToString();
-
-            //if (DateTime.Today.Year.ToString().CompareTo(a) > 0)
-            //    return true;
-            //else
-            //     if (DateTime.Today.Month.ToString().CompareTo(m) > 0)
-            //         return true;
-            //     else
-            //        if (DateTime.Today.Day.ToString().CompareTo(d) > 0)
-            //            return true;
-
-
             return false;
         }
 
         public ActionResult AdicionarSonho(Sonho sonho)
         {
-            try
-            {
-                UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
-                SonhoDAO dao = new SonhoDAO();
-                
-                sonho.id = (dao.Lista()).Count() + 1;
-                sonho.idUsuario = usuario.id;
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+            SonhoDAO dao = new SonhoDAO();
+            var lista = dao.Lista();
 
-                dao.Adiciona(sonho);
-
-                return RedirectToAction("Index", "Principal");
-            }
-            catch
+            int ultimoId = 0;
+            if (lista.Count >= 1)
             {
-                return View();
+                ultimoId = lista.ElementAt(lista.Count - 1).id;
             }
+            sonho.id = ultimoId + 1;
+            sonho.idUsuario = usuario.id;
+
+            dao.Adiciona(sonho);
+
+            return RedirectToAction("Index", "Principal");
+
         }
 
         public ActionResult Erro()
         {
             Session["usuarioLogado"] = null;
-            return RedirectToAction("Index", "Login");            
+            return RedirectToAction("Index", "Login");
         }
 
         public ActionResult Salvar(Sonho sonho)
@@ -217,7 +173,7 @@ namespace ProjetoI9.Controllers
 
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
             usuario.pontuacao += 1;
-            
+
             return RedirectToAction("Index", "Principal");
         }
 

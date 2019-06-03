@@ -1,0 +1,4 @@
+[0520/112049.523:ERROR:file_io.cc(134)] WriteFile: O pipe está sendo fechado. (0xE8)
+[0529/100402.274:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
+[0529/100402.505:ERROR:exception_snapshot_win.cc(98)] thread ID 5148 not found in process
+[0529/100402.505:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentou-se acessar um processo de saída. (0xc000010a)
