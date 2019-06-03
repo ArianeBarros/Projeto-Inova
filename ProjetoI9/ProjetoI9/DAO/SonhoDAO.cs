@@ -39,5 +39,14 @@ namespace ProjetoI9.DAO
                 contexto.SaveChanges();
             }
         }
+
+        public void Excluir(Sonho s)
+        {
+            using (var contexto = new ProjetoContext())
+            {
+                contexto.Sonho.Remove(s);
+                contexto.SaveChanges();
+            }
+        }
     }
 }

@@ -140,9 +140,9 @@
     width: 250%;
 }
 
-#myFooter {
+/*#myFooter {
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     position: relative;
     top: 5em;
-}
+}*/

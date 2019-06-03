@@ -4,6 +4,7 @@
     <title>Perfil</title>
 
     <link rel="shortcut icon" href="favicon.ico">
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
@@ -17,8 +18,7 @@
         window.onload = function()
         {
             document.getElementById("secEscolherFoto").style.display = "none";
-            document.getElementById("escolherNovaFoto").style.display = "none";
-            
+
             CarregarDadosBD();
         }
 
@@ -41,6 +41,7 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -63,6 +64,7 @@
 
                 document.getElementById("secEscolherFoto").style.display = "block";
                 document.getElementById("escolherNovaFoto").style.display = "block";
+
                 //document.getElementById("loginSection").preventDefault();
             }
             else {
@@ -78,7 +80,7 @@
             //var input = document.getElementById("arquivoEscolhido");
 
             //var foto = input.files[0].name;
-    
+
             //input.addEventListener("change", function(){
             //if(input.files.length > 0) nome = input.files[0].name;
             //input.innerHTML = ""; });
@@ -100,7 +102,7 @@
             document.getElementById("escolherNovaFoto").innerHTML = " <img id='btnFotoPerfil' src=" + a + " onclick='TrocarFoto()'>";
 
             document.getElementById("secEscolherFoto").style.display = "none";
-            
+
             qualImg = "/Imagens/" + (a.split('/'))[4];
             alert(qualImg);
             document.getElementById("tagInvisivel").value = qualImg;
@@ -112,18 +114,23 @@
 
         function VerificarSenhaAtual()
         {
-            if (@ViewBag.UsuarioLogado.senha != document.getElementById("senhaAtual").value)
-            {
+
+            if (@ViewBag.UsuarioLogado.senha != document.getElementById("senhaAtual").value) {
                 alert("Preencha o campo da senha atual corretamente");
                 document.getElementById("senhaAtual").value = "";
-                document.getElementById("senhaAtual").focus();
-                return false;
             }
-            return true;
+            else
+                if (document.getElementById("senhaAtual").value != "" && document.getElementById("senhaNova").value == document.getElementById("confirmaSenha").value)
+                   document.getElementById("btnOkay").style.display = "block";
+
         }
 
         function VerificarSenhas() {
-            if (VerificarSenhaAtual()) {
+
+            if (document.getElementById("senhaAtual").value == "")
+               document.getElementById("senhaAtual").focus();
+
+            if (document.getElementById("senhaAtual").innerHTML != "") {
                 if (document.getElementById("senhaNova").value == document.getElementById("confirmaSenha").value)
                     document.getElementById("btnOkay").style.display = "block";
                 else {
@@ -131,8 +138,6 @@
                     document.getElementById("confirmaSenha").value = "";
                 }
             }
-            else
-                document.getElementById("senhaAtual").focus();
         }
 
         function SubmitTrocarSenha()
@@ -148,7 +153,7 @@
                 document.getElementById("senhaAtual").value = "";
                 document.getElementById("senhaNova").value = "";
                 document.getElementById("confirmaSenha").value = "";
-            }              
+            }
             else
                 document.getElementById("frmTrocarSenha").style.display = "block";
         }
@@ -174,23 +179,6 @@
     </header>
 
     <form id="invisivel" method="post" action="/Perfil/Erro"></form>
-
-    @*<section id="secEscolherFoto">
-        Escolha uma foto para o seu Perfil!
-        <br><br>
-
-        <img class="exImg" src="~/Imagens/paisagem1.jpg" onclick="CarregarFotoEscolhida(this.src)">
-        <img class="exImg" src="~/Imagens/paisagem2.jpg" onclick="CarregarFotoEscolhida(this.src)">
-        <img class="exImg" src="~/Imagens/paisagem3.jpg" onclick="CarregarFotoEscolhida(this.src)">
-        <img class="exImg" src="~/Imagens/paisagem4.jpg" onclick="CarregarFotoEscolhida(this.src)">
-        <img class="exImg" src="~/Imagens/paisagem5.jpg" onclick="CarregarFotoEscolhida(this.src)">
-        <img class="exImg" src="~/Imagens/paisagem6.jpg" onclick="CarregarFotoEscolhida(this.src)">
-
-        <br><br>
-        @*<label for="arquivoEscolhido">Selecionar arquivo da foto</label>*@
-        @*<input type="file" accept="image/*" onchange="CarregarArquivoEscolhido()" id="arquivoEscolhido" style="display: none" name="upload">
-        <br><br>
-    </section>*@
 
     <form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
         <br><br>
@@ -236,40 +224,9 @@
             <br><br>
         </section>
 
-        @*<input type="file" name="upload" />*@
         <input class="cBtn" id="btnSalvar" type="submit" value="Salvar dados" />
         <br />
     </form>
-            @*<form id="loginSection" method="post" action="/Perfil/SalvarDados">
-                    <br><br>
-                    <div id="escolherNovaFoto">
-                        <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
-                    </div>
-
-                    <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
-
-
-                    <h1>Seus dados:</h1><br>
-
-                    <div>
-                        <label class="login" for="username2">Username: </label>
-                        <input class="loginInput" id="username2" type="text" required pattern=".{6,15}" title="De 6 a 10 caracteres" name="u.nome" value="@ViewBag.UsuarioLogado.nome">
-                    </div><br><br>
-
-                    <div>
-                        <label class="login" for="email">Email: </label>
-                        <input class="loginInput" id="email" type="email" required name="u.email" value="@ViewBag.UsuarioLogado.email">
-                    </div><br><br>
-
-
-                    <div>
-                        <label class="login" for="aniversario">Data Nascimento: </label>
-                        <input class="loginInput" type="date" id="data" name="u.dataNascimento" class="datepicker" pattern="^\d{2}/\d{2}/\d{4}$" required value="@ViewBag.UsuarioLogado.dataNascimento.Year-@ViewBag.UsuarioLogado.dataNascimento.Month-@ViewBag.UsuarioLogado.dataNascimento.Day">
-                    </div><br><br>
-
-                    <button type="submit" class="cBtn" id="btnSalvar">Salvar dados</button>
-
-                </form>*@
 
             <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
 
@@ -277,7 +234,7 @@
                 <div id="divTrocarSenha">
                     <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="TrocarSenha()"></i><br>
                     <u><label class="lblTrocarSenha"> Trocar de Senha </label></u><br>
-                    <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onchange="VerificarSenhaAtual()" required><br>
+                    <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onblur="VerificarSenhaAtual()" required><br>
                     <label class="lblSenhas">Senha nova: </label><input id="senhaNova" class="lblSenhas" type="password" required><br>
                     <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
                     <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>

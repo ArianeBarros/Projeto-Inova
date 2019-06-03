@@ -65,6 +65,9 @@ namespace ProjetoI9.Controllers
 
             UsuarioI9DAO dao = new UsuarioI9DAO();
             UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
+            usu.nome = u.nome;
+            usu.dataNascimento = u.dataNascimento;
+            usu.email = u.email;
 
             if (upload != null)
             {
@@ -82,9 +85,13 @@ namespace ProjetoI9.Controllers
                     }
                 usu.imagem = "../Imagens/" + upload.FileName;
             }
+            else
+                usu.imagem = u.imagem;
+
 
             dao.Atualiza(usu);
-            
+            Session["usuarioLogado"] = usu;
+
             return RedirectToAction("Index", "Perfil");
         }
     }

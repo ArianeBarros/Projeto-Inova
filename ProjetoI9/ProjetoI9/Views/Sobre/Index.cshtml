@@ -24,14 +24,14 @@
         var qualImg = null;
 
         function CarregarDadosBD() {
-            
+
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
             var img = qualImg.split('"')[1];
             if (img == "n")
                 document.getElementById("opcoesFotos").style.display = "none";
             else
                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
-            
+
         }
 
         var seMostraPerfil = 2;
@@ -39,6 +39,7 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -114,7 +115,7 @@
                     position: "left",
                     id: "y-axis-1",
                     stacked: true,
-                    
+
                     ticks: {
                         suggestedMin: 0,
                         fontSize: 26
