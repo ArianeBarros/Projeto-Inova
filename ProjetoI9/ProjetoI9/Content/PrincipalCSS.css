@@ -58,10 +58,25 @@ header {
     }
 }
 
-#configV, #sairV {
+#configV, #sairV, #lblPontuacao, #ImgCoracao {
     color: black;
     position: relative;
-    left: -3em;
+    left: -2em;
+}
+
+
+#lblPontuacao {
+    margin-left: 2em;
+    font-size: 30px;
+    top: 4px;
+}
+
+#ImgCoracao {
+    width: 20%;
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    margin-left: 1em;
 }
 
 #iconeConfig 
@@ -72,13 +87,20 @@ header {
     left: -2em;
 }
 
-footer {
+/*footer {
     background-color: #0B2161;
     text-align: center;
     height: 55%;
     width: 100%;
     position: relative;
-    top: 140%;
+    top: 370%;
+}*/
+
+#myFooter {
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    position: relative;
+    top: 57em;
 }
 
 
@@ -100,10 +122,11 @@ footer {
 
 #menuV {
     position: relative;
-    right: 50%;
     width: 100%;
     visibility: visible;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    left: 20%;
+    height: 100%;
 }
 
 #divMenuV {
@@ -113,6 +136,7 @@ footer {
     position: absolute;
     top: 3em;
     left: 80%;
+    height: 340%;
 }
 
 #navHeader {
@@ -206,7 +230,7 @@ footer {
 .localizacao {
     font-size: 20px;
     color: black;
-    height: 16%;
+    height: 19%;
     width: 100%;
     background-color: green;
 }
@@ -220,26 +244,27 @@ footer {
     width: 100%;
 }
 
-/*#parabens {
+#parabens {
     background-color: #b1f1f4;
     width: 40%;
     height: 30%;
     border-color: #361bc4;
     border-style: dotted;
-    /* box-shadow: 10px 10px 5px grey;
+     box-shadow: 10px 10px 5px grey;
     left: 450px;
     top: 600px;
     position: absolute;
     border-radius: 10%;
     display: none;
-}*/
+}
+
 
 /*#lblParabens {
     font-family: 'Times New Roman', Times, serif;
     color: #8b4513;
     font-size: 48px;
     text-align: center;
-}*/
+}
 
 /*#lblVoceRealizouUmSonho {
     font-family: 'Times New Roman', Times, serif;
@@ -257,7 +282,6 @@ footer {
     top: 200px;
     position: absolute;
 }*/
-
 .chkSonhos {
     font-size: 20px;
     margin-left: 1em;
@@ -286,10 +310,10 @@ footer {
     width: 80%;
     position: relative;
     margin-top: 1em;
-    border-radius: 10%;
+    border-radius: 3%;
     left: 8%;
     margin-top: 2em;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 20px 20px 10px grey;
 }
 
 #eventos {

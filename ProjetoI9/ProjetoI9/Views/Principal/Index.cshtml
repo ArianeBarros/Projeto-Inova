@@ -89,7 +89,7 @@
             var s = "";
             while (cont < @ViewBag.QuantosSonhos)
             {
-                s = s + "<div class='divSonho'><input type='checkbox' class='inputSonhos'><label class='chkSonhos'></label></div><br><br>";
+                s = "<div class='divSonho'><input name='nameChkSonho' onchange='Parabens()' type='checkbox' class='inputSonhos'><label class='chkSonhos'></label></div><br><br>";
                 document.getElementById("sectionRight").innerHTML += s;
 
                 cont++;
@@ -155,6 +155,7 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
+                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -165,14 +166,25 @@
             }
         }
 
-        //function Parabens() {
-        //    if (document.getElementById("parabens").style.display == "block") {
-        //        document.getElementById("parabens").style.display = "none";
-        //    }
-        //    else {
-        //        document.getElementById("parabens").style.display = "block";
-        //    }
-        //}
+        function Parabens() {
+            var i = 0;
+
+            while (i <= document.getElementsByName("nameChkSonho").length) {
+                if (document.getElementsByClassName("inputSonhos")[i].checked == true) {
+                    if (document.getElementById("parabens").style.display == "block") {
+                        document.getElementById("parabens").style.display = "none";
+                    }
+                    else {
+                        document.getElementById("parabens").style.display = "block";
+                    }
+                    document.getElementsByClassName("inputSonhos")[i].disabled = true;
+                    document.getElementById("lblPontuacao").value = document.getElementsByClassName("chkSonhos")[i].innerHTML; 
+                }
+
+                i++;
+            }       
+           
+        }
 
         function MostrarAgenda() {
             if (document.getElementById("secAgenda").style.display == "block")
@@ -194,17 +206,21 @@
             else
                 document.getElementById("adicionarSonho").style.display = "block";
         }
-
+        
         function Erro()
         {
             document.getElementById("invisivel").submit();
         }
 
-        //COMEÇO DO WEB SERVICE
+        function ExcluirSonho() {
+            document.getElementById('parabens').style.display = "none";
+            document.getElementById("invisivelSalvar").submit();
+        }
 
+        //window.onclose = function () {
+        //    document.getElementById("invisivelSalvar").submit();
+        //}
 
-
-        //FIM DO WEB SERVICE
     </script>
 </head>
 <body>
@@ -229,39 +245,44 @@
     @*<button id="btnAgenda" onclick="MostrarAgenda()">VER AGENDA</button>*@
 
     @*<section id="secAgenda">
-        AEEEE
+            AEEEE
 
-        <div id="calendario">
-            <table>
-                <tr>
-                    <td class="diaSemana">D</td>
-                    <td class="diaSemana">S</td>
-                    <td class="diaSemana">T</td>
-                    <td class="diaSemana">Q</td>
-                    <td class="diaSemana">Q</td>
-                    <td class="diaSemana">S</td>
-                    <td class="diaSemana">S</td>
-                </tr>
+            <div id="calendario">
+                <table>
+                    <tr>
+                        <td class="diaSemana">D</td>
+                        <td class="diaSemana">S</td>
+                        <td class="diaSemana">T</td>
+                        <td class="diaSemana">Q</td>
+                        <td class="diaSemana">Q</td>
+                        <td class="diaSemana">S</td>
+                        <td class="diaSemana">S</td>
+                    </tr>
 
-                <tr>
-                    <td class="dias">a<span>1</span></td>
-                    <td class="dias">2</td>
-                    <td class="dias">3</td>
-                    <td class="dias">4</td>
-                    <td class="dias">5</td>
-                    <td class="dias">6</td>
-                    <td class="dias">7</td>
-                </tr>
+                    <tr>
+                        <td class="dias">a<span>1</span></td>
+                        <td class="dias">2</td>
+                        <td class="dias">3</td>
+                        <td class="dias">4</td>
+                        <td class="dias">5</td>
+                        <td class="dias">6</td>
+                        <td class="dias">7</td>
+                    </tr>
 
-            </table>
-        </div>
+                </table>
+            </div>
 
-    </section>*@
+        </section>*@
 
     <section id="sectionLeft"></section>
 
-    <form id="invisivel" method="post" action="/Principal/Erro">
-        </form>
+    <form id="invisivel" method="post" action="/Principal/Erro"></form>
+
+    <form id="invisivelSalvar" method="post" action="/Principal/Salvar">
+        <input id="lblPontuacao" name="sonho.descricao" type="text" style="display: none">
+    </form>
+
+
 
     <form method="post" action="/Principal/AdicionarEvento">
         <div id="adicionarEvento">
@@ -291,11 +312,11 @@
 
     <section id="sectionPrincipal"></section>
 
-    @*<section id="parabens">
-            <div id="lblParabens">Parabéns !! </div><br><br>
-            <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
-            <button id="btnParabens" onclick="Parabens()">OK</button>
-        </section>*@
+    <section id="parabens">
+        <div id="lblParabens">Parabéns !! </div><br><br>
+        <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
+        <button id="btnParabens" onclick="ExcluirSonho()">OK</button>
+    </section>
 
 </body>
 </html>

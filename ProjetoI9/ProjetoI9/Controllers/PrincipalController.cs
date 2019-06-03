@@ -199,9 +199,28 @@ namespace ProjetoI9.Controllers
         public ActionResult Erro()
         {
             Session["usuarioLogado"] = null;
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Login");            
         }
-        
+
+        public ActionResult Salvar(Sonho sonho)
+        {
+            string aux = sonho.descricao;
+
+            SonhoDAO daoS = new SonhoDAO();
+            IList<Sonho> s = daoS.Lista();
+
+            foreach (var a in s)
+            {
+                if (a.descricao == sonho.descricao)
+                    daoS.Excluir(a);
+            }
+
+            UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
+            usuario.pontuacao += 1;
+            
+            return RedirectToAction("Index", "Principal");
+        }
+
         public string PegarNoticia(string url)
         {
             WebRequest request = WebRequest.Create(url);
