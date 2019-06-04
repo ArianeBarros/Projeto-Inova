@@ -23,7 +23,18 @@ Layout = null;
             });
 
             CarregarDadosBD();
+            Organiza();
         }
+        function Organiza() {
+            var fundo = document.getElementById("ondas");
+           
+            if (window.innerWidth >= 1300) 
+                fundo.style.width = "100%";
+                else
+                    if (window.innerWidth >= 800) 
+                        fundo.style.width = "120%";
+                        
+            }
 
         var qualImg = null;
 
@@ -165,14 +176,25 @@ Layout = null;
 <body>
     <header>
 
-        <nav id="navHeader">
-            <ul>
-                <a id="home" href="~/Home/Index">HOME</a>
-                <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
-                <a id="contato" href="~/Contato/Index">CONTATO</a>
-                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+        <div class="header" id="header">
+            <!-- <img class="barra" src="./Imagens/nav.png"> -->
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-menu-btn">
+                <i class="fa fa-bars fa-w-14 fa-2x"></i>
+            </label>
+            <ul class="menu">
+                <div class="ab" onclick="abrir('Home')">HOME</div>
+                <div class="ab" onclick="abrir('Cadastro')">CADASTRO</div>
+                <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
+                <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                <label for="chk" class="hide-menu-btn">
+                    <a class="menu-barra">
+                        <i class="fa fa-times fa-w-14 fa-2x"></i>
+                    </a>
+                </label>
             </ul>
-        </nav>
+
+        </div>
 
 
         <div id="opcoesFotos">
@@ -213,12 +235,12 @@ Layout = null;
     <div class="slidershow middle" id="slidersh">
         <div class="slides">
             <div class="slide s1" id="s1">
-                <img src="~/Imagens/img1-sobre.png" alt="" id="img1">
+                <img src="~/Imagens/img-sobre.png" alt="" id="img1">
             </div>
             <div class="slide">
                 <img src="~/Imagens/img-02.png" alt="" id="img2">
             </div>
-            <div class="slide">                         
+            <div class="slide">
                 <img src="~/Imagens/img-03.png" alt="" id="img3">
             </div>
             <div class="slide">
@@ -227,19 +249,22 @@ Layout = null;
             <div class="slide">
                 <img src="~/Imagens/img-05.png" alt="" id="img5">
             </div>
+            <div class="slide">
+                <img src="~/Imagens/img-06.png" alt="" id="img6">
+            </div>
         </div>
     </div>
     <div class="navigation">
-        <label id="r1B" class="bar" onclick="trocarSlide(0)"></label>
-        <label id="r2B" class="bar" onclick="trocarSlide(1)"></label>
-        <label id="r3B" class="bar" onclick="trocarSlide(2)"></label>
-        <label id="r4B" class="bar" onclick="trocarSlide(3)"></label>
-        <label id="r5B" class="bar" onclick="trocarSlide(4)"></label>
+        <label id="r1B" class="bar selector" onclick="trocarSlide(0)"></label>
+        <label id="r2B" class="bar selector" onclick="trocarSlide(1)"></label>
+        <label id="r3B" class="bar selector" onclick="trocarSlide(2)"></label>
+        <label id="r4B" class="bar selector" onclick="trocarSlide(3)"></label>
+        <label id="r5B" class="bar selector" onclick="trocarSlide(4)"></label>
+        <label id="r6B" class="bar selector" onclick="trocarSlide(5)"></label>
     </div>
-
+    <br /><br /><br /><br /><br />
     <canvas id="canvas"></canvas>
 
-    <img src="~/Imagens/formigaSobre.png" id="imagem">
 
     <script src="~/Scripts/bootstrap-min.js"></script>
 </body>

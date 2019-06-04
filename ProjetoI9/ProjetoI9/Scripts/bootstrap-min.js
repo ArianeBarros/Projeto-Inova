@@ -10,7 +10,7 @@ var indexAtual = -1;
 trocarSlide(indexAtual)
 function trocarSlide(index)
 {
-    var labels = $("label");
+    var labels = $(".selector");
     if (index >= labels.length || index < 0) index = 0;
     {
         $("input[name=r]").prop('checked', false); //pintar o btn la
@@ -18,7 +18,20 @@ function trocarSlide(index)
         $(labels[index]).addClass('selectedBar')
         $(labels[index]).removeClass('bar')
         indexAtual = index;
-        $("#s1").prop('style', `margin-left: -${index * 20}%;`); //margin left
+        if (index == 1 || index == 0)
+            $("#s1").prop('style', `margin-left: -${index * 25}%;`); //margin left
+        else
+            if (index ==2)
+                $("#s1").prop('style', `margin-left: -${index * 22.5}%;`); //margin left
+            else
+                if (index == 3)
+                    $("#s1").prop('style', `margin-left: -${index * 21.6666}%;`); //margin left
+                else
+                    if (index == 4)
+                        $("#s1").prop('style', `margin-left: -${index * 21.2666}%;`); //margin left
+                    else
+                        if (index == 5)
+                            $("#s1").prop('style', `margin-left: -${index * 21}%;`); //margin left
         // na teoria, quanto de margin-left teria o segundo slide com esse método? -1 * 100% === -100%
         //20% --> 40% --> 60% --> 80%
     }
