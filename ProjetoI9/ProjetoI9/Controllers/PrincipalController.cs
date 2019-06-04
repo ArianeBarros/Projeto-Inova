@@ -158,6 +158,13 @@ namespace ProjetoI9.Controllers
             return RedirectToAction("Index", "Login");
         }
 
+        public ActionResult ExcluirEvento(Evento eve)
+        {
+            EventoDAO daoE = new EventoDAO();
+            daoE.Excluir(eve);
+            return RedirectToAction("Index", "Principal");
+        }
+
         public ActionResult Salvar(Sonho sonho)
         {
             string aux = sonho.descricao;

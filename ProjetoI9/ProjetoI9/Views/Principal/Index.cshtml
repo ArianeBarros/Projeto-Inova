@@ -14,6 +14,7 @@
         window.onload = function () {
             document.getElementById("adicionarEvento").style.display = "none";
             document.getElementById("adicionarSonho").style.display = "none";
+            document.getElementById('divExcluirEvento').style.display = "none";
 
             CarregarNoticias();
             CarregarDadosBD();
@@ -46,7 +47,7 @@
                         var t = tudo.split("</title><link>");
                         var l = t[1].split("</link>");
 
-                        noti += " <section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><div class='cImagem'></div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section>";
+                        noti += "<section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><div class='cImagem'></div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section>";
                         document.getElementById("sectionPrincipal").innerHTML = noti;
                     }
                     })
@@ -70,7 +71,7 @@
             var re = "";
             while (cont < @ViewBag.QuantosEventos)
             {
-                re = re + "<div class='eventoSemana'><label class='data'> </label><div class='descricao'></div><div class='localizacao'></div></div>";
+                re = re + "<div class='eventoSemana'><label class='data'></label><div class='descricao'></div><div class='localizacao'></div></div>";
                 document.getElementById("sectionLeft").innerHTML = a + re;
 
                 cont++;
@@ -101,6 +102,7 @@
 
             for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
             {
+                document.getElementsByClassName("eventoSemana")[cont].innerHTML += " <i class='fa fa-times fa-w-14 fa-2x' id='iconeExcluirEvento' onclick='ExcluirEvento()'></i>";
                 document.getElementsByClassName("data")[cont].textContent = JSON.stringify(lista[cont].dia).split('"')[1] + "," + JSON.stringify(lista[cont].diaSemana).split('"')[1];
                 document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao).split('"')[1];
                 document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].descricao).split('"')[1];
@@ -184,6 +186,11 @@
             document.getElementById("invisivelSalvar").submit();
         }
 
+        function ExcluirEvento()
+        {
+            document.getElementById('divExcluirEvento').style.display = "block";
+        }
+
     </script>
 </head>
 <body>
@@ -227,6 +234,18 @@
             <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao"><br><br>
             <button id="btnAdicionarEvento">Ok</button>
         </div>
+    </form>
+
+
+    <form method="post" action="/Principal/ExcluirEvento">
+        <div id="divExcluirEvento">
+            <i class="fa fa-times fa-w-14 fa-2x" id="iconeExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = none"></i>
+
+            <br>
+            <label>Tem certeza que deseja excluir esse evento?</label><br><br>
+            <input  type="text" name="evento.id" style="display: none"><br><br>
+            <button id="btnExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = 'none';">Ok</button>
+            </div>
     </form>
 
     <form method="post" action="/Principal/AdicionarSonho">
