@@ -27,12 +27,18 @@ Layout = null;
         }
         function Organiza() {
             var fundo = document.getElementById("ondas");
-           
-            if (window.innerWidth >= 1300) 
+            var slide = document.getElementsByClassName("slide").getElementByTagName("img");
+
+            if (window.innerWidth >= 1300)
                 fundo.style.width = "100%";
+            else
+                if (window.innerWidth >= 1000)
+                    slide.style.height = "80%";
                 else
-                    if (window.innerWidth >= 800) 
+                    if (window.innerWidth >= 800) {
                         fundo.style.width = "120%";
+                        slide.style.height = "30%";
+                    }
                         
             }
 
@@ -235,22 +241,22 @@ Layout = null;
     <div class="slidershow middle" id="slidersh">
         <div class="slides">
             <div class="slide s1" id="s1">
-                <img src="~/Imagens/img-sobre.png" alt="" id="img1">
+                <img src="~/Imagens/img-sobre.png" alt="" name ="imgN"id="img1">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img-02.png" alt="" id="img2">
+                <img src="~/Imagens/img-02.png" alt=""name ="imgN"id="img2">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img-03.png" alt="" id="img3">
+                <img src="~/Imagens/img-03.png" alt="" name ="imgN" id="img3">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img-04.png" alt="" id="img4">
+                <img src="~/Imagens/img-04.png" alt="" name ="imgN" id="img4">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img-05.png" alt="" id="img5">
+                <img src="~/Imagens/img-05.png" alt="" name ="imgN" id="img5">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img-06.png" alt="" id="img6">
+                <img src="~/Imagens/img-06.png" alt="" name ="imgN"id="img6">
             </div>
         </div>
     </div>

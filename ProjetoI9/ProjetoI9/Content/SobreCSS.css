@@ -1,4 +1,6 @@
-﻿html {
+﻿* {
+}
+html {
     height: 100%;
 }
 
@@ -34,6 +36,72 @@ header {
     top: 5%;
 }
 
+.menu div {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    line-height: 15px;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+    color: white;
+    position: absolute;
+    top: 2%;
+    left: 85%;
+    cursor: pointer;
+}
+
+.ab:active {
+    background: lightseagreen;
+}
+
+.hide-menu-btn i {
+    color: lightseagreen;
+}
+
+
+#chk {
+    position: absolute;
+    top: 2%;
+    left: 85%;
+    visibility: hidden;
+    z-index: -1111;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.hide-menu-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 10;
+}
+
+#chk:checked ~ .menu {
+    right: 0em;
+}
+
+.menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: 1000px;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: unset;
+    z-index: 10;
+    height: 350%;
+}
+
+.ab {
+    cursor: pointer;
+}
+
 
 @media screen and (min-width: 400px) {
     nav {
@@ -54,6 +122,28 @@ header {
     .logo {
         width: 30%;
     }
+    .show-menu-btn, .hide-menu-btn {
+        display: none;
+    }
+    .menu {
+        background: none;
+        line-height: 100px;
+        position: absolute;
+        top: -70px;
+        left: 16%;
+        height: 5em;
+        transition: unset;
+        z-index: 100;
+    }
+        .menu div {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+            display: inline;
+            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+        }
 }
 
 @media screen and (min-width: 800px) {
@@ -72,11 +162,41 @@ header {
     .logo {
         width: 28%;
     }
+    .menu div {
+        font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 22px;
+        padding: 0.6em;
+    }
 
 }
 @media screen and (min-width: 800px) {
     .logo {
         width: 28%;
+    }
+    .slide img {
+        height: 30%;
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .logo {
+        width: 28%;
+    }
+
+    .menu {
+        left: 22%;
+    }
+
+        .menu div {
+            font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+        }
+    .slide img {
+        height: 80%;
+        width: 100%;
+        background-size: cover;
     }
 }
 @media screen and (min-width: 1300px) {
@@ -226,7 +346,7 @@ header {
 
     .navigation {
         position: absolute;
-        bottom: -45%;
+        bottom: -20%;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -282,7 +402,7 @@ header {
 
 
         .slide img {
-            height: 70%;
+            height: 80%;
             width: 100%;
             background-size: cover;
         }
