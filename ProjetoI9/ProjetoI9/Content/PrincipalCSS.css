@@ -479,6 +479,7 @@ header {
 
 #iconeExcluirEvento {
     position: relative;
+    top: -5em;
     left: 90%;
     width: 10%;
     height: 3%;

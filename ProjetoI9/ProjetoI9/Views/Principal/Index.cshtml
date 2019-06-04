@@ -102,7 +102,7 @@
 
             for (var cont = 0; cont < @ViewBag.QuantosEventos; cont++)
             {
-                document.getElementsByClassName("eventoSemana")[cont].innerHTML += " <i class='fa fa-times fa-w-14 fa-2x' id='iconeExcluirEvento' onclick='ExcluirEvento()'></i>";
+                document.getElementsByClassName("eventoSemana")[cont].innerHTML += " <i class='fa fa-times fa-w-14 fa-2x' id='iconeExcluirEvento' onclick='ExcluirEvento("+ lista[cont].id +")'></i>";
                 document.getElementsByClassName("data")[cont].textContent = JSON.stringify(lista[cont].dia).split('"')[1] + "," + JSON.stringify(lista[cont].diaSemana).split('"')[1];
                 document.getElementsByClassName("localizacao")[cont].innerHTML = JSON.stringify(lista[cont].localizacao).split('"')[1];
                 document.getElementsByClassName("descricao")[cont].innerHTML = JSON.stringify(lista[cont].descricao).split('"')[1];
@@ -186,9 +186,10 @@
             document.getElementById("invisivelSalvar").submit();
         }
 
-        function ExcluirEvento()
+        function ExcluirEvento(qualId)
         {
-            document.getElementById('divExcluirEvento').style.display = "block";
+            document.getElementById("idExcluirEvento").value = qualId;
+            document.getElementById("divExcluirEvento").style.display = "block";
         }
 
     </script>
@@ -239,12 +240,12 @@
 
     <form method="post" action="/Principal/ExcluirEvento">
         <div id="divExcluirEvento">
-            <i class="fa fa-times fa-w-14 fa-2x" id="iconeExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = none"></i>
+            <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="document.getElementById('divExcluirEvento').style.display = 'none'"></i>
 
             <br>
             <label>Tem certeza que deseja excluir esse evento?</label><br><br>
-            <input  type="text" name="evento.id" style="display: none"><br><br>
-            <button id="btnExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = 'none';">Ok</button>
+            <input  type="text" id="idExcluirEvento" name="eve.id" style="display: none">
+            <button id="btnExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = 'none'">Ok</button>
             </div>
     </form>
 
