@@ -25,20 +25,70 @@ Layout = null;
             CarregarDadosBD();
             Organiza();
         }
+        window.onresize = function () {
+            Organiza();
+        }
         function Organiza() {
             var fundo = document.getElementById("ondas");
-            var slide = document.getElementsByClassName("slide").getElementByTagName("img");
+            var img1 = document.getElementById("img1");
+            var img2 = document.getElementById("img2");
+            var img3 = document.getElementById("img3");
+            var img4 = document.getElementById("img4");
+            var img5 = document.getElementById("img5");
+            var img6 = document.getElementById("img6");
+            var nav = document.getElementById("nav");
 
-            if (window.innerWidth >= 1300)
+            if (window.innerWidth >= 1300) {
                 fundo.style.width = "100%";
+                img1.style.height = "80%";
+                img2.style.height = "80%";
+                img3.style.height = "80%";
+                img4.style.height = "80%";
+                img5.style.height = "80%";
+                img6.style.height = "80%";
+                nav.style.top = "initial";
+            }
             else
-                if (window.innerWidth >= 1000)
-                    slide.style.height = "80%";
+                if (window.innerWidth >= 1000) {
+                    img1.style.height = "80%";
+                    img2.style.height = "80%";
+                    img3.style.height = "80%";
+                    img4.style.height = "80%";
+                    img5.style.height = "80%";
+                    img6.style.height = "80%";
+                    nav.style.top = "initial";
+                }
                 else
                     if (window.innerWidth >= 800) {
                         fundo.style.width = "120%";
-                        slide.style.height = "30%";
+                        img1.style.height = "55%";
+                        img2.style.height = "55%";
+                        img3.style.height = "55%";
+                        img4.style.height = "55%";
+                        img5.style.height = "55%";
+                        img6.style.height = "55%";
+                        nav.style.top = "100%";
                     }
+                    else
+                        if (window.innerWidth >= 600) {
+                            img1.style.height = "39%";
+                            img2.style.height = "39%";
+                            img3.style.height = "39%";
+                            img4.style.height = "39%";
+                            img5.style.height = "39%";
+                            img6.style.height = "39%";
+                            nav.style.top = "80%";
+                        }
+                        else {
+                            img1.style.height = "35%";
+                            img2.style.height = "35%";
+                            img3.style.height = "35%";
+                            img4.style.height = "35%";
+                            img5.style.height = "35%";
+                            img6.style.height = "35%";
+                            nav.style.top = "78%";
+                        }
+
                         
             }
 
@@ -260,7 +310,7 @@ Layout = null;
             </div>
         </div>
     </div>
-    <div class="navigation">
+    <div class="navigation" id="nav">
         <label id="r1B" class="bar selector" onclick="trocarSlide(0)"></label>
         <label id="r2B" class="bar selector" onclick="trocarSlide(1)"></label>
         <label id="r3B" class="bar selector" onclick="trocarSlide(2)"></label>
