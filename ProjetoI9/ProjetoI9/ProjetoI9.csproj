@@ -280,7 +280,6 @@
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Controllers\TermosController.cs" />
-    <Compile Include="Controllers\TrocarSenhaController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
