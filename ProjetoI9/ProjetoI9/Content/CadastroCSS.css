@@ -216,7 +216,6 @@ header {
     right: -40%;
     width: 55%;
     visibility: visible;
-    /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -344,9 +343,6 @@ footer {
     position: relative;
     left: 170%;
 }
-
-
-
 
 #menuV {
     position: relative;
@@ -521,12 +517,6 @@ footer {
         width: 100%;
     }
 }
-
-
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
-
-
 
 #myFooter {
     flex: 0 0 auto;

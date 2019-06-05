@@ -24,20 +24,6 @@ namespace ProjetoI9.Controllers
             else
                 return RedirectToAction("Index", "Login");
         }
-        //public ActionResult SalvarDados(UsuarioI9 u)
-        //{
-        //    if (u.imagem == null)//mandar mensagemmmm
-        //        return RedirectToAction("Index", "Perfil");
-
-        //    UsuarioI9DAO dao = new UsuarioI9DAO();
-        //    UsuarioI9 usu = (UsuarioI9)Session["usuarioLogado"];
-
-        //    usu.imagem = u.imagem;
-
-        //    dao.Atualiza(usu);
-
-        //    return RedirectToAction("Index", "Perfil");
-        //}
 
         public ActionResult TrocarSenha(UsuarioI9 u)
         {
@@ -60,7 +46,7 @@ namespace ProjetoI9.Controllers
         [HttpPost]
         public ActionResult SalvarDados(UsuarioI9 u, HttpPostedFileBase upload)
         {
-            if (u.imagem == null)//mandar mensagemmmm
+            if (u.imagem == null)
                 return RedirectToAction("Index", "Perfil");
 
             UsuarioI9DAO dao = new UsuarioI9DAO();

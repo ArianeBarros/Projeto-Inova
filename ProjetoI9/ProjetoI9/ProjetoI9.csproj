@@ -278,7 +278,6 @@
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PoliticaController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
-    <Compile Include="Controllers\SairDaPaginaController.cs" />
     <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="Controllers\TrocarSenhaController.cs" />
@@ -314,8 +313,6 @@
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />
     <Content Include="Views\SairDaPagina\Index.cshtml" />
-    <Content Include="Views\TrocarSenha\Index.cshtml" />
-    <Content Include="Views\Login\HomeLogado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
