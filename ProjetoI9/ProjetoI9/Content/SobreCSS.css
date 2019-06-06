@@ -102,6 +102,10 @@ header {
     cursor: pointer;
 }
 
+#nav{
+    height:2em;
+}
+
 
 @media screen and (min-width: 400px) {
     nav {

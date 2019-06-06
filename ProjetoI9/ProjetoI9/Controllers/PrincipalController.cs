@@ -19,12 +19,6 @@ namespace ProjetoI9.Controllers
             ViewBag.UsuarioLogado = usuario;
             if (usuario != null)
             {
-                //NoticiaDAO dao = new NoticiaDAO();
-                //IList<Noticia> not = dao.Lista();
-                //ViewBag.QuantasNot = not.Count();
-
-                //ViewData["noticias"] = not;
-
                 SonhoDAO daoS = new SonhoDAO();
                 IList<Sonho> s = daoS.Lista();
                 List<Sonho> l = new List<Sonho>();
@@ -51,8 +45,6 @@ namespace ProjetoI9.Controllers
                     if (mes[0] == '0')
                         mes = mes[1].ToString();
 
-                    //if (DateTime.Today.Year.ToString().CompareTo(ano) > 0 || ('"' + DateTime.Today.Month.ToString() + '"').CompareTo(mes) > 0)
-                    //    eveDAO.Excluir(a);
                     if (EhPassado(data[0], mes, ano, a.dia))
                         eveDAO.Excluir(a);
                     else

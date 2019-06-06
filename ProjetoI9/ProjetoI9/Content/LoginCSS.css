@@ -201,58 +201,14 @@ header {
         }
     }
 
-    /*#sobreV, #cadastroV, #contatoV, #homeV, #principalV, #configV {
-    color: black;
-    position: relative;
-    left: 170%;
-}
-
-#opcoesFotos {
-    border-radius: 50%;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 8%;
-    left: 80%;
-}
-
-#btnPerfil {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-}
-
-#menuV {
-    position: relative;
-    right: 50%;
-    width: 55%;
-    visibility: visible;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#divMenuV {
-    background-color: wheat;
-    width: 380%;
-    border-radius: 3%;
-    position: relative;
-    top: -2em;
-    left: 100%;
-}*/
-
     #navHeader {
         position: relative;
         top: -22em;
         right: -40%;
         width: 55%;
         visibility: visible;
-        /* font-size: 80%(width: ;; */
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-
-    /*#sobre, #cadastro, #contato, #home, #principal, .cNTemCadastro, #perfil {
-    color: white;
-}*/
 
     #logo2 {
         width: 250%;
@@ -309,7 +265,7 @@ header {
 
 
 
-    .fot1 {
+    /*.fot1 {
         font-size: 30px;
         color: white;
         position: relative;
@@ -325,7 +281,7 @@ header {
         top: 42%;
         margin-top: 1em;
         left: 10px;
-    }
+    }*/
 
 
     #myFooter {

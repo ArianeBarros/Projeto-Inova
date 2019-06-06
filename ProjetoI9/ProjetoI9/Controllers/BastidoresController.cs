@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ProjetoI9.DAO;
 using ProjetoI9.Models;
 
 namespace ProjetoI9.Controllers
 {
-    public class SobreController : Controller
+    public class BastidoresController : Controller
     {
-        // GET: Sobre
+        // GET: Bastidores
         public ActionResult Index()
         {
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
@@ -34,6 +33,6 @@ namespace ProjetoI9.Controllers
         {
             Session["usuarioLogado"] = null;
             return RedirectToAction("Index", "Login");
-        }        
+        }
     }
 }

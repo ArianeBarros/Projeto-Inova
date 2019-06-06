@@ -19,11 +19,5 @@ namespace ProjetoI9.Models
         public DateTime dataNascimento{ get; set; }
         public string imagem { get; set; }
         public int pontuacao { get; set; }
-
-
-        public UsuarioI9()
-        {
-            
-        }
     }
 }

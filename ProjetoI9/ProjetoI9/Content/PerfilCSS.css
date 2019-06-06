@@ -64,7 +64,6 @@ header {
     right: -40%;
     width: 55%;
     visibility: visible;
-    /* font-size: 80%(width: ;; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -105,7 +104,6 @@ header {
 
 #btnPerfil {
     position: absolute;
-    /*top: 20%;*/
     border-radius: 50%;
     width: 100%;
     height: 100%;
@@ -115,7 +113,6 @@ header {
 
 #menuV {
     position: relative;
-    /*right: 50%;*/
     width: 100%;
     visibility: visible;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -163,14 +160,6 @@ header {
     width: 100%;
     border-radius: 50%;
 }
-
-/*#novaFoto {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    /* border-color: black;
-    border-width: 1em; 
-}*/
 
 #btnSalvar {
     top: 90%;
@@ -226,24 +215,6 @@ header {
     width: 15%;
     height: 25%;
     border-radius: 100%;
-}
-
-.fot1 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: 32%;
-    margin-top: 1em;
-    left: -30%;
-}
-
-.fot2 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: -22%;
-    margin-top: 1em;
-    left: 10px;
 }
 
 #divTrocarSenha {
