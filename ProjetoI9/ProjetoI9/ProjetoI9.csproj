@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate2.css" />
+    <Content Include="Content\animate3.css" />
     <Content Include="Content\BastidoresCSS.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -224,7 +225,7 @@
     <Content Include="Imagens\img-06.png" />
     <Content Include="Imagens\img-sobre.png" />
     <Content Include="Imagens\img1-sobre.png" />
-    <Content Include="Imagens\imgPerfil.png" />
+    <Content Include="Imagens\imgPerfil.jpg" />
     <Content Include="Imagens\LOGO\apple-icon-114x114.png" />
     <Content Include="Imagens\LOGO\apple-icon-120x120.png" />
     <Content Include="Imagens\LOGO\apple-icon-144x144.png" />
