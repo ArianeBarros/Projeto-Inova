@@ -1,7 +1,6 @@
 ﻿<html>
 <head>
     <title>Principal</title>
-    <link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">
 
     <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
@@ -24,7 +23,7 @@
             var noti = "";
             var re = "";
             while (cont < 11) {
-                noti = noti + "<section class='cNoticia'><img id='carregandoImagem' src='/Imagens/carregandoImagem.png'></section>";
+                noti = noti + "<section class='cNoticia'><img id='carregandoImagem' src='/Imagens/carregandoImagem.png'></section><br><br>";
                 document.getElementById("sectionPrincipal").innerHTML = noti;
 
                 cont++;
@@ -45,7 +44,7 @@
                         var t = tudo.split("</title><link>");
                         var l = t[1].split("</link>");
 
-                        noti += "<section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><div class='cImagem'></div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section>";
+                        noti += "<section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section><br><br>";
                         document.getElementById("sectionPrincipal").innerHTML = noti;
                     }
                     })
@@ -122,15 +121,43 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
+                    "<img id='ImgCoracao' src='/Imagens/pontuacao.png' onclick='ExplicarEstrela()'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
+                document.getElementById("divExplicaEstrela").style.display = 'none';
                 document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
+        }
+
+        var explicacao = "a";
+
+        function ExplicarEstrela()
+        {
+            if (explicacao == "a") {
+                explicacao = "c";
+                document.getElementsByTagName("header")[0].innerHTML += "<div id='divExplicaEstrela'><label id='explicacao'><b>A estrela representa uma pontuação, que aumenta 1 a cada sonho que você conseguir realizar! Assim esperamos te incentivar a realizar mais sonhos a cada dia, afinal, temos só uma vida e precisamos aproveitá-la, não é mesmo?</b></label><button id='btnExplicacaoEstrela' onclick='ExplicarBotao()'>Entendi</button></div>";
+            }
+            else {
+                if (explicacao == "b") {
+                    explicacao = "c";
+                    document.getElementById("divExplicaEstrela").style.display = 'block';
+                }
+                else {
+                    explicacao = "b";
+                    document.getElementById("divExplicaEstrela").style.display = 'none';
+                }
+
+            }
+
+        }
+
+        function ExplicarBotao() {
+            explicacao = "c";
+            ExplicarEstrela();
         }
 
         function Parabens() {
@@ -145,12 +172,12 @@
                         document.getElementById("parabens").style.display = "block";
                     }
                     document.getElementsByClassName("inputSonhos")[i].disabled = true;
-                    document.getElementById("lblPontuacao").value = document.getElementsByClassName("chkSonhos")[i].innerHTML; 
+                    document.getElementById("lblPontuacao").value = document.getElementsByClassName("chkSonhos")[i].innerHTML;
                 }
 
                 i++;
-            }       
-           
+            }
+
         }
 
         function MostrarAgenda() {
@@ -173,7 +200,7 @@
             else
                 document.getElementById("adicionarSonho").style.display = "block";
         }
-        
+
         function Erro()
         {
             document.getElementById("invisivel").submit();
@@ -227,10 +254,10 @@
             <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarEvento()"></i>
 
             <br>
-            <label>Adicionar Evento</label><br><br>
-            <label class="lbl"> Data: </label><input id="diaEvento" type="text" name="not.dia"><br><br>
-            <label class="lbl"> Descrição: </label><input id="descricaoEvento" type="text" name="not.descricao"><br><br>
-            <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao"><br><br>
+            <label class="lblAdicionarEvento">Adicionar Evento</label><br><br>
+            <label class="lbl"> Data: </label><input id="diaEvento" type="text" name="not.dia" required><br><br>
+            <label class="lbl"> Descrição: </label><input id="descricaoEvento" type="text" name="not.descricao" required><br><br>
+            <label class="lbl"> Localização: </label><input id="localizacaoEvento" type="text" name="not.localizacao" required><br><br>
             <button id="btnAdicionarEvento">Ok</button>
         </div>
     </form>
@@ -251,8 +278,8 @@
         <div id="adicionarSonho">
             <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="AdicionarSonho()"></i>
             <br>
-            <label>Adicionar Sonho</label><br><br>
-            <label class="lbl"> Descrição: </label><input id="descricaoSonho" type="text" name="sonho.descricao"><br><br>
+            <label class="lblAdicionarEvento">Adicionar Sonho</label><br><br>
+            <label class="lbl"> Descrição: </label><input id="descricaoSonho" type="text" name="sonho.descricao" required><br><br>
             <button id="btnAdicionarEvento">Ok</button>
         </div>
     </form>

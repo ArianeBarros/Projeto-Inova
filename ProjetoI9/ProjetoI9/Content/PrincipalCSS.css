@@ -173,6 +173,32 @@ header {
     scrollbar-base-color: bisque;
 }
 
+#divExplicaEstrela {
+    background-color: black;
+    height: 23%;
+    width: 30%;
+    left: 29%;
+    top: 30%;
+    position: absolute;
+    z-index: 2;
+}
+
+#explicacao{
+    color: green;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 5%;
+}
+
+#btnExplicacaoEstrela 
+{
+    border-radius: 70%;
+    position: absolute;
+    left: 40%;
+    top: 80%;
+}
+
 .cNoticia {
     background-color: #00FFFF;
     box-shadow: 10px 10px 5px grey;
@@ -181,7 +207,12 @@ header {
     border-radius: 8%;
     left: 4%;
     position: relative;
-    margin-top: 2em;
+}
+
+.lblAdicionarEvento 
+{
+    position: absolute;
+    left: 30%;
 }
 
 .cTitulo {
@@ -198,7 +229,7 @@ header {
     position: absolute;
     top: 100px;
     height: 45%;
-    width: 80%;
+    width: 100%;
     border-radius: 3%;
 }
 
@@ -284,44 +315,12 @@ header {
     width: 100%;
 }
 
-#btnAgenda {
-    position: absolute;
-    left: 1%;
-    top: 64%;
-    height: 5%;
-    width: 10%;
-    background-color: white;
-    border-color: rgb(87, 36, 36);
-    border-radius: 60%;
-}
-
-#secAgenda {
-    background-color: white;
-    width: 40%;
-    height: 80%;
-    left: 30%;
-    top: 10%;
-    position: absolute;
-    display: none;
-    font-size: 28px;
-}
-
-.dias { 
-    color: greenyellow;
-    background-color: black;
-    font-size: 38px;
-}
-
-#calendario {
-    width: 100%;
-    height: 100%;
-}
-
 #adicionarEvento {
-    background-color: antiquewhite;
-    color: black;
+    background-color: black;
+    color: white;
+    font-size: 20px;
     height: 32%;
-    width: 28%;
+    width: 38%;
     position: relative;
     margin-top: 1em;
     border-radius: 10%;
@@ -347,9 +346,21 @@ header {
     text-align: left;
 }
 
-#descricaoEvento, #diaEvento, #localizacaoEvento {
-    position: relative;
-    margin-left: 14%;
+#descricaoEvento {
+    position: absolute;
+    left: 26%;
+    margin-top: 1em;
+}
+
+#diaEvento {
+    position: absolute;
+    left: 26%;
+    margin-top: 1em;
+}
+
+#localizacaoEvento {
+    position: absolute;
+    left: 26%;
     margin-top: 1em;
 }
 
@@ -402,7 +413,7 @@ header {
     left: 80%;
     top: 73%;
     width: 10%;
-    height: 20%;
+    height: 18%;
     border-radius: 50%;
 }
 
@@ -416,10 +427,11 @@ btnExcluirEvento {
 }
 
 #adicionarSonho {
-    background-color: antiquewhite;
-    color: black;
-    height: 32%;
-    width: 28%;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    height: 36%;
+    width: 38%;
     position: relative;
     margin-top: 1em;
     border-radius: 10%;
