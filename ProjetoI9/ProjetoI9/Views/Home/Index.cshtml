@@ -29,11 +29,23 @@
         <label for="chk" class="show-menu-btn">
             <i class="fa fa-bars fa-w-14 fa-2x"></i>
         </label>
+
         <ul class="menu">
-            <div class="ab" onclick="abrir('Login')">LOGIN</div>
-            <div class="ab" onclick="abrir('Cadastro')">CADASTRE-SE</div>
-            <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
-            <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+            @if (ViewBag.UsuarioLogado.imagem == "n")
+            {
+                <div class="ab" onclick="abrir('Login')">LOGIN</div>
+                <div class="ab" onclick="abrir('Cadastro')">CADASTRE-SE</div>
+                <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
+                <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+            }
+            else
+            {
+                    <div class="ab" onclick="abrir('Principal')">PRINCIPAL</div>
+                    <div class="ab" onclick="abrir('Perfil')">PERFIL</div>
+                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                    <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
+            }
+
             <label for="chk" class="hide-menu-btn">
                 <a class="menu-barra">
                     <i class="fa fa-times fa-w-14 fa-2x"></i>
@@ -42,43 +54,6 @@
         </ul>
     </div>
 
-    <!--<ul id="slide-out" class="sidenav" >
-        <div class="wrap-menu">
-            <div class="container" onclick="myFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <div class="balon"></div>
-            <div class="hrUm"></div>
-            <li><a id="cadmin" href="Cadastro.html" >CADASTRE-SE</a></li><div class="hrDois"></div>
-            <li><a id="loginmin" href="Login.html" >LOGIN</a>  </li><div class="hrDois"></div>
-            <li><a id="sobremin" href="Sobre.html" >SOBRE</a></li><div class="hrDois"></div>
-            <li><a id="contmin" href="Contato.html" >CONTATO</a></li>
-
-
-        </div>
-    </ul>-->
-    <!--
-          <ul id="slide-out" class="sidenav">
-                                <li><div class="user-view">
-                                    <div class="background">
-                                        <img src="images/office.jpg">
-                </div>
-                                        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                                            <a href="#name"><span class="white-text name">John Doe</span></a>
-                                            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-              </div></li>
-                                    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                                    <li><a href="#!">Second Link</a></li>
-                                    <li><div class="divider"></div></li>
-                                    <li><a class="subheader">Subheader</a></li>
-                                    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            </ul>
-                                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">,</i></a>
-
-
-                                    -->
     <section class="home-hero">
         <div>
             <img class="frase" src="~/Imagens/frase1.png" id="frase">

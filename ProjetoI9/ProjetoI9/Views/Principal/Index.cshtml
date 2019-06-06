@@ -32,24 +32,33 @@
             var qualConteudo = 0;
             while (qualConteudo < conteudos.length)
             {
-                var noti = "";
-                $.post("Principal/PegarNoticia", {
-                    url: "https://news.google.com/rss/search?q=" + conteudos[qualConteudo] + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
-                }, function (resposta) {
-                    var r = resposta;
-                    r = r.split("<item><title>");
+                var xmlhttp = new XMLHttpRequest();
+                if (xmlhttp.readyState == 404)
+                {
+                    document.getElementById("sectionPrincipal").innerHTML = "<section class='cNoticia'><img id='carregandoImagem' src='/Imagens/carregandoImagem.png'></section><br><br>";
+                }
+                else
+                {
+                    var noti = "";
+                    $.post("Principal/PegarNoticia", {
+                        url: "https://news.google.com/rss/search?q=" + conteudos[qualConteudo] + "&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+                    }, function (resposta) {
+                        var r = resposta;
+                        r = r.split("<item><title>");
 
-                    for (var i = 1; i < (r.length) / 6; i++) {
-                        var tudo = r[i];
-                        var t = tudo.split("</title><link>");
-                        var l = t[1].split("</link>");
+                        for (var i = 1; i < (r.length) / 6; i++) {
+                            var tudo = r[i];
+                            var t = tudo.split("</title><link>");
+                            var l = t[1].split("</link>");
 
-                        noti += "<section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section><br><br>";
-                        document.getElementById("sectionPrincipal").innerHTML = noti;
-                    }
+                            noti += "<section class='cNoticia'><div class='cTitulo'>" + t[0] + "</div><br><a href=" + l[0] + " class='cLink'>" + l[0] + "</a></section><br><br>";
+                            document.getElementById("sectionPrincipal").innerHTML = noti;
+                        }
                     })
 
-                qualConteudo++;
+                    qualConteudo++;
+                }
+              
             }
         }
 
