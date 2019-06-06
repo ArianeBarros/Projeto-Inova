@@ -63,7 +63,7 @@
 
             //EVENTOS
             var cont = 0;
-            var a = "<label class='semana'>Semana</label><button class='btnMais' onclick='AdicionarEvento()'>+</button>";
+            var a = "<label class='semana'>Semana</label><i id='btnMais' class='fa fa-plus fa-w-14 fa-2x' onclick='AdicionarEvento()'></i>";
             document.getElementById("sectionLeft").innerHTML = a;
             var re = "";
             while (cont < @ViewBag.QuantosEventos)
@@ -78,7 +78,7 @@
 
             //SONHOS
             cont = 0;
-            var a = "<label class='semana'>Sonhos</label><button class='btnMais' onclick='AdicionarSonho()'>+</button>";
+            var a = "<label class='semana'>Sonhos</label><i id='btnMais' class='fa fa-plus fa-w-14 fa-2x' onclick='AdicionarSonho()'></i>";
             document.getElementById("sectionRight").innerHTML = a;
             var s = "";
             while (cont < @ViewBag.QuantosSonhos)

@@ -11,6 +11,7 @@ namespace ProjetoI9.DAO
     {
         public void Adiciona(Evento eve)
         {
+            
             using (var context = new ProjetoContext())
             {
                 context.Evento.Add(eve);

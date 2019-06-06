@@ -66,8 +66,6 @@ namespace ProjetoI9.Controllers
             UsuarioI9 usuario = (UsuarioI9)Session["usuarioLogado"];
             EventoDAO dao = new EventoDAO();
 
-            not.idUsuario = usuario.id;
-            not.id = (dao.Lista()).Count() + 1;
             DateTime d = d = Convert.ToDateTime(not.dia);
             not.diaSemana = d.DayOfWeek.ToString();
 
@@ -91,6 +89,15 @@ namespace ProjetoI9.Controllers
                     not.diaSemana = "Sábado";
                 else
                     not.diaSemana = "Domingo";
+            }
+
+            not.idUsuario = usuario.id;
+            not.id = (dao.Lista()).Count() + 1;
+
+            foreach(var a in dao.Lista())
+            {
+                if (not.id == a.id)
+                    not.id++;
             }
 
             dao.Adiciona(not);
@@ -137,6 +144,13 @@ namespace ProjetoI9.Controllers
             }
             sonho.id = ultimoId + 1;
             sonho.idUsuario = usuario.id;
+
+            foreach (var a in dao.Lista())
+            {
+                if (sonho.id == a.id)
+                    sonho.id++;
+            }
+
 
             dao.Adiciona(sonho);
 
