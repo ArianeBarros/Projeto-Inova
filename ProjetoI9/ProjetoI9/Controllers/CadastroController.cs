@@ -44,7 +44,7 @@ namespace ProjetoI9.Controllers
 
                 u.id = usuLista.Count() + 1;
                 u.pontuacao = 0;
-                u.imagem = "/Imagens/imgPerfil.jpg";
+                u.imagem = "/Imagens/imgPerfil.png";
 
                 dao.Adiciona(u);
                 Session["usuarioLogado"] = u;
