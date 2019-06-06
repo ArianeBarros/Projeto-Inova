@@ -3,7 +3,15 @@
 <html>
 <head>
     <title>Contato</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/animate3.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="~/Script/CadScript.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="~/Content/ContatoCSS.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <script type="text/javascript">
@@ -11,10 +19,82 @@
         window.onload = function () {
 
             CarregarDadosBD();
+            Organiza();
         }
 
         var qualImg = null;
+        window.onresize = function () {
+            Organiza();
+        }
 
+        function abrir(pag) {
+            var link = '/' + pag + "/Index";
+            window.location = link;
+        }
+
+        function Organiza() {
+            var fundo = document.getElementById("ondas");
+            var img1 = document.getElementById("img1");
+            var img2 = document.getElementById("img2");
+            var img3 = document.getElementById("img3");
+            var img4 = document.getElementById("img4");
+            var img5 = document.getElementById("img5");
+            var img6 = document.getElementById("img6");
+            var nav = document.getElementById("nav");
+
+            if (window.innerWidth >= 1300) {
+                fundo.style.width = "100%";
+                img1.style.height = "80%";
+                img2.style.height = "80%";
+                img3.style.height = "80%";
+                img4.style.height = "80%";
+                img5.style.height = "80%";
+                img6.style.height = "80%";
+                nav.style.top = "initial";
+            }
+            else
+                if (window.innerWidth >= 1000) {
+                    img1.style.height = "80%";
+                    img2.style.height = "80%";
+                    img3.style.height = "80%";
+                    img4.style.height = "80%";
+                    img5.style.height = "80%";
+                    img6.style.height = "80%";
+                    nav.style.top = "initial";
+                }
+                else
+                    if (window.innerWidth >= 800) {
+                        fundo.style.width = "120%";
+                        img1.style.height = "55%";
+                        img2.style.height = "55%";
+                        img3.style.height = "55%";
+                        img4.style.height = "55%";
+                        img5.style.height = "55%";
+                        img6.style.height = "55%";
+                        nav.style.top = "100%";
+                    }
+                    else
+                        if (window.innerWidth >= 600) {
+                            img1.style.height = "39%";
+                            img2.style.height = "39%";
+                            img3.style.height = "39%";
+                            img4.style.height = "39%";
+                            img5.style.height = "39%";
+                            img6.style.height = "39%";
+                            nav.style.top = "80%";
+                        }
+                        else {
+                            img1.style.height = "35%";
+                            img2.style.height = "35%";
+                            img3.style.height = "35%";
+                            img4.style.height = "35%";
+                            img5.style.height = "35%";
+                            img6.style.height = "35%";
+                            nav.style.top = "78%";
+                        }
+
+
+        }
         function CarregarDadosBD() {
             qualImg = JSON.stringify("@ViewBag.UsuarioLogado.imagem");
             var img = qualImg.split('"')[1];
@@ -50,14 +130,36 @@
 <body>
     <header>
 
-        <nav id="navHeader">
-            <ul>
-                <a id="home" href="~/Home/Index">HOME</a>
-                <a id="principal" href="~/Principal/Index">PRINCIPAL</a>
-                <a id="sobre" href="~/Sobre/Index">SOBRE</a>
-                <a id="perfil" href="~/Perfil/Index">PERFIL</a>
+        <div class="header" id="header">
+            <!-- <img class="barra" src="./Imagens/nav.png"> -->
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-menu-btn">
+                <i class="fa fa-bars fa-w-14 fa-2x"></i>
+            </label>
+            <ul class="menu">
+                @if (ViewBag.UsuarioLogado.imagem == "n")
+                {
+                    <div class="ab" onclick="abrir('Home')">HOME</div>
+                    <div class="ab" onclick="abrir('Cadastro')">CADASTRO</div>
+                    <div class="ab" onclick="abrir('Login')">LOGIN</div>
+                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                }
+                else
+                {
+                    <div class="ab" onclick="abrir('Home')">HOME</div>
+                    <div class="ab" onclick="abrir('Principal')">PRINCIPAL</div>
+                    <div class="ab" onclick="abrir('Perfil')">PERFIL</div>
+                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                }
+
+                <label for="chk" class="hide-menu-btn">
+                    <a class="menu-barra">
+                        <i class="fa fa-times fa-w-14 fa-2x"></i>
+                    </a>
+                </label>
             </ul>
-        </nav>
+
+        </div>
 
 
         <div id="opcoesFotos">
@@ -68,14 +170,48 @@
 
     <form id="invisivel" method="post" action="/Contato/Erro"></form>
 
-    <section id="contatoSection">
-        <img id="imgBalao" src="~/Imagens/balao.png">
-        <h1 id="h1Contato">Informações de contato: </h1>
-        <li class="info">inovaAgora@gmail.com</li>
-        <li class="info">i9@hotmail.com</li>
-        <li class="info">(19)3336-5487</li>
-        <li class="info">(19)5135-9804</li>
-        <li class="info">Endereço: R. Jorge de Figueiredo Corrêa, 735 - Chácara Primavera, Campinas - SP, 13087-261</li>
-    </section>
+    <div class="container" id="cont">
+        <form id="loginSection" method="post" action="ContEnvia" class="contact100-form validate-form" style:"background:#black;">
+            <div class="wrap-contact100">
+                <span class="contact100-form-title">
+                    CONTATO
+                </span>
+                <span class="contact100-form-title2">
+                    Entre em contato com nós
+                </span>
+                <div id="dados">
+                    <h1 class="email"><b> Email:</b> i9@hotmail.com</h1>
+                    <h1 class="tel"> <b>Tel:&nbsp;&nbsp;&nbsp;&nbsp;</b> (19) 3521-9903</h1>
+                    <h1 class="end"><b>Endereço:</b></h1>
+                    <h1 class="end">R. Jorge de Figueiredo Corrêa, 735 <br /> Chácara Primavera, Campinas - SP</h1>
+                </div>
+                <div class="contact100-pic js-tilt" data-tilt>
+                    <img src="~/Imagens/balao.png" alt="IMG">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
+                    <span class="focus-input100" id="nomeF"></span>
+                    <span class="symbol-input100" id="nomeS">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid comment is required">
+                    <textarea class="input100" placeholder="Comentário" id="com"  required onblur="Ver(value)" title="Digite uma mensagem" onclick="ClickVer()"></textarea>
+                    <span class="focus-input100" id="comF"></span>
+                    <span class="symbol-input100" id="comS">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+            </div>
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
+                    Enviar mensagem
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
