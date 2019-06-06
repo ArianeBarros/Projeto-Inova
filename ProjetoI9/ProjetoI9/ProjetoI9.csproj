@@ -167,6 +167,7 @@
   <ItemGroup>
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate2.css" />
+    <Content Include="Content\BastidoresCSS.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CadastroCSS.css" />
@@ -271,6 +272,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BastidoresController.cs" />
     <Compile Include="Controllers\CadastroController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -312,6 +314,7 @@
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />
     <Content Include="Views\SairDaPagina\Index.cshtml" />
+    <Content Include="Views\Bastidores\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
