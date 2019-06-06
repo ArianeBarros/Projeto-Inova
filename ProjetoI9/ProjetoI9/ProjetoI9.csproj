@@ -200,6 +200,7 @@
     <Content Include="Imagens\coisinhas.png" />
     <Content Include="Imagens\coisinhas2.png" />
     <Content Include="Imagens\comeceJa.png" />
+    <Content Include="Imagens\conj.png" />
     <Content Include="Imagens\formiga.png" />
     <Content Include="Imagens\formigaBalao.png" />
     <Content Include="Imagens\formigaFofa.png" />
@@ -225,13 +226,14 @@
     <Content Include="Imagens\img-06.png" />
     <Content Include="Imagens\img-sobre.png" />
     <Content Include="Imagens\img1-sobre.png" />
-    <Content Include="Imagens\imgPerfil.jpg" />
+    <Content Include="Imagens\imgPerfil.png" />
     <Content Include="Imagens\LOGO\apple-icon-114x114.png" />
     <Content Include="Imagens\LOGO\apple-icon-120x120.png" />
     <Content Include="Imagens\LOGO\apple-icon-144x144.png" />
     <Content Include="Imagens\LOGO\apple-icon-152x152.png" />
     <Content Include="Imagens\LOGO\apple-icon-180x180.png" />
     <Content Include="Imagens\LOGO\apple-icon-76x76.png" />
+    <Content Include="Imagens\cont.png" />
     <Content Include="Imagens\LOGO\favicon.ico" />
     <Content Include="Imagens\LOGO\logo.png" />
     <Content Include="Imagens\LOGO\logo1.png" />
@@ -284,6 +286,7 @@
     <Compile Include="Controllers\SobreController.cs" />
     <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
+    <Compile Include="DAO\MensagemDAO.cs" />
     <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\SonhoDAO.cs" />
@@ -293,6 +296,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\Mensagem.cs" />
     <Compile Include="Models\Noticia.cs" />
     <Compile Include="Models\Sonho.cs" />
     <Compile Include="Models\UsuarioI9.cs" />

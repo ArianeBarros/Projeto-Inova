@@ -13,6 +13,7 @@ namespace ProjetoI9.DAO
         public DbSet<Evento> Evento { get; set; }
         public DbSet<UsuarioI9> UsuarioI9 { get; set; }
         public DbSet<Noticia> Noticia { get; set; }
+        public DbSet<Mensagem> Mensagem { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118201;User ID=PR118201;Password=PR118201");

@@ -20,6 +20,7 @@
 
             CarregarDadosBD();
             Organiza();
+           
         }
 
         var qualImg = null;
@@ -34,64 +35,48 @@
 
         function Organiza() {
             var fundo = document.getElementById("ondas");
-            var img1 = document.getElementById("img1");
-            var img2 = document.getElementById("img2");
-            var img3 = document.getElementById("img3");
-            var img4 = document.getElementById("img4");
-            var img5 = document.getElementById("img5");
-            var img6 = document.getElementById("img6");
-            var nav = document.getElementById("nav");
+            var btn = document.getElementById("btnCadastrar");
+
+            btn.style.top = "-7em";
 
             if (window.innerWidth >= 1300) {
                 fundo.style.width = "100%";
-                img1.style.height = "80%";
-                img2.style.height = "80%";
-                img3.style.height = "80%";
-                img4.style.height = "80%";
-                img5.style.height = "80%";
-                img6.style.height = "80%";
-                nav.style.top = "initial";
+                btn.style.left = "156%";
             }
             else
-                if (window.innerWidth >= 1000) {
-                    img1.style.height = "80%";
-                    img2.style.height = "80%";
-                    img3.style.height = "80%";
-                    img4.style.height = "80%";
-                    img5.style.height = "80%";
-                    img6.style.height = "80%";
-                    nav.style.top = "initial";
+                if (window.innerWidth >= 1200) {
+                    btn.style.left = "156%";
+                    btn.style.width = "222%";
                 }
-                else
+                else {
                     if (window.innerWidth >= 800) {
+                        if (window.innerWidth >= 992) {
+                            btn.style.left = "106%";
+                            btn.style.width = "92%";
+                        }
+                        else
+                            btn.style.left = "74%";
+
                         fundo.style.width = "120%";
-                        img1.style.height = "55%";
-                        img2.style.height = "55%";
-                        img3.style.height = "55%";
-                        img4.style.height = "55%";
-                        img5.style.height = "55%";
-                        img6.style.height = "55%";
-                        nav.style.top = "100%";
                     }
                     else
-                        if (window.innerWidth >= 600) {
-                            img1.style.height = "39%";
-                            img2.style.height = "39%";
-                            img3.style.height = "39%";
-                            img4.style.height = "39%";
-                            img5.style.height = "39%";
-                            img6.style.height = "39%";
-                            nav.style.top = "80%";
+                        if (window.innerWidth >= 770) {
+                            btn.style.left = "78%";
+                            btn.style.width = "80%";
                         }
-                        else {
-                            img1.style.height = "35%";
-                            img2.style.height = "35%";
-                            img3.style.height = "35%";
-                            img4.style.height = "35%";
-                            img5.style.height = "35%";
-                            img6.style.height = "35%";
-                            nav.style.top = "78%";
-                        }
+                        else
+                                if (window.innerWidth >= 576) {
+                                    btn.style.left = "-1%";
+                                    btn.style.width = "67%";
+                                    btn.style.top = "-5em";
+                                }
+                                else {
+                                    btn.style.left = "-10%";
+                                    btn.style.width = "75%";
+                                    btn.style.top = "-5em";
+                                }
+                            
+                }
 
 
         }
@@ -109,7 +94,7 @@
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
+                    "<img id='ImgCoracao' src='/Imagens/pontuacao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -183,22 +168,34 @@
                     <h1 class="email"><b> Email:</b> i9@hotmail.com</h1>
                     <h1 class="tel"> <b>Tel:&nbsp;&nbsp;&nbsp;&nbsp;</b> (19) 3521-9903</h1>
                     <h1 class="end"><b>Endereço:</b></h1>
-                    <h1 class="end">R. Jorge de Figueiredo Corrêa, 735 <br /> Chácara Primavera, Campinas - SP</h1>
+                    <h1 class="end">R. Jorge de Figueiredo Corrêa, 735 Chácara Primavera, Campinas - SP</h1>
                 </div>
                 <div class="contact100-pic js-tilt" data-tilt>
-                    <img src="~/Imagens/balao.png" alt="IMG">
+                    <img src="~/Imagens/conj.png" alt="IMG">
                 </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="u.nome" onblur="Nome(value)" onclick="ClickNome()">
+                @if (ViewBag.UsuarioLogado.imagem != "n")
+                {
+                    <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" id="nome" value ="@ViewBag.UsuarioLogado.nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="men.nome" onblur="Nome(value)" onclick="ClickNome()">
                     <span class="focus-input100" id="nomeF"></span>
                     <span class="symbol-input100" id="nomeS">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
+                }
+                else
+                {
+                    <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" id="nome" placeholder="Nome" required pattern=".{6,}" title="No mínimo 6 caracteres" name="men.nome" onblur="Nome(value)" onclick="ClickNome()">
+                    <span class="focus-input100" id="nomeF"></span>
+                    <span class="symbol-input100" id="nomeS">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+                }
 
                 <div class="wrap-input100 validate-input" data-validate="Valid comment is required">
-                    <textarea class="input100" placeholder="Comentário" id="com"  required onblur="Ver(value)" title="Digite uma mensagem" onclick="ClickVer()"></textarea>
+                    <textarea class="input100" placeholder="Mensagem" id="com" name="men.mensagem" required onblur="Ver(value)" title="Digite uma mensagem" onclick="ClickVer()"></textarea>
                     <span class="focus-input100" id="comF"></span>
                     <span class="symbol-input100" id="comS">
                         <i class="fa fa-check" aria-hidden="true"></i>
@@ -207,7 +204,7 @@
 
             </div>
             <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
+                <button class="contact100-form-btn" id="btnCadastrar">
                     Enviar mensagem
                 </button>
             </div>

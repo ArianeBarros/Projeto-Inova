@@ -8291,7 +8291,7 @@ iframe {
     justify-content: space-between;
     padding: 110px 130px 157px 148px;
     position: relative;
-    left: 0%;
+    left: -15%;
     height: 100%;
     height: auto;
 }
@@ -8306,7 +8306,7 @@ iframe {
 }
 
     .contact100-pic img {
-        max-width: 45%;
+        max-width: 90%;
     }
 
 
@@ -8334,7 +8334,7 @@ iframe {
     display: block;
     font-family: "Century Gothic", sans-serif;
     font-size: 30px;
-    color: #e4e4e4;
+    color: #b3b3ff;
     line-height: 1.2;
     text-align: center;
     padding-bottom: 36px;
@@ -8421,8 +8421,8 @@ textarea.input100 {
     display: flex;
     position: absolute;
     border-radius: 25px;
-    top: 15px;
-    left: 48%;
+    top: 16px;
+    left: 48.5%;
     width: 100%;
     height: 100%;
     padding-left: 30px;
@@ -8486,7 +8486,10 @@ textarea.input100 {
 
 @media (max-width: 1200px) {
     .contact100-pic {
-        width: 33.5%;
+        width: 34%;
+        padding-top: 300px;
+        position: absolute;
+        left: 9em;
     }
 
     .contact100-form {
@@ -8495,7 +8498,6 @@ textarea.input100 {
 
     .wrap-contact100 {
         width: 623px;
-        background: black;
         border-radius: 10px;
         overflow: hidden;
         display: -webkit-box;
@@ -8510,13 +8512,33 @@ textarea.input100 {
         left: 0%;
         height: auto;
     }
+    .symbol-input100 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: absolute;
+        border-radius: 25px;
+        top: 16px;
+        left: 47.5%;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        pointer-events: none;
+        color: #aaaaaa;
+        font-size: 15px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
 }
 
 @media (max-width: 992px) {
     .wrap-contact100 {
         padding: 110px 80px 157px 90px;
         width: 523px;
-        background: black;
         border-radius: 10px;
         overflow: hidden;
         display: -webkit-box;
@@ -8531,15 +8553,38 @@ textarea.input100 {
         height: auto;
     }
 
-    .contact100-pic {
-        width: 35%;
-        padding-top: 180px;
+    .symbol-input100 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
         position: absolute;
-        left: 1em;
+        border-radius: 25px;
+        top: 16px;
+        left: 47%;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        pointer-events: none;
+        color: #aaaaaa;
+        font-size: 15px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .contact100-pic {
+    width: 34%;
+    padding-top: 350px;
+    position: absolute;
+    left: 5em;
+
     }
 
         .contact100-pic img {
-            max-width: 130%;
+            max-width: 80%;
         }
 
     .contact100-form {
@@ -8549,7 +8594,7 @@ textarea.input100 {
 
 @media (max-width: 768px) {
     .wrap-contact100 {
-        padding: 110px 80px 157px 80px;
+        padding: 110px 80px 300px 80px;
         width: 363px;
         height: auto;
     }
@@ -8563,14 +8608,15 @@ textarea.input100 {
     }
 
     .input100 {
-        width: 100%;
+        width: 85%;
         position: relative;
         left: 0%;
-        bottom: 0;
+        top: 13em;
     }
 
     .symbol-input100 {
-        left: 0%;
+        top: 14.1em;
+        left:-4%;
     }
 
     .focus-input100 {
@@ -8585,11 +8631,24 @@ textarea.input100 {
         box-shadow: 0px 0px 0px 0px;
         color: rgba(132,106,221, 0.5);
     }
+    .contact100-form-title2 {
+        display: block;
+        font-family: "Century Gothic", sans-serif;
+        font-size: 30px;
+        color: #b3b3ff;
+        line-height: 1.2;
+        text-align: center;
+        padding-bottom: 36px;
+        position: relative;
+        top: 7em;
+        width: 100%;
+        font-weight: 500;
+    }
 }
 
 @media (max-width: 576px) {
     .wrap-contact100 {
-        padding: 110px 15px 157px 15px;
+        padding: 110px 15px 300px 15px;
         width: 74%;
         left: 0%;
         height: auto;

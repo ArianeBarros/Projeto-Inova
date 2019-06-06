@@ -30,18 +30,18 @@ namespace ProjetoI9.Controllers
             }
         }
 
-        public ActionResult SalvarDados(string img, string id, string cont)
-        {
-            UsuarioI9DAO dao = new UsuarioI9DAO();
-            UsuarioI9 usu = dao.BuscaPorId(Convert.ToInt32(id));
-
-            return RedirectToAction("Index", cont, new { usu.nome, usu.imagem, usu.id });
-        }
-
         public ActionResult Erro()
         {
             Session["usuarioLogado"] = null;
             return RedirectToAction("Index", "Login");
+        }
+        public ActionResult ContEnvia(Mensagem men)
+        {
+            MensagemDAO dao = new MensagemDAO();
+            men.id = dao.Lista().Count+ 1;     
+            dao.Adiciona(men);
+
+            return RedirectToAction("Index");
         }
     }
 }

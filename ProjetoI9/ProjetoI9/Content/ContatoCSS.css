@@ -154,8 +154,15 @@ header {
         position: relative;
         left: 0%;
     }
+    
 }
 
+@media screen and (min-width:770)
+{
+    .end {
+        width: 10em;
+    }
+}
 @media screen and (min-width: 800px) {
     body {
     }
@@ -191,6 +198,9 @@ header {
         width: 100%;
         background-size: cover;
     }
+    .end {
+        width: 10em;
+    }
 }
 
 @media screen and (min-width:1000px) {
@@ -212,6 +222,9 @@ header {
         width: 100%;
         background-size: cover;
     }
+    .end {
+        width: 14em;
+    }
 }
 @media screen and (min-width:1200px) {
     .container {
@@ -222,6 +235,9 @@ header {
 
     #btnCadastrar {
         width: 800px;
+    }
+    .end {
+        width: 20em;
     }
 }
 
@@ -344,12 +360,11 @@ h1 {
 }
 
 
-
 #btnCadastrar {
     position: relative;
     top: -6em;
     width: 400px;
-    left: 152%;
+    left: 155%;
     font-family: 'Century Gothic';
     font-size: 22px;
     font-weight: 500;
