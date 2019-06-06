@@ -243,10 +243,21 @@ Layout = null;
                 <i class="fa fa-bars fa-w-14 fa-2x"></i>
             </label>
             <ul class="menu">
-                <div class="ab" onclick="abrir('Home')">HOME</div>
-                <div class="ab" onclick="abrir('Cadastro')">CADASTRO</div>
-                <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
-                <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                @if (ViewBag.UsuarioLogado.imagem == "n")
+                 {
+                    <div class="ab" onclick="abrir('Home')">HOME</div>
+                    <div class="ab" onclick="abrir('Cadastro')">CADASTRO</div>
+                    <div class="ab" onclick="abrir('Login')">LOGIN</div>
+                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                }
+                else
+                {
+                    <div class="ab" onclick="abrir('Home')">HOME</div>
+                    <div class="ab" onclick="abrir('Principal')">PRINCIPAL</div>
+                    <div class="ab" onclick="abrir('Perfil')">PERFIL</div>
+                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                }
+
                 <label for="chk" class="hide-menu-btn">
                     <a class="menu-barra">
                         <i class="fa fa-times fa-w-14 fa-2x"></i>

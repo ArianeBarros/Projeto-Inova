@@ -86,7 +86,6 @@ header {
 .menu {
     position: absolute;
     width: 100%;
-    height: 100vh;
     background: #333;
     right: 1000px;
     top: 0;
@@ -94,8 +93,8 @@ header {
     padding: 80px 0;
     line-height: normal;
     transition: unset;
-    z-index: 10;
-    height: 350%;
+    z-index: 1;
+    height: 5px;
 }
 
 .ab {
@@ -135,7 +134,7 @@ header {
         position: absolute;
         top: -70px;
         left: 16%;
-        height: 5em;
+        height: 1em;
         transition: unset;
         z-index: 100;
     }
@@ -246,7 +245,7 @@ header {
         width: 50px;
         height: 50px;
         position: absolute;
-        top: 8%;
+        top: 13%;
         left: 80%;
     }
 
@@ -258,8 +257,8 @@ header {
 
     #menuV {
         position: relative;
-        right: 50%;
-        width: 55%;
+        right: -20%;
+        width: 105%;
         visibility: visible;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
