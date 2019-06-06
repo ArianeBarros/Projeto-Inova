@@ -120,6 +120,10 @@ Layout = null;
                 seMostraPerfil++;
             }
         }
+        function abrir(pag) {
+            var link = '/' + pag + "/Index";
+            window.location = link;
+        }
 
         function Erro() {
             document.getElementById("invisivel").submit();
@@ -132,10 +136,10 @@ Layout = null;
                     var ctx = this.chart.ctx;
                     ctx.textAlign = "center";
                     ctx.textBaseline = "middle";
-                    ctx.fontSize = "400px";
+                    ctx.fontSize = "40px";
 
                     this.chart.config.data.datasets.forEach(function (dataset) {
-                        ctx.font = "2000px Arial";
+                        ctx.font = "20px Arial";
                         switch (dataset.type) {
                             case "line":
                                 ctx.fillStyle = "Black";
@@ -189,12 +193,12 @@ Layout = null;
 
                     ticks: {
                         suggestedMin: 0,
-                        fontSize: 26
+                        fontSize: 18 //mexe com os numeros do lado esquerdo
                     },
                     scaleLabel: {
                         display: true,
                         labelString: "Frequência",
-                        fontSize: 26
+                        fontSize: 18
                     }
                 }, {
                     type: "linear",
@@ -205,13 +209,13 @@ Layout = null;
                         callback: function (value) {
                             return value + "%";
                         },
-                        fontSize: 26,
+                        fontSize: 18,
                         color: "red"
                     },
                     scaleLabel: {
                         display: true,
                         labelString: "Porcentagem",
-                        fontSize: 26
+                        fontSize: 18
                     }
                 }]
             }
