@@ -23,6 +23,8 @@
             document.getElementById("secEscolherFoto").style.display = "none";
 
             CarregarDadosBD();
+
+            PegaData();
         }
 
         function CarregarDadosBD()
@@ -197,6 +199,12 @@
             else
                 document.getElementById("frmTrocarSenha").style.display = "block";
         }
+        function PegaData() {
+            alert("aoi");
+            var data = JSON.stringify("@ViewBag.UsuarioLogado.dataNascimento").substring(0, 7);
+            document.getElementById("data").value = data;
+            
+        }
 
     </script>
 </head>
@@ -209,7 +217,7 @@
             </label>
             <ul class="menu">
                 <div class="ab" onclick="abrir('Home')">HOME</div>
-                <div class="ab" onclick="abrir('Login')">LOGIN</div>
+                <div class="ab" onclick="abrir('Principal')">PRINCIPAL</div>
                 <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
                 <div class="ab" onclick="abrir('Contato')">CONTATO</div>
                 <label for="chk" class="hide-menu-btn">
@@ -227,10 +235,44 @@
         </div>
 
     </header>
+    <div class="container" id="cont">
+        <form id="loginSection" method="post" action="/Perfil/SalvarDados" class="contact100-form validate-form" style:"background:#black;">
+            <div class="wrap-contact100" id="form">
+                <h2>Seus dados</h2>
+                <div id="escolherNovaFoto" class="contact100-pic js-tilt" data-tilt>
+                    <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" alt="IMG" onclick='TrocarFoto()'>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" id="username2" name="u.nome" required pattern=".{6,15}" title="De 6 a 10 caracteres" value="@ViewBag.UsuarioLogado.nome">
+
+                </div>
+                <h1 id="hu">Username:</h1>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required">
+                    <input class="input100" id="email" type="text" name="u.email" required   value="@ViewBag.UsuarioLogado.email">
+                </div>
+                
+                <h1 id="he">Email:</h1>
+                <div class="wrap-input100 validate-input" data-validate="Valid date is required">
+                    <input class="input100 datepicker" id="data" type="datetime" name="u.dataNascimento" required value="">
+
+                </div>
+                <h1 id="hs">Data de nascimento:</h1>
+                @*<img id="alertSenha" src="~/Imagens/alertSenha.png" />*@
+
+            </div>
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
+                    Login
+                </button>
+            </div>
+            <div id="cadastro"><a href="~/Cadastro/Index" id="cad" onclick="Abrir'Cadastro'">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
+        </form>
+    </div>
 
     <form id="invisivel" method="post" action="/Perfil/Erro"></form>
 
-    <form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
+    @*<form action="/Perfil/SalvarDados" enctype="multipart/form-data" method="post" id="loginSection">
         <br><br>
         <div id="escolherNovaFoto">
             <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" onclick='TrocarFoto()'>
@@ -278,18 +320,18 @@
         <br />
     </form>
 
-            <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
+    <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
 
-            <form id="frmTrocarSenha" method="post" action="/Perfil/TrocarSenha" style="display: none">
-                <div id="divTrocarSenha">
-                    <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="TrocarSenha()"></i><br>
-                    <u><label class="lblTrocarSenha"> Trocar de Senha </label></u><br>
-                    <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onblur="VerificarSenhaAtual()" required><br>
-                    <label class="lblSenhas">Senha nova: </label><input id="senhaNova" class="lblSenhas" type="password" required><br>
-                    <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
-                    <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>
-                </div>
-            </form>
+    <form id="frmTrocarSenha" method="post" action="/Perfil/TrocarSenha" style="display: none">
+        <div id="divTrocarSenha">
+            <i class="fa fa-times fa-w-14 fa-2x" id="icones" onclick="TrocarSenha()"></i><br>
+            <u><label class="lblTrocarSenha"> Trocar de Senha </label></u><br>
+            <label class="lblSenhas">Senha atual: </label><input id="senhaAtual" class="lblSenhas" type="password" onblur="VerificarSenhaAtual()" required><br>
+            <label class="lblSenhas">Senha nova: </label><input id="senhaNova" class="lblSenhas" type="password" required><br>
+            <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
+            <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>
+        </div>
+    </form>*@
 
-    </body>
+</body>
 </html>
