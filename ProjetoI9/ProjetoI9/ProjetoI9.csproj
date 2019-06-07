@@ -174,7 +174,6 @@
     <Content Include="Content\CadastroCSS.css" />
     <Content Include="Content\ContatoCSS.css" />
     <Content Include="Content\Footer-with-button-logo.css" />
-    <Content Include="Content\HomeCadastrado.css" />
     <Content Include="Content\HomeCSS.css" />
     <Content Include="Content\LayoutFooter.css" />
     <Content Include="Content\LoginCSS.css" />
@@ -293,17 +292,14 @@
     <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\MensagemDAO.cs" />
-    <Compile Include="DAO\NoticiaDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\SonhoDAO.cs" />
     <Compile Include="DAO\UsuarioI9DAO.cs" />
-    <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Mensagem.cs" />
-    <Compile Include="Models\Noticia.cs" />
     <Compile Include="Models\Sonho.cs" />
     <Compile Include="Models\UsuarioI9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,7 +320,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Termos\Index.cshtml" />
     <Content Include="Views\Politica\Index.cshtml" />
-    <Content Include="Views\SairDaPagina\Index.cshtml" />
     <Content Include="Views\Bastidores\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

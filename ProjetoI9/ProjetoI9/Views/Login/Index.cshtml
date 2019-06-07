@@ -7,7 +7,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="~/Imagens/icons/favicon.ico">
     <link href="~/Content/LoginCSS.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -23,6 +23,7 @@
                     erro = erro.split('s')[1];
                     document.getElementById("email").value = erro;
                     document.getElementById("alertLogin2").style.display = "block";
+                    document.getElementById("alertLogin").style.display = "none";
                     document.getElementById("senha").style.boxShadow = "5px 5px red";
                     document.getElementById("senhaS").style.color = "red";
                     document.getElementById("senhaF").style.color = "red";
@@ -81,6 +82,7 @@
                     }
             }
         }
+
         function abrir(pag) {
             var link = '/' + pag + "/Index";
             window.location = link;
@@ -104,6 +106,7 @@
 
                     if (!estaCadastrado) {
                         document.getElementById("alertLogin").style.display = "block";
+                        document.getElementById("alertLogin2").style.display = "none";
                         document.getElementById("email").style.boxShadow = "5px 5px red";
                         document.getElementById("emailS").style.color = "red";
                         document.getElementById("emailF").style.color = "red";
@@ -169,7 +172,6 @@
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     </span>
                 </div>
-                @*<img id="alertSenha" src="~/Imagens/alertSenha.png" />*@
 
             </div>
             <div class="container-contact100-form-btn">
@@ -177,7 +179,7 @@
                     Login
                 </button>
             </div>
-            <div id="cadastro"><a href="~/Cadastro/Index" id="cad"onclick="Abrir'Cadastro'">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
+            <div id="cadastro"><a href="~/Cadastro/Index" id="cad"onclick="Abrir('Cadastro')">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
         </form>
     </div>
    
@@ -194,16 +196,16 @@
                 <div class="col-sm-2">
                     <h5>Comece já</h5>
                     <ul>
-                        <li><a href="#">Cadastre-se</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="~/Cadastro/Index">Cadastre-se</a></li>
+                        <li><a href="~/Login/Index">Login</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">
                     <h5>Empresa</h5>
                     <ul>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Pareto</a></li>
+                        <li><a href="~/Sobre/Index">Sobre</a></li>
+                        <li><a href="~/Contato/Index">Contato</a></li>
+                        <li><a href="~/Sobre/Index">Pareto</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">

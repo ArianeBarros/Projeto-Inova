@@ -13,7 +13,7 @@ namespace ProjetoI9.Models
         public string nome { get; set; }
         [Required]
         public string senha { get; set; }
-        [Required] //, [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}
+        [Required]
         public string email { get; set; }
         [Required]
         public DateTime dataNascimento{ get; set; }

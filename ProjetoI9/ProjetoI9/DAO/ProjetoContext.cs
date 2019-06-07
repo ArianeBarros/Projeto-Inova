@@ -12,7 +12,6 @@ namespace ProjetoI9.DAO
         public DbSet<Sonho> Sonho { get; set; }
         public DbSet<Evento> Evento { get; set; }
         public DbSet<UsuarioI9> UsuarioI9 { get; set; }
-        public DbSet<Noticia> Noticia { get; set; }
         public DbSet<Mensagem> Mensagem { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
