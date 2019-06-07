@@ -1,8 +1,4 @@
-﻿@*@{
-Layout = null;
-}*@
-
-<html>
+﻿<html>
 <head>
     <title>Sobre</title>
 
@@ -110,7 +106,7 @@ Layout = null;
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<img id='ImgCoracao' src='/Imagens/coracao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
+                    "<img id='ImgCoracao' src='/Imagens/pontuacao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
@@ -237,7 +233,6 @@ Layout = null;
     <header>
 
         <div class="header" id="header">
-            <!-- <img class="barra" src="./Imagens/nav.png"> -->
             <input type="checkbox" id="chk">
             <label for="chk" class="show-menu-btn">
                 <i class="fa fa-bars fa-w-14 fa-2x"></i>
@@ -303,6 +298,12 @@ Layout = null;
             <span class="sr-only">Next</span>
         </a>
     </div>-->
+
+    <div id="divPareto">Abaixo está o nosso Gráfico de Pareto, que te mostra como ter organização é importante e muito relevante 
+    para você conseguir alcançar suas metas! Os dados foram adquiridos por uma pesquisa que fizemos, pode confiar ;)</div>
+
+    <a id="aBastidores" href="~/Bastidores/Index">Você quer conhecer os bastidores do desenvolvimento do nosso projeto? Vem com a gente!</a>
+
     <div class="slidershow middle" id="slidersh">
         <div class="slides">
             <div class="slide s1" id="s1">

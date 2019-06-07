@@ -89,17 +89,19 @@
                    document.getElementById("opcoesFotos").innerHTML = "<input id=\"btnPerfil\" type=\"image\" src=" + qualImg + " onclick=\"CarregarPerfil()\">";
         }
 
-        var seMostraPerfil = 2;
+         var seMostraPerfil = 2;
         function CarregarPerfil() {
             if (seMostraPerfil % 2 == 0) {
                 document.getElementById("opcoesFotos").innerHTML = "<input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>" +
                     "<div id='divMenuV'><nav id ='menuV'><ul>" +
-                    "<img id='ImgCoracao' src='/Imagens/pontuacao.png'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
+                    "<img id='ImgCoracao' src='/Imagens/pontuacao.png' onclick='ExplicarEstrela()'>" + "<label id='lblPontuacao'>" + @ViewBag.UsuarioLogado.pontuacao + "</label>" +
                     "<br><a id ='sairV' href='#' onclick='Erro()'>Sair</a><br><br>" +
                     "<a id ='configV' href='/Perfil/Index'><i class='fa fa-cog' id='iconeConfig'></i>Configurar conta</a><br><br></ul><nav></div>";
                 seMostraPerfil++;
             }
             else {
+                if (document.getElementById("divExplicaEstrela") != null)
+                     document.getElementById("divExplicaEstrela").style.display = 'none';
                 document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
@@ -127,14 +129,14 @@
                     <div class="ab" onclick="abrir('Home')">HOME</div>
                     <div class="ab" onclick="abrir('Cadastro')">CADASTRO</div>
                     <div class="ab" onclick="abrir('Login')">LOGIN</div>
-                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                    <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
                 }
                 else
                 {
                     <div class="ab" onclick="abrir('Home')">HOME</div>
                     <div class="ab" onclick="abrir('Principal')">PRINCIPAL</div>
                     <div class="ab" onclick="abrir('Perfil')">PERFIL</div>
-                    <div class="ab" onclick="abrir('Contato')">CONTATO</div>
+                    <div class="ab" onclick="abrir('Sobre')">SOBRE</div>
                 }
 
                 <label for="chk" class="hide-menu-btn">

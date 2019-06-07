@@ -2,7 +2,10 @@
 <head>
     <title>Principal</title>
 
-    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    @*<script src="~/Scripts/bootstrap-min.js"></script>*@
+
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+
     <link href="~/Content/PrincipalCSS.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
@@ -58,7 +61,7 @@
 
                     qualConteudo++;
                 }
-              
+
             }
         }
 
@@ -279,9 +282,9 @@
 
             <br>
             <label>Tem certeza que deseja excluir esse evento?</label><br><br>
-            <input  type="text" id="idExcluirEvento" name="eve.id" style="display: none">
+            <input type="text" id="idExcluirEvento" name="eve.id" style="display: none">
             <button id="btnExcluirEvento" onclick="document.getElementById('divExcluirEvento').style.display = 'none'">Ok</button>
-            </div>
+        </div>
     </form>
 
     <form method="post" action="/Principal/AdicionarSonho">
@@ -303,6 +306,5 @@
         <div id="lblVoceRealizouUmSonho">Você realizou um sonho !!</div>
         <button id="btnParabens" onclick="ExcluirSonho()">OK</button>
     </section>
-
 </body>
 </html>
