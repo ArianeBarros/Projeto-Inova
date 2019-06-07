@@ -438,13 +438,13 @@ input[name="r"] {
     margin-left: -20%;
 }
 
-#r4:checked ~ .s1 {
+/*#r4:checked ~ .s1 {
     margin-left: -40%;
 }
 
 #r5:checked ~ .s1 {
     margin-left: -80%;
-}
+}*/
 
 #myFooter {
     background-color: #3c3d41;

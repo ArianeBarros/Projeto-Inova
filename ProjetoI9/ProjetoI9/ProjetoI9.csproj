@@ -226,6 +226,10 @@
     <Content Include="Imagens\img-06.png" />
     <Content Include="Imagens\img-sobre.png" />
     <Content Include="Imagens\img1-sobre.png" />
+    <Content Include="Imagens\img1p.jpeg" />
+    <Content Include="Imagens\img2p.jpeg" />
+    <Content Include="Imagens\img3p.jpeg" />
+    <Content Include="Imagens\img4p.jpeg" />
     <Content Include="Imagens\imgPerfil.png" />
     <Content Include="Imagens\LOGO\apple-icon-114x114.png" />
     <Content Include="Imagens\LOGO\apple-icon-120x120.png" />
