@@ -1,5 +1,6 @@
 ﻿html {
     height: 100%;
+    overflow-x:hidden;
 }
 
 body {
@@ -13,18 +14,15 @@ body {
     max-width: 2000px;
     background-image: url(../Imagens/fundoSobre.png);
 }
-/* width */
 ::-webkit-scrollbar {
     width: 20px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#0018a5,#13e0ae);
     border-radius: 10px;
@@ -125,9 +123,6 @@ header {
     nav {
         float: right, top;
         width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
         font-size: 20px;
     }
 }
@@ -185,9 +180,6 @@ header {
     nav {
         float: top;
         width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
         visibility: hidden;
         font-size: 20px;
     }
@@ -269,36 +261,8 @@ header {
         right: -40%;
         width: 55%;
         visibility: visible;
-        /* font-size: 80%(width: ;; */
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-
-/*#configV, #sairV, #lblPontuacao, #ImgCoracao {
-    color: black;
-    position: relative;
-    left: -2em;
-}
-#lblPontuacao {
-    margin-left: 2em;
-    font-size: 30px;
-    top: 4px;
-}
-
-#ImgCoracao {
-    width: 20%;
-    position: absolute;
-    left: -30px;
-    top: 10px;
-    margin-left: 1em;
-}
-
-#iconeConfig {
-    position: absolute;
-    width: 800%;
-    top: 20%;
-    left: -2em;
-}*/
-
 
     #opcoesFotos {
         border-radius: 50%;
@@ -316,38 +280,17 @@ header {
         height: 100%;
     }
 
-/*#menuV {
-    position: relative;
-    width: 100%;
-    visibility: visible;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    left: 30%;
+#contatoSection {
+    background-color: black;
+    box-shadow: 10px 10px 10px 5px grey;
     height: 100%;
-}
-
-#divMenuV {
-    background-color: wheat;
-    width: 380%;
-    border-radius: 3%;
+    width: 70%;
+    align-self: center;
+    left: 200px;
     position: absolute;
-    top: 3em;
-    left: 80%;
-    height: 340%;
-}*/
-
-
-
-    #contatoSection {
-        background-color: black;
-        box-shadow: 10px 10px 10px 5px grey;
-        height: 100%;
-        width: 70%;
-        align-self: center;
-        left: 200px;
-        position: absolute;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: white;
-    }
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
 
 #login {
     position: relative;
@@ -412,20 +355,20 @@ h1 {
     transition: all .3s ease;
 }
 
-    #configV, #sairV, #lblPontuacao, #ImgCoracao {
-        color: black;
-        position: relative;
-        left: -2em;
-        top: 20px;
-    }
+#configV, #sairV, #lblPontuacao, #ImgCoracao {
+    color: black;
+    position: relative;
+    left: -2em;
+    top: 20px;
+}
 
 
-    #lblPontuacao {
-        position: absolute;
-        left: 1em;
-        font-size: 30px;
-        top: 4px;
-    }
+#lblPontuacao {
+    position: absolute;
+    left: 1em;
+    font-size: 30px;
+    top: 4px;
+}
 
 #ImgCoracao {
     width: 20%;
@@ -435,74 +378,74 @@ h1 {
     margin-left: 1em;
 }
 
-    #btnPerfil {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-    }
+#btnPerfil {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
 
-    #menuV {
-        position: relative;
-        left: 60px;
-        width: 55%;
-        visibility: visible;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+#menuV {
+    position: relative;
+    left: 60px;
+    width: 55%;
+    visibility: visible;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-    #divMenuV {
-        background-color: wheat;
-        width: 380%;
-        border-radius: 3%;
-        position: relative;
-        top: -2em;
-        left: 100%;
-    }
+#divMenuV {
+    background-color: wheat;
+    width: 380%;
+    border-radius: 3%;
+    position: relative;
+    top: -2em;
+    left: 100%;
+}
 
 
-    #sobre, #login, #cadastro, #home, #principal, #perfil {
-        color: white;
-    }
+#sobre, #login, #cadastro, #home, #principal, #perfil {
+    color: white;
+}
 
-    #myFooter {
-        flex: 0 0 auto;
-        -webkit-flex: 0 0 auto;
-        position: relative;
-        top: 5em;
-    }
+#myFooter {
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    position: relative;
+    top: 5em;
+}
 
-    #navSectionLeft {
-        text-align: center;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
+#navSectionLeft {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-    #imgBalao {
-        width: 20%;
-        height: 30%;
-        position: absolute;
-        left: 70%;
-        top: 17%;
-    }
+#imgBalao {
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    left: 70%;
+    top: 17%;
+}
 
-    #contatoSection {
-        width: 80%;
-        text-align: center;
-        font-size: 30px;
-        margin-top: 2px;
-    }
+#contatoSection {
+    width: 80%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 2px;
+}
 
-    #h1Contato {
-        top: 2em;
-        position: absolute;
-        left: 30%;
-        font-style: italic;
-    }
+#h1Contato {
+    top: 2em;
+    position: absolute;
+    left: 30%;
+    font-style: italic;
+}
 
-    .info {
-        font-size: 25px;
-        margin-top: 39px;
-        position: relative;
-        top: 10em;
-        left: -3em;
-        font-style: italic;
-    }
+.info {
+    font-size: 25px;
+    margin-top: 39px;
+    position: relative;
+    top: 10em;
+    left: -3em;
+    font-style: italic;
+}
 

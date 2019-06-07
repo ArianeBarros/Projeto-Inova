@@ -5,18 +5,16 @@
     font-size: 106%;
     transition: all .3s ease;
 }
-/* width */
+
 ::-webkit-scrollbar {
     width: 20px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#0018a5,#13e0ae);
     border-radius: 10px;
@@ -30,7 +28,6 @@ html
 .header {
     height: 35em;
     color: white;
-    /* font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 .ondas {
@@ -42,7 +39,6 @@ html
 
 .logo {
     width: 25%;
-    /* float: left; */
     position: absolute;
     top: 0;
     left: 0;
@@ -83,12 +79,6 @@ html
     width: 1.2em;
     height: 1.2em;
 }
-
-.content {
-    /* padding:  */
-    /* text-align: justify; */
-}
-
 
 .hide-menu-btn {
     position: absolute;
@@ -223,9 +213,6 @@ html
 
     @media screen and (min-width: 800px) {
 
-        /* #botoes {
-        /* position: relative; */
-        /* top: -18em; */
         .show-menu-btn, .hide-menu-btn {
             display: none;
         }
@@ -286,10 +273,6 @@ html
         }
     }
 
-
-
-
-
     @media screen and (min-width: 1000px) {
         .menu {
             left: 25%;
@@ -343,50 +326,6 @@ html
         }
     }
 
-
-
-
-    /*#menu
-{
-    position: absolute;
-    left: 17em;
-    top: 7em;
-    color: white;
-    font-family: Courier New, Courier, monospace;
-    font-size: 200%;
-    width: 400em;
-}*/
-
-
-    /*
-#botoes {
-    position: absolute;
-    bottom: 30.5em;
-    left: 10%;
-    /* z-index: 50; */ /*
-}
-
-.cadastro {
-    width: 58%;
-    position: relative;
-    bottom: 0.1em;
-    margin-left: -0.5em;
-}
-
-.login {
-    width: 40%;
-
-}
-#sobre,#login,#cadastro,#contato {
-    /* visibility: hidden; */ /*
-    color: white;
-    float: center;
-    /* font-size: 80%(width: ;; */ /*
-    position: relative;
-    top: -30em;
-    font-family: Aharoni, 'Aharoni', Calibri, 'Trebuchet MS', sans-serif;
-}
-*/
     .btnComece {
         position: absolute;
         top: 7em;
@@ -422,7 +361,6 @@ html
     .content {
         width: 100%;
         height: 50%;
-        /* padding: 0em 0em 0em 10em; */
     }
 
     #form {
@@ -530,91 +468,6 @@ html
         height: auto;
     }
 
-    /*
-.btnMenu_open {
-    background-image: url("./Imagens/menu3.png");
-    height: 2em;
-    position: relative;
-    left: 60%;
-}
-
-.btnMenu_close {
-    background-color: white;
-    background-image: url("./Imagens/menupt.png");
-}
-
-/*
-  .bar1open, .bar2open, .bar3open {
-    width: 23px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
-  }
-  
-  .bar1 {
-    width: 23px;
-    height: 3px;
-    background-color: black;
-    margin: 5px 0;
-    transition: 0.4s;
-    -webkit-transform: rotate(-45deg) translate(-9px, 20px);
-    transform: rotate(-45deg) translate(-7px, -2px);
-  }
-  
-  .bar2 {opacity: 0;}
-  
-  .bar3 {
-    width: 23px;
-    height: 3px;
-    background-color: black;
-    margin: 5px 0;
-    transition: 0.4s;
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-9px, 2px);
-  }
-
-
-
-   #sobremin, #loginmin,#contmin
-   {
-    
-    font-family: "Century Gothic";
-    font-weight: 500;
-    font-size: 17px;
-    color: #757575;
-   }
-   #cadmin
-   {
-    font-family: "Century Gothic";
-    font-weight: 500;
-    font-size: 17px;
-    color: #757575;
-   }
-
-  .balon
-  {
-    background: url("./Imagens/logopretomin.png");
-    position: relative;
-    bottom: 20;
-    left: 38%;
-    width: 4em;
-    height: 2.3em;
-  }
-
-  /*.escuro
-  {
-      width: 100%;
-      height: 100%;
-      background: black;
-      position: absolute;
-      opacity: 0.5;
-      z-index: -1;
-  }
-  */
-
-  
-
     .hrUm {
         width: 12em;
         height: 0.11em;
@@ -635,7 +488,7 @@ html
 footer {
     background-color: #0B2161;
     text-align: center;
-    height: 56%;
+    height: 36%;
     width: 100%;
     position: relative;
     top: 124%;
@@ -772,12 +625,6 @@ footer {
         width: 100%;
     }
 }
-
-
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
-
-
 
 #myFooter {
     flex: 0 0 auto;

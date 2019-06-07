@@ -13,18 +13,16 @@ body {
     max-width: 2000px;
     background-image: url(../Imagens/fundoSobre.png);
 }
-/* width */
+
 ::-webkit-scrollbar {
     width: 20px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#0018a5,#13e0ae);
     border-radius: 10px;
@@ -49,11 +47,8 @@ header {
 
 @media screen and (min-width: 400px) {
     nav {
-        float: right;/*, top;*/
+        float: right;
         width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
         font-size: 20px;
     }
 }
@@ -108,7 +103,7 @@ header {
 footer {
     background-color: #0B2161;
     text-align: center;
-    height: 70%;
+    height: 50%;
     width: 100%;
     position: fixed;
     top: 900px;
@@ -410,8 +405,6 @@ footer {
 #btnMais {
     position: relative;
     left: 4em;
-    /*width: 10%;
-    height: 3%;*/
     z-index: 1;
     color: white;
 }

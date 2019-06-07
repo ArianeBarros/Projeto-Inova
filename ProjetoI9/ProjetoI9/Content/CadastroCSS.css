@@ -10,18 +10,15 @@ html {
     height: 100%;
     overflow-x:hidden;
 }
-/* width */
 ::-webkit-scrollbar {
     width: 20px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#0018a5,#13e0ae);
     border-radius: 10px;
@@ -164,9 +161,6 @@ header {
     nav {
         float: right, top;
         width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
         font-size: 20px;
     }
 }
@@ -178,9 +172,6 @@ header {
     nav {
         float: top;
         width: 50%;
-        /* position: absolute; */
-        /* top: 0em; */
-        /* left: 50%; */
         visibility: hidden;
         font-size: 20px;
     }
@@ -322,7 +313,7 @@ header {
 footer {
     background-color: #0B2161;
     text-align: center;
-    height: 35%;
+    height: 34%;
     width: 100%;
     position: relative;
     top: 124%;
@@ -348,53 +339,6 @@ footer {
     top: 86%;
 }
 
-#btnPerfil {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-}
-
-#sobreV, #loginNavV, #contatoV, #homeV, #principalV, #configV {
-    color: black;
-    position: relative;
-    left: 170%;
-}
-
-#menuV {
-    position: relative;
-    right: 50%;
-    width: 55%;
-    visibility: visible;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#divMenuV {
-    background-color: white;
-    width: 380%;
-    border-radius: 3%;
-    position: relative;
-    top: -2em;
-    left: 100%;
-}
-
-.fot1 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: 32%;
-    margin-top: 1em;
-    left: -30%;
-}
-
-.fot2 {
-    font-size: 30px;
-    color: white;
-    position: relative;
-    top: -22%;
-    margin-top: 1em;
-    left: 10px;
-}
-
 #cbNoti {
     width: 20%;
     height: 4%;
@@ -409,104 +353,102 @@ footer {
     font-size: 106%;
 }
 
-    #myFooter .footer-copyright {
-        background-color: #333333;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        text-align: center;
-    }
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
 
-    #myFooter .row {
-        margin-bottom: 60px;
-    }
+#myFooter .row {
+    margin-bottom: 60px;
+}
 
-    #myFooter .navbar-brand {
-        margin-top: 45px;
-        height: 65px;
-    }
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
 
-    #myFooter .footer-copyright p {
-        margin: 10px;
-        color: #ccc;
-        font-size: 16px;
-    }
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+    font-size: 16px;
+}
 
-    #myFooter ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
-    #myFooter h5 {
-        font-size: 18px;
-        color: white;
-        font-weight: bold;
-    }
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
 
-    #myFooter h2 a {
-        font-size: 50px;
-        text-align: center;
-        color: #fff;
-    }
+#myFooter h2 a {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
 
-    #myFooter a {
-        color: #d2d1d1;
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+    #myFooter a:hover,
+    #myFooter a:focus {
         text-decoration: none;
-    }
-
-        #myFooter a:hover,
-        #myFooter a:focus {
-            text-decoration: none;
-            color: white;
-        }
-
-    #myFooter .social-networks {
-        text-align: center;
-        padding-top: 30px;
-        padding-bottom: 16px;
-    }
-
-        #myFooter .social-networks a {
-            font-size: 32px;
-            color: #f9f9f9;
-            padding: 10px;
-            transition: 0.2s;
-        }
-
-            #myFooter .social-networks a:hover {
-                text-decoration: none;
-            }
-
-    #myFooter .facebook:hover {
-        color: #0077e2;
-    }
-
-    #myFooter .google:hover {
-        color: #ef1a1a;
-    }
-
-    #myFooter .twitter:hover {
-        color: #00aced;
-    }
-
-    #myFooter .btn {
         color: white;
-        background-color: #d84b6b;
-        border-radius: 20px;
-        border: none;
-        width: 150px;
-        display: block;
-        margin: 0 auto;
-        margin-top: 10px;
-        line-height: 25px;
-        position:relative;
-        top:-0.5em;
     }
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .google:hover {
+    color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+    position:relative;
+    top:-0.5em;
+}
 
 .logo2 {
     width: 350%;
 }
-
-
 
 @media screen and (max-width: 767px) {
     #myFooter {
