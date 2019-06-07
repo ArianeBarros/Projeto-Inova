@@ -99,6 +99,9 @@ body {
     height: 2em;
 }*/
 
+/*#coisa{
+    width:30%;
+}*/
 
 @media screen and (min-width: 400px) {
     nav {
@@ -405,12 +408,12 @@ body {
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    display: flex;
+    display: inline-block;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 110px 130px 157px 148px;
+    padding: 110px 130px 227px 148px;
     position: relative;
-    left: 0%;
+    left:25%;
     height: 30em;
 }
 
@@ -424,27 +427,39 @@ body {
 }
 #username2 {
     display: block;
-    width: 60%;
+    width: 250px;
     background: #e6e6e6;
     font-family: "montserrat", sans-serif;
     font-size: 15px;
     line-height: 1.5;
     color: #666666;
     position: relative;
-    left: 25%;
+   margin-left: 20em;
     top: 7em;
 }
 #email {
     display: block;
-    width: 60%;
+    width: 250px;
     background: #e6e6e6;
     font-family: "montserrat", sans-serif;
     font-size: 15px;
     line-height: 1.5;
     color: #666666;
     position: relative;
-    left: 25%;
+   margin-left: 20em;
     top: 6em;
+}
+#data {
+    display: block;
+    width: 250px;
+    background: #e6e6e6;
+    font-family: "montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    position: relative;
+    margin-left: 20em;
+    top: 5em;
 }
 h1{
     font-family:'Century Gothic';
@@ -459,6 +474,11 @@ h1{
     position:relative;
     top:1.5em;
 }
+#hs {
+    position: relative;
+    top: 1em;
+}
+
 
 h2{
     font-family:'Century Gothic';
@@ -468,12 +488,14 @@ h2{
     left:35%;
 }
 #btnSalvar {
-    top: 90%;
+    top: 78%;
     position: absolute;
-    left: 40%;
-    width: 15%;
+    left: 32%;
+    width: 35%;
     height: 6%;
-    font-size: 28px;
+    font-size: 22px;
+    font-weight: 100;
+    font-family: 'Century Gothic';
 }
 
 #btnAlterar {
@@ -524,15 +546,15 @@ h2{
 }
 
 #divTrocarSenha {
-    background-color: antiquewhite;
+    background-color: #6b47ff;
     color: black;
-    height: 52%;
-    width: 41%;
+    height: 106%;
+    width: 58%;
     position: absolute;
-    border-radius: 10%;
+    border-radius: 2%;
     font-family: 'Times New Roman', Times, serif;
-    left: 30%;
-    top: 140%;
+    left: 19.5%;
+    top: 45%;
     z-index: 2;
     text-align: left;
     font-size: 30px;
@@ -546,10 +568,11 @@ h2{
 #trocarSenha {
     position: absolute;
     z-index: 1;
-    left: 32%;
-    top: 175%;
-    font-size: 20px;
-    color: black;
+    left: 35.5%;
+    top: 88%;
+    font-size: 23px;
+    color: #ae9ffa;
+    cursor:pointer;
 }
 
 .lblTrocarSenha
@@ -557,13 +580,20 @@ h2{
     position: absolute;
     left:30%;
     top: 2em;
-    color: green;
+    color: black;
+    font-size:60px;
+    font-weight:600;
+    font-family:'Century Gothic';
 }
 
-.lblSenhas
-{
-    margin-left: 1em;
-    margin-top: 1em;
+.lblSenhas {
+    position: relative;
+    margin-left: 5em;
+    margin-top: 2em;
+    top: 4em;
+    font-size: 26px;
+    font-weight: 100;
+    font-family: 'Century Gothic';
 }
 
 #btnOkay
@@ -578,4 +608,9 @@ h2{
     position: absolute;
     top: 1%;
     left: 84%;
+    cursor:pointer;
+}
+
+#coisa{
+    width: 20%;
 }

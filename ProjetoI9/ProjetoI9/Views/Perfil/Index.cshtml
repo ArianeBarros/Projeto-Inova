@@ -200,8 +200,9 @@
                 document.getElementById("frmTrocarSenha").style.display = "block";
         }
         function PegaData() {
-            alert("aoi");
             var data = JSON.stringify("@ViewBag.UsuarioLogado.dataNascimento");
+            data = data.split('"')[1];
+            data = data.substring(0, 10);
             document.getElementById("data").value = data;
             
         }
@@ -236,24 +237,26 @@
 
     </header>
     <div class="container" id="cont">
-        <form id="loginSection" method="post" action="/Perfil/SalvarDados" class="contact100-form validate-form" style:"background:#black;">
+        <form id="loginSection" enctype="multipart/form-data" method="post" action="/Perfil/SalvarDados" class="contact100-form validate-form" style:"background:#black;">
             <div class="wrap-contact100" id="form">
                 <h2>Seus dados</h2>
                 <div id="escolherNovaFoto" class="contact100-pic js-tilt" data-tilt>
                     <img id="btnFotoPerfil" src="@ViewBag.UsuarioLogado.imagem" alt="IMG" onclick='TrocarFoto()'>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <input name="u.imagem" id="tagInvisivel" style="visibility:hidden" value="@ViewBag.UsuarioLogado.imagem">
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required" id="coisa">
                     <input class="input100" type="text" id="username2" name="u.nome" required pattern=".{6,15}" title="De 6 a 10 caracteres" value="@ViewBag.UsuarioLogado.nome">
 
                 </div>
                 <h1 id="hu">Username:</h1>
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required">
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required" id="coisa">
                     <input class="input100" id="email" type="text" name="u.email" required value="@ViewBag.UsuarioLogado.email">
                 </div>
 
                 <h1 id="he">Email:</h1>
-                <div class="wrap-input100 validate-input" data-validate="Valid date is required">
+                <div class="wrap-input100 validate-input" data-validate="Valid date is required" id="coisa">
                     <input class="input100 datepicker" id="data" type="datetime" name="u.dataNascimento" required value="">
 
                 </div>
@@ -262,11 +265,13 @@
 
             </div>
             <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn" onclick="Pode()" id="btnCadastrar">
-                    Login
+                <button class="contact100-form-btn" onclick="Pode()" id="btnSalvar">
+                    Salvar alterações
                 </button>
+                <h1 id="trocarSenha" onclick="TrocarSenha()">Quero trocar minha senha</h1>
             </div>
-            <div id="cadastro"><a href="~/Cadastro/Index" id="cad" onclick="Abrir'Cadastro'">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
+
+            
 
             <section id="secEscolherFoto" enctype="multipart/form-data">
                 Escolha uma foto para o seu Perfil!
@@ -338,6 +343,7 @@
     </form>
 
     <h1 id="trocarSenha" onclick="TrocarSenha()"><b><u>Quero trocar minha senha</u></b></h1>
+*@
 
     <form id="frmTrocarSenha" method="post" action="/Perfil/TrocarSenha" style="display: none">
         <div id="divTrocarSenha">
@@ -348,7 +354,7 @@
             <label class="lblSenhas">Confirmação: </label><input id="confirmaSenha" class="lblSenhas" type="password" onchange="VerificarSenhas()" name="u.senha" required><br><br>
             <button class="cBtn" id="btnOkay" onclick="SubmitTrocarSenha()" style="display: none">OK</button>
         </div>
-    </form>*@
+    </form>
 
 </body>
 </html>
