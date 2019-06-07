@@ -54,7 +54,7 @@ header {
 #canvas
 {
     position: absolute;
-    top: 64em;
+    top: 72em;
 }
 
 /*#lblPareto {
@@ -68,7 +68,7 @@ header {
     background-color: yellow;
     position: absolute;
     left: 5%;
-    top: 25em;
+    top: 28em;
     font-size: 34px;
 }
 

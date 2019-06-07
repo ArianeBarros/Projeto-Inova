@@ -27,6 +27,9 @@
             var img2 = document.getElementById("img2");
             var img3 = document.getElementById("img3");
             var img4 = document.getElementById("img4");
+            var img2 = document.getElementById("img5");
+            var img3 = document.getElementById("img6");
+            var img4 = document.getElementById("img7");
             var nav = document.getElementById("nav");
 
             if (window.innerWidth >= 1300) {
@@ -35,6 +38,9 @@
                 img2.style.height = "80%";
                 img3.style.height = "80%";
                 img4.style.height = "80%";
+                img5.style.height = "80%";
+                img6.style.height = "80%";
+                img7.style.height = "80%";
                 nav.style.top = "initial";
             }
             else
@@ -43,6 +49,9 @@
                     img2.style.height = "80%";
                     img3.style.height = "80%";
                     img4.style.height = "80%";
+                    img5.style.height = "80%";
+                    img6.style.height = "80%";
+                    img7.style.height = "80%";
                     nav.style.top = "initial";
                 }
                 else
@@ -60,6 +69,9 @@
                             img2.style.height = "39%";
                             img3.style.height = "39%";
                             img4.style.height = "39%";
+                            img5.style.height = "39%";
+                            img6.style.height = "39%";
+                            img7.style.height = "39%";
                             nav.style.top = "80%";
                         }
                         else {
@@ -67,6 +79,9 @@
                             img2.style.height = "35%";
                             img3.style.height = "35%";
                             img4.style.height = "35%";
+                            img5.style.height = "35%";
+                            img6.style.height = "35%";
+                            img7.style.height = "35%";
                             nav.style.top = "78%";
                         }
 
@@ -146,18 +161,27 @@
 
     <div class="slidershow middle" id="slidersh">
         <div class="slides">
-            <div class="slide s1" id="s1">
-                <img src="~/Imagens/img4p.jpeg" alt="" name="imgN" id="img1">
+            <div class="slide" s1 id="s1">
+                <img src="~/Imagens/imgp6.png" alt="" name="imgN" id="img3">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img3p.jpeg" alt="" name="imgN" id="img2">
+                <img src="~/Imagens/imgp3.png" alt="" name="imgN" id="img6">
+            </div>
+
+            <div class="slide">
+                <img src="~/Imagens/imgp2.png" alt="" name="imgN" id="img2">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img2p.jpeg" alt="" name="imgN" id="img3">
+                <img src="~/Imagens/imgp4.png" alt="" name="imgN" id="img1">
             </div>
             <div class="slide">
-                <img src="~/Imagens/img1p.jpeg" alt="" name="imgN" id="img4">
+                <img src="~/Imagens/imgp5.png" alt="" name="imgN" id="img5">
             </div>
+            <div class="slide">
+                <img src="~/Imagens/imgp1.png" alt="" name="imgN" id="img4">
+            </div>
+
+
         </div>
     </div>
     <div class="navigation" id="nav">
@@ -165,8 +189,8 @@
         <label id="r2B" class="bar selector" onclick="trocarSlide(1)"></label>
         <label id="r3B" class="bar selector" onclick="trocarSlide(2)"></label>
         <label id="r4B" class="bar selector" onclick="trocarSlide(3)"></label>
-        @*<label id="r5B" class="bar selector" onclick="trocarSlide(4)"></label>
-        <label id="r6B" class="bar selector" onclick="trocarSlide(5)"></label>*@
+        <label id="r5B" class="bar selector" onclick="trocarSlide(4)"></label>
+        <label id="r6B" class="bar selector" onclick="trocarSlide(5)"></label>
     </div>
     <br /><br /><br /><br /><br />
 
