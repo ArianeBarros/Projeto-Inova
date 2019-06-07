@@ -249,9 +249,9 @@
                 </div>
                 <h1 id="hu">Username:</h1>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required">
-                    <input class="input100" id="email" type="text" name="u.email" required   value="@ViewBag.UsuarioLogado.email">
+                    <input class="input100" id="email" type="text" name="u.email" required value="@ViewBag.UsuarioLogado.email">
                 </div>
-                
+
                 <h1 id="he">Email:</h1>
                 <div class="wrap-input100 validate-input" data-validate="Valid date is required">
                     <input class="input100 datepicker" id="data" type="datetime" name="u.dataNascimento" required value="">
@@ -267,6 +267,23 @@
                 </button>
             </div>
             <div id="cadastro"><a href="~/Cadastro/Index" id="cad" onclick="Abrir'Cadastro'">Ainda não possui uma conta? <br />Cadastre-se aqui!</a></div>
+
+            <section id="secEscolherFoto" enctype="multipart/form-data">
+                Escolha uma foto para o seu Perfil!
+                <br><br>
+
+                <img class="exImg" src="~/Imagens/paisagem1.jpg" onclick="CarregarFotoEscolhida(this.src)">
+                <img class="exImg" src="~/Imagens/paisagem2.jpg" onclick="CarregarFotoEscolhida(this.src)">
+                <img class="exImg" src="~/Imagens/paisagem3.jpg" onclick="CarregarFotoEscolhida(this.src)">
+                <img class="exImg" src="~/Imagens/paisagem4.jpg" onclick="CarregarFotoEscolhida(this.src)">
+                <img class="exImg" src="~/Imagens/paisagem5.jpg" onclick="CarregarFotoEscolhida(this.src)">
+                <img class="exImg" src="~/Imagens/paisagem6.jpg" onclick="CarregarFotoEscolhida(this.src)">
+
+                <br><br>
+                <label for="arquivoEscolhido">Selecionar arquivo da foto</label>
+                <input type="file" id="arquivoEscolhido" style="display: none" onclick="CarregarArquivoEscolhido()" name="upload">
+                <br><br>
+            </section>
         </form>
     </div>
 
