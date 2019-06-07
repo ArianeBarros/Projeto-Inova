@@ -136,7 +136,8 @@
                 seMostraPerfil++;
             }
             else {
-                document.getElementById("divExplicaEstrela").style.display = 'none';
+                if (document.getElementById("divExplicaEstrela") != null)
+                     document.getElementById("divExplicaEstrela").style.display = 'none';
                 document.getElementById("opcoesFotos").innerHTML = " <input id='btnPerfil' type='image' src=" + qualImg + " onclick='CarregarPerfil()'>";
                 seMostraPerfil++;
             }
